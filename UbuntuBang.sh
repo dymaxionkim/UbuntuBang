@@ -37,8 +37,9 @@ ln -s /usr/bin/firefox /etc/alternatives/x-www-browser
 
 ###########################################################
 # Conky
-cp -rf ./conky/* ~/.conky
 mv ~/.conkyrc ~/.conkyrc.old
+mkdir ~/.conky
+git clone git://github.com/zenzire/conkyrc.git ~/.conky
 ln -s ~/.conky/conkyrc ~/.conkyrc
 
 ###########################################################
