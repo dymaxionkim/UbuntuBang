@@ -1,0 +1,5 @@
+xcompmgr &
+nitrogen --restore &
+tint2 &
+conky &
+numlockx on &
