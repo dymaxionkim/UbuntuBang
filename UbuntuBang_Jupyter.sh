@@ -57,9 +57,12 @@ echo '}' >> /usr/local/share/jupyter/kernels/python3/kernel.json
 #apt-get update
 #apt-get -y install julia
 #julia -e 'Pkg.init()'
+#julia -e 'Pkg.add("Jewel")'
+#julia -e 'Pkg.add("Images")'
+#julia -e 'Pkg.add("PyPlot")'
 #julia -e 'Pkg.add("IJulia")'
 #julia -e 'Pkg.update()'
-
+#sudo chmod -R 777 ~/.julia
 
 
 
