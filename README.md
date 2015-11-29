@@ -32,7 +32,10 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
 * 설치된 Ubuntu의 VirtualBox 메뉴에서 `장치` 안에 있는 `게스트 확장 CD 이미지 삽입`을 반드시 선택해 줍니다. (주의할 것!)
-* 다음의 명령어를 차례대로 쳐넣습니다.
+
+![virtualbox_01](https://cloud.githubusercontent.com/assets/12775748/11455936/9c9c6e7c-96b8-11e5-9bcf-d993aa4788c6.png)
+
+* 이후에 다음의 명령어를 차례대로 쳐넣습니다.
 ```
 sudo apt-get update
 sudo apt-get upgrade
