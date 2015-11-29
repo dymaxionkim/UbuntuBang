@@ -30,6 +30,8 @@ dpkg -i dasom_1.0.1-ubuntu-14.04_amd64.deb
 dpkg -i arkzip_2.4.4_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 
+rm *.deb
+
 ###########################################################
 # Default Web browser
 rm /etc/alternatives/x-www-browser

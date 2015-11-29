@@ -60,6 +60,19 @@ startx
 nitrogen
 ```
 
+* 이제, Python/Jupyter/Julia 개발환경을 구성하는 쉘스크립트를 실행시킵니다.
+```
+cd ~/github/UbuntuBang
+chmod +x ./UbuntuBang_Jupyter.sh
+sudo sh UbuntuBang_Jupyter.sh
+```
+
+* X윈도우 상에서 Jupyter가 잘 실행되고, Python2/Python3/Julia 커널이 잘 올라가 있는지 확인해 봅니다.
+
+* 끝!  나머지 환경설정은 알아서~
+
+
+
 ## 유의사항
 * 사운드 드라이버는 설치하지 않습니다.  필요시 별도로 잡아주어야 합니다.
 * LightDM은 설치하지 않습니다.  필요시 별도로 설치하면 됩니다.
