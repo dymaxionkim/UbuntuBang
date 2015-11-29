@@ -51,13 +51,14 @@ echo '}' >> /usr/local/share/jupyter/kernels/python3/kernel.json
 
 ###########################################################
 # Julia
-add-apt-repository ppa:staticfloat/juliareleases
-add-apt-repository ppa:staticfloat/julia-deps
-apt-get update
-apt-get -y install julia
-julia -e 'Pkg.init()'
-julia -e 'Pkg.add("IJulia")'
-julia -e 'Pkg.update()'
+# Do not act this sequence because Permission Problems
+#add-apt-repository ppa:staticfloat/juliareleases
+#add-apt-repository ppa:staticfloat/julia-deps
+#apt-get update
+#apt-get -y install julia
+#julia -e 'Pkg.init()'
+#julia -e 'Pkg.add("IJulia")'
+#julia -e 'Pkg.update()'
 
 
 
