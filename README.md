@@ -1,7 +1,16 @@
 # UbuntuBang
 _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 
-![ubuntubang_01](https://cloud.githubusercontent.com/assets/12775748/11455961/8b4a237a-96b9-11e5-90fc-0890beeb737e.png)
+
+![Numix Theme](https://cloud.githubusercontent.com/assets/12775748/11458097/81a3e3f4-96fc-11e5-8d66-7a009bf36585.png)
+
+![Terminator Terminal Emulator](https://cloud.githubusercontent.com/assets/12775748/11458099/852898e4-96fc-11e5-8eae-90a0b5f22e00.png)
+
+![FreeCAD and Netgen](https://cloud.githubusercontent.com/assets/12775748/11458100/9000d1e6-96fc-11e5-96a5-0d7cc24c7e91.png)
+
+![ElmerGUI](https://cloud.githubusercontent.com/assets/12775748/11458103/a1ec281a-96fc-11e5-886c-3c88c63ea891.png)
+
+![Jupyter Notebook, Atom Editor, PCManFM File Mangager](https://cloud.githubusercontent.com/assets/12775748/11455961/8b4a237a-96b9-11e5-90fc-0890beeb737e.png)
 
 
 ## 소개
