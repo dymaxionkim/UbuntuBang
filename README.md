@@ -1,6 +1,8 @@
 # UbuntuBang
 _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 
+![ubuntubang_01](https://cloud.githubusercontent.com/assets/12775748/11455961/8b4a237a-96b9-11e5-90fc-0890beeb737e.png)
+
 
 ## 소개
 * 우분투 기반 경량 리눅스 데스크탑을 빠르게 구성하기 위한 자동화 툴입니다.
