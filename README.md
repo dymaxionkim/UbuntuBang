@@ -31,7 +31,7 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 * Ubuntu Server 14.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 20GB 이상으로 합니다.
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
-* 설치된 Ubuntu의 VirtualBox 메뉴에서 `장치` 안에 있는 `게스트 확장 CD 이미지 삽입`을 반드시 선택해 줍니다.
+* 설치된 Ubuntu의 VirtualBox 메뉴에서 `장치` 안에 있는 `게스트 확장 CD 이미지 삽입`을 반드시 선택해 줍니다. (주의할 것!)
 * 다음의 명령어를 차례대로 쳐넣습니다.
 ```
 sudo apt-get update
