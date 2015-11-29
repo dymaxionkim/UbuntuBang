@@ -44,19 +44,19 @@ ln -s ~/.conky/conkyrc ~/.conkyrc
 
 ###########################################################
 # ~/.config
-cp -rf ./config/* ~/.config
+cp -rf ~/github/UbuntuBang/config/* ~/.config
 
 ###########################################################
 # /etc/default/locale
-cp -rf ./etc/default/locale /etc/default/locale
+cp -rf ~/github/UbuntuBang/etc/default/locale /etc/default/locale
 
 ###########################################################
 # ~/.xinputrc
-cp -rf ./home/.xinputrc ~/.xinputrc
+cp -rf ~/github/UbuntuBang/home/.xinputrc ~/.xinputrc
 
 ###########################################################
 # ~/.gtkrc-2
-cp -rf ./home/.gtkrc-2 ~/.gtkrc-2
+cp -rf ~/github/UbuntuBang/home/.gtkrc-2 ~/.gtkrc-2
 
 ###########################################################
 # VirtualBox Guest Extension
