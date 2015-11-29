@@ -61,6 +61,11 @@ cp -rf ~/github/UbuntuBang/home/.xinputrc ~/.xinputrc
 cp -rf ~/github/UbuntuBang/home/.gtkrc-2 ~/.gtkrc-2
 
 ###########################################################
+# Nitrogen
+wget http://pre05.deviantart.net/79a1/th/pre/f/2014/242/1/c/numix_wallpaper_orange_by_sypnos-d7xbh4j.png
+cp numix_wallpaper*.png ~/.config/nitrogen/
+
+###########################################################
 # VirtualBox Guest Extension
 mount /dev/cdrom /mnt
 /mnt/VBoxLinuxAdditions.run

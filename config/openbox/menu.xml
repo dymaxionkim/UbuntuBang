@@ -51,6 +51,11 @@
 			</item>
 		</menu>
 		<menu id="root-menu-393243" label="Utils">
+			<item label="File-roller">
+				<action name="Execute">
+					<execute>file-roller</execute>
+				</action>
+			</item>
 			<item label="smPlayer">
 				<action name="Execute">
 					<execute>smplayer</execute>
@@ -67,6 +72,28 @@
 				</action>
 			</item>
 		</menu>
+		<menu id="root-menu-805359" label="DEVELOP">
+			<item label="Octave">
+				<action name="Execute">
+					<execute>terminator -e octave</execute>
+				</action>
+			</item>
+			<item label="iPython">
+				<action name="Execute">
+					<execute>terminator -e ipython</execute>
+				</action>
+			</item>
+			<item label="Julia">
+				<action name="Execute">
+					<execute>terminator -e julia</execute>
+				</action>
+			</item>
+			<item label="Jupyter Notebook">
+				<action name="Execute">
+					<execute>terminator -e 'jupyter notebook'</execute>
+				</action>
+			</item>
+		</menu>
 		<menu id="root-menu-813412" label="CAD">
 			<item label="FreeCAD">
 				<action name="Execute">
@@ -75,14 +102,29 @@
 			</item>
 			<item label="DraftSight">
 				<action name="Execute">
-					<execute>command</execute>
+					<execute>DraftSight</execute>
 				</action>
 			</item>
 		</menu>
 		<menu id="root-menu-773440" label="CAE">
+			<item label="Netgen">
+				<action name="Execute">
+					<execute>netgen</execute>
+				</action>
+			</item>
+			<item label="Gmsh">
+				<action name="Execute">
+					<execute>gmsh</execute>
+				</action>
+			</item>
 			<item label="ElmerGUI">
 				<action name="Execute">
 					<execute>ElmerGUI</execute>
+				</action>
+			</item>
+			<item label="ParaView">
+				<action name="Execute">
+					<execute>paraview</execute>
 				</action>
 			</item>
 		</menu>
@@ -156,9 +198,9 @@
 		</menu>
 		<separator/>
 		<menu id="root-menu-263541" label="Setting">
-			<item label="Synaptic">
+			<item label="gksu Synaptic">
 				<action name="Execute">
-					<execute>gksudo synaptic</execute>
+					<execute>gksu synaptic</execute>
 				</action>
 			</item>
 			<item label="lxTask">
