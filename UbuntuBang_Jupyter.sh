@@ -24,8 +24,7 @@ pip install pip-tools
 
 ###########################################################
 # apt
-apt-get -y install python-dev libblas-dev libatlas-base-dev liblapack-dev gfortran libpng-dev libfreetype6-dev libjpeg8-dev pkg-config libncurses5-dev libzmq-dev
-
+apt-get -y install python-dev libblas-dev libatlas-base-dev liblapack-dev gfortran libpng-dev libfreetype6-dev libjpeg8-dev pkg-config libncurses5-dev
 ###########################################################
 # pip
 pip install sympy nose sphinx pygments tornado jinja2 numpy scipy matplotlib readline pandas pyzmq scikit-learn jupyter
