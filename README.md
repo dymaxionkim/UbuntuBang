@@ -59,6 +59,14 @@ cd UbuntuBang
 chmod +x ./UbuntuBang.sh
 sudo sh UbuntuBang.sh
 ```
+
+* 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다.
+```
+cd ~/github/UbuntuBang
+chmod +x ./UbuntuBang_Jupyter.sh
+sudo sh UbuntuBang_Jupyter.sh
+```
+
 * 위의 과정이 다 끝나면 다음 명령을 쳐서 재부팅을 한 번 해 줍니다.
 ```
 sudo reboot now
@@ -67,18 +75,6 @@ sudo reboot now
 * 그리고 X윈도우를 실행해서 잘 되는지 확인합니다.
 ```
 startx
-```
-
-* X윈도우상에서 터미널 에뮬레이터를 실행시킨 후, 다음 명령을 써서 바탕화면을 원하는대로 설정합니다.
-```
-nitrogen
-```
-
-* 이제, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다.
-```
-cd ~/github/UbuntuBang
-chmod +x ./UbuntuBang_Jupyter.sh
-sudo sh UbuntuBang_Jupyter.sh
 ```
 
 * X윈도우 상에서 Jupyter가 잘 실행되고, Python2/Python3 커널이 잘 올라가 있는지 확인해 봅니다.
