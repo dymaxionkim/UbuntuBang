@@ -46,6 +46,7 @@ ln -s ~/.conky/conkyrc ~/.conkyrc
 
 ###########################################################
 # ~/.config
+mkdir ~/.config
 cp -rf ~/github/UbuntuBang/config/* ~/.config
 
 ###########################################################
@@ -58,7 +59,7 @@ cp -rf ~/github/UbuntuBang/home/.xinputrc ~/.xinputrc
 
 ###########################################################
 # ~/.gtkrc-2
-cp -rf ~/github/UbuntuBang/home/.gtkrc-2 ~/.gtkrc-2
+cp -rf ~/github/UbuntuBang/home/.gtkrc-* ~/.gtkrc-2
 
 ###########################################################
 # Nitrogen
