@@ -22,15 +22,18 @@ apt-get -y install build-essential linux-headers-`uname -r` xorg openbox obmenu 
 
 ###########################################################
 # wget
-wget https://github.com/cogniti/dasom/releases/download/1.0.1/dasom_1.0.1-ubuntu-14.04_amd64.deb
 wget https://github.com/Thestars3/arkzip/releases/download/v2.4.4/arkzip_2.4.4_amd64.deb
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-dpkg -i dasom_1.0.1-ubuntu-14.04_amd64.deb
 dpkg -i arkzip_2.4.4_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 
 rm *.deb
+
+###########################################################
+# Dasom IM
+add-apt-repository ppa:dasom
+apt-get -y install dasom dasom-gtk dasom-qt dasom-jeongeum
 
 ###########################################################
 # Default Web browser
