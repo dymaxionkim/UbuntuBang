@@ -1,6 +1,8 @@
 # UbuntuBang
 _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 
+* Wiki : <http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/index.html>
+
 
 ![Numix Theme](https://cloud.githubusercontent.com/assets/12775748/11458097/81a3e3f4-96fc-11e5-8d66-7a009bf36585.png)
 
