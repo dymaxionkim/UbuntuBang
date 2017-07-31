@@ -35,11 +35,11 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 
 
 ## 상세한 설명
-* http://dymaxionkim.github.io/mdwiki/#!pages/Linux/Setup_OS.md
-* http://dymaxionkim.github.io/mdwiki/#!pages/Linux/Setup_Apps.md
-* http://dymaxionkim.github.io/mdwiki/#!pages/Linux/Setup_Dev.md
-* http://dymaxionkim.github.io/mdwiki/#!pages/Linux/Maintenance.md
-* http://dymaxionkim.github.io/mdwiki/#!pages/Linux/Tips.md
+* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_OS.md
+* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Apps.md
+* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Dev.md
+* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Maintenance.md
+* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Tips.md
 
 
 ## 사용방법
