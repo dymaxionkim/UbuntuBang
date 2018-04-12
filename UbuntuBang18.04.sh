@@ -23,7 +23,6 @@ apt -y install build-essential linux-headers-`uname -r`
 apt -y install virtualbox-guest-additions-iso
 mount /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt
 /mnt/VBoxLinuxAdditions.run
-reboot now
 
 ###########################################################
 # Repository
