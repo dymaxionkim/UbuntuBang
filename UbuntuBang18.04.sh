@@ -66,4 +66,5 @@ echo "xcompmgr &" > /home/osboxes/.config/openbox/autostart
 echo "nitrogen --restore &" >> /home/osboxes/.config/openbox/autostart
 echo "tint2 -c ~/.config/tint2/Numix_tint2/red_taskbar/tint2rc &" >> /home/osboxes/.config/openbox/autostart
 echo "volumeicon &" >> /home/osboxes/.config/openbox/autostart
+chown -R osboxes /home/osboxes/.config
 
