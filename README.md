@@ -89,7 +89,7 @@ startx
 
 ## 사용방법 (Ubuntu Server 18.04)
 * Ubuntu Server 18.04를 VirtualBox 가상머신에 설치합니다.
-* 가상머신의 하드디스크 사이즈는 20GB 이상으로 하고, 제대로 사용하려면 80~100GB 정도 잡아줍니다.
+* 가상머신의 하드디스크 사이즈는 60GB 이상으로 하고, 제대로 사용하려면 80~100GB 정도 잡아줍니다.
 * 편의상, 설치할 때 사용자 아이디는 무조건 `osboxes`로 합시다.
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
@@ -103,8 +103,9 @@ sudo reboot now
 
 startx
 tint2 in terminal one time
-obmenu in terminal and settings for Numix theme
-lxappearance in terminal and settings for Numix theme
+obmenu in terminal and set for applications
+lxappearance in terminal and set for Numix theme
+nitrogen --restore in terminal and set wallpaper
 ibus preference for Hangul input method
 ```
 
