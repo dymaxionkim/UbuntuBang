@@ -9,6 +9,13 @@
 ###########################################################
 
 ###########################################################
+# How to use
+#
+# wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang18.04.sh
+# chmod +x ./UbuntuBang18.04.sh
+# sudo sh ./UbuntuBang18.04.sh
+
+###########################################################
 # Virtualbox Additions
 apt -y update
 apt -y upgrade
