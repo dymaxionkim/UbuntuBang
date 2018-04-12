@@ -64,7 +64,7 @@ apt -y install texlive-full pandoc
 # Octave
 apt -y install octave liboctave-dev
 
-
+# Elmer FEM is not yet provided for Ubuntu 18.04
 # Elmer
 #apt -y install elmerfem-csc
 #mkdir /usr/share/ElmerGUI/icons
@@ -140,28 +140,28 @@ echo 'Terminal=false' >> /usr/share/applications/Paraview.desktop
 echo 'Type=Application' >> /usr/share/applications/Paraview.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
 
-
+# Salome is not yet provided for Ubuntu 18.04
 # Salome
-wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB16.04&version=8.4.0"
-tar -xvzf Salome.tgz
-mv ./SALOME-* /home/osboxes/Salome
-rm Salome.tgz
+#wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB16.04&version=8.4.0"
+#tar -xvzf Salome.tgz
+#mv ./SALOME-* /home/osboxes/Salome
+#rm Salome.tgz
 
-echo '' >> ~/.bashrc
-echo '# Salome' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
+#echo '' >> ~/.bashrc
+#echo '# Salome' >> ~/.bashrc
+#echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
 
-echo '[Desktop Entry]' > /usr/share/applications/Salome.desktop
-echo 'Encoding=UTF-8' >> /usr/share/applications/Salome.desktop
-echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
-echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
-echo 'Exec=/home/osboxes/Salome/salome' >> /usr/share/applications/Salome.desktop
-echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
+#echo '[Desktop Entry]' > /usr/share/applications/Salome.desktop
+#echo 'Encoding=UTF-8' >> /usr/share/applications/Salome.desktop
+#echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
+#echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
+#echo 'Exec=/home/osboxes/Salome/salome' >> /usr/share/applications/Salome.desktop
+#echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
 #echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
-echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
-echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
-echo 'Type=Application' >> /usr/share/applications/Salome.desktop
-echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
+#echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
+#echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
+#echo 'Type=Application' >> /usr/share/applications/Salome.desktop
+#echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 
 ###########################################################
@@ -202,6 +202,7 @@ mv /home/osboxes/.config/tint2/tint2rc /home/osboxes/.config/tint2/tint2rc.old
 wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.config/tint2/themes/Numix/red_taskbar/tint2rc
 mv ./tint2rc /home/osboxes/.config/tint2/tint2rc
 
+apt -y autoremove
 
 # Fin
 echo 'Finished!'
