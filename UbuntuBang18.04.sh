@@ -49,7 +49,7 @@ apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
 apt -y install numlockx terminator pcmanfm pluma language-pack-ko fonts-noto-cjk fonts-nanum* fonts-naver-d2coding 
 apt -y install ibus ibus-hangul im-config alsa alsa-tools volumeicon-alsa
 apt -y install numix-icon-theme-circle shimmer-themes libreoffice okular mirage inkscape gimp smplayer
-apt -y install cups-pdf convertall qalculate file-roller gksu synaptic firefox-trunk vlc expect
+apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk vlc expect
 apt -y install ffmpeg libav-tools x264 x265
 apt -y install openshot-qt
 apt -y install atom freecad
