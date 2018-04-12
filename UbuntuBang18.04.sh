@@ -60,7 +60,7 @@ echo "LC_MEASUREMENT=\"ko_KR.UTF-8\"" >> /etc/default/locale
 
 ###########################################################
 # Openbox
-mkdir ~/.config/openbox
+mkdir /home/osboxes/.config/openbox
 echo "xcompmgr &" > /home/osboxes/.config/openbox/autostart
 echo "nitrogen --restore &" >> /home/osboxes/.config/openbox/autostart
 echo "tint2 -c ~/.config/tint2/Numix_tint2/red_taskbar/tint2rc &" >> /home/osboxes/.config/openbox/autostart
