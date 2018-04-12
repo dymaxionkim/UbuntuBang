@@ -100,7 +100,11 @@ wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang1
 chmod +x ./UbuntuBang18.04.sh
 sudo sh ./UbuntuBang18.04.sh
 sudo reboot now
+
 startx
-tint2, obmenu, lxappearance ...
+tint2 in terminal one time
+obmenu in terminal and settings for Numix theme
+lxappearance in terminal and settings for Numix theme
+ibus preference for Hangul input method
 ```
 
