@@ -96,15 +96,10 @@ startx
 * 이후에 다음의 명령어를 차례대로 쳐넣습니다.
 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git
-mkdir ~/github
-cd ~/github
-git init
-git clone https://github.com/dymaxionkim/UbuntuBang.git
-cd UbuntuBang
-chmod +x ./UbuntuBang.sh
-sudo sh UbuntuBang.sh
+wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang18.04.sh
+chmod +x ./UbuntuBang18.04.sh
+sudo sh ./UbuntuBang18.04.sh
+sudo reboot now
+startx
 ```
 
