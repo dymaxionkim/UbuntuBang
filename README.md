@@ -1,5 +1,5 @@
 # UbuntuBang
-_Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
+_Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 
 * Wiki : <http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/index.html>
 
@@ -27,7 +27,7 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 
 
 ## 주요 유틸리티
-* Ubuntu Server 14.04
+* Ubuntu Server
 * Xorg, OpenBox
 * obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx, conky
 * leafpad, pcmanfm, lxtask, gmrun, gnome-screenshot, Dasom Jeongeum
@@ -42,7 +42,7 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Tips.md
 
 
-## 사용방법
+## 사용방법 (Ubuntu Server 14.04)
 * Ubuntu Server 14.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 20GB 이상으로 합니다.
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
@@ -51,7 +51,7 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server 14.04_
 ![virtualbox_01](https://cloud.githubusercontent.com/assets/12775748/11455936/9c9c6e7c-96b8-11e5-9bcf-d993aa4788c6.png)
 
 * 이후에 다음의 명령어를 차례대로 쳐넣습니다.
-```
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git
@@ -65,19 +65,19 @@ sudo sh UbuntuBang.sh
 ```
 
 * 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다.
-```
+```bash
 cd ~/github/UbuntuBang
 chmod +x ./UbuntuBang_Jupyter.sh
 sudo sh UbuntuBang_Jupyter.sh
 ```
 
 * 위의 과정이 다 끝나면 다음 명령을 쳐서 재부팅을 한 번 해 줍니다.
-```
+```bash
 sudo reboot now
 ```
 
 * 그리고 X윈도우를 실행해서 잘 되는지 확인합니다.
-```
+```bash
 startx
 ```
 
@@ -87,9 +87,24 @@ startx
 
 
 
-## 유의사항
-* 사운드 드라이버는 설치하지 않습니다.  필요시 별도로 잡아주어야 합니다.
-* LightDM은 설치하지 않습니다.  필요시 별도로 설치하면 됩니다.
-* 스크린세이버는 설치하지 않습니다.  필요시 별도로 설치하면 됩니다.
-* 한컴오피스 뷰어는 직접 수동으로 따로 설치하도록 합시다.
+## 사용방법 (Ubuntu Server 18.04)
+* Ubuntu Server 18.04를 VirtualBox 가상머신에 설치합니다.
+* 가상머신의 하드디스크 사이즈는 20GB 이상으로 하고, 제대로 사용하려면 80~100GB 정도 잡아줍니다.
+* 편의상, 설치할 때 사용자 아이디는 무조건 `osboxes`로 합시다.
+* 최초 부팅하고 로그인 합니다.
+* 인터넷 연결이 되어 있는지 확인합니다.
+* 이후에 다음의 명령어를 차례대로 쳐넣습니다.
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+mkdir ~/github
+cd ~/github
+git init
+git clone https://github.com/dymaxionkim/UbuntuBang.git
+cd UbuntuBang
+chmod +x ./UbuntuBang.sh
+sudo sh UbuntuBang.sh
+```
 
