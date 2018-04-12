@@ -101,5 +101,6 @@ chmod +x ./UbuntuBang18.04.sh
 sudo sh ./UbuntuBang18.04.sh
 sudo reboot now
 startx
+tint2
 ```
 
