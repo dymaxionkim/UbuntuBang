@@ -101,6 +101,7 @@ apt -y install octave liboctave-dev
 wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.6-Linux64.tgz"
 tar -xvzf Gmsh.tgz
 mv ./gmsh* /home/osboxes/Gmsh
+chown -R osboxes /home/osboxes/Gmsh
 rm Gmsh.tgz
 
 echo '' >> ~/.bashrc
@@ -124,6 +125,7 @@ wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.ph
 tar -xvzf Paraview.tar.gz
 mv ./ParaView-* /home/osboxes/Paraview
 rm Paraview.tar.gz
+chown -R osboxes /home/osboxes/Paraview
 
 echo '' >> ~/.bashrc
 echo '# Paraview' >> ~/.bashrc
@@ -146,6 +148,7 @@ echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
 #tar -xvzf Salome.tgz
 #mv ./SALOME-* /home/osboxes/Salome
 #rm Salome.tgz
+#chown -R osboxes /home/osboxes/Salome
 
 #echo '' >> ~/.bashrc
 #echo '# Salome' >> ~/.bashrc
