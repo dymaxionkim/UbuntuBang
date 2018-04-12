@@ -68,3 +68,11 @@ echo "tint2 -c /home/osboxes/.config/tint2/tint2rc &" >> /home/osboxes/.config/o
 echo "volumeicon &" >> /home/osboxes/.config/openbox/autostart
 chown -R osboxes /home/osboxes/.config
 
+###########################################################
+# Numix Taskbar
+mv /home/osboxes/.config/tint2/tint2rc /home/osboxes/.config/tint2/tint2rc.old
+wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.config/tint2/themes/Numix/red_taskbar/tint2rc /home/osboxes/.config/tint2/tint2rc
+
+
+
+
