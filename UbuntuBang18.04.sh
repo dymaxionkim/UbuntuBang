@@ -34,13 +34,13 @@ add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
 add-apt-repository -y ppa:inkscape.dev/stable
 add-apt-repository -y ppa:otto-kesselgulasch/gimp
 add-apt-repository -y ppa:libreoffice/ppa
-add-apt-repository -y ppa:jonathonf/ffmpeg-3
-add-apt-repository -y ppa:openshot.developers/ppa
 add-apt-repository -y ppa:webupd8team/atom
 add-apt-repository -y ppa:freecad-maintainers/freecad-stable
-# Elmer FEM is not yet provided for Ubuntu 18.04
+# Blocked for not yet provided things for Ubuntu 18.04
+# add-apt-repository -y ppa:jonathonf/ffmpeg-3
+# add-apt-repository -y ppa:openshot.developers/ppa
 # apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-add-apt-repository -y ppa:octave/stable
+# add-apt-repository -y ppa:octave/stable
 apt -y update
 
 ###########################################################
