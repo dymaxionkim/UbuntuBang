@@ -205,6 +205,15 @@ wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.con
 mv ./tint2rc /home/osboxes/.config/tint2/tint2rc
 
 ###########################################################
+# d2coding font
+wget https://github.com/naver/d2codingfont/releases/download/VER1.21/D2Coding-1.2.zip
+mkdir /usr/share/fonts/truetype/D2Coding
+unzip D2Coding-1.2.zip -d /usr/share/fonts/truetype/D2Coding/
+rm -rf /usr/share/fonts/truetype/D2Coding/__MACOSX
+rm D2Coding-1.2.zip
+fc-cache -f -v
+
+###########################################################
 # Timezone
 echo "TZ='Asia/Seoul'; export TZ" >> /home/osboxes/.profile
 
