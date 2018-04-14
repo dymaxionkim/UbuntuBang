@@ -40,7 +40,6 @@ add-apt-repository -y ppa:jonathonf/ffmpeg-3
 add-apt-repository -y ppa:openshot.developers/ppa
 apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
 add-apt-repository -y ppa:octave/stable
-###########################################################
 # Arc Theme, Window-10-theme anf icons
 add-apt-repository -y ppa:noobslab/themes
 add-apt-repository -y ppa:noobslab/icons
@@ -58,8 +57,6 @@ apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk vlc 
 apt -y install ffmpeg libav-tools x264 x265
 apt -y install openshot-qt
 apt -y install atom freecad
-mv /usr/share/netgen/drawing.tcl /usr/share/netgen/drawing.tcl.bak
-cp ./drawing.tcl /usr/share/netgen/drawing.tcl
 apt -y install texlive-full pandoc
 
 ###########################################################
