@@ -166,6 +166,18 @@ echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 ###########################################################
+# step2unv
+mkdir /home/osboxes/.config/salome/step2unv
+wget -O /home/osboxes/.config/salome/step2unv/step2unv https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv
+wget -O /home/osboxes/.config/salome/step2unv/step2unv.py https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv.py
+wget -O /home/osboxes/.config/salome/step2unv/Readme.md https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/Readme.md
+chmod +x /home/osboxes/.config/salome/step2unv/step2unv
+echo "" >> ~/.bashrc
+echo "# STEP2UNV for Elmer with Salome" >> ~/.bashrc
+echo "export PATH=\"/home/osboxes/.config/salome/step2unv:\$PATH\"" >> ~/.bashrc
+echo "" >> ~/.bashrc
+
+###########################################################
 # DraftSight
 wget http://www.draftsight.com/download-linux-ubuntu
 mv download-linux-ubuntu draftSight.deb
