@@ -53,7 +53,7 @@ apt -y install uim uim-byeoru im-config
 apt -y install alsa alsa-tools volumeicon-alsa
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
 apt -y install libreoffice okular mirage inkscape gimp smplayer
-apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk vlc expect
+apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk vlc expect htop
 apt -y install ffmpeg libav-tools x264 x265
 apt -y install openshot-qt
 apt -y install atom freecad
