@@ -49,7 +49,7 @@ apt -y update
 ###########################################################
 # Installs
 apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
-apt -y install numlockx terminator pcmanfm pluma language-pack-ko fonts-noto-cjk fonts-nanum* fonts-naver-d2coding 
+apt -y install numlockx terminator pcmanfm pluma language-pack-ko fonts-noto-cjk fonts-nanum* 
 apt -y install ibus ibus-hangul im-config alsa alsa-tools volumeicon-alsa
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
 apt -y install libreoffice okular mirage inkscape gimp smplayer
