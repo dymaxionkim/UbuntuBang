@@ -165,6 +165,13 @@ echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
 echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
+###########################################################
+# DraftSight
+wget http://www.draftsight.com/download-linux-ubuntu
+mv download-linux-ubuntu draftSight.deb
+# Should dpkg on X-Window
+#dpkg -i ./draftSight.deb
+#rm draftSight.deb
 
 ###########################################################
 # Remove
