@@ -219,7 +219,8 @@ fc-cache -f -v
 
 ###########################################################
 # Timezone
-echo "TZ='Asia/Seoul'; export TZ" >> /home/osboxes/.profile
+ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
 
 apt -y autoremove
 
