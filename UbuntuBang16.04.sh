@@ -42,8 +42,8 @@ apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
 add-apt-repository -y ppa:octave/stable
 ###########################################################
 # Arc Theme, Window-10-theme anf icons
-add-apt-repository ppa:noobslab/themes
-add-apt-repository ppa:noobslab/icons
+add-apt-repository -y ppa:noobslab/themes
+add-apt-repository -y ppa:noobslab/icons
 apt -y update
 
 ###########################################################
