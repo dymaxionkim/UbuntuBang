@@ -189,6 +189,10 @@ echo "LC_TELEPHONE=\"ko_KR.UTF-8\"" >> /etc/default/locale
 echo "LC_MEASUREMENT=\"ko_KR.UTF-8\"" >> /etc/default/locale
 
 ###########################################################
+# Set Input Method
+im-config -n uim
+
+###########################################################
 # Openbox
 mkdir /home/osboxes/.config
 mkdir /home/osboxes/.config/openbox
