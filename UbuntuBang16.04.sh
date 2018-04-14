@@ -222,6 +222,7 @@ fc-cache -f -v
 ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 
+chown -R osboxes /home/osboxes/.config
 apt -y autoremove
 
 # Fin
