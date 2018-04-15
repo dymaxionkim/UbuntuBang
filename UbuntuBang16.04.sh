@@ -165,7 +165,6 @@ echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
 echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
-###########################################################
 # step2unv
 mkdir /home/osboxes/.config/salome/step2unv
 wget -O /home/osboxes/.config/salome/step2unv/step2unv https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv
@@ -177,13 +176,12 @@ echo "# STEP2UNV for Elmer with Salome" >> ~/.bashrc
 echo "export PATH=\"/home/osboxes/.config/salome/step2unv:\$PATH\"" >> ~/.bashrc
 echo "" >> ~/.bashrc
 
-###########################################################
 # DraftSight
 wget http://www.draftsight.com/download-linux-ubuntu
 mv download-linux-ubuntu draftSight.deb
 # Should dpkg on X-Window
-#dpkg -i ./draftSight.deb
-#rm draftSight.deb
+# dpkg -i ./draftSight.deb
+# rm draftSight.deb
 
 ###########################################################
 # Remove
@@ -228,12 +226,17 @@ wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.con
 mv ./tint2rc /home/osboxes/.config/tint2/tint2rc
 
 ###########################################################
-# d2coding font
+# Fonts
+# d2coding
 wget https://github.com/naver/d2codingfont/releases/download/VER1.21/D2Coding-1.2.zip
 mkdir /usr/share/fonts/truetype/D2Coding
 unzip D2Coding-1.2.zip -d /usr/share/fonts/truetype/D2Coding/
 rm -rf /usr/share/fonts/truetype/D2Coding/__MACOSX
 rm D2Coding-1.2.zip
+# Arial Unicode MS
+wget https://raw.githubusercontent.com/dymaxionkim/CREO3_STARTUP/master/font/ARIALUNI.TTF
+mkdir /usr/share/fonts/truetype/ARIALUNI
+mv ./ARIALUNI.TTF /usr/share/fonts/truetype/ARIALUNI/ARIALUNI.TTF
 fc-cache -f -v
 
 ###########################################################
