@@ -213,16 +213,22 @@ im-config -n uim
 # Openbox
 mkdir /home/osboxes/.config
 mkdir /home/osboxes/.config/openbox
-echo "xcompmgr &" > /home/osboxes/.config/openbox/autostart
-echo "nitrogen --restore &" >> /home/osboxes/.config/openbox/autostart
-echo "tint2 -c /home/osboxes/.config/tint2/tint2rc &" >> /home/osboxes/.config/openbox/autostart
-echo "volumeicon &" >> /home/osboxes/.config/openbox/autostart
-chown -R osboxes /home/osboxes/.config
+# autostart
+wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04/autostart
+mv ./autostart /home/osboxes/.config/openbox/autostart
+# rc.xml
+wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04/rc.xml
+mv ./rc.xml /home/osboxes/.config/openbox/rc.xml
+# menu.xml
+wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04/menu.xml
+mv ./menu.xml /home/osboxes/.config/openbox/menu.xml
 
 ###########################################################
-# Numix Taskbar
-mv /home/osboxes/.config/tint2/tint2rc /home/osboxes/.config/tint2/tint2rc.old
-wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.config/tint2/themes/Numix/red_taskbar/tint2rc
+# Tint2
+mkdir /home/osboxes/.config/tint2
+# mv /home/osboxes/.config/tint2/tint2rc /home/osboxes/.config/tint2/tint2rc.old
+# wget https://raw.githubusercontent.com/danielcbaldwin/dotfiles/master/tint2/.config/tint2/themes/Numix/red_taskbar/tint2rc
+wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04/tint2rc
 mv ./tint2rc /home/osboxes/.config/tint2/tint2rc
 
 ###########################################################
@@ -249,4 +255,3 @@ apt -y autoremove
 
 # Fin
 echo 'Finished!'
-
