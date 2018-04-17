@@ -166,6 +166,7 @@ echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 # step2unv
+mkdir /home/osboxes/.config/salome
 mkdir /home/osboxes/.config/salome/step2unv
 wget -O /home/osboxes/.config/salome/step2unv/step2unv https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv
 wget -O /home/osboxes/.config/salome/step2unv/step2unv.py https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv.py
