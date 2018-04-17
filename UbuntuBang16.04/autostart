@@ -1,0 +1,4 @@
+xcompmgr &
+nitrogen --restore &
+tint2 -c /home/osboxes/.config/tint2/tint2rc &
+volumeicon &
