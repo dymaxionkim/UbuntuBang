@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="터미널">
+			<action name="Execute">
+				<execute>x-terminal-emulator --geometry=700x450+0+35</execute>
+			</action>
+		</item>
+		<item label="탐색기">
+			<action name="Execute">
+				<execute>pcmanfm</execute>
+			</action>
+		</item>
+		<item label="브라우저">
+			<action name="Execute">
+				<execute>x-www-browser</execute>
+			</action>
+		</item>
+		<item label="편집기">
+			<action name="Execute">
+				<execute>pluma</execute>
+			</action>
+		</item>
+		<menu id="root-menu-672118" label="Engineering">
+			<item label="Qalculate">
+				<action name="Execute">
+					<execute>qalculate</execute>
+				</action>
+			</item>
+			<item label="Octave">
+				<action name="Execute">
+					<execute>octave</execute>
+				</action>
+			</item>
+			<item label="ConvertAll">
+				<action name="Execute">
+					<execute>convertall</execute>
+				</action>
+			</item>
+			<item label="DraftSight">
+				<action name="Execute">
+					<execute>/opt/dassault-systemes/DraftSight/Linux/DraftSight</execute>
+				</action>
+			</item>
+			<item label="FreeCAD">
+				<action name="Execute">
+					<execute>freecad</execute>
+				</action>
+			</item>
+			<item label="Salome">
+				<action name="Execute">
+					<execute>salome</execute>
+				</action>
+			</item>
+			<item label="Gmsh">
+				<action name="Execute">
+					<execute>gmsh</execute>
+				</action>
+			</item>
+			<item label="Elmer">
+				<action name="Execute">
+					<execute>ElmerGUI</execute>
+				</action>
+			</item>
+			<item label="Paraview">
+				<action name="Execute">
+					<execute>paraview</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-754040" label="Document">
+			<item label="Okular">
+				<action name="Execute">
+					<execute>okular</execute>
+				</action>
+			</item>
+			<item label="Pluma">
+				<action name="Execute">
+					<execute>pluma</execute>
+				</action>
+			</item>
+			<item label="Atom">
+				<action name="Execute">
+					<execute>atom</execute>
+				</action>
+			</item>
+			<item label="Libreoffice">
+				<action name="Execute">
+					<execute>libreoffice</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-13440" label="Graphic">
+			<item label="Mirage">
+				<action name="Execute">
+					<execute>mirage</execute>
+				</action>
+			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+					<execute>inkscape</execute>
+				</action>
+			</item>
+			<item label="Gimp">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+		</menu>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<menu id="root-menu-113836" label="Media">
+			<item label="Openshot">
+				<action name="Execute">
+					<execute>openshot-qt</execute>
+				</action>
+			</item>
+			<item label="VLCplayer">
+				<action name="Execute">
+					<execute>vlc</execute>
+				</action>
+			</item>
+			<item label="SMplayer">
+				<action name="Execute">
+					<execute>smplayer</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-623644" label="Setting">
+			<item label="tint2conf">
+				<action name="Execute">
+					<execute>tint2conf</execute>
+				</action>
+			</item>
+			<item label="Nitrogen">
+				<action name="Execute">
+					<execute>nitrogen --restore</execute>
+				</action>
+			</item>
+			<item label="lxappearance">
+				<action name="Execute">
+					<execute>lxappearance</execute>
+				</action>
+			</item>
+			<item label="obconf">
+				<action name="Execute">
+					<execute>obconf</execute>
+				</action>
+			</item>
+			<item label="obmenu">
+				<action name="Execute">
+					<execute>obmenu</execute>
+				</action>
+			</item>
+			<item label="im-config">
+				<action name="Execute">
+					<execute>im-config</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="/Debian"/>
+		<separator/>
+		<menu id="client-list-menu"/>
+		<separator/>
+		<item label="Reconfigure">
+			<action name="Reconfigure"/>
+		</item>
+		<item label="Restart">
+			<action name="Restart"/>
+		</item>
+		<separator/>
+		<item label="Exit">
+			<action name="Exit"/>
+		</item>
+	</menu>
+</openbox_menu>
