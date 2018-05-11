@@ -4,7 +4,7 @@
 # Making UbuntuBang
 # Start in Ubuntu 16.04 Server
 # UserID = osboxes
-# 2018.04.14
+# 2018.05.11
 # by Dymaxionkim in Github
 ###########################################################
 
@@ -29,17 +29,18 @@ usermod -G vboxsf -a osboxes
 
 ###########################################################
 # Repository
+#add-apt-repository -y ppa:otto-kesselgulasch/gimp --> Replaced by flatpak
+#add-apt-repository -y ppa:octave/stable
+#add-apt-repository -y ppa:libreoffice/ppa
+#add-apt-repository -y ppa:inkscape.dev/stable
+#add-apt-repository -y ppa:webupd8team/atom
+#add-apt-repository -y ppa:openshot.developers/ppa
 apt-add-repository -y ppa:numix/ppa
 add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
-add-apt-repository -y ppa:inkscape.dev/stable
-add-apt-repository -y ppa:otto-kesselgulasch/gimp
-add-apt-repository -y ppa:libreoffice/ppa
-add-apt-repository -y ppa:webupd8team/atom
 add-apt-repository -y ppa:freecad-maintainers/freecad-stable
 add-apt-repository -y ppa:jonathonf/ffmpeg-3
-add-apt-repository -y ppa:openshot.developers/ppa
 apt-add-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-add-apt-repository -y ppa:octave/stable
+add-apt-repository -y ppa:alexlarsson/flatpak
 # Arc Theme, Window-10-theme anf icons
 add-apt-repository -y ppa:noobslab/themes
 add-apt-repository -y ppa:noobslab/icons
@@ -48,22 +49,36 @@ apt -y update
 ###########################################################
 # Installs
 apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
-apt -y install numlockx terminator pcmanfm pluma language-pack-ko fonts-noto-cjk fonts-nanum*
+apt -y install numlockx terminator pcmanfm pluma
+apt -y install language-pack-ko fonts-noto-cjk fonts-nanum*
 apt -y install uim uim-byeoru im-config gnome-font-viewer
 apt -y install alsa alsa-tools volumeicon-alsa
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
-apt -y install libreoffice okular mirage inkscape gimp smplayer
-apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk vlc expect htop
+apt -y install mirage smplayer
+apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop
 apt -y install ffmpeg libav-tools x264 x265
-apt -y install openshot-qt
-apt -y install atom freecad
+apt -y install freecad
 apt -y install texlive-full pandoc
+apt -y install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+###########################################################
+# Important Apps
+flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub org.videolan.VLC
+flatpak install -y flathub org.libreoffice.LibreOffice
+flatpak install -y flathub io.atom.Atom
+flatpak install -y flathub org.openshot.OpenShot
+flatpak install -y flathub org.gnome.Evince
+flatpak install -y flathub org.blender.Blender
+flatpak install -y flathub org.inkscape.Inkscape
+
 
 ###########################################################
 # Engineering
-
-# Octave
-apt -y install octave liboctave-dev
+flatpak install flathub org.kicad_pcb.KiCad
+flatpak install -y flathub org.octave.Octave
 
 # Elmer
 apt -y install elmerfem-csc
@@ -181,7 +196,7 @@ echo "" >> ~/.bashrc
 wget http://www.draftsight.com/download-linux-ubuntu
 mv download-linux-ubuntu draftSight.deb
 # Should dpkg on X-Window
-# dpkg -i ./draftSight.deb
+dpkg --force-all -i ./draftSight.deb
 # rm draftSight.deb
 
 ###########################################################
@@ -250,8 +265,14 @@ fc-cache -f -v
 # Timezone
 ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
-
+###########################################################
+# User Permission
 chown -R osboxes /home/osboxes/.config
+chown -R osboxes /home/osboxes/.local
+chown -R osboxes /home/osboxes/.var
+
+###########################################################
+# Autoremove
 apt -y autoremove
 
 # Fin

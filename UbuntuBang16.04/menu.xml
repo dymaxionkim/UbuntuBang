@@ -29,7 +29,7 @@
 			</item>
 			<item label="Octave">
 				<action name="Execute">
-					<execute>octave</execute>
+					<execute>flatpak run org.octave.Octave</execute>
 				</action>
 			</item>
 			<item label="ConvertAll">
@@ -69,9 +69,9 @@
 			</item>
 		</menu>
 		<menu id="root-menu-754040" label="Document">
-			<item label="Okular">
+			<item label="Evince">
 				<action name="Execute">
-					<execute>okular</execute>
+					<execute>flatpak run org.gnome.Evince</execute>
 				</action>
 			</item>
 			<item label="Pluma">
@@ -81,12 +81,12 @@
 			</item>
 			<item label="Atom">
 				<action name="Execute">
-					<execute>atom</execute>
+					<execute>flatpak run io.atom.Atom</execute>
 				</action>
 			</item>
 			<item label="Libreoffice">
 				<action name="Execute">
-					<execute>libreoffice</execute>
+					<execute>flatpak run org.libreoffice.LibreOffice</execute>
 				</action>
 			</item>
 		</menu>
@@ -98,12 +98,12 @@
 			</item>
 			<item label="Inkscape">
 				<action name="Execute">
-					<execute>inkscape</execute>
+					<execute>flatpak run org.inkscape.Inkscape</execute>
 				</action>
 			</item>
 			<item label="Gimp">
 				<action name="Execute">
-					<execute>gimp</execute>
+					<execute>flatpak run org.gimp.GIMP</execute>
 				</action>
 			</item>
 		</menu>
@@ -111,12 +111,12 @@
 		<menu id="root-menu-113836" label="Media">
 			<item label="Openshot">
 				<action name="Execute">
-					<execute>openshot-qt</execute>
+					<execute>flatpak run org.openshot.OpenShot</execute>
 				</action>
 			</item>
 			<item label="VLCplayer">
 				<action name="Execute">
-					<execute>vlc</execute>
+					<execute>flatpak run org.videolan.VLC</execute>
 				</action>
 			</item>
 			<item label="SMplayer">
