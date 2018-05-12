@@ -48,9 +48,8 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
 * 이후에 다음의 명령어를 차례대로 쳐넣습니다.
+
 ```bash
-sudo apt update
-sudo apt upgrade
 mkdir ~/git
 cd ~/git
 git init

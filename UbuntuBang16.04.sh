@@ -77,7 +77,7 @@ flatpak install -y flathub org.inkscape.Inkscape
 
 ###########################################################
 # Engineering
-flatpak install flathub org.kicad_pcb.KiCad
+flatpak install -y flathub org.kicad_pcb.KiCad
 flatpak install -y flathub org.octave.Octave
 
 # Elmer
