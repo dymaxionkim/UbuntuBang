@@ -115,8 +115,8 @@ echo 'Categories=Education;' >> /usr/share/applications/ElmerGUI.desktop
 # Gmsh
 wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.6-Linux64.tgz"
 tar -xvzf Gmsh.tgz
-mv ./gmsh* /home/osboxes/Gmsh
-chown -R osboxes /home/osboxes/Gmsh
+mv ./gmsh* /home/osboxes/.Gmsh
+chown -R osboxes /home/osboxes/.Gmsh
 rm Gmsh.tgz
 
 echo '' >> ~/.bashrc
@@ -127,8 +127,8 @@ echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
 echo 'Name=Gmsh' >> /usr/share/applications/Gmsh.desktop
 echo 'Comment=Mesh Generator' >> /usr/share/applications/Gmsh.desktop
-echo 'Exec=/home/osboxes/Gmsh/bin/gmsh' >> /usr/share/applications/Gmsh.desktop
-echo 'Icon=/home/osboxes/Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
+echo 'Exec=/home/osboxes/.Gmsh/bin/gmsh' >> /usr/share/applications/Gmsh.desktop
+echo 'Icon=/home/osboxes/.Gmsh/share/doc/gmsh/tutorial/image.png' >> /usr/share/applications/Gmsh.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Gmsh.desktop
 echo 'Terminal=false' >> /usr/share/applications/Gmsh.desktop
 echo 'Type=Application' >> /usr/share/applications/Gmsh.desktop
@@ -138,20 +138,20 @@ echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
 # Paraview
 wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.5&type=binary&os=Linux&downloadFile=ParaView-5.5.0-Qt5-MPI-Linux-64bit.tar.gz"
 tar -xvzf Paraview.tar.gz
-mv ./ParaView-* /home/osboxes/Paraview
+mv ./ParaView-* /home/osboxes/.Paraview
 rm Paraview.tar.gz
-chown -R osboxes /home/osboxes/Paraview
+chown -R osboxes /home/osboxes/.Paraview
 
 echo '' >> ~/.bashrc
 echo '# Paraview' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Paraview/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="/home/osboxes/.Paraview/bin:$PATH"' >> ~/.bashrc
 
 echo '[Desktop Entry]' > /usr/share/applications/Paraview.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Paraview.desktop
 echo 'Name=Paraview' >> /usr/share/applications/Paraview.desktop
 echo 'Comment=Data Analysis and Visualization' >> /usr/share/applications/Paraview.desktop
-echo 'Exec=/home/osboxes/Paraview/bin/paraview' >> /usr/share/applications/Paraview.desktop
-echo 'Icon=/home/osboxes/Paraview/share/icons/hicolor/32x32/apps/paraview.png' >> /usr/share/applications/Paraview.desktop
+echo 'Exec=/home/osboxes/.Paraview/bin/paraview' >> /usr/share/applications/Paraview.desktop
+echo 'Icon=/home/osboxes/.Paraview/share/icons/hicolor/32x32/apps/paraview.png' >> /usr/share/applications/Paraview.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Paraview.desktop
 echo 'Terminal=false' >> /usr/share/applications/Paraview.desktop
 echo 'Type=Application' >> /usr/share/applications/Paraview.desktop
@@ -160,21 +160,21 @@ echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
 # Salome
 wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB16.04&version=8.4.0"
 tar -xvzf Salome.tgz
-mv ./SALOME-* /home/osboxes/Salome
+mv ./SALOME-* /home/osboxes/.Salome
 rm Salome.tgz
-chown -R osboxes /home/osboxes/Salome
+chown -R osboxes /home/osboxes/.Salome
 
 echo '' >> ~/.bashrc
 echo '# Salome' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Salome:$PATH"' >> ~/.bashrc
+echo 'export PATH="/home/osboxes/.Salome:$PATH"' >> ~/.bashrc
 
 echo '[Desktop Entry]' > /usr/share/applications/Salome.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Salome.desktop
 echo 'Name=Salome' >> /usr/share/applications/Salome.desktop
 echo 'Comment=Pre/Post Processing' >> /usr/share/applications/Salome.desktop
-echo 'Exec=/home/osboxes/Salome/salome' >> /usr/share/applications/Salome.desktop
-echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
-echo 'Icon=/home/osboxes/Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
+echo 'Exec=/home/osboxes/.Salome/salome' >> /usr/share/applications/Salome.desktop
+echo 'Icon=/home/osboxes/.Salome/BINARIES-UB16.04/SALOME/share/salome/resources/salome_profile/splash.png' >> /usr/share/applications/Salome.desktop
+echo 'Icon=/home/osboxes/.Salome/BINARIES-UB16.04/SMESH/share/doc/salome/gui/SMESH/blocFissure/_images/01_CubeAngle.png' >> /usr/share/applications/Salome.desktop
 echo 'StartupNotify=true' >> /usr/share/applications/Salome.desktop
 echo 'Terminal=false' >> /usr/share/applications/Salome.desktop
 echo 'Type=Application' >> /usr/share/applications/Salome.desktop

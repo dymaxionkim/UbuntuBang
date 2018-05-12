@@ -29,12 +29,13 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 ## 주요 유틸리티
 * Ubuntu Server
 * Xorg, OpenBox
-* obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx, conky
-* leafpad, pcmanfm, lxtask, gmrun, gnome-screenshot, Dasom Jeongeum
+* obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx
+* pluma, pcmanfm, htop, gnome-screenshot, uim byeoru
 * etc ...
 
 
 ## 상세한 설명
+* 구버전인 Ubuntu 14.04 기준으로 작성된 것이므로 현재는 잘 안 맞을 수도 있습니다.  참고만 해 주세요~
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_OS.md
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Apps.md
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Dev.md
@@ -42,29 +43,24 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Tips.md
 
 
-## 사용방법 (Ubuntu Server 14.04)
-* Ubuntu Server 14.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 20GB 이상으로 합니다.
+## 사용방법
+* Ubuntu Server 16.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 30GB 이상으로 합니다.
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
-* 설치된 Ubuntu의 VirtualBox 메뉴에서 `장치` 안에 있는 `게스트 확장 CD 이미지 삽입`을 반드시 선택해 줍니다. (주의할 것!)
-
-![virtualbox_01](https://cloud.githubusercontent.com/assets/12775748/11455936/9c9c6e7c-96b8-11e5-9bcf-d993aa4788c6.png)
-
 * 이후에 다음의 명령어를 차례대로 쳐넣습니다.
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git
-mkdir ~/github
-cd ~/github
+sudo apt update
+sudo apt upgrade
+mkdir ~/git
+cd ~/git
 git init
 git clone https://github.com/dymaxionkim/UbuntuBang.git
 cd UbuntuBang
-chmod +x ./UbuntuBang.sh
-sudo sh UbuntuBang.sh
+chmod +x ./UbuntuBang16.04.sh
+sudo sh UbuntuBang16.04.sh
 ```
 
-* 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다.
+* 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다. (아직 미검증)
 ```bash
 cd ~/github/UbuntuBang
 chmod +x ./UbuntuBang_Jupyter.sh
@@ -87,13 +83,7 @@ startx
 
 
 
-## 사용방법 (Ubuntu Server 18.04)
-* Ubuntu Server 18.04를 VirtualBox 가상머신에 설치합니다.
-* 가상머신의 하드디스크 사이즈는 60GB 이상으로 하고, 제대로 사용하려면 80~100GB 정도 잡아줍니다.
-* 편의상, 설치할 때 사용자 아이디는 무조건 `osboxes`로 합시다.
-* 최초 부팅하고 로그인 합니다.
-* 인터넷 연결이 되어 있는지 확인합니다.
-* 이후에 다음의 명령어를 차례대로 쳐넣습니다.
+
 
 ```bash
 wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang18.04.sh
