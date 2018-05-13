@@ -112,7 +112,7 @@ rm Gmsh.tgz
 
 echo '' >> ~/.bashrc
 echo '# Gmsh' >> ~/.bashrc
-echo 'export PATH="/home/osboxes/Gmsh/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="/home/osboxes/.Gmsh/bin:$PATH"' >> ~/.bashrc
 
 echo '[Desktop Entry]' > /usr/share/applications/Gmsh.desktop
 echo 'Encoding=UTF-8' >> /usr/share/applications/Gmsh.desktop
