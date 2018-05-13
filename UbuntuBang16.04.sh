@@ -193,7 +193,7 @@ mv download-linux-ubuntu draftSight.deb
 
 ###########################################################
 # Remove
-#apt remove --purge gnome-terminal
+#apt -y remove --purge gnome-terminal
 
 ###########################################################
 # Adduser
