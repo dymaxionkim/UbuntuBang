@@ -28,14 +28,20 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 
 ## 주요 유틸리티
 * Ubuntu Server
-* Xorg, OpenBox
-* obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx
-* pluma, pcmanfm, htop, gnome-screenshot, uim byeoru
-* etc ...
+* Xorg, OpenBox, obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx
+* pluma, pcmanfm, htop, gnome-screenshot, uim byeoru (Korean locale), file-roller, atom
+* mirage, gimp, inkscape, blender
+* smplayer, vlc, ffmpeg, openshot
+* cups-pdf, evince, libreoffice
+* convertall, qalculate, gnu octave
+* texlive-full, pandoc
+* freecad, KiCad, draftsight
+* Elmer FEM, Gmsh, Paraview, Salome Platform
+* step2unv script
 
 
 ## 상세한 설명
-* 구버전인 Ubuntu 14.04 기준으로 작성된 것이므로 현재는 잘 안 맞을 수도 있습니다.  참고만 해 주세요~
+* 이 설명은 구버전인 Ubuntu 14.04 기준으로 작성된 것이므로 현재는 잘 안 맞을 수도 있습니다.  참고만 해 주세요~
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_OS.md
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Apps.md
 * http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Dev.md
@@ -59,7 +65,10 @@ chmod +x ./UbuntuBang16.04.sh
 sudo sh UbuntuBang16.04.sh
 ```
 
+* Ubuntu Server 18.04를 사용할 경우에는 `UbuntuBang18.04.sh` 스크립트를 대신 사용합니다. (아직 미검증)
+
 * 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다. (아직 미검증)
+
 ```bash
 cd ~/github/UbuntuBang
 chmod +x ./UbuntuBang_Jupyter.sh
@@ -67,34 +76,21 @@ sudo sh UbuntuBang_Jupyter.sh
 ```
 
 * 위의 과정이 다 끝나면 다음 명령을 쳐서 재부팅을 한 번 해 줍니다.
+
 ```bash
 sudo reboot now
 ```
 
 * 그리고 X윈도우를 실행해서 잘 되는지 확인합니다.
+
 ```bash
 startx
 ```
 
-* X윈도우 상에서 Jupyter가 잘 실행되고, Python2/Python3 커널이 잘 올라가 있는지 확인해 봅니다.
+* 이제 데스크탑 관련 각종 설정을 해 줍니다.
 
-* 끝!  나머지 환경설정은 알아서~
-
-
+* 끝!  나머지 환경는 알아서~
 
 
 
-```bash
-wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang18.04.sh
-chmod +x ./UbuntuBang18.04.sh
-sudo sh ./UbuntuBang18.04.sh
-sudo reboot now
-
-startx
-tint2 in terminal one time
-obmenu in terminal and set for applications
-lxappearance in terminal and set for Numix theme
-nitrogen --restore in terminal and set wallpaper
-ibus preference for Hangul input method
-```
 

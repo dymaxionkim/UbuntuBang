@@ -9,15 +9,6 @@
 ###########################################################
 
 ###########################################################
-# How to use
-#
-# wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04.sh
-# chmod +x ./UbuntuBang16.04.sh
-# sudo sh ./UbuntuBang16.04.sh
-# sudo reboot now
-# startx
-
-###########################################################
 # Virtualbox Additions
 apt -y update
 apt -y upgrade
@@ -181,6 +172,7 @@ echo 'Type=Application' >> /usr/share/applications/Salome.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Salome.desktop
 
 # step2unv
+mkdir /home/osboxes/.config
 mkdir /home/osboxes/.config/salome
 mkdir /home/osboxes/.config/salome/step2unv
 wget -O /home/osboxes/.config/salome/step2unv/step2unv https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv
@@ -196,12 +188,12 @@ echo "" >> ~/.bashrc
 wget http://www.draftsight.com/download-linux-ubuntu
 mv download-linux-ubuntu draftSight.deb
 # Should dpkg on X-Window
-dpkg --force-all -i ./draftSight.deb
+# dpkg --force-all -i ./draftSight.deb
 # rm draftSight.deb
 
 ###########################################################
 # Remove
-apt remove --purge gnome-terminal
+#apt remove --purge gnome-terminal
 
 ###########################################################
 # Adduser
@@ -227,7 +219,6 @@ im-config -n uim
 
 ###########################################################
 # Openbox
-mkdir /home/osboxes/.config
 mkdir /home/osboxes/.config/openbox
 # autostart
 wget https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/UbuntuBang16.04/autostart
@@ -277,3 +268,4 @@ apt -y autoremove
 
 # Fin
 echo 'Finished!'
+
