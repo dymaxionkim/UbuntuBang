@@ -29,7 +29,7 @@
 			</item>
 			<item label="Octave">
 				<action name="Execute">
-					<execute>flatpak run org.octave.Octave</execute>
+					<execute>flatpak run org.octave.Octave --gui</execute>
 				</action>
 			</item>
 			<item label="ConvertAll">
@@ -65,6 +65,16 @@
 			<item label="Paraview">
 				<action name="Execute">
 					<execute>paraview</execute>
+				</action>
+			</item>
+			<item label="Blender">
+				<action name="Execute">
+					<execute>flatpak run org.blender.Blender</execute>
+				</action>
+			</item>
+			<item label="KiCad">
+				<action name="Execute">
+					<execute>flatpak run org.kicad_pcb.KiCad</execute>
 				</action>
 			</item>
 		</menu>
