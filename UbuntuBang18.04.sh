@@ -42,12 +42,12 @@ apt -y update
 apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
 apt -y install numlockx terminator pcmanfm pluma
 apt -y install language-pack-ko fonts-noto-cjk fonts-nanum*
-apt -y install uim uim-byeoru im-config gnome-font-viewer
-apt -y install alsa alsa-tools volumeicon-alsa
-apt -y install numix-gtk-theme numix-icon-theme shimmer-themes arc-theme arc-icons windos-10-themes win-icons
+apt -y install fcitx fcitx-hangul im-config gnome-font-viewer
+apt -y install alsa-base alsa-tools volumeicon-alsa
+apt -y install numix-gtk-theme numix-icon-theme shimmer-themes
 apt -y install mirage smplayer
-apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop
-apt -y install ffmpeg libav-tools
+apt -y install printer-driver-cups-pdf convertall qalculate file-roller firefox-trunk expect htop
+apt -y install ffmpeg
 apt -y install freecad
 apt -y install texlive-full pandoc
 apt -y install flatpak
@@ -72,7 +72,7 @@ flatpak install -y flathub org.kicad_pcb.KiCad
 flatpak install -y flathub org.octave.Octave
 
 # Elmer
-apt -y install elmerfem-csc
+apt -y install elmerfem-csc-eg
 mkdir /usr/share/ElmerGUI/icons
 wget -O /usr/share/ElmerGUI/icons/Mesh3D.png "https://raw.githubusercontent.com/tehnick/elmerfem/master/ElmerGUI/Application/icons/Mesh3D.png"
 echo '' >> /home/osboxes/.bashrc
@@ -215,7 +215,7 @@ echo "LC_MEASUREMENT=\"ko_KR.UTF-8\"" >> /etc/default/locale
 
 ###########################################################
 # Set Input Method
-im-config -n uim
+im-config -n fcitx
 
 ###########################################################
 # Openbox
