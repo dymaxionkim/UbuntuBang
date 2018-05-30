@@ -43,7 +43,7 @@ apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
 apt -y install numlockx terminator pcmanfm pluma
 apt -y install language-pack-ko fonts-noto-cjk fonts-nanum*
 apt -y install uim uim-byeoru im-config gnome-font-viewer
-apt -y install alsa alsa-tools volumeicon-alsa
+apt -y install pulseaudio pavucontrol
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
 apt -y install mirage smplayer
 apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop

@@ -43,7 +43,7 @@ apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
 apt -y install numlockx terminator pcmanfm pluma
 apt -y install language-pack-ko fonts-noto-cjk fonts-nanum*
 apt -y install fcitx fcitx-hangul im-config gnome-font-viewer
-apt -y install alsa-base alsa-tools volumeicon-alsa
+apt -y install pulseaudio pavucontrol
 apt -y install numix-gtk-theme numix-icon-theme shimmer-themes
 apt -y install mirage smplayer
 apt -y install printer-driver-cups-pdf convertall qalculate file-roller firefox-trunk expect htop
