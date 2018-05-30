@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
 	<menu id="root-menu" label="Openbox 3">
-		<item label="Volume">
-			<action name="Execute">
-				<execute>pavucontrol</execute>
-			</action>
-		</item>
 		<item label="터미널">
 			<action name="Execute">
 				<execute>x-terminal-emulator --geometry=700x450+0+35</execute>
