@@ -22,7 +22,7 @@ usermod -G vboxsf -a osboxes
 # Repository
 #add-apt-repository -y ppa:otto-kesselgulasch/gimp --> Replaced by flatpak
 #add-apt-repository -y ppa:octave/stable
-#add-apt-repository -y ppa:libreoffice/ppa
+add-apt-repository -y ppa:libreoffice/ppa
 #add-apt-repository -y ppa:inkscape.dev/stable
 #add-apt-repository -y ppa:webupd8team/atom
 #add-apt-repository -y ppa:openshot.developers/ppa
@@ -46,7 +46,7 @@ apt -y install uim uim-byeoru im-config gnome-font-viewer
 apt -y install pulseaudio pavucontrol pasystray
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
 apt -y install mirage smplayer
-apt -y install cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop
+apt -y install libreoffice libreoffice-l10n-ko cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop
 apt -y install ffmpeg libav-tools x264 x265
 apt -y install freecad
 apt -y install texlive-full pandoc
@@ -58,7 +58,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Important Apps
 flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub org.videolan.VLC
-flatpak install -y flathub org.libreoffice.LibreOffice
 flatpak install -y flathub io.atom.Atom
 flatpak install -y flathub org.openshot.OpenShot
 flatpak install -y flathub org.gnome.Evince
@@ -201,17 +200,8 @@ adduser osboxes audio
 
 ###########################################################
 # Locale
-echo "LANG=\"ko_KR.UTF-8\"" > /etc/default/locale
-echo "LANGUAGE=\"ko_KR:ko\"" >> /etc/default/locale
-echo "LC_NUMERIC=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_TIME=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_MONETARY=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_PAPER=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_IDENTIFICATION=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_NAME=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_ADDRESS=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_TELEPHONE=\"ko_KR.UTF-8\"" >> /etc/default/locale
-echo "LC_MEASUREMENT=\"ko_KR.UTF-8\"" >> /etc/default/locale
+echo "LANG=ko_KR.UTF-8" > /etc/default/locale
+echo "LC_MESSAGES=POSIX" >> /etc/default/locale
 
 ###########################################################
 # Set Input Method
