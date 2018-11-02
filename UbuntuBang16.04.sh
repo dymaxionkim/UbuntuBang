@@ -41,7 +41,7 @@ apt -y update
 # Installs
 apt -y install xorg openbox obmenu lxappearance xcompmgr nitrogen tint2
 apt -y install numlockx terminator pcmanfm pluma
-apt -y install language-pack-ko fonts-noto-cjk fonts-nanum*
+apt -y install language-pack-ko fonts-noto fonts-noto-cjk fonts-nanum*
 apt -y install uim uim-byeoru im-config gnome-font-viewer
 apt -y install pulseaudio pavucontrol pasystray
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
