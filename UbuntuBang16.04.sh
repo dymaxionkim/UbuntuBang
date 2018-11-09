@@ -4,7 +4,7 @@
 # Making UbuntuBang
 # Start in Ubuntu 16.04 Server
 # UserID = osboxes
-# 2018.05.11
+# 2018.11.09
 # by Dymaxionkim in Github
 ###########################################################
 
@@ -23,7 +23,7 @@ usermod -G vboxsf -a osboxes
 #add-apt-repository -y ppa:otto-kesselgulasch/gimp --> Replaced by flatpak
 #add-apt-repository -y ppa:octave/stable
 add-apt-repository -y ppa:libreoffice/ppa
-#add-apt-repository -y ppa:inkscape.dev/stable
+add-apt-repository -y ppa:inkscape.dev/stable
 #add-apt-repository -y ppa:webupd8team/atom
 #add-apt-repository -y ppa:openshot.developers/ppa
 apt-add-repository -y ppa:numix/ppa
@@ -46,7 +46,7 @@ apt -y install uim uim-byeoru im-config gnome-font-viewer
 apt -y install pulseaudio pavucontrol pasystray
 apt -y install numix-icon-theme-circle shimmer-themes arc-theme arc-icons windos-10-themes win-icons
 apt -y install mirage smplayer
-apt -y install libreoffice libreoffice-l10n-ko cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop
+apt -y install libreoffice libreoffice-l10n-ko cups-pdf convertall qalculate file-roller gksu firefox-trunk expect htop inkscape
 apt -y install ffmpeg libav-tools x264 x265
 apt -y install freecad
 apt -y install texlive-full pandoc
@@ -62,7 +62,7 @@ flatpak install -y flathub io.atom.Atom
 flatpak install -y flathub org.openshot.OpenShot
 flatpak install -y flathub org.gnome.Evince
 flatpak install -y flathub org.blender.Blender
-flatpak install -y flathub org.inkscape.Inkscape
+#flatpak install -y flathub org.inkscape.Inkscape
 
 
 ###########################################################
