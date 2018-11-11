@@ -4,7 +4,7 @@
 # Making UbuntuBang
 # Start in Ubuntu 16.04 Server
 # UserID = osboxes
-# 2018.11.09
+# 2018.11.11
 # by Dymaxionkim in Github
 ###########################################################
 
@@ -103,7 +103,7 @@ echo 'Categories=Education;' >> /usr/share/applications/ElmerGUI.desktop
 
 
 # Gmsh
-wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-3.0.6-Linux64.tgz"
+wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-4.0.4-Linux64.tgz"
 tar -xvzf Gmsh.tgz
 mv ./gmsh* /home/osboxes/.Gmsh
 chown -R osboxes /home/osboxes/.Gmsh
@@ -126,7 +126,7 @@ echo 'Categories=Education;' >> /usr/share/applications/Gmsh.desktop
 
 
 # Paraview
-wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.5&type=binary&os=Linux&downloadFile=ParaView-5.5.0-Qt5-MPI-Linux-64bit.tar.gz"
+wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v5.6&type=binary&os=Linux&downloadFile=ParaView-5.6.0-MPI-Linux-64bit.tar.gz"
 tar -xvzf Paraview.tar.gz
 mv ./ParaView-* /home/osboxes/.Paraview
 rm Paraview.tar.gz
@@ -148,7 +148,7 @@ echo 'Type=Application' >> /usr/share/applications/Paraview.desktop
 echo 'Categories=Education;' >> /usr/share/applications/Paraview.desktop
 
 # Salome
-wget -O Salome.tgz "http://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB16.04&version=8.4.0"
+wget -O Salome.tgz "https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB16.04&version=8.5.0"
 tar -xvzf Salome.tgz
 mv ./SALOME-* /home/osboxes/.Salome
 rm Salome.tgz
