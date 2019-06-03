@@ -54,6 +54,7 @@ apt -y install openbox obconf obmenu lxappearance
 wget https://github.com/luffah/obkey/raw/master/obkey.deb
 dpkg -i obkey.deb
 rm ./obkey.deb
+apt --fix-broken -y install
 
 ###########################################################
 # lxmenu
@@ -145,14 +146,13 @@ wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus-aspromauros/mas
 add-apt-repository -y ppa:hodong/nimf
 apt -y install nimf nimf-libhangul
 im-config -n nimf
-nimf-settings
 
 ###########################################################
 # Fonts
 # Korean language pack
 apt -y install language-pack-ko
 # Korean fonts
-apt install -y fonts-noto-cjk fonts-nanum*
+apt install -y fonts-noto-cjk fonts-noto-cjk-extra fonts-nanum*
 # MS Fonts
 apt -y install msttcorefonts
 # d2coding
@@ -202,8 +202,9 @@ ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ###########################################################
 # User Permission
-chown -R `logname` $HOME/.config
+mkdir $HOME/.local
 chown -R `logname` $HOME/.local
+chown -R `logname` $HOME/.config
 chown -R `logname` $HOME/.themes
 chown -R `logname` $HOME/.Wallpaper
 
