@@ -2,7 +2,7 @@
 Name=V-REP
 GenericName=V-REP
 Exec=/home/osboxes/.V-REP_PRO/vrep.sh
-Icon=/home/osboxes/.V-REP_PRO/vrep.png
+Icon=steam-icon
 Terminal=false
 Type=Application
 Categories=Education;
