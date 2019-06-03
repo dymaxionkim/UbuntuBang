@@ -1,19 +1,6 @@
 # UbuntuBang
 _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 
-* Wiki : <http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/index.html>
-
-
-![Numix Theme](https://cloud.githubusercontent.com/assets/12775748/11458097/81a3e3f4-96fc-11e5-8d66-7a009bf36585.png)
-
-![Terminator Terminal Emulator](https://cloud.githubusercontent.com/assets/12775748/11458099/852898e4-96fc-11e5-8eae-90a0b5f22e00.png)
-
-![FreeCAD and Netgen](https://cloud.githubusercontent.com/assets/12775748/11458100/9000d1e6-96fc-11e5-96a5-0d7cc24c7e91.png)
-
-![ElmerGUI](https://cloud.githubusercontent.com/assets/12775748/11458103/a1ec281a-96fc-11e5-886c-3c88c63ea891.png)
-
-![Jupyter Notebook, Atom Editor, PCManFM File Mangager](https://cloud.githubusercontent.com/assets/12775748/11455961/8b4a237a-96b9-11e5-90fc-0890beeb737e.png)
-
 
 ## 소개
 * 우분투 기반 경량 리눅스 데스크탑을 빠르게 구성하기 위한 자동화 툴입니다.
@@ -27,30 +14,13 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 
 
 ## 주요 유틸리티
-* Ubuntu Server
-* Xorg, OpenBox, obmenu, lxappearance, xcompmgr, nitrogen, tint2, numlockx
-* pluma, pcmanfm, htop, gnome-screenshot, uim byeoru (Korean locale), file-roller, atom
-* mirage, gimp, inkscape, blender
-* smplayer, vlc, ffmpeg, openshot
-* cups-pdf, evince, libreoffice
-* convertall, qalculate, gnu octave
-* texlive-full, pandoc
-* freecad, KiCad, draftsight
-* Elmer FEM, Gmsh, Paraview, Salome Platform
-* step2unv script
-
-
-## 상세한 설명
-* 이 설명은 구버전인 Ubuntu 14.04 기준으로 작성된 것이므로 현재는 잘 안 맞을 수도 있습니다.  참고만 해 주세요~
-* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_OS.md
-* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Apps.md
-* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Setup_Dev.md
-* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Maintenance.md
-* http://dymaxionkim.github.io/UbuntuBang/mdwiki_UbuntuBang/#!pages/Linux/Tips.md
+* OS : Ubuntu Server 18.04
+* Xorg, OpenBox, obmenu, lxappearance, compton, feh, tint2, numlockx
+* pluma, pcmanfm, htop, scrot, nimf, file-roller, cups-pdf, evince, convertall, qalculate ...
 
 
 ## 사용방법
-* Ubuntu Server 16.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 30GB 이상으로 합니다.
+* Ubuntu Server 18.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 80GB 이상으로 합니다.
 * 최초 부팅하고 로그인 합니다.
 * 인터넷 연결이 되어 있는지 확인합니다.
 * 이후에 다음의 명령어를 차례대로 쳐넣습니다.
@@ -61,18 +31,8 @@ cd ~/git
 git init
 git clone https://github.com/dymaxionkim/UbuntuBang.git
 cd UbuntuBang
-chmod +x ./UbuntuBang16.04.sh
-sudo sh UbuntuBang16.04.sh
-```
-
-* Ubuntu Server 18.04를 사용할 경우에는 `UbuntuBang18.04.sh` 스크립트를 대신 사용합니다. (아직 미검증)
-
-* 그리고 원한다면, Python/Jupyter 개발환경을 구성하는 쉘스크립트를 실행시킵니다. (아직 미검증)
-
-```bash
-cd ~/github/UbuntuBang
-chmod +x ./UbuntuBang_Jupyter.sh
-sudo sh UbuntuBang_Jupyter.sh
+chmod +x ./UbuntuBang18.04.sh
+sudo sh UbuntuBang18.04.sh
 ```
 
 * 위의 과정이 다 끝나면 다음 명령을 쳐서 재부팅을 한 번 해 줍니다.
@@ -88,6 +48,14 @@ startx
 ```
 
 * 이제 데스크탑 관련 각종 설정을 해 줍니다.
+
+```bash
+nimf-settings
+obconf
+lxappearance
+obkey
+obmenu
+```
 
 * 끝!  나머지 환경는 알아서~
 
