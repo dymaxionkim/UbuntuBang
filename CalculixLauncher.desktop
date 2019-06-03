@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CalculixLauncher
+Comment=Calculix Launcher with GUI
+Exec=/home/osboxes/.CalculixLauncher/Launcher32x64bit
+Icon=/home/osboxes/.CalculixLauncher/CalculixLauncher.png
+Terminal=false
+Type=Application
+Categories=Education;

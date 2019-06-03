@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=JupyterNotebook
+Comment=JupyterNotebook
+Exec=/home/osboxes/.JupyterNotebook.sh
+Icon=/home/osboxes/.icons/JupyterNotebook_logo.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Education;
+Name[en_US]=JupyterNotebook
+Comment[en_US]=JupyterNotebook

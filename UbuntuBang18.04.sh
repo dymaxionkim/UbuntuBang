@@ -172,7 +172,7 @@ wget http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT/raw/branch/master/Font
 mkdir /usr/share/fonts/truetype/BickhamScriptPro
 mv ./BickhamScriptPro-Bold.otf /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Bold.otf
 mv ./BickhamScriptPro-Regular.otf /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Regular.otf
-mv ./BickhamScriptPro-Semibold /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Semibold
+mv ./BickhamScriptPro-Semibold.otf /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Semibold.otf
 # Font cache
 fc-cache -f -v
 # Font viewer
@@ -203,10 +203,10 @@ ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 ###########################################################
 # User Permission
 mkdir $HOME/.local
-chown -R `logname` $HOME/.local
-chown -R `logname` $HOME/.config
-chown -R `logname` $HOME/.themes
-chown -R `logname` $HOME/.Wallpaper
+chown -R `logname`:`logname` $HOME/.local
+chown -R `logname`:`logname` $HOME/.config
+chown -R `logname`:`logname` $HOME/.themes
+chown -R `logname`:`logname` $HOME/.Wallpaper
 
 ###########################################################
 # Autoremove

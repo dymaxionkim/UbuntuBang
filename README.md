@@ -15,8 +15,9 @@ _Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
 
 ## 주요 유틸리티
 * OS : Ubuntu Server 18.04
-* Xorg, OpenBox, obmenu, lxappearance, compton, feh, tint2, numlockx
-* pluma, pcmanfm, htop, scrot, nimf, file-roller, cups-pdf, evince, convertall, qalculate ...
+* Xorg, OpenBox, obmenu, lxappearance, compton, feh, tint2, numlockx, qlipper
+* pluma, atom, mscode
+* pcmanfm, htop, scrot, nimf, file-roller, cups-pdf, evince, convertall, qalculate, rofi, stacer ...
 
 
 ## 사용방법
@@ -55,6 +56,15 @@ obconf
 lxappearance
 obkey
 obmenu
+```
+
+* 기타 유틸리티들의 설치 스크립트를 마저 실행해 줍니다.
+
+```bash
+chmod +x ./Utilities.sh
+chmod +x ./pyenv.sh
+sudo sh Utilities.sh
+./pyenv.sh
 ```
 
 * 끝!  나머지 환경는 알아서~
