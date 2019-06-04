@@ -188,10 +188,10 @@
       </action>
     </keybind>
     <keybind key="W-Up">
-      <action name="DirectionalFocusNorth"/>
+      <action name="PreviousWindow"/>
     </keybind>
     <keybind key="W-Down">
-      <action name="DirectionalFocusSouth"/>
+      <action name="NextWindow"/>
     </keybind>
     <keybind key="W-1">
       <action name="SendToDesktop">
