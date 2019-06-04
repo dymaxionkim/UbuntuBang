@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -40,7 +39,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Arc-Clone</name>
+    <name>Cotton</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -176,107 +175,53 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="C-A-Left">
+    <keybind key="W-Left">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-Right">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
+    <keybind key="W-Up">
+      <action name="DirectionalFocusNorth"/>
     </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
+    <keybind key="W-Down">
+      <action name="DirectionalFocusSouth"/>
     </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="W-1">
       <action name="SendToDesktop">
         <desktop>1</desktop>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="W-2">
       <action name="SendToDesktop">
-        <desktop>1</desktop>
+        <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
-    <keybind key="A-F4">
-      <action name="Close"/>
-    </keybind>
-    <keybind key="A-Escape">
+    <keybind key="W-l">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
+    <keybind key="W-C-Left">
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>683</width>
+        <height>743</height>
       </action>
     </keybind>
-    <keybind key="A-S-space">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>pcmanfm</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>pcmanfm</name>
-        </startupnotify>
+    <keybind key="W-C-Right">
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>683</width>
+        <height>743</height>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -290,10 +235,10 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>firefox-trunk</command>
+        <command>firefox</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>firefox-trunk</name>
+          <name>firefox</name>
         </startupnotify>
       </action>
     </keybind>
@@ -311,7 +256,7 @@
         <command>scrot</command>
       </action>
     </keybind>
-    <keybind key="A-Print">
+    <keybind key="W-Print">
       <action name="Execute">
         <command>scrot -s</command>
       </action>

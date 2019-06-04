@@ -190,7 +190,7 @@ apt -y install stacer
 
 ###########################################################
 # Other utilties
-apt -y install scrot htop file-roller printer-driver-cups-pdf evince convertall qalculate curl
+apt -y install scrot htop file-roller printer-driver-cups-pdf evince convertall qalculate curl arandr
 
 ###########################################################
 # bashrc
