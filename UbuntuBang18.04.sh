@@ -48,7 +48,7 @@ apt -y install xorg
 
 ###########################################################
 # Openbox WM
-wget -O $HOME/openbox_3.6.1-4.3_amd64.deb https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/openbox_3.6.1-4.3_amd64.deb
+wget -O $HOME/openbox_3.6.1-4.3_amd64.deb https://github.com/dymaxionkim/UbuntuBang/raw/master/openbox_3.6.1-4.3_amd64.deb
 dpkg -i $HOME/openbox_3.6.1-4.3_amd64.deb
 rm $HOME/openbox_3.6.1-4.3_amd64.deb
 apt -y install obconf obmenu lxappearance
