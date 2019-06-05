@@ -137,6 +137,11 @@ git clone https://github.com/addy-dclxvi/openbox-theme-collections $HOME/.themes
 rm -r /usr/share/themes/*
 git clone https://github.com/addy-dclxvi/gtk-theme-collections.git /usr/share/themes
 
+apt -y install arc-theme
+
+add-apt-repository -y ppa:tista/adapta
+apt -y install adapta-gtk-theme
+
 ###########################################################
 # icons
 wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus-aspromauros/master/install.sh | env DESTDIR="/usr/share/icons" sh
@@ -190,7 +195,7 @@ apt -y install stacer
 
 ###########################################################
 # Other utilties
-apt -y install scrot htop file-roller printer-driver-cups-pdf evince convertall qalculate curl arandr
+apt -y install scrot htop file-roller printer-driver-cups-pdf evince convertall qalculate curl arandr gsimplecal
 
 ###########################################################
 # bashrc

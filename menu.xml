@@ -6,7 +6,7 @@
 				<execute>x-terminal-emulator</execute>
 			</action>
 		</item>
-		<item label="탐색기 [W-e]">
+		<item label="탐색기 [W-f]">
 			<action name="Execute">
 				<execute>pcmanfm</execute>
 			</action>
