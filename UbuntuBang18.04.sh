@@ -9,6 +9,7 @@
 
 ###########################################################
 # Basic update
+cd
 cp /etc/apt/sources.list /etc/apt/sources.list.old
 sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/' /etc/apt/sources.list
 apt -y update
@@ -47,7 +48,10 @@ apt -y install xorg
 
 ###########################################################
 # Openbox WM
-apt -y install openbox obconf obmenu lxappearance
+wget -O $HOME/openbox_3.6.1-4.3_amd64.deb https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/openbox_3.6.1-4.3_amd64.deb
+dpkg -i $HOME/openbox_3.6.1-4.3_amd64.deb
+rm $HOME/openbox_3.6.1-4.3_amd64.deb
+apt -y install obconf obmenu lxappearance
 
 ###########################################################
 # obkey
@@ -94,6 +98,7 @@ mkdir $HOME/.config/openbox
 wget -O $HOME/.config/openbox/autostart https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/autostart
 wget -O $HOME/.config/openbox/menu.xml https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/menu.xml
 wget -O $HOME/.config/openbox/rc.xml https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/rc.xml
+wget -O $HOME/.gtkrc-2.0 https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/gtkrc-2.0
 
 ###########################################################
 # Tint2
