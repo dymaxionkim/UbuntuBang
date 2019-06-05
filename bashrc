@@ -145,3 +145,5 @@ export PATH="/home/osboxes/.Salome:$PATH"
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
+
+screenfetch
