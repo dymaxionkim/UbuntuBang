@@ -206,6 +206,16 @@
         <desktop>2</desktop>
       </action>
     </keybind>
+    <keybind key="W-3">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
+      </action>
+    </keybind>
     <keybind key="W-l">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
