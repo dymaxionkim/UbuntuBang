@@ -131,10 +131,11 @@ wget -O $HOME/.config/pluma/accels https://raw.githubusercontent.com/dymaxionkim
 wget -O $HOME/.config/pluma/pluma.ini https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/pluma.ini
 
 ###########################################################
-# Wallpaper
+# feh for Wallpaper, Imageview
 apt -y install feh
 mkdir $HOME/.Wallpaper
 wget -O $HOME/.Wallpaper/Wallpaper.jpg https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Wallpaper.jpg
+wget -O $HOME/.feh.sh https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/feh.sh
 
 ###########################################################
 # openbox themes
