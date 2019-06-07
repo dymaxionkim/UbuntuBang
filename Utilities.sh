@@ -171,6 +171,10 @@ echo 'Categories=Education;' >> $HOME/.local/share/applications/Salome.desktop
 
 ###########################################################
 # CalculiX Launcher
+wget -O $HOME/CL.zip https://sourceforge.net/projects/calculixforwin/files/launcher4caelinux17/CLCX-caelinux64bit.zip/download
+unzip $HOME/CL.zip
+mv $HOME/CLCX* $HOME/.CalculixLauncher
+rm $HOME/CL.zip
 wget -O $HOME/.local/share/applications/CalculixLauncher.desktop https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/CalculixLauncher.desktop
 
 ###########################################################
@@ -187,12 +191,18 @@ cp /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.old
 find /etc/ImageMagick-6/ -name "policy.xml" -exec perl -pi -e 's/rights="none"/rights="read|write"/g' {} \;
 
 ###########################################################
+# TLP for notebook pc
+#add-apt-repository -y ppa:linuxuprising/apps
+#apt -y install tlp tlpui
+
+###########################################################
 # User Permission
 chown -R `logname`:`logname` $HOME/.pyenv
 chown -R `logname`:`logname` $HOME/.Gmsh
 chown -R `logname`:`logname` $HOME/.Paraview
 chown -R `logname`:`logname` $HOME/.Salome
 chown -R `logname`:`logname` $HOME/.local
+chown -R `logname`:`logname` $HOME
 
 ###########################################################
 # Autoremove

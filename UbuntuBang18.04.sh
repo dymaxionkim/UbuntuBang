@@ -17,9 +17,9 @@ apt -y upgrade
 
 ###########################################################
 # Kernel update
-apt-add-repository -y ppa:teejee2008/ppa
-apt -y install ukuu
-ukuu --install-latest
+#apt-add-repository -y ppa:teejee2008/ppa
+#apt -y install ukuu
+#ukuu --install-latest
 
 ###########################################################
 # Enable quick shutdown
@@ -48,6 +48,8 @@ apt -y install xorg
 
 ###########################################################
 # Openbox-patched
+
+apt -y install openbox openbox-menu
 wget -O $HOME/openbox_3.6.1-4.3_amd64.deb https://github.com/dymaxionkim/UbuntuBang/raw/master/openbox_3.6.1-4.3_amd64.deb
 dpkg -i $HOME/openbox_3.6.1-4.3_amd64.deb
 rm $HOME/openbox_3.6.1-4.3_amd64.deb
@@ -66,7 +68,7 @@ apt --fix-broken -y install
 
 ###########################################################
 # lxmenu
-apt -y install lxmenu-data openbox-menu
+apt -y install lxmenu-data
 
 ###########################################################
 # Network Manager
@@ -80,7 +82,7 @@ apt -y install compton
 
 ###########################################################
 # numlockx
-apt -y install numlockx
+#apt -y install numlockx
 
 ###########################################################
 # Pulse audio
@@ -103,6 +105,7 @@ wget -O $HOME/.config/openbox/autostart https://raw.githubusercontent.com/dymaxi
 wget -O $HOME/.config/openbox/menu.xml https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/menu.xml
 wget -O $HOME/.config/openbox/rc.xml https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/rc.xml
 wget -O $HOME/.gtkrc-2.0 https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/gtkrc-2.0
+chown osboxes:osboxes $HOME/.gtkrc-2.0
 
 ###########################################################
 # Tint2
@@ -136,6 +139,8 @@ apt -y install feh
 mkdir $HOME/.Wallpaper
 wget -O $HOME/.Wallpaper/Wallpaper.jpg https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Wallpaper.jpg
 wget -O $HOME/.feh.sh https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/feh.sh
+chown osboxes:osboxes $HOME/.feh.sh
+chmod +x $HOME/.feh.sh
 
 ###########################################################
 # openbox themes
@@ -222,6 +227,7 @@ chown -R `logname`:`logname` $HOME/.local
 chown -R `logname`:`logname` $HOME/.config
 chown -R `logname`:`logname` $HOME/.themes
 chown -R `logname`:`logname` $HOME/.Wallpaper
+chown -R `logname`:`logname` $HOME
 
 ###########################################################
 # Autoremove

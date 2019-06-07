@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=CalculixLauncher
 Comment=Calculix Launcher with GUI
-Exec=/home/osboxes/.CalculixLauncher/Launcher32x64bit
+Exec=/home/osboxes/.CalculixLauncher/CalculiX4Caelinux
 Icon=yast-system
 Terminal=false
 Type=Application
