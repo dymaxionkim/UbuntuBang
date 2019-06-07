@@ -31,7 +31,7 @@ echo 'DefaultTimeoutStopSec=4s' >> /etc/systemd/system.conf
 echo '' >> /etc/profile
 echo 'setterm -blank 0' >> /etc/profile
 source /etc/profile
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="consoleblank=0"/' /etc/default/grub
+#sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="consoleblank=0"/' /etc/default/grub
 update-grub
 
 ###########################################################
@@ -138,9 +138,16 @@ wget -O $HOME/.config/pluma/pluma.ini https://raw.githubusercontent.com/dymaxion
 apt -y install feh
 mkdir $HOME/.Wallpaper
 wget -O $HOME/.Wallpaper/Wallpaper.jpg https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Wallpaper.jpg
+
+###########################################################
+# Imageview
 wget -O $HOME/.feh.sh https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/feh.sh
 chown osboxes:osboxes $HOME/.feh.sh
 chmod +x $HOME/.feh.sh
+
+wget -O $HOME/.disp.sh https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/disp.sh
+chown osboxes:osboxes $HOME/.disp.sh
+chmod +x $HOME/.disp.sh
 
 ###########################################################
 # openbox themes
