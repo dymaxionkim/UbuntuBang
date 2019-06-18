@@ -1,0 +1,9 @@
+This option is providing feature, described
+in CGX help for 'send' card
+....
+There is also the ''slide'' option in combination with the ''areampc'' option: For example if the mesh of a turbine-blade and a disk should be connected with each other in a simpler but realistic way then a sliding condition between this parts can be established. The command:
+
+send dep indep abq areampc slide
+
+will connect the nodes in the set dep to element-faces described by nodes included in the set indep but only in the direction perpendicular to a plane defined by nodes of the dep-set. Therefore all dep-nodes and all indep-nodes must lie in the same plane and will slide in the same plane! 
+...

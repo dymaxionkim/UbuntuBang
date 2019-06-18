@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>proj</TITLE>
+<META NAME="description" CONTENT="proj">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node135.html">
+<LINK REL="previous" HREF="node133.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node135.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2299"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2295"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2289"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2297"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2300"
+  HREF="node135.html">qadd</A>
+<B> Up:</B> <A NAME="tex2html2296"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2290"
+  HREF="node133.html">prnt</A>
+ &nbsp; <B>  <A NAME="tex2html2298"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001073000000000000000"></A><A NAME="proj"></A>
+<BR>
+proj
+</H2>
+<PRE>
+   'proj' &lt;set&gt; &lt;target-set&gt;|&lt;shpe&gt; -&gt;
+              ['tra' &lt;dx&gt; &lt;dy&gt; &lt;dz&gt; &lt;offset&gt; [&lt;tol&gt;]]|
+              ['rot' &lt;p1&gt; &lt;p2&gt; &lt;offset&gt; [&lt;tol&gt;]]|
+              ['rot' 'x'|'y'|'z' &lt;offset&gt; [&lt;tol&gt;]]|
+              ['rad' &lt;p1&gt; &lt;p2&gt; &lt;offset&gt; [&lt;tol&gt;]]|
+              ['rad' 'x'|'y'|'z' &lt;offset&gt; [&lt;tol&gt;]]|
+              ['nor' &lt;offset&gt; [&lt;tol&gt;] ]
+</PRE>
+This keyword is used to project points (with all related geometry) or nodes onto a set of surfaces or element-faces. Alternative a shape can be specified as the target. In consequence the set with the entities which should be moved must contain nodes and/or points and the target-set must contain surfaces and/or element-faces.
+
+<P>
+Several transformations are available. For example tra will move points in the direction of the vector dx, dy, dz onto elements or surfaces included in set2. Alternatively an offset could be specified as well,
+<BR>
+<BR>
+proj set1 set2 tra 0. 0.5 0.7  
+<BR>
+<BR>
+rot will move points around the axis defined by the points p1 and p2 or around the x,y,z axis onto elements or surfaces included in set2,
+<BR>
+<BR>
+proj set1 set2 rot p0 px 
+<BR>
+<BR>
+rad will move points radial to the axis defined by the points p1 and p2 or radial to the x-, y- or z-axis onto elements or surfaces included in set2. Alternatively a set of lines could be used instead of surfaces as the target-set. Then the geometry will be moved onto an imaginary rotational surface defined by these lines,
+<BR>
+<BR>
+proj set1 set2 rad x 
+<BR>
+<BR>
+nor will move points in a direction normal to the target surface onto surfaces included in set2. An offset might be specified:
+<BR>
+<BR>
+proj set1 set2 nor 0.7 
+<BR>
+<BR>
+If a point does not hit any surface from the target-set, then it will not be moved. A tolerance can be specified for the projections. No projection takes place if the target surface is farther away as this value defines:
+<BR>
+<BR>
+proj set1 set2 nor 0.7 10. 
+<BR>
+<BR>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2299"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2295"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2289"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2297"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2300"
+  HREF="node135.html">qadd</A>
+<B> Up:</B> <A NAME="tex2html2296"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2290"
+  HREF="node133.html">prnt</A>
+ &nbsp; <B>  <A NAME="tex2html2298"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

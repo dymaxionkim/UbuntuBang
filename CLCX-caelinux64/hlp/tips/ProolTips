@@ -1,0 +1,14 @@
+Prool converter 
+is to transfer GMSH INP file to CCX INP file.
+
+
+It works for beam, shell and body elements separately (no mixed type can be converted)
+Will produce nodal groups for all lines and faces (can be recognized by number, for example line #3 in GMSH will produce nodal set ln3)
+
+Play with samples in /samples/Converters/tests_prool
+folder
+
+Video lesson: https://youtu.be/r1vnffsPRd0
+
+source code (C++) at
+/scr/Converters/inp-gmsh2inp-ccx/konvertor-linux

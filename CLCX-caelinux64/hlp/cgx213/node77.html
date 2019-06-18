@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>div</TITLE>
+<META NAME="description" CONTENT="div">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1615"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1611"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1605"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1613"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1616"
+  HREF="node78.html">ds</A>
+<B> Up:</B> <A NAME="tex2html1612"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1606"
+  HREF="node76.html">dist</A>
+ &nbsp; <B>  <A NAME="tex2html1614"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001016000000000000000"></A><A NAME="div"></A>
+<BR>
+div
+</H2>
+<PRE>
+   'div'  |
+          &lt;line&gt; [&lt;division&gt;]|
+          &lt;set&gt;  [&lt;division&gt;]|
+                 ['mult'|'div' &lt;factor-div&gt; &lt;factor-bias&gt;]|
+                 ['auto' &lt;node-dist&gt; &lt;angle&gt; &lt;elem-ratio&gt;]
+</PRE>
+This keyword is used to define the division of line(s).  The div keyword also works on a set of lines (see <A HREF="node135.html#qadd">qadd</A>). The division controls the number of nodes created when the geometry is meshed (see <A HREF="node81.html#elty">elty</A> and <A HREF="node115.html#mesh">mesh</A>). For example,
+<BR>
+<BR>
+div all 4
+<BR>
+<BR>
+attaches the division of 4 to all lines. With the keyword mult or div in combination with a value, it is possible to multiply or divide already assigned divisions:
+<BR>
+<BR>
+div all mult 2.
+<BR>
+<BR>
+Or in case you need a starting-point for the individual divisions you can use the option auto with the optional parameters node-dist and angle. Node-dist is the maximum allowed distance between nodes and angle is the maximum allowed angle defined by three sequential nodes. If one parameter is not fulfilled then the division is halved until the requirements are fulfilled. Default values are defined in the file cgx.h and can be listed with
+<BR>
+<BR>
+div
+<BR>
+<BR>
+without parameters
+<BR>
+<BR>
+div all auto
+<BR>
+<BR>
+uses the defaults. But they can be overruled
+<BR>
+<BR>
+div all auto 2. 10. 0.5
+<BR>
+<BR>
+will use a maximum element lenght of 2., the angle between successive nodes is less than 10 degree and the minimum element is only half of the maximum-length.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1615"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1611"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1605"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1613"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1616"
+  HREF="node78.html">ds</A>
+<B> Up:</B> <A NAME="tex2html1612"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1606"
+  HREF="node76.html">dist</A>
+ &nbsp; <B>  <A NAME="tex2html1614"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

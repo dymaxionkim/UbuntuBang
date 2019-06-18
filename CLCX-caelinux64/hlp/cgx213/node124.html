@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>mshp</TITLE>
+<META NAME="description" CONTENT="mshp">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node125.html">
+<LINK REL="previous" HREF="node123.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node125.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2179"
+  HREF="node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2175"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2169"
+  HREF="node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2177"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2180"
+  HREF="node125.html">node</A>
+<B> Up:</B> <A NAME="tex2html2176"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2170"
+  HREF="node123.html">msg</A>
+ &nbsp; <B>  <A NAME="tex2html2178"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001063000000000000000"></A><A NAME="mshp"></A>
+<BR>
+mshp
+</H2>
+<PRE>
+   'mshp' &lt;name&gt; 's'|'b' &lt;element-type-nr&gt; &lt;element-attr-nr&gt; &lt;density&gt;|&lt;size&gt;
+</PRE>
+This keyword is used to set the mesh parameters for individual surfaces and bodies:
+<BR>
+<BR>
+mshp A001 s 8 -1 2.074
+<BR>
+<BR>
+sets the lement type to 8 (please see ''<A HREF="node198.html#Element_Types">Element Types</A>'' for a key to the element numbers) and the attribute to -1 (tr6u) and the mesh density to 2.074 (mesh refinement). For sets of surfaces or bodies the <A HREF="node81.html#elty">elty</A> command must be used. The attributes are integer values with the following meaning:
+
+<UL>
+<LI>-1: unstructured mesh tr3u (-2 for mesh with libGLu tr3g )
+</LI>
+<LI>0: default
+</LI>
+<LI>1: reduced integration he8r he20r
+</LI>
+<LI>2: incompatible modes he8i
+</LI>
+<LI>3: DASHPOTA be2d
+</LI>
+<LI>4: plane strain (CPE) tr3e tr6e qu4e qu8e
+</LI>
+<LI>5: plane stress (CPS) tr3s
+</LI>
+<LI>6: axisymmetric  (CAX) tr3c
+</LI>
+<LI>7: fluid he8f
+</LI>
+<LI>8: tet10m
+</LI>
+<LI>14: reduced integration, plane strain (CPE)
+</LI>
+<LI>15: reduced integration, plane stress (CPS)
+</LI>
+<LI>16: reduced integration, axisymmetric  (CAX)
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

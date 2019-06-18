@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to select only nodes on the surface</TITLE>
+<META NAME="description" CONTENT="How to select only nodes on the surface">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node225.html">
+<LINK REL="previous" HREF="node223.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node225.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3408"
+  HREF="node225.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3404"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3398"
+  HREF="node223.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3406"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3409"
+  HREF="node225.html">How to generate a</A>
+<B> Up:</B> <A NAME="tex2html3405"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3399"
+  HREF="node223.html">How to write values</A>
+ &nbsp; <B>  <A NAME="tex2html3407"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000176000000000000000"></A><A NAME="How_to_select_only_nodes_on_the_surface"></A>
+<BR>
+How to select only nodes on the surface
+</H2>
+Some times you need to select nodes only on the surface of the mesh. This can be done when the mesh is displayed in the surface mode (see ''<A HREF="node23.html#Toggle_Surfaces_Volumes">Toggle Surfaces/Volumes</A>'') using the menu-entry ''<A HREF="node14.html#Show_Elements_With_Light">Show Elements With Light</A>''. To find node positions more easily add the element edges to the view (see <A HREF="node22.html#Toggle_Element_Edges">Toggle Element Edges</A>).
+
+<P>
+A different way uses the element-faces (see ''<A HREF="node130.html#plot">plot</A>'' with parameter ''f''). Store the desired faces in a new set (<A HREF="node135.html#qadd">qadd</A>) and complete the set downwards (``<A HREF="node70.html#comp">comp</A> set do''). Check the selected nodes with ``plot n setname''. 
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

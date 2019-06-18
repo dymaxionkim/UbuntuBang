@@ -1,0 +1,676 @@
+object Form1: TForm1
+  Left = 511
+  Height = 322
+  Top = 245
+  Width = 452
+  BorderStyle = bsSingle
+  Caption = 'Launcher-CalculiX (v 0.32)'
+  ClientHeight = 299
+  ClientWidth = 452
+  Font.Height = -9
+  Font.Name = 'Sans'
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object FileNameEdit1: TFileNameEdit
+    Left = 8
+    Height = 22
+    Top = 24
+    Width = 328
+    FilterIndex = 0
+    HideDirectories = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 0
+    OnChange = FileNameEdit1Change
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 12
+    Top = 8
+    Width = 404
+    Caption = 'Select File (INP, FRD, UNV, VOL,MSH...) No spaces in the path and filename selected!'
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 56
+    Top = 304
+    Width = 440
+    CharCase = ecLowerCase
+    Lines.Strings = (
+      'calculixforwin.blogspot.com'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 224
+    Top = 72
+    Width = 432
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 2
+    object TabSheet1: TTabSheet
+      Caption = 'Launcher'
+      ClientHeight = 194
+      ClientWidth = 426
+      OnContextPopup = TabSheet1ContextPopup
+      object Button1: TButton
+        Left = 5
+        Height = 32
+        Hint = 'Run CalculiX CCX solver (INP file with mesh, groups'#10'and all boundary conditions should be selected)'
+        Top = 5
+        Width = 160
+        Caption = 'Run Solver - CCX'
+        OnClick = Button1Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 5
+        Height = 32
+        Hint = 'Run CalculiX CGX in the Pre-Processor Mode '#10'(INP file with mesh should be selected)'#10'Other options are possible with certain key.'
+        Top = 37
+        Width = 160
+        Caption = 'Run CGX Preprocessor mode'
+        OnClick = Button2Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object Button3: TButton
+        Left = 5
+        Height = 33
+        Hint = 'Run CalculiX CGX in the PostProcessor Mode '#10'(FRD file with results should be selected)'
+        Top = 69
+        Width = 160
+        Caption = 'Run CGX Post-Processor Mode'
+        OnClick = Button3Click
+        ParentShowHint = False
+        PopupMenu = PopupMenu1
+        ShowHint = True
+        TabOrder = 2
+      end
+      object ComboBox1: TComboBox
+        Left = 221
+        Height = 27
+        Hint = 'Program Parameters '#10'  -a        automatic-build-mode, geometry file derived from a '#10'            cad file is expected'#10'  -b        build-mode, geometry file in fbd-format is expected'#10'  -bg       background, suppress creation of graphic output'#10'            otherwhise as -b, geometry (command) file must be provided'#10'  -c        read an solver input file (ccx, Abaqus)              '#10'  -duns2d   read duns result files (2D)                                  '#10'  -duns3d   read duns result files (3D)'#10'  -isaac2d  read isaac result files (2D)                                  '#10'  -isaac3d  read isaac result files (3D)                                  '#10'  -foam     read the OpenFOAM result directory structure'#10'  -ng       read Netgen native format (with surface domains)    '#10'  -step     read an ascii-step file (points and lines only)                                  '#10'  -stl      read an ascii-stl file (triangles)    '
+        Top = 37
+        Width = 72
+        Font.Height = -11
+        Font.Name = 'Sans'
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          '-c'
+          '-b'
+          '-duns2d'
+          '-duns3d'
+          '-isaac2d'
+          '-isaac3d'
+          '-foam'
+          '-ng'
+          '-step'
+          '-stl'
+        )
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 3
+        Text = '-c'
+      end
+      object Label3: TLabel
+        Left = 189
+        Height = 12
+        Top = 45
+        Width = 23
+        Caption = 'Flag:'
+        ParentColor = False
+      end
+      object ComboBox3: TComboBox
+        Left = 222
+        Height = 27
+        Hint = 'One of these versions will be used'#10'if Settings have no special path for '#10'ccx execuabe'
+        Top = 8
+        Width = 113
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          'ccx2.13'
+          'ccx2.12-stable'
+          'ccx2.8p2-oldstable'
+          'custom'
+          ''
+        )
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 4
+        Text = 'ccx2.13'
+      end
+      object ComboBox5: TComboBox
+        Left = 220
+        Height = 27
+        Top = 72
+        Width = 73
+        ItemHeight = 0
+        ItemIndex = 1
+        Items.Strings = (
+          'cgx2.10'
+          'cgx2.5'
+        )
+        Style = csDropDownList
+        TabOrder = 5
+        Text = 'cgx2.5'
+      end
+      object Button13: TButton
+        Left = 344
+        Height = 25
+        Top = 8
+        Width = 75
+        Caption = 'Monitor'
+        OnClick = Button13Click
+        TabOrder = 6
+      end
+      object Button14: TButton
+        Left = 344
+        Height = 25
+        Top = 74
+        Width = 75
+        Caption = '.dat Graph'
+        OnClick = Button14Click
+        TabOrder = 7
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Mesh Converters'
+      ClientHeight = 194
+      ClientWidth = 426
+      ParentShowHint = False
+      ShowHint = True
+      object Button4: TButton
+        Left = 134
+        Height = 28
+        Hint = 'GMSH .MSH Converter'#10'Use GMSH 2.5..2.6 (no guarantee for future versions)'#10'3D mesh only'#10'cannot convert Gmsh''s Type18(18-node second order prism )'#10'cannot convert Gmsh''s  Type 12(27-node second order hexahedron )'#10'(Type18 and Type 12 will be made when using  Recombine and mesh oder 2)'#10#10'.UNV Converter'#10'3D mesh only (?)'#10'In GMSH save as .UNV with "Save groups of nodes" option'#10#10'GMSH INP (v2.5) to CCX INP Converter'#10'Supports 2D-Tri(C2D3 , C2D6) or 3D-Tetra(C3D4 , C3D10) only'#10'(cannot treat Recombined mesh , it will make 2D-Rect , 3D-prism , Hexa)'#10'Save as .INP with "Save all" option.'#10#10'NETGEN .VOL Converter'#10'3D-Tetra (C3D10), second order is mast!'#10'It will make nodal groups for all surfaces '
+        Top = 104
+        Width = 152
+        Caption = 'CONVERT !'
+        Color = clYellow
+        OnClick = Button4Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object Label4: TLabel
+        Left = 126
+        Height = 12
+        Top = 56
+        Width = 145
+        Caption = 'PostKey String for .msh converter'
+        ParentColor = False
+        Visible = False
+      end
+      object Edit1: TEdit
+        Left = 294
+        Height = 20
+        Top = 56
+        Width = 80
+        TabOrder = 1
+        Text = 'C3'
+        Visible = False
+      end
+      object Label5: TLabel
+        Left = 72
+        Height = 12
+        Hint = 'Select element type option for converted mesh '#10'(3C3 for 3d tetras, 2S for shell elements, etc)'
+        Top = 80
+        Width = 195
+        Caption = 'Element Type Option for GMSH.INP converter'
+        ParentColor = False
+        ParentShowHint = False
+        ShowHint = True
+        Visible = False
+      end
+      object ComboBox2: TComboBox
+        Left = 294
+        Height = 20
+        Hint = 'Select element type option (3C3 for 3d tetras, 2S for'#10'shell elements. etc...)'
+        Top = 80
+        Width = 100
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          '3 C3'
+          '3 C3 R'
+          '2 S'
+          '2 S R'
+          '2 CPS'
+          '2 CPE'
+          '2 CAX'
+          '3 F3'
+        )
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+        Text = '3 C3'
+        Visible = False
+      end
+      object Label10: TLabel
+        Left = 5
+        Height = 12
+        Top = 5
+        Width = 260
+        Caption = ' UNV, GMSH .msh, Netgen .vol mesh >> CCX INP Converter'
+        ParentColor = False
+      end
+      object ComboBox4: TComboBox
+        Left = 166
+        Height = 20
+        Top = 24
+        Width = 184
+        Font.Height = -9
+        Font.Name = 'Sans'
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          'UNV (unical converter)'
+          'UNV (python script)'
+          'MSH (python script)'
+          'VOL Netgen (python script)'
+          'GMSH INP (by Prool)'
+          'GMSH INP (python script)'
+        )
+        OnChange = ComboBox4Change
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 3
+        Text = 'UNV (unical converter)'
+      end
+      object Label2: TLabel
+        Left = 46
+        Height = 12
+        Top = 32
+        Width = 100
+        Caption = 'Mesh Format/Converter'
+        ParentColor = False
+      end
+      object Button5: TButton
+        Left = 368
+        Height = 25
+        Top = 24
+        Width = 56
+        Caption = 'help'
+        OnClick = Button5Click
+        TabOrder = 4
+      end
+      object CheckBox3: TCheckBox
+        Left = 46
+        Height = 17
+        Top = 54
+        Width = 213
+        Caption = 'Mixed Types Of Elements (beams, shells, etc)'
+        TabOrder = 5
+        Visible = False
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Examples'
+      ClientHeight = 194
+      ClientWidth = 426
+      object CheckBox1: TCheckBox
+        Left = 6
+        Height = 22
+        Top = 172
+        Width = 412
+        Caption = 'Copy Path of Example File To Launcher (to run it and see how it works)'
+        TabOrder = 0
+      end
+      object tvExamples: TTreeView
+        Left = 8
+        Height = 160
+        Top = 8
+        Width = 198
+        DefaultItemHeight = 14
+        Images = ilHlpTree
+        ReadOnly = True
+        TabOrder = 1
+        OnDblClick = tvExamplesDblClick
+        OnDeletion = tvExamplesDeletion
+        OnSelectionChanged = tvExamplesSelectionChanged
+        Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoNoDoubleClickExpand, tvoThemedDraw]
+      end
+      object pnInfoView: TIpHtmlPanel
+        Left = 216
+        Height = 160
+        Top = 8
+        Width = 200
+        BorderStyle = bsSingle
+        FixedTypeface = 'Courier New'
+        DefaultTypeFace = 'default'
+        DefaultFontSize = 10
+        FactBAParag = 0.5
+        FlagErrors = False
+        PrintSettings.MarginLeft = 0.5
+        PrintSettings.MarginTop = 0.5
+        PrintSettings.MarginRight = 0.5
+        PrintSettings.MarginBottom = 0.5
+        MarginHeight = 4
+        MarginWidth = 4
+        ShowHints = False
+        TabOrder = 2
+        OnHotClick = pnInfoViewHotClick
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Verf Tests'
+      ClientHeight = 194
+      ClientWidth = 426
+      object ListBox2: TListBox
+        Left = 7
+        Height = 149
+        Top = 11
+        Width = 409
+        ItemHeight = 0
+        OnDblClick = ListBox2DblClick
+        ScrollWidth = 407
+        Sorted = True
+        TabOrder = 0
+        TopIndex = -1
+      end
+      object CheckBox2: TCheckBox
+        Left = 24
+        Height = 17
+        Top = 160
+        Width = 317
+        Caption = 'Copy Path of Example File To Launcher (to run it and see how it works)'
+        TabOrder = 1
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'CCX WIZARD!'
+      ClientHeight = 194
+      ClientWidth = 426
+      object Button6: TButton
+        Left = 136
+        Height = 33
+        Top = 112
+        Width = 136
+        Caption = 'START CCX WIZARD!'
+        Color = clYellow
+        OnClick = Button6Click
+        TabOrder = 0
+      end
+      object RadioButton1: TRadioButton
+        Left = 22
+        Height = 17
+        Top = 16
+        Width = 220
+        Caption = 'Static, Buckling, Modal (3D body elements only)'
+        Checked = True
+        TabOrder = 1
+        TabStop = True
+      end
+      object RadioButton2: TRadioButton
+        Left = 22
+        Height = 17
+        Top = 40
+        Width = 170
+        Caption = 'Static, Buckling, Modal (Shells Only)'
+        TabOrder = 2
+      end
+      object RadioButton4: TRadioButton
+        Left = 22
+        Height = 17
+        Top = 88
+        Width = 102
+        Caption = 'Thermal (3D bodies)'
+        TabOrder = 4
+      end
+      object RadioButton3: TRadioButton
+        Left = 22
+        Height = 17
+        Top = 64
+        Width = 211
+        Caption = 'Static, Buckling, Modal (Beam Elements Only)'
+        TabOrder = 3
+      end
+      object Button11: TButton
+        Left = 176
+        Height = 25
+        Top = 152
+        Width = 40
+        Caption = 'hlp'
+        OnClick = Button11Click
+        TabOrder = 5
+      end
+      object CheckBox4: TCheckBox
+        Left = 240
+        Height = 17
+        Top = 40
+        Width = 129
+        Caption = 'R Integration (shell layers)'
+        Checked = True
+        State = cbChecked
+        TabOrder = 6
+      end
+    end
+  end
+  object Button7: TButton
+    Left = 368
+    Height = 25
+    Top = 24
+    Width = 72
+    Caption = 'Open Folder'
+    Color = clYellow
+    OnClick = Button7Click
+    TabOrder = 3
+  end
+  object Button8: TButton
+    Left = 16
+    Height = 20
+    Top = 48
+    Width = 48
+    Caption = 'Edit'
+    Color = clLime
+    OnClick = Button8Click
+    TabOrder = 4
+  end
+  object Button9: TButton
+    Left = 64
+    Height = 20
+    Top = 48
+    Width = 96
+    Caption = 'Combine INP files'
+    Color = clLime
+    OnClick = Button9Click
+    TabOrder = 5
+  end
+  object Button10: TButton
+    Left = 261
+    Height = 20
+    Top = 48
+    Width = 75
+    Caption = 'Run GMSH'
+    Color = clAqua
+    OnClick = Button10Click
+    TabOrder = 6
+  end
+  object Button12: TButton
+    Left = 160
+    Height = 20
+    Top = 48
+    Width = 80
+    Caption = 'Read .dat file'
+    Color = clLime
+    OnClick = Button12Click
+    TabOrder = 7
+  end
+  object MainMenu1: TMainMenu
+    left = 408
+    top = 280
+    object MenuItem1: TMenuItem
+      Caption = 'Menu'
+      object MenuItem2: TMenuItem
+        Caption = 'Open Editor'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'Open Folder'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem20: TMenuItem
+        Caption = 'Combine INP files into one'
+        OnClick = MenuItem20Click
+      end
+      object MenuItem21: TMenuItem
+        Caption = 'Read .dat file'
+        OnClick = MenuItem21Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Settings'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem27: TMenuItem
+        Caption = 'Run GMSH'
+        OnClick = MenuItem27Click
+      end
+      object MenuItem29: TMenuItem
+        Caption = 'Run VTKpost'
+        OnClick = MenuItem29Click
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Calculator'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Exit...'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Help'
+      object MenuItem8: TMenuItem
+        Caption = 'CCX(html)'
+        OnClick = MenuItem8Click
+      end
+      object MenuItem25: TMenuItem
+        Caption = 'CCX(pdf)'
+        OnClick = MenuItem25Click
+      end
+      object MenuItem9: TMenuItem
+        Caption = 'CGX(html)'
+        OnClick = MenuItem9Click
+      end
+      object MenuItem26: TMenuItem
+        Caption = 'CGX(pdf)'
+        OnClick = MenuItem26Click
+      end
+      object MenuItem28: TMenuItem
+        Caption = 'GMSH(html)'
+        OnClick = MenuItem28Click
+      end
+      object MenuItem10: TMenuItem
+        Caption = 'CGX Tips'
+        object MenuItem11: TMenuItem
+          Caption = 'preprocessor'
+          OnClick = MenuItem11Click
+        end
+        object MenuItem12: TMenuItem
+          Caption = 'postprocessor'
+          OnClick = MenuItem12Click
+        end
+      end
+      object MenuItem14: TMenuItem
+        Caption = 'Web Links'
+        object MenuItem15: TMenuItem
+          Caption = 'yahoo group'
+          OnClick = MenuItem15Click
+        end
+        object MenuItem16: TMenuItem
+          Caption = 'calculix.de'
+          OnClick = MenuItem16Click
+        end
+        object MenuItem17: TMenuItem
+          Caption = 'calculixforwin'
+          OnClick = MenuItem17Click
+        end
+        object MenuItem18: TMenuItem
+          Caption = 'Salome'
+          OnClick = MenuItem18Click
+        end
+        object MenuItem19: TMenuItem
+          Caption = 'GMSH'
+          OnClick = MenuItem19Click
+        end
+        object MenuItem22: TMenuItem
+          Caption = 'CalculiX-Examples'
+          OnClick = MenuItem22Click
+        end
+        object MenuItem23: TMenuItem
+          Caption = 'CalculiX For Windows'
+          OnClick = MenuItem23Click
+        end
+        object MenuItem24: TMenuItem
+          Caption = 'eFatigue'
+          OnClick = MenuItem24Click
+        end
+      end
+    end
+  end
+  object CalculatorDialog1: TCalculatorDialog
+    Value = 0
+    ColorBtnDigits = clBlack
+    ColorBtnMemory = clNavy
+    ColorBtnOk = clGreen
+    ColorBtnCancel = clMaroon
+    ColorBtnClear = clRed
+    ColorBtnOthers = clBlack
+    ColorDisplayText = clBlack
+    ColorDisplayBack = clWhite
+    left = 104
+    top = 280
+  end
+  object PopupMenu1: TPopupMenu
+    left = 24
+    top = 280
+    object MenuItem13: TMenuItem
+      Caption = 'Run CGX with CCX groups'
+      OnClick = MenuItem13Click
+    end
+  end
+  object ilHlpTree: TImageList
+    Height = 9
+    Width = 9
+    left = 24
+    top = 352
+    Bitmap = {
+      4C69020000000900000009000000FFFFFF000088CC610088CC810088CC810088
+      CC810088CC810088CC810088CC610087CB00FFFFFF000086C884B0F4FFFFAEF2
+      FFFFAEF2FFFFAEF2FFFFB0F4FFFF0086C8840086C800FFFFFF000083C488A9EE
+      FDFFA4E9FCFFA4E9FCFFA4E9FCFFA9EEFDFF0083C4880083C400FFFFFF000080
+      C08CA2E7FAFF9CE2F8FF9CE2F8FF9CE2F8FFA2E7FAFF0080C08C007EBD07FFFF
+      FF00007CBA929AE0F7FF93DAF3FF93DAF3FF97DDF5FF86CBE9FF007CBA92007C
+      BA75FFFFFF000078B59791D9F3FF8AD3EFFF8AD3EFFF91D9F3FF76BADCFFFDFD
+      FBFF0078B597FFFFFF000074AF9D89D2F0FF81CCEAFF81CCEAFF89D2F0FF6CB0
+      D2FFEEEEE3FF0074AF9DFFFFFF00006EA6A587D0F1FF83CDEEFF83CDEEFF87D0
+      F1FF62A6C8FFFBC43CFF006EA6A5FFFFFF000062948A006091B9006091B90060
+      91B9006091B9006091B9006091B900629440FFFFFF007E7E544D7E7E54677E7E
+      54677E7E54677E7E54677E7E54247A7A510075754C00FFFFFF007A7A5168FBFB
+      F0FFF5F5E6FFF3F3E2FFC2C2B1FF7A7A51687A7A512575754C00FFFFFF007575
+      4C6AF9F9F1FFEFEFE4FFE9E9DAFFB6B6A5FFFFFFFFFF75754C6A74744C26FFFF
+      FF006F6F476DFBFBF4FFF3F3EBFFEFEFE4FFA4A493FFA4A493FFA4A493FF4949
+      257CFFFFFF006868416FFCFCF8FFF6F6F0FFF3F3EBFFEFEFE4FFE9E9DAFFF3F3
+      E2FF6868416FFFFFFF0060603A72FDFDFAFFF9F9F4FFF6F6F0FFF3F3EBFFEFEF
+      E4FFF5F5E6FF60603A72FFFFFF0059593375FEFEFDFFFCFCF8FFF9F9F4FFF6F6
+      F0FFF3F3EBFFF8F8EDFF59593375FFFFFF004E4E297AFFFFFFFFFEFEFDFFFDFD
+      FAFFFCFCF7FFFAFAF5FFFCFCF5FF4E4E297AFFFFFF0035351563323212853232
+      12853232128532321285323212853232128535351563
+    }
+  end
+end

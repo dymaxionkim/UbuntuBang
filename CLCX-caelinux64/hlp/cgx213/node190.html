@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>valu</TITLE>
+<META NAME="description" CONTENT="valu">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node191.html">
+<LINK REL="previous" HREF="node189.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node191.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2971"
+  HREF="node191.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2967"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2961"
+  HREF="node189.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2969"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2972"
+  HREF="node191.html">view</A>
+<B> Up:</B> <A NAME="tex2html2968"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2962"
+  HREF="node189.html">ulin</A>
+ &nbsp; <B>  <A NAME="tex2html2970"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00010129000000000000000"></A><A NAME="valu"></A>
+<BR>
+valu
+</H2>
+<PRE>
+   'valu' &lt;name&gt; [[&lt;value&gt;|'push' [&lt;splitkey&gt;]|'pop'] [nr]] | -&gt;
+         [['?'|'&amp;'|'*'|'/'|'+'|'-'|'abs'|'max'|'min'|'pow'|-&gt;
+          'sqr'|'sin'|'cos'|'tan'|'asin'|'acos'|'atan'] -&gt;
+          'int'|'float'|'exp' -&gt;
+         [name name] ]
+</PRE>
+An entity which stores a string of characters. Most characters are valid but no white-spaces are accepted from the command line.
+The command parser will scan each parameter of each command for expressions which match the name of a value and will replace the parameter by the content of the value. For example
+<BR>
+<BR>
+pnt P0 xvalue 0. 0.
+<BR>
+<BR>
+uses the value 'xvalue'. If the user has previously defined the value with:
+<BR>
+<BR>
+valu xvalue 1.24
+<BR>
+<BR>
+then the command-parser will replace 'xvalue' by '1.24' in the 'pnt' command.
+
+<BR>
+<BR>
+ATTENTION: To suppress the substitution the value has to be masked by a leading '&#92;'. For example the command:
+<BR>
+<BR>
+del v &#92;value
+<BR>
+<BR>
+will delete the value itself. The content of a value can be defined by the user
+<BR>
+<BR>
+valu arg1 1.24
+<BR>
+<BR>
+or derived from the stack previously filled by a command
+<BR>
+<BR>
+valu arg1 pop
+<BR>
+<BR>
+if the ''<A HREF="node178.html#stack">stack</A>'' was activated. A certain number on the stack can be addressed with
+<BR>
+<BR>
+valu arg1 pop 2
+<BR>
+<BR>
+were the '2' means that 2 successive 'pops' are executed. In this way the second value on the stack can be loaded at once.
+
+<P>
+Values can be added to a set
+<BR>
+<BR>
+seta valset v all
+<BR>
+<BR>
+and can then be deleted by zapping ``<A HREF="node196.html#zap">zap</A>'' the set storing the values.
+
+<P>
+Values can be written to the stack when the 'push' parameter is used:
+<BR>
+<BR>
+valu arg1 push
+<BR>
+<BR>
+A white-space separated string stored in a ``<A HREF="#valu">valu</A>'' will be written to the stack in separate sub-strings. With this method single pieces of a white-space separated string can be splitted and stored in separate values:
+<BR>
+<BR>
+stack on
+<BR>
+<BR>
+opens the stack
+<BR>
+<BR>
+valu complicatedString push
+<BR>
+<BR>
+splits the string stored in 'complicatedString' and writes the single pieces to the stack. The command 
+<BR>
+<BR>
+valu subString pop 3
+<BR>
+<BR>
+loads the 3rd substring into the varible 'subString'. Other splitting characters can be used when this character follows the push key-word:
+<BR>
+<BR>
+valu string push .
+<BR>
+<BR>
+splits the string at each occurence of ``.'' and writes the pieces to the stack. 
+
+<P>
+The command is able to perform simple calculations like
+<BR>
+<BR>
+valu result * arg1 arg2
+<BR>
+<BR>'result' will store the product from 'arg1' and 'arg2'. It is important to understand that the command deals only with other 'values'. That means that a direct multiplication of two numbers is not possible. The number has to be stored in a value before it can be used:
+<BR>
+<BR>
+valu arg1 1.24
+<BR>
+<BR>
+assigns the string ``1.24'' to the value 'arg1'. During the calulation the strings are converted to double precision numbers and the result is stored as a string representing an exponential number. The 'int', 'float' and 'exp' convert between integer, floating point and exponential format.
+
+<P>
+The '<code>?</code>' operator is used to request user input:
+<BR>
+<BR>
+valu string <code>?</code>
+<BR>
+<BR>
+The command is waiting for user input. Please type into the terminal. Usually this requires to leave the graphics window and click into the terminal from which cgx was started.
+
+<P>
+The '<code>&amp;</code>' operator is used to concatenate two strings:
+<BR>
+<BR>
+valu string3 <code>&amp;</code> string1 string2
+<BR>
+<BR>
+<P>
+See also ``<A HREF="node133.html#prnt">prnt</A>'' and ''<A HREF="node223.html#How_to_write_values_to_a_file">How to write values to a file</A>''.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2971"
+  HREF="node191.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2967"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2961"
+  HREF="node189.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2969"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2972"
+  HREF="node191.html">view</A>
+<B> Up:</B> <A NAME="tex2html2968"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2962"
+  HREF="node189.html">ulin</A>
+ &nbsp; <B>  <A NAME="tex2html2970"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

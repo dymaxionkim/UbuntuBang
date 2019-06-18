@@ -1,0 +1,79 @@
+[Breakpoint 0]
+Enabled=true
+File=snlTest.cpp
+Line=1716
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=snlTest.cpp
+Line=1741
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=snlTest.cpp
+Line=1750
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=snlTest.cpp
+Line=1815
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=snlCtrlPointNet.cpp
+Line=517
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=97,0
+Expression1=curve1.knotVect.knots
+Expression10=paramV
+Expression11=paramU
+Expression12=testSurf.knotVectV.knots
+Expression13=testSurf.knotVectU.knots
+Expression14=surface.knotVectU.knots
+Expression15=knotsT.knots
+Expression16=surface.knotsT.knots
+Expression2=curve1.knotVect
+Expression3=knotVect
+Expression4=knotVectU.knots
+Expression5=splitSpanU
+Expression6=splitSpanV
+Expression7=splitSpanU [0 ]
+Expression8=*splitSpanU
+Expression9=knotVectV.knots
+Format1=19
+Format10=132
+Format11=132
+Format12=19
+Format13=19
+Format14=19
+Format15=19
+Format16=19
+Format2=19
+Format3=19
+Format4=132
+Format5=19
+Format6=19
+Format7=19
+Format8=19
+Format9=132
+NumExprs=16
+
+[Watches]
+Expr0=testPoints2 [ 0 ]
+Expr1=curve1.ctrlPtNet.ctrlPts [ 14 ]
+Expr2=curve1.ctrlPtNet.ctrlPts [ 13 ]

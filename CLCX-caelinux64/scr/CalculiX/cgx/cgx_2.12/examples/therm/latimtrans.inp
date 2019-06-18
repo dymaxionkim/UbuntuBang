@@ -1,0 +1,104 @@
+***********************************************************************
+*HEADING
+FW05 Thermal
+***********************************************************************
+**
+*include, input=all.msh
+** ZYLINDERSYSTEM FUER DIE KNOTENVERSCHIEBUNGEN
+*TRANSFORM, NSET=Nall, TYPE=C
+0.,0.,0., 1.,0.,0.
+***********************************************************************
+**CYCLIC SYMMETRY
+*include, input=CYC1.equ
+***********************************************************************
+***********************************************************************
+**RANDBEDINGUNGEN
+***********************************************************************
+*BOUNDARY
+*include, input=SPC_23.bou
+**MATERIALPARAMETER:
+*************************************************
+**               MATERIALDATEN
+**   (T IN CELSIUS, REST IM N,MM,S-SYSTEM, DH.:
+**    E-MODUL IN N/MM**2, ALPHA IN 1/K, RHO IN
+**    10**3*KG/MM**3, ZEIT IN S, VERSCHIEB. IN
+**    MM, SPANNG. IN MPA)
+*************************************************
+*MATERIAL,NAME=NI
+*ELASTIC,TYPE=ISO
+2.0E5,0.3,291.
+1.5E5,0.3,1200.
+*EXPANSION,TYPE=ISO,ZERO=293.
+13.E-6,291.
+16.E-6,1200.
+*DENSITY
+8.E-9
+** CONDUCTIVITY: T*mm/s3/K
+*CONDUCTIVITY
+10.,273.
+18.,873.
+27.,1373.
+** Nmm/T/K
+*SPECIFIC HEAT
+450.e6,273.
+580.e6,873.
+710.e6,1373.
+** N/mm/K4
+*PHYSICAL CONSTANTS,ABSOLUTE ZERO=0.,STEFAN BOLTZMANN=5.669E-11
+***********************************************************************
+**ZUORDNUNG DER ELEMENTE ZU MATERIALIEN:
+*SOLID SECTION,ELSET=Eall,MATERIAL=NI
+***********************************************************************
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+Nall, 293.15
+**
+***********************************************************************
+**              BELASTUNG UND AUSZUGEBENDE GROESSEN                  **
+** fuer n=110000/min
+***********************************************************************
+*AMPLITUDE, NAME=BOU_ACC
+0.,0.55,60.,1.,1000.,1.
+*AMPLITUDE, NAME=BOU_DEC
+0.,1.,30.,0.7,1000.,0.55
+*AMPLITUDE, NAME=FILM_ACC
+0., 0.22,3.,1.,1000.,1.
+*AMPLITUDE, NAME=ALPHA_ACC
+0., 0.81,3.,1.,1000.,1.
+*AMPLITUDE, NAME=FILM_DEC
+0.,1.,3.,0.22,1000.,0.22
+*AMPLITUDE, NAME=ALPHA_DEC
+0.,1.,3.,0.81,1000.,0.81
+*AMPLITUDE, NAME=RAD_ACC
+0.,0.55,6.,1.,1000.,1.
+*AMPLITUDE, NAME=RAD_DEC
+0.,1.,30.,0.55,1000.,0.55
+**
+*STEP, INC=1000
+*HEAT TRANSFER
+1.e-1,120.
+*BOUNDARY, AMPLITUDE=BOU_ACC
+*include, input=SPCT_t800..bou
+*FILM, AMPLITUDE=FILM_ACC, FILM AMPLITUDE=ALPHA_ACC
+*include, input=all.flm
+*RADIATE, AMPLITUDE=RAD_ACC, RADIATION AMPLITUDE=RAD_ACC
+*include, input=all.rad
+*NODE PRINT,FREQUENCY=0
+*EL PRINT,FREQUENCY=0
+*NODE FILE
+NT
+*END STEP
+*STEP, INC=1000
+*HEAT TRANSFER
+1.e-1,120.
+*BOUNDARY, AMPLITUDE=BOU_DEC
+*include, input=SPCT_t800..bou
+*FILM, AMPLITUDE=FILM_DEC, FILM AMPLITUDE=ALPHA_DEC
+*include, input=all.flm
+*RADIATE, AMPLITUDE=RAD_DEC, RADIATION AMPLITUDE=RAD_DEC
+*include, input=all.rad
+*NODE PRINT,FREQUENCY=0
+*EL PRINT,FREQUENCY=0
+*NODE FILE
+NT
+*END STEP

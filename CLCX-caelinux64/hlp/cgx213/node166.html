@@ -1,0 +1,612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>send</TITLE>
+<META NAME="description" CONTENT="send">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node167.html">
+<LINK REL="previous" HREF="node165.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node167.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2683"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2679"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2673"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2681"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2684"
+  HREF="node167.html">seqa</A>
+<B> Up:</B> <A NAME="tex2html2680"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2674"
+  HREF="node165.html">scal</A>
+ &nbsp; <B>  <A NAME="tex2html2682"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00010105000000000000000"></A><A NAME="send"></A>
+<BR>
+send
+</H2>
+<PRE>
+  'send' &lt;set&gt; 'fbd' ['c','e']| -&gt;
+               'stl'| -&gt;
+               'abq'|'ans'|'ast'|'dar'|'duns'|'frd'|'gmp'|-&gt;
+               'lst'|'nas'|'ng'|'pat'|'tcg' &lt;RETURN&gt;|
+               ['bin']|
+               ['ds'&lt;nr&gt;[+] [e&lt;nr&gt;[','|'-'&lt;nr&gt;]..]]|
+               ['tmf']|
+               ['sta' &lt;refspeed&gt;]|
+               ['crp' &lt;timefact&gt; &lt;refspeed&gt; &lt;writefreq&gt;]|
+               ['comp']|
+               ['mpc' [[&lt;rotation&gt;|'v'&lt;node&gt; &lt;v1&gt; &lt;v2&gt; &lt;v3&gt; ]|
+                                  ['n'&lt;node&gt;]]]|
+               ['names']|
+               ['spc' &lt;dofs(1-6|t|p)&gt; &lt;value&gt;]| -&gt;
+                 [&lt;dofs(1-6|t|p)&gt; 'ds'&lt;nr&gt; e&lt;nr&gt;]| -&gt;
+                 ['nor' &lt;fac1&gt; [&lt;fac2&gt; &lt;fac3&gt;]]| -&gt;
+                 ['nor' 'ds'&lt;nr&gt; 'e'&lt;nr&gt;]|
+               ['spcf' &lt;dofs(1-6|t|p)&gt; &lt;value&gt;]| -&gt;
+                 [&lt;dofs(1-6|t|p)&gt; 'ds'&lt;nr&gt; 'e'&lt;nr&gt;]| -&gt;
+               ['slide' 'c'|'s'|'rx'| -&gt;
+                 'ry'|'rz'|'tx'|'ty'|'tz']|
+               ['pres' [&lt;value&gt;]|['ds'&lt;nr&gt; 'e'&lt;nr&gt;] [+|-] ]|
+               ['film' [[n&lt;nodnr&gt;][&lt;temp&gt;]|-&gt;
+                     [[['ds'&lt;nr&gt;]|[sq&lt;dsnr&gt;-&lt;dsnr&gt;]] 'e'&lt;nr&gt;]-&gt;
+                 [[&lt;coeff&gt;]|-&gt;
+                 [['ds'&lt;nr&gt;]|[sq&lt;dsnr&gt;-&lt;dsnr&gt;] 'e'&lt;nr&gt;]] [+|-] ]| 
+               ['rad' [[&lt;temp&gt;|[cr&lt;temp&gt;]|['ds'&lt;nr&gt; 'e'&lt;nr&gt;]] -&gt;
+                 [[&lt;emis&gt;|['ds'&lt;nr&gt; 'e'&lt;nr&gt;]] [+|-] ]|
+               ['dflux' [[&lt;load&gt;]|['ds'&lt;nr&gt; 'e'&lt;nr&gt;]] [+|-] ]|
+               ['mflow' [[&lt;load&gt;]|['ds'&lt;nr&gt; 'e'&lt;nr&gt;]] [+|-] ]|
+               ['cflux' &lt;load&gt;]| 
+               ['force' &lt;f1&gt; &lt;f2&gt; &lt;f3&gt;]|
+               ['quadlin']|
+               ['sur' [+|-] ]
+  'send' &lt;set&gt; ['dolfyn'|'duns'|'isaac'|'foam'] [&lt;type&gt; &lt;set&gt;] | -&gt;
+               ['cyclic' &lt;set&gt; &lt;set&gt; 'tx'|'ty'|'tz'|'rx'|'ry'|'rz'|
+               'cx'|'cy'|'cz'|&lt;vx,vy,vz&gt;] 
+  'send' &lt;dep-set&gt; &lt;indep-set&gt; 'nas'|'abq'|'ans' ['cycmpc'|'cycmpcf' -&gt;
+    'px'|'py'|'pz'|'tx'|'ty'|'tz'| -&gt;
+    'rx'|'ry'|'rz'|'cx'|'cy'|'cz'&lt;+-segments&gt; 'c'|'u'&lt;NR&gt;]| -&gt;
+    ['areampc' &lt;dofs('t'|'p'|'1-6')&gt; 'c'|'u'&lt;Nr&gt;]|'f'&lt;value&gt; -&gt;
+    ['areampc' 'slide']| -&gt;
+    ['areampc' 'presfit' ['s'&lt;value&gt;]]| -&gt;
+    ['gap' &lt;vx&gt; &lt;vy&gt; &lt;vz&gt; &lt;tol&gt;]
+</PRE>
+This keyword is used to send data to the file-system. The following formats are known (but not all options for all formats are fully supported so far); The geometry-format (fbd)
+<BR>
+<BR>
+send set fbd
+<BR>
+<BR>
+or
+<BR>
+<BR>
+send set fbd c
+<BR>
+<BR>
+will complete the set downwards before writing, or
+<BR>
+<BR>
+send set fbd e
+<BR>
+<BR>
+will write all model-edges as small lines running from node to node, and a surface description with triangles (stl)
+<BR>
+<BR>
+send all stl
+<BR>
+<BR>
+This triangles are based on elements which were created by meshing surfaces or by automatically triangulated element-faces of all types of supported elements. If be2 elements are included in the mesh (meshed lines) a so called edge file for NETGEN will also be created if stl is written. NETGEN provides also a stand-alone mesher called ng_vol. The mesher can be found in the netgen sub-directory nglib. As for the stl-format triangles can be written for this mesher with:
+<BR>
+<BR>
+send set ng
+<BR>
+<BR>
+It has the advantage that the triangles are directly used to define tetras and not as with stl are only used to define the outer shape of the body.
+
+<P>
+The following mesh-related formats are known: Femview and CADfix (frd), Nastran (nas), Abaqus (abq), Ansys (ans), CodeAster (ast), Samcef (sam), Darwin (dar), patran (pat, only sets), gagemap (gmp, only sets) and Tochnog (tcg) but only ccx (Abaqus) is fully supported. Good support is also provided for ansys, darwin and nastran. If no further parameter follows then just the definition of the nodes and elements will be written:
+<BR>
+<BR>
+send all abq
+<BR>
+<BR>
+will write the mesh in the format used by Abaqus and the CalculiX solver. If the parameter ''ds'' is provided followed by the dataset-nr
+<BR>
+<BR>
+send set abq ds1
+<BR>
+<BR>
+then the values stored in Dataset 1 are written. For 'frd'-format the 'ds' parameter w/o any further values forces cgx to write all datasets but w/o the internally calculated ones:
+<BR>
+<BR>
+send all frd ds
+<BR>
+<BR>
+If a ``+'' sign appears at the end of the 'ds' parameter
+<BR>
+<BR>
+send all frd ds+
+<BR>
+<BR>
+or 
+<BR>
+<BR>
+send all frd ds1+
+<BR>
+<BR>
+then also the internally calculated values like vMises-stress are written. Additionally the entities might be specified with the 'e' parameter followed by the numbers to write. The numbers have to be separated by a ',' sign or in case of a range by a '-' sign:
+<BR>
+<BR>
+send all frd ds1 e9,25-30
+<BR>
+<BR>
+The ``bin'' parameter has the same meaning as the ``ds'' parameter but in this case the result is written in the binary form of the frd-format (always all datasets). In case data should be written for the crack analysis tool Darwin
+<BR>
+<BR>
+send all dar ds
+<BR>
+<BR>
+will write all datasets. Since Darwin changed the format from version 7.1 on, it is possible to change the format with the parameter 'v7.1' as the last parameter. If the set is of the ordered type and includes nodes (see ``<A HREF="node154.html#qseq">qseq</A>'') then the data are written in tabular form for use in a 1D crack-prop Darwin-analysis.
+
+<P>
+In certain circumstances the user needs an easy solver independent format to write node- and element numbers. This is provided by the ``lst'' parameter:
+<BR>
+<BR>
+send setname lst
+<BR>
+<BR>
+will write the node- and element-numbers in lines of seven space separated rows.
+
+<P>
+Missing lower entities (nodes, points, lines etc.)  will be added to the set before the set is written if the parameter ''comp'' follows. For example geometry like bodies
+<BR>
+<BR>
+send set fbd comp
+<BR>
+<BR>
+will be extended by surfaces, lines and points or
+<BR>
+<BR>
+send set frd comp
+<BR>
+<BR>
+will include all nodes used by the elements to the set elem and will then write the file.
+<BR>
+<BR>
+The parameter ``quadlin'' forces the conversion from second order elements into single order elements were each element is subdivided into 8 single order elements. This takes place during writing and will not change the current state of the mesh in cgx. Up to now it is only available for the abq format:
+<BR>
+<BR>
+send all abq quadlin
+<BR>
+<BR>
+If the parameter ''tmf'' follows the definition of a solver format
+<BR>
+<BR>
+send set abq tmf
+<BR>
+<BR>
+then the mesh plus all temperatures with the necessary solver context for tmf calculations is written. If the parameter ''sta'' follows 
+<BR>
+<BR>
+send set abq sta 2900.
+<BR>
+<BR>
+then the mesh plus all temperatures with the necessary solver context for a static calculations is written. Here the value for ''speed'' is a reference value for eventual numerical values in the TEXT-Block of the Datasets in the result file (frd-file, see ''<A HREF="node205.html#Nodal_Results_Block">Nodal Results Block</A>''). A scaling factor will be determined based on the reference value (here a ref.speed of 2900.) and the individual TEXT-Block values (factor = speed**2 / refspeed**2). This factor is used in *AMPLITUDE commands which will also be written and will be used to scale static loads which are referenced in the *STEP data. If the parameter ''crp'' follows 
+<BR>
+<BR>
+send set abq crp 1. 2900. 1
+<BR>
+<BR>
+then the mesh plus all temperatures with the necessary solver context for creep calculations is written. Here the value for ''timefact'' scales the time-values of the Datasets, ''speed'' is a reference value for scaling static loads (see option ``sta'') and writefreq limits the output to the result-file.
+<BR>
+<BR>
+If the parameter ''names'' follows the solver-type then just the element- or node-numbers are written. This is useful for defining sets for the solvers. The command
+<BR>
+<BR>
+send steel abq names
+<BR>
+<BR>
+will write the node and element numbers included in ''steel''. This file could be used to define a set for material assignments, boundary conditions or loads. If all sets should be written at once, use:
+<BR>
+<BR>
+send all abq nam
+<BR>
+<BR>
+If the solver-format ''duns'' is used then related numbers of surfaces (3D) or lines (2D) will be written. This information is necessary to apply boundary-conditions to duns. The numbers are used in the connectivity file (duns.conn) which will be created by the mesh-command. The user has to refer this numbers in the duns.script2 file when assigning boundary conditions.
+
+<P>
+It is also possible to define and send some constraints to the file system. To constrain degrees of freedom (dof) of selected nodes use the parameter ''spc'' in combination with the numbers of the constrained dofs and optionally a forced deflection. For example:
+<BR>
+<BR>
+send hinge abq spc 123
+<BR>
+<BR>
+will constrain the translational degrees of freedom of the nodes in set ''hinge''. Or
+<BR>
+<BR>
+send hinge abq spc 12356
+<BR>
+<BR>
+will leave just one rotational degree of freedom unconstrained. And
+<BR>
+<BR>
+send move-nodes abq spc 1 0.1
+<BR>
+<BR>
+will move the nodes in set move-nodes by 0.1 in direction 1.
+<BR>
+<BR>
+send move-nodes abq spc 1 ds1 e1
+<BR>
+<BR>
+will use the values from dataset-nr 1 and the entity-nr 1 for the forced displacement in direction 1 and
+<BR>
+<BR>
+send move-nodes abq spc nor 0.1
+<BR>
+<BR>
+will force the nodes included in set move-nodes by 0.1 in the normal direction (normal to the element-faces). The components of the vectors at the node positions can be scaled individually (fac1-3)). The vector length can also be read from an entity of a dataset:
+<BR>
+<BR>
+send move-nodes abq spc nor ds1 e4
+<BR>
+<BR>
+A subsequent calculation with ccx will move the mesh accordingly. After solving the deformed mesh can be used as a new mesh for further calculations. With this procedure geometric variations are possible without manipulating the geometry (morphing).
+
+<P>
+For cfd there is a ``spc'' function available which works on faces instead on nodes.
+<BR>
+<BR>
+send Inlet abq spcf 123
+<BR>
+<BR>
+The degees of freedom 123 define velocities and not deflections. Its called ``spcf'' and works otherwhise accordingly to the ``spc'' command.
+
+<P>
+The parameter ''slide'' in combination with one additional parameter will create equations that force the selected nodes to move only in a plane. If the additional parameter ''s'' is specified then the specified nodes will be attached to their element faces. All nodes of the affected element-faces have to be selected. For example you type:
+<BR>
+<BR>
+send sur abq slide s
+<BR>
+<BR>
+and this should attach the node with the node-nr. 1 to a plane parallel to the surface of the corresponding element-face. This element uses the node 1, 2, 3, 4, 5, 6, 7 and 8 where 1, 2, 3 and 4 are on the surface of the mesh. The program will detect this element face and constrain the node only then if the nodes 2, 3 and 4 were also included in the set ''sur''! The detected elements or faces of volume-elements will be assigned to the set. So it is possible to check the detected elements. Instead of providing a set with the necessary nodes, you might instead provide a set with shell-elements or/and faces of volume-elements. The nodes will be derived from them. In most cases this is the most convenient way.
+
+<P>
+A special case which works probably only in ccx (abaqus might give wrong results) is triggered by the ``c'' parameter. It behaves as for the ``s'' parameter but works for cycsym calcs:
+<BR>
+<BR>
+send cycsur abq slide c
+<BR>
+<BR>
+A new set with new nodes will be created with the name ``<code>&lt;</code>set<code>&gt;</code>_COPY'' which has to be used in the cycsym definition in ccx instead of ``<code>&lt;</code>set<code>&gt;</code>''. In addition equations are specified which connect the new nodes with the original ones in the normal direction of the element faces. In this way two faces used in a cyclic symmetry connection will slide at each other instead of beeing glued in all directions. 
+
+<P>
+If nodes should slide radially to the y axis then use ''ry'':
+<BR>
+<BR>
+send sur abq slide ry
+<BR>
+<BR>
+or use ''ty'' if the nodes should move only tangential to the y axis. In both cases the axial movement is still permitted.
+
+<P>
+The parameter ''sur'' will write the surfaces of the mesh either in abaqus-format for the *SURFACE command or in frd-format as shell elements. For example
+<BR>
+<BR>
+send top abq sur
+<BR>
+<BR>
+will write the elements in set top together with the face-nr (Important: Only free surfaces of the mesh are regarded, internal faces are unknown and can not be identified). The front- or rear side of the face (pos or neg) is selected with the '+' or '-' parameter:
+<BR>
+<BR>
+send surset abq sur -
+<BR>
+<BR>
+will write all surfaces in set surset in abaqus format but all surfaces which have a potentially negative side will be written in that manner. 
+
+<P>
+The parameter ''pres'' is used to assign pressure values to element faces. For example
+<BR>
+<BR>
+send surf abq pres 0.05
+<BR>
+<BR>
+will assign the pressure value 0.05 to all element-faces in set surf. If a dataset with nodal values is available it is also possible to use this values instead of using a uniform value for all faces. For example
+<BR>
+<BR>
+send surf abq pres lc1 e1
+<BR>
+<BR>
+will specify the dataset-nr 1 and the entity-nr 1 to be used instead of a uniform value. The front- or rear side of the face (pos or neg) is selected with the '+' or '-' parameter (it has to be the last parameter).
+
+<P>
+The parameter ''film'' is used to assign free-stream temperatures and thermal heat coefficients to element faces. It works similar to the ''pres'' option. For example
+<BR>
+<BR>
+send surf abq film 1200. 0.5
+<BR>
+<BR>
+will assign the film temperature of 1200 and the coefficient 0.5 to all element-faces in set surf. If datasets with nodal values are available it is also possible to use this values instead of using a uniform value for all faces. For example
+<BR>
+<BR>
+send surf abq film ds1 e1 0.5
+<BR>
+<BR>
+will specify the dataset-nr 1 and the entity-nr 1 to be used for the temperature instead of a uniform value, or 
+<BR>
+<BR>
+send surf abq film ds1 e1 lc1 e2
+<BR>
+<BR>
+will specify also the dataset-nr 1 with the entity-nr 2 to be used for the film-coefficients instead of a uniform value. The front- or rear side of the face (pos or neg) is selected with the '+' or '-' parameter (it has to be the last parameter). Instead of a single dataset-nr a range can be given:
+<BR>
+<BR>
+send surf abq film sq1-9 e1 sq1-9 e2
+<BR>
+<BR>
+and instead of giving e determined value for the temperature a node of a thermal network can be specified with: 
+<BR>
+<BR>
+send surf abq film n1277 ds1 e1
+<BR>
+<BR>
+<P>
+The parameter ''rad'' is used to assign a sink temperatures and the emissivity to element faces. It works similar to the ''pres'' option. For example
+<BR>
+<BR>
+send surf abq rad 1200. 0.5
+<BR>
+<BR>
+will assign the sink temperature of 1200 and the emissivity 0.5 to all element-faces in set surf. If datasets with nodal values are available it is also possible to use this values instead of using a uniform value for all faces. For example
+<BR>
+<BR>
+send surf abq rad lc1 e1 1200.
+<BR>
+<BR>
+will specify the dataset-nr 1 and the entity-nr 1 to be used for the temperature instead of a uniform value, or 
+<BR>
+<BR>
+send surf abq rad lc1 e1 lc1 e2
+<BR>
+<BR>
+will specify also the dataset-nr 1 with the entity-nr 2 to be used for the emissivity instead of a uniform value. The front- or rear side of the face (pos or neg) is selected with the '+' or '-' parameter (it has to be the last parameter). If cavity radiation should be used then the command has to use the 'cr' attribute:
+<BR>
+<BR>
+send surf abq rad cr1000. 0.7
+<BR>
+<BR>
+Here 1000. is either the sink temperature, or, if the ccx parameter ENVNODE is active (*RADIATE,ENVNODE), the sink node.
+
+<P>
+The parameters ''dflux'' and ''mflow'' are used to assign an energy stream or a mass-flow to element faces. They work similar to the ''pres'' option. For example
+<BR>
+<BR>
+send surf abq dflux 0.5
+<BR>
+<BR>
+will assign the flux of 0.5 to all element-faces in set surf. And
+<BR>
+<BR>
+send surf abq mflow 0.5
+<BR>
+<BR>
+will assign the mass-flow of 0.5 to all element-faces of the given set. If a dataset with nodal values is available it is also possible to use this values instead of using a uniform value for all faces. For example
+<BR>
+<BR>
+send surf abq dflux lc1 e1
+<BR>
+<BR>
+will specify the dataset-nr 1 and the entity-nr 1 to be used instead of a uniform value. The front- or rear side of the face (pos or neg) is selected with the '+' or '-' parameter (it has to be the last parameter).
+
+<P>
+The parameter ''cflux'' is used to assign an energy stream to nodes. For example
+<BR>
+<BR>
+send surf abq cflux 0.5
+<BR>
+<BR>
+will assign the flux of 0.5 to all nodes in set surf.
+
+<P>
+The parameter ''force'' is used to assign force values to nodes. For example
+<BR>
+<BR>
+send nodes abq force 1. 20. 0.
+<BR>
+<BR>
+will assign the specified forces to all nodes of the set nodes.
+
+<P>
+The parameter ''mpc'' is either used to create input for the user-subroutine umpc which forces all nodes from ''set'' to rotate by an average value specified with ''rotation'' around the vector v, or to create a rigid body. In case of a rotation the value has to be in degree were 90 degree is orthogonal. For example
+<BR>
+<BR>
+send nodes abq mpc 4. 1. 0. 0.
+<BR>
+<BR>
+will assign the nodes of the set ''nodes'' to the user-subroutine umpc and will force them to rotate by 4 degree around the x-axis. Two files are produced. The one with the equations has to be included in the model-definition-section and the boundary-file in the step section.
+
+<P>
+In case of a rigid-body request there are two other parameters in combination with ``mpc'' available. The rotation value is replaced by a nodenr of an independent node which will be created based on either provided coordinates
+<BR>
+<BR>
+send nodes nas mpc v4711 1. 0. 0.
+<BR>
+<BR>
+or by averaged coordinates based on the specified set (here ``nodes'') which are interpreted as dependent nodes:
+<BR>
+<BR>
+send nodes nas mpc n4711
+<BR>
+<BR>
+In both cases an RBE2 (nastran) or *RIGID BODY,REF NODE=nodenr (ccx,abq) element will be created which connect all this nodes. See also ''<A HREF="node64.html#asgn">asgn</A>'' on how to predefine a thermal expansion coefficient ``alfa'' for this element (only nastran).
+<BR>
+<BR>
+<P>
+Another useful method are so called ''cyclic symmetry'' equations. These equations are used when just a section of a rotation-symmetric part like a disk is modeled. These equations force the two cutting planes of such a section to move exactly equal in the cylindrical system. If the coordinate system of the displacements for the solver is rectangular (xyz) then the syntax is:
+<BR>
+<BR>
+send dep indep nas cycmpc rx12 c1
+<BR>
+<BR>
+Here ''dep'' is the set containing the nodes of the dependent side. These nodes will be replaced by the solver with the independent nodes from the set ''indep''. In this case the equations will be written in the nastran format ''nas'' (in nastran called MPC). The parameter ''rx12'' defines the displacement system as rectangular ''r'', the rotational axis is ''x'' and the ''12'' defines the number of segments in 360 deg, therefore the angle of the segment is 360 deg /12. Attention: The sign of the number-of-segments must be negative if the angle between the independent side and the dependent side is negative. When the nr-of-segments is omitted the value is calculated individual for each node. The ''c'' triggers the correction of the position of the dependent nodes to a position defined by the angle of the segment (highly recommended), ''u'' would prevent the correction. The ''1'' will be the identifier for the equations if the format is nas (nastran). In case the format would be ans (ansys) then the ''1'' would be the number of the first equation. No number is required for abq (abaqus and calculix). If the coordinate system of the displacements is cylindrical (rtz) then the example would be:
+<BR>
+<BR>
+send dep indep nas cycmpc cx12 c1
+<BR>
+<BR>
+Only the ''r'' from ''rx12'' is changed to ''c''. A thermal connection is created with:
+<BR>
+<BR>
+send dep indep nas cycmpc tx c
+<BR>
+<BR>
+The thermal connection is triggered by the ''t'', a pressure connection with ``p''. See comments above for the single parameters. In case of cfd elements the syntax is similar but only the function name itself differs:
+<BR>
+<BR>
+send dep indep abq cycmpcf rx12 c1
+<BR>
+<BR>
+The function name for cfd elements is 'cycmpcf' instead of 'cycmpc'.
+
+<P>
+In addition it is possible to ''glue'' independent meshes together. For this purpose the dependent nodes are tied to independent elements by equations. Choose the finer mesh for the dependent side. The equations are based on the shape-functions of the element types. For example
+<BR>
+<BR>
+send dep indep nas areampc 123 c1
+<BR>
+<BR>
+will connect the nodes in the set dep to element-faces described by nodes included in the set indep. The set dep must contain all nodes which should be ''glued'' and the set indep should contain all nodes of the elements surfaces to which the dep nodes should be glued. The numbers ''123'' are the degrees of freedom which will be connected (''t'' will create a thermal connection, ``p'' a pressure connection). The ''c'' triggers the correction of the position of the dependent nodes to a position on the surface of the independent elements (highly recommended and default), ''u'' would prevent the correction, ``f'' forces the dependend node away from the independent face. Of course the mesh has to be written after the use of such a command, otherwhise the corrected node positions would not be regarded and the equations would lead to increased stiffness and decreased accuracy. The ''1'' will be the identifier for the equations if the format is nas (nastran). In case the format would be ans (ansys) then the ''1'' would be the number of the first equation. No number is required for abq (abaqus and calculix), see also ''<A HREF="node228.html#How_to_connect_independent_meshes">How to connect independent meshes</A>''.
+
+<P>
+There is also the ''slide'' option in combination with the ''areampc'' option: For example if the mesh of a turbine-blade and a disk should be connected with each other in a simpler but realistic way then a sliding condition between this parts can be established. The command:
+<BR>
+<BR>
+send dep indep abq areampc slide
+<BR>
+<BR>
+will connect the nodes in the set dep to element-faces described by nodes included in the set indep but only in the direction perpendicular to a plane defined by nodes of the dep-set. Therefore all dep-nodes and all indep-nodes must lie in the same plane and will slide in the same plane!
+<BR>
+<P>
+Another case is considered with the ''presfit'' option in combination with the ''areampc'' option. For example if a cylindrical press fit should be simulated then a forced displacement between the two intersecting surfaces is necessary. This forces the dependent nodes to move to the independent face. Two modes are available:
+<BR>
+<BR>
+send dep indep abq areampc presfit f
+<BR>
+<BR>
+simulates sticking friction and with the option s
+<BR>
+<BR>
+send dep indep abq areampc presfit s
+<BR>
+<BR>
+works for sliding conditions. The user might request a certain value for the press fit if the overlapping of the mesh do not represent the necessary distance:
+<BR>
+<BR>
+send dep indep abq areampc presfit s0.06
+<BR>
+<BR>
+will move the dep-nodes 0.06 in the normal direction of the independent faces (works also with option f). Additional nodes are generated and can be used to request the reaction forces on the dependent nodes. They are stored in a set named N&lt;dep-set-name&gt;&lt;ind-set-name&gt;. Two files are produced. The one with the equations has to be included in the model-definition-section and the boundary-file in the step section.
+<BR>
+<BR>
+Special cases are the cfd-solvers Duns, Isaac and OpenFoam. The boundary patches are an integral part of the mesh. So it is necessary to specify all boundary patches when writing the mesh. All free surfaces of the mesh must be specified. This is an example for OpenFoam:
+<BR>
+<BR>
+send all foam cyclic cyc1 cyc2 cx patch in patch out wall wall
+<BR>
+<BR>
+will write the so called polyMesh description to the file-system. After the send command the set (all) with the mesh is specified, then the format (foam), then cyclic boundary conditions (cyclic cyc1 cyc2 cx) between set cyc1 and cyc2 of the axi-symmetric case around x (cx), then boundary conditions of type patch for set ''in'' (patch in), then boundary conditions of type patch for set ''out'' (patch out) and boundary conditions of type wall for set ''wall'' (wall wall).
+
+<P>
+The symmetric boundary-conditions (base-type: cyclic) can be axi-symmetric (c) around x,y,z or rectangular (r) in direction of x,y,z. Only for OpenFoam and in the rectangular (Cartesian) case also a vector pointing in the direction of the symmetry can be specified (ie: 1.,1.,0.)
+
+<P>
+For dolfyn, duns and isaac the same syntax has to be used:
+<BR>
+<BR>
+send all duns viscous-wall profil subsonic-inflow in subsonic-outflow out
+<BR>
+<BR>
+send all isaac WALL profil FARFIELD far EXTRAPOLATE out
+<BR>
+<BR>
+send all dolfyn INLE ingang OUTL uitgang ... etc
+<BR>
+<BR>
+<P>
+To define so called ''gap'' elements and related control-commands: These elements will connect parts if they are closer as a certain distance. For example if the distance is zero (contact). The command:
+<BR>
+<BR>
+send dep indep abq gap 1. 0. 0.
+<BR>
+<BR>
+will connect the nodes in the set dep and indep with gap-elements but only if they match each other in the direction 1.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2683"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2679"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2673"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2681"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2684"
+  HREF="node167.html">seqa</A>
+<B> Up:</B> <A NAME="tex2html2680"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2674"
+  HREF="node165.html">scal</A>
+ &nbsp; <B>  <A NAME="tex2html2682"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

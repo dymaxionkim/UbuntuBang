@@ -1,0 +1,17 @@
+The Ramberg–Osgood is typical equation to describe the non linear relationship between stress and strain—that is, the stress–strain curve—in materials near their yield points. It is especially useful for metals that harden with plastic deformation.
+
+https://en.wikipedia.org/wiki/Ramberg%E2%80%93Osgood_relationship
+
+You can use it to calculate total (elastic+plastic) strain for fatigue with Strain-Life Analysis.
+In this case you can avoid of using Neuber's correction (approximate and conservative dependency for getting plastic results based on elastic solution)
+In this case (with using CalculiX) you don't need to take into account Stress Concentration Factor, only Surface Finish make sense for calculation, based on total strain.
+
+Please read about that here:
+
+http://calculixforwin.blogspot.com/2016/10/fatigue-with-calculix.html
+
+Also read 
+www.efatigue.com
+www.efatigue.com/training/
+
+for more information

@@ -1,0 +1,18 @@
+read rae2822_penta.fbd
+comp in do
+comp out do
+comp profil do
+setr profil se tedge
+mesh all
+swep all s2 tra 0 0 0.1 1 append
+send profil abq nam
+send in abq nam
+send out abq nam
+send profil abq surf
+send profil abq slide s
+send profil abq dflux 0.
+send all abq
+plot e all
+view ed off
+view elem on
+

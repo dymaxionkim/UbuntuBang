@@ -1,0 +1,13 @@
+** user material provided with calculix launcher
+
+**     par1=Young's modulus, E
+**     par2=Poisson's ratio, nu
+**     par3=cohesion, c
+**     par4=friction angle, phi [degrees] Cannot be set to zero
+**     par5=dilation angle, psi [degrees] Cannot be set to zero
+
+
+*MATERIAL,NAME=ABAQUSMCWD
+*USER MATERIAL, CONSTANTS=5
+<par1>,<par2>,<par3>,<par4>,<par5>
+

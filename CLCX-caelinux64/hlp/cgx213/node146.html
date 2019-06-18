@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>qflp</TITLE>
+<META NAME="description" CONTENT="qflp">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node147.html">
+<LINK REL="previous" HREF="node145.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node147.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2443"
+  HREF="node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2439"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2433"
+  HREF="node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2441"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2444"
+  HREF="node147.html">qint</A>
+<B> Up:</B> <A NAME="tex2html2440"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2434"
+  HREF="node145.html">qfil</A>
+ &nbsp; <B>  <A NAME="tex2html2442"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001085000000000000000"></A><A NAME="qflp"></A>
+<BR>
+qflp
+</H2>
+<PRE>
+   'qflp' RETURN 'w'|'e'|'s'|'a'|'i'|'q'
+</PRE>
+This keyword is used to invert the outer- and inner side (the orientation) of shell-elements and surfaces. The orientation of shell-elements or surfaces can be seen by the interior color. The outer face reflects light, if the face is dark-grey it is the back-side. If ''<A HREF="node19.html#Toggle_Culling_Back_Front">Toggle Culling Back/Front</A>'' was selected before then both sides are illuminated. To flip the orientation of a surface and all related shell-elements select either a shell-element with the ''e'' key or if the illuminated surfaces are displayed (see ``<A HREF="node161.html#rep">rep</A>'' how to do that) select the surface with the ''s'' key. To see the effect on the elements immediatelly they must have been displayed with the ''<A HREF="node130.html#plot">plot</A>'' command. If only elements are in the database flip them with the ''e'' key. The ''a'' key has a different meaning than usually. If pressed before a selection then a so called auto mode is activated. It makes sense for volumes were a vector pointing in or out can be determined for all surfaces. In this case all related surfaces (and embedded elements) are oriented in the same way as the selected one. It works only in situations were only two surfaces share a common edge. This is the case for volumes without inner surfaces or a 2D model. In case of a volume all surface normals will point either inwards or outwards, depending on the orientation of the selected surface. Press ''q'' to quit the command. 
+
+<P>
+It is also possible to measure distances between two pixels on the screen. Just press the key ''w'' on the positions of the two pixels. The distance is calculated in the scale of the displayed geometry.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2443"
+  HREF="node147.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2439"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2433"
+  HREF="node145.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2441"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2444"
+  HREF="node147.html">qint</A>
+<B> Up:</B> <A NAME="tex2html2440"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2434"
+  HREF="node145.html">qfil</A>
+ &nbsp; <B>  <A NAME="tex2html2442"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

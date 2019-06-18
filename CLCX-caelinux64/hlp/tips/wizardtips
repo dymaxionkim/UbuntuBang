@@ -1,0 +1,5 @@
+1. At first you should create mesh with groups (sets). You can do it in Salome-Platform, GMSH and CalculiX CGX.
+Convertes can be used to transfer misc. mesh formats (UNV, MSH, etc) into CalculiX INP format.
+2. You may run one case of wizard at one session of Launcher. Wizard don't save applied input. It will generate many txt .INP files in working folder and then you may correct them manually. Read CCX help to learn command language.
+3. Many additional options are available only by hand correction of INP files. Wizard just helps you to start with CalculiX.
+ 

@@ -1,0 +1,11 @@
+read latim.fbd
+del me
+elty all
+elty all he20r
+mesh all
+merg n all 0.02
+send SPC abq spc 23
+send CYC1 abq nam
+send CYC2 abq nam
+send all abq
+quit

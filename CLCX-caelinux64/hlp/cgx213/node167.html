@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>seqa</TITLE>
+<META NAME="description" CONTENT="seqa">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node168.html">
+<LINK REL="previous" HREF="node166.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node168.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2695"
+  HREF="node168.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2691"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2685"
+  HREF="node166.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2693"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2696"
+  HREF="node168.html">seqc</A>
+<B> Up:</B> <A NAME="tex2html2692"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2686"
+  HREF="node166.html">send</A>
+ &nbsp; <B>  <A NAME="tex2html2694"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00010106000000000000000"></A><A NAME="seqa"></A>
+<BR>
+seqa
+</H2>
+<PRE>
+   'seqa' &lt;seq&gt; ['nod'|'pnt' &lt;name&gt; .. &lt;=&gt;]|
+                ['afte'|'befo' &lt;name&gt; 'nod'|'pnt' &lt;name&gt;.. &lt;=&gt;]|
+                ['end' 'nod'|'pnt' &lt;name&gt; .. &lt;=&gt;]
+</PRE>
+This keyword is used to create or redefine a set marked as a sequential set. This set is used for spline definitions (see <A HREF="node106.html#line">line</A>). With the command <A HREF="node148.html#qlin">qlin</A> such a sequential set is automatically created. To begin such a set type for example:
+<BR>
+<BR>
+SEQA  Q003     PNT  P004 P005 P006 P00M P00N
+<BR>
+<BR>
+The program will create or overwrite the set Q003. The command will continue in the next line if the sign ''='' is found:
+<BR>
+<BR>
+SEQA  Q003     PNT  P004 P005 P006 =
+<BR>
+P007 P008 P009
+<BR>
+<BR>
+The parameter AFTE will insert additional points after the first specified point in the existing sequence. The parameter BEFO will insert additional points before the first specified point and the parameter END will add additional points to a sequence.
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

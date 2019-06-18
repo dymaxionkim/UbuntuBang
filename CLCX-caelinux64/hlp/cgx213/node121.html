@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>move</TITLE>
+<META NAME="description" CONTENT="move">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node122.html">
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2143"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2139"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2133"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2141"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2144"
+  HREF="node122.html">movi</A>
+<B> Up:</B> <A NAME="tex2html2140"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2134"
+  HREF="node120.html">mm</A>
+ &nbsp; <B>  <A NAME="tex2html2142"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001060000000000000000"></A><A NAME="move"></A>
+<BR>
+move
+</H2>
+<PRE>
+   'move' &lt;set&gt; ['scal' &lt;fx&gt; &lt;fy&gt; &lt;fz&gt; &lt;pnt&gt;]|
+                ['tra' &lt;dx&gt; &lt;dy&gt; &lt;dz&gt;]|
+                ['rot' [&lt;p1&gt; [&lt;p2&gt;]|['x'|'y'|'z']] |
+                       ['x'|'y'|'z'] &lt;alfa&gt; |
+                       [&lt;alfa1&gt; &lt;ax1&gt; &lt;alfa2&gt; &lt;ax2&gt;]]|
+                ['rad' [&lt;p1&gt; [&lt;p2&gt;]|['x'|'y'|'z']] |['x'|'y'|'z'] |
+                     'p'&lt;pnt&gt; &lt;dr&gt;] | [&lt;dr1&gt; &lt;ax1&gt; &lt;dr2&gt; &lt;ax2&gt;]
+                ['equ' &lt;trgt-set&gt; [&lt;tol&gt;]]|
+                ['mir' &lt;P1&gt; &lt;P2&gt;]
+</PRE>
+This keyword is used to move nodes or points which are stored in a set. Related entities will be moved as well (Warning: results are not affected by this command, they are unchanged). For example to move a line it is necessary to include their points in a set (see <A HREF="node70.html#comp">comp</A>). Several transformations are available:
+<BR>
+<BR>
+For example scal will scale the entities of the set, the scaling factors fx, fy, fz can be chosen independently and a reference point can be used,
+<BR>
+<BR>
+move part scal 2 
+<BR>
+move part scal 1 1 2
+<BR>
+<BR>
+move part scal 2 P0
+<BR>
+move part scal 1 1 2 P0
+<BR>
+<BR>
+tra will move it away by the vector dx, dy, dz,
+<BR>
+<BR>
+move all tra 10 20 30 
+<BR>
+<BR>
+rot will move it around the axis defined by the points p1 and p2 (or the axis x,y,z) by alfa degrees,
+<BR>
+<BR>
+move all rot p0 px 20.
+<BR>
+<BR>
+rad will move it radially to the x-, y- or z-axis (or two points as above) or to a single point,
+<BR>
+<BR>
+move cylinder rad x 20.
+<BR>
+move sphere rad pP0 10.
+<BR>
+<BR>
+The axis for the rad or rot commands can also be specified by one point and on main-axis (x|y|z) as shown in the following example:
+<BR>
+<BR>
+move all rot P y 20.
+<BR>
+<BR>
+The change in length or angle might be interpolated for the rad or rot cases:
+<BR>
+<BR>
+move set rad x 1. 120. 2. 140.
+<BR>
+<BR>
+The number 1. specifies the radial change around x at 120. length units along the x-axis and 2. is the change at 140. length units,
+<BR>
+<BR>
+With parameter equ points will be moved to their nearest neighbour in set ``trgt-set'' as long as the neighbour is not more than 0.01 units away:
+<BR>
+<BR>
+move slave-set equ trgt-set 0.01
+<BR>
+<BR>
+mir will mirror the set. The mirror-plane is placed normal to the direction running from P1 to P2 and placed at P2, or defined by a point and a main-axis (x|y|z) as shown in the following example:
+<BR>
+<BR>
+move part mir P y
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2143"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2139"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2133"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2141"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2144"
+  HREF="node122.html">movi</A>
+<B> Up:</B> <A NAME="tex2html2140"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2134"
+  HREF="node120.html">mm</A>
+ &nbsp; <B>  <A NAME="tex2html2142"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

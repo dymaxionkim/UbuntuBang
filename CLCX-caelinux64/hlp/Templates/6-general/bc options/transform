@@ -1,0 +1,18 @@
+
+
+** assigns a new cylindrical coordinate system with center at point 'a'. 
+** to the nodes belonging to nodal set <..>. 
+** The new X' axis will be in radial direction, the Z' axis in axial direction 
+** and Y' is in tangential direction  (from point 'a' to point 'b')
+** (such that X'-Y'-Z' is a right hand system)
+
+** Second line:
+**     X-coordinate of point a.
+**     Y-coordinate of point a.
+**     Z-coordinate of point a.
+**     X-coordinate of point b.
+**     Y-coordinate of point b.
+**     Z-coordinate of point b.
+
+*TRANSFORM,NSET=<..>,TYPE=C
+0.,1.,0.,0.,0.,1.

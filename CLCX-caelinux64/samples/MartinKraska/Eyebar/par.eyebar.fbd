@@ -1,0 +1,87 @@
+# <wi=10>
+# <re=10>
+# <rp=9.5>
+# <etyp="qu4e"> Element type (4 or for nodes, e for plain strain, s for plain stress)
+
+# eye
+seto eye
+pnt pe0 0 0 0
+copy all new tra <re> 0 0
+swep new new1 tra <wi> 0 0 10
+swep all new2 rot z 90 16
+swep new2 new3 rot z 90 16
+seta p1 p D005
+swep p1 p2 tra <-wi-re> 0 0 8
+swep p2 p3 tra 0 <-wi-re> 0 8
+lcmb lc + L00A + L00B
+surf s1 L008 L002 lc L006
+flip A001
+del s A002
+merg p all
+setc eye
+#pin
+seto pin
+pnt pp0 0 0 0
+swep pin pin1 tra 0 <rp> 0 10
+swep pin pin2 rot z -90 10
+move pin tra <re-rp> 0 0
+setc pin
+
+#mesh
+elty all <etyp>
+div all mult 2
+mesh all
+send all abq
+send pin abq nam
+send eye abq nam
+
+# support
+seta nodes n all
+enq nodes fix rec <-re-wi> _ _ 0.01
+send fix abq nam
+
+# symmetry
+enq nodes sym rec _ 0 _ 0.01
+send sym abq nam
+
+# control
+seta npin n pin
+enq npin control rec <re-rp> _ _ 0.01
+send control abq nam
+#comp control do
+send control abq sur
+
+# displacement monitoring nodes
+enq npin monitor rec <re-rp> 0 _ 0.01 i
+send monitor abq nam
+
+# contact Surface-to-surface
+seta spin l L00F
+comp spin do
+comp spin do
+send spin abq sur
+seta seye l L004
+comp seye do
+comp seye do
+send seye abq sur
+
+# path for stress profile
+seta neye n eye
+enq neye path rec 0 _ _ 0.0001
+send path abq nam
+
+# sets plot
+ulin fix (red), sym (green), contact pair (red/blue), path (mag.), control (turq.)
+rot -z
+seta ! all
+frame
+plus n fix r 6
+plus n sym g 5
+plus f seye r 6
+plus f spin b 6
+plus n path m 6
+zoom 1.2
+view elem
+plus n control t 6
+hcpy png
+sys mv hcpy_1.png mesh.png

@@ -1,0 +1,61 @@
+see examples in
+.../hlp/examples folder
+They are accessible from Launcher.
+
+Old examples (Windows):
+https://yadi.sk/d/V4NGLruEtZn7s
+
+Absolutely perfect samples
+by Martin Kraska:
+https://github.com/mkraska/CalculiX-Examples
+
+Converters and files:
+http://dip28p.web.fc2.com/calculix/
+
+Thermal Steady State
+https://youtu.be/cgxDMrL1myc
+link to 3d file
+https://yadi.sk/d/JnwgcQqwsxLnf
+
+Boat on Water
+https://youtu.be/bXWuHN1Waes
+files: https://yadi.sk/d/X7HUSapKtB2US
+
+Bolted Connection
+https://youtu.be/VA0eg0LWfWM
+Files:
+https://yadi.sk/d/z_zg5zS_tMas9
+
+Bolted Connection (2)
+https://youtu.be/vdI0h7hn9Pg
+files: https://yadi.sk/d/6PZA-60dtNTtp
+
+Sheeve (Contact Problem)
+https://youtu.be/hGneBWZn-gU
+files: https://yadi.sk/d/cRA9sZ7btRBqr
+
+Rack And Pinion FEA 
+https://youtu.be/_FjRNOEHBq8
+files: https://yadi.sk/d/kvTgapuUtUzHG
+NOTE: this example is given for general understanding. There is a mistake - model had not been scaled to inches.
+
+Presfit
+https://youtu.be/MLsQObUk_H8
+files: https://yadi.sk/d/PwbX6N_2tZVPC
+
+Playlist for learning Salome-Platform
+https://www.youtube.com/playlist?list=PL6xb6rX5ieWNNv2rYhdNO25WdJ_ChsU5E
+
+
+
+
+
+
+
+
+
+
+
+
+
+

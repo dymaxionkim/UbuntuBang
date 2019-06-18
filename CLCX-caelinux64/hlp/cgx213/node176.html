@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>shpe</TITLE>
+<META NAME="description" CONTENT="shpe">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node177.html">
+<LINK REL="previous" HREF="node175.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node177.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2803"
+  HREF="node177.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2799"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2793"
+  HREF="node175.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2801"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2804"
+  HREF="node177.html">split</A>
+<B> Up:</B> <A NAME="tex2html2800"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2794"
+  HREF="node175.html">setr</A>
+ &nbsp; <B>  <A NAME="tex2html2802"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00010115000000000000000"></A><A NAME="shpe"></A>
+<BR>
+shpe
+</H2>
+<PRE>
+   'shpe' &lt;name|!&gt; ['pln' &lt;P1&gt; &lt;P2&gt; &lt;P3&gt;] |
+                   ['cyl' &lt;P1&gt; &lt;P2&gt; &lt;R1&gt;] |
+                   ['con' &lt;P1&gt; &lt;P2&gt; &lt;R1&gt; &lt;R2&gt;] |
+                   ['tor' &lt;P1&gt; &lt;R1&gt; &lt;P2&gt; &lt;R2&gt;] |
+                   ['sph'] &lt;P1&gt; &lt;R1&gt;]
+</PRE>
+This keyword is used to create a shape which can be used to define the interiour of surfaces or to be used as a target for projections (see <A HREF="node134.html#proj">proj</A>) or to split entities (see <A HREF="node177.html#split">split</A>). A plane shape is defined with the parameter ``pln'' followed by the names of three points:
+<BR>
+<BR>
+shpe H001 pln P1 P2 P3
+<BR>
+<BR>
+A cylinder can be defined by
+<BR>
+<BR>
+shpe H001 cyl P1 P2 10.5
+<BR>
+<BR>
+were 10.5 is the radius. A cone can be defined by
+<BR>
+<BR>
+shpe H001 con P1 P2 10.5 2.
+<BR>
+<BR>
+were 10.5 is the radius at point P1 and 2. at point P2. A torus can be defined by
+<BR>
+<BR>
+shpe H001 tor P1 10.5 P2 2.0
+<BR>
+<BR>
+were 10.5 is the radius at point P1. Point P2 lies on the torus axis and 2.0 is the radius of the tube. A sphere can be defined by
+<BR>
+<BR>
+shpe H001 sph P1 10.5
+<BR>
+<BR>
+were 10.5 is the radius at point P1. If automatic name generation is desired, then use ''<code>!</code>'' instead of a name. See also ``<A HREF="node155.html#qshp">qshp</A>'' for the mouse controlled definition of shapes. It should be mentioned that all shapes are actually nurbs and that internally all nurbs which are used by surfaces are actually referenced by a shape as an interface.
+
+<P>
+Remark: A further shape type exists which links a nurbs to a surface definition. Such a shape will be automatically generated when a nurbs is finished by the ``END'' parameter using the same name as the nurbs. This shapes will not be written to a file but using the <A HREF="node133.html#prnt">prnt</A> command will list them:
+<BR>
+<BR>
+shpe N001 NURS N001
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="The_shape_types_and_its_symbols_together_with_an_illustrating_mesh"></A><A NAME="2060"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10:</STRONG>
+The shape types and its symbols together with an illustrating mesh</CAPTION>
+<TR><TD><IMG
+ WIDTH="543" HEIGHT="435" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{figure}\epsfig{file=shpe.eps,width=12cm}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2803"
+  HREF="node177.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2799"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2793"
+  HREF="node175.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2801"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2804"
+  HREF="node177.html">split</A>
+<B> Up:</B> <A NAME="tex2html2800"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2794"
+  HREF="node175.html">setr</A>
+ &nbsp; <B>  <A NAME="tex2html2802"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

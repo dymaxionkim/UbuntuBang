@@ -1,0 +1,8 @@
+** With this card a rigid body can be defined consisting of nodes or elements
+**  Optional parameters are REF NODE and ROT NODE. 
+** Example:
+
+*RIGID BODY,NSET=rigid1,REF NODE=100000,ROT NODE=100001
+
+
+

@@ -1,0 +1,23 @@
+
+**example is given below
+** defines a distributing coupling
+** avoid this feature for Nsets with many nodes
+
+*DISTRIBUTING COUPLING,ELSET=E1
+<Nset or nodes>
+
+** define reference element (100001)
+*ELSET,ELSET=E1
+100001
+
+** define reference node (1000001)
+*ELEMENT,TYPE=DCOUP3D
+100001,1000001
+
+** now *cload or *boundary can be applied to ref. node
+** within *step card  
+
+
+
+
+

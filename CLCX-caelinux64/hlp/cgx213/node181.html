@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>swep</TITLE>
+<META NAME="description" CONTENT="swep">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node182.html">
+<LINK REL="previous" HREF="node180.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node182.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2863"
+  HREF="node182.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2859"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2853"
+  HREF="node180.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2861"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2864"
+  HREF="node182.html">sys</A>
+<B> Up:</B> <A NAME="tex2html2860"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2854"
+  HREF="node180.html">surf</A>
+ &nbsp; <B>  <A NAME="tex2html2862"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00010120000000000000000"></A><A NAME="swep"></A>
+<BR>
+swep
+</H2>
+<PRE>
+  'swep' &lt;set&gt; &lt;set&gt; ['scal' &lt;fx&gt; &lt;fy&gt; &lt;fz&gt; &lt;P0&gt;|&lt;div&gt; [a] ]|
+                     ['tra' &lt;dx&gt; &lt;dy&gt; &lt;dz&gt; &lt;div&gt; [a] ]|
+                     ['rot' &lt;p1&gt; &lt;p2&gt; &lt;alfa&gt; &lt;div&gt; [a|&amp;n] ]|
+                     ['rot' 'x'|'y'|'z' &lt;alfa&gt; &lt;div&gt; [a|&amp;n] ]|
+                     ['rot' &lt;p1&gt; 'x'|'y'|'z' &lt;alfa&gt; &lt;div&gt; [a|&amp;n] ]|
+                     ['rad' &lt;p1&gt; &lt;p2&gt; &lt;dr&gt; &lt;div&gt; [a] ]|
+                     ['rad' 'x'|'y'|'z'|'p'&lt;pnt&gt; &lt;dr&gt; &lt;div&gt; [a] ]|
+                     ['rad' &lt;p1&gt; 'x'|'y'|'z' &lt;dr&gt; &lt;div&gt; [a] ]|
+                     ['mir' &lt;P1&gt; &lt;P2&gt; &lt;div&gt; [a] ]|
+                     ['mir' 'x'|'y'|'z' &lt;div&gt; [a] ]|
+                     ['mir' &lt;P1&gt; 'x'|'y'|'z' &lt;div&gt; [a] ]
+</PRE>
+This keyword is used to sweep entities into the next higher dimension. Sweeping a point will create a line, sweeping a line will create a surface and sweeping a surface will create a body. Shell elements will be expanded into Volume elements. The 'div' parameter defines how much elements will be created in the sweep direction. Existing results will be applied to the new nodes. Important: The ``<A HREF="node186.html#trfm">trfm</A>'' command must be used after the sweep operation and not before.
+
+<P>
+At first a copy of the first set (see <A HREF="node170.html#seta">seta</A> and <A HREF="node71.html#copy">copy</A>) will be created. The copy of the master-set is included in the second set. Then the connecting lines and surfaces are created and at last the bodies. The divisions of the new lines between set1 and set2 is specified with the parameter ''div'' or the default is used. Existing sets are extended by the copied entities if the last parameter includes the character ``a'' (append). Rotational sweeped lines create nurbs related surfaces if the last parameter includes the character ``n''. Several transformations are available. For example scal creates a scaled copy, the scaling factors fx, fy, fz could be chosen independently,
+<BR>
+<BR>
+swep part1 part2 scal 2 
+<BR>
+swep part1 part2 scal 1 1 2 P0
+<BR>
+<BR>
+tra will create a copy and will move it away by the vector dx, dy, dz and the optional parameter 'a' will assign the new entities to sets were the mother of each entity is included,
+<BR>
+<BR>
+swep set1 set2 tra 10 20 30 a
+<BR>
+<BR>
+nurbs related surfaces will be created if ``a'' is followed by ``n'' or a sole ``n'' is used in a rotational sweep,
+<BR>
+<BR>
+swep set1 set2 rot 10 20 30 an
+<BR>
+<BR>
+rot will create a copy and will move it around the axis defined by the points p1 and p2 by 'alfa' degrees (the connecting lines will be of type arc below 180 deg, above a spline),
+<BR>
+<BR>
+swep set1 set2 rot p0 px 20.
+<BR>
+<BR>
+or the axis of rotation is given by specifying one of the basis coordinate axes:
+swep set1 set2 rot x 20.
+<BR>
+<BR>
+or just one point and a vector of rotation is given by specifying one of the basis coordinate axes:
+swep set1 set2 rot p1 x 20.
+<BR>
+<BR>
+rad will create a copy and uses the same transformation options as 'rot' or will create a spherical section if just a single point is defined,
+<BR>
+<BR>
+swep sphere1 sphere2 rad pP0 10.
+<BR>
+<BR>
+mir will create a mirrored copy. The mirror-plane is placed normal to the direction running from P1 to P2 and placed at P2,
+<BR>
+<BR>
+swep section1 section2 mir p1 p2
+<BR>
+<BR>
+as with 'rot and 'rad' additional transformation options are available:
+<BR>
+<BR>
+swep section1 section2 mir P1 x
+<BR>
+<BR>
+places the mirror at P1 with its normal direction in 'x' direction
+<BR>
+<BR>
+swep section1 section2 mir x
+<BR>
+<BR>
+Places the mirror in the origin with its normal direction in 'x' direction.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2863"
+  HREF="node182.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2859"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2853"
+  HREF="node180.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2861"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2864"
+  HREF="node182.html">sys</A>
+<B> Up:</B> <A NAME="tex2html2860"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2854"
+  HREF="node180.html">surf</A>
+ &nbsp; <B>  <A NAME="tex2html2862"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

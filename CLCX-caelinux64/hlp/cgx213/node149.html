@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>qmsh</TITLE>
+<META NAME="description" CONTENT="qmsh">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node150.html">
+<LINK REL="previous" HREF="node148.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node150.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2479"
+  HREF="node150.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2475"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2469"
+  HREF="node148.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2477"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2480"
+  HREF="node150.html">qnor</A>
+<B> Up:</B> <A NAME="tex2html2476"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2470"
+  HREF="node148.html">qlin</A>
+ &nbsp; <B>  <A NAME="tex2html2478"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001088000000000000000"></A><A NAME="qmsh"></A>
+<BR>
+qmsh
+</H2>
+<PRE>
+   'qmsh' RETURN 'i'|'a'|'e'|'f'|'v'|'n'|'l'|'c'|'s'|'m'|'d'|'h'|'t'|'q'
+</PRE>
+A very usefull command to optimize surface meshes as a basis for
+tet-meshes. Line divisions can be changed by selecting a line with the ``l'' key and then a number as
+for <A HREF="node143.html#qdiv">qdiv</A>. The mesh will be updated automatically.
+
+<P>
+Based on identified lines ``l'' or surfaces ``s'' meshes can be coarsened 't', refined 'h', deleted ``d'' and generated ``m''. Surfaces can be combined ``c'' to get rid of very small ones and splitted 'b'.
+<BR>
+<BR>
+To change the mesh density along a line:
+
+<UL>
+<LI>Identify a line or several lines with key ``l''. The related surfaces are selected.
+</LI>
+<LI>The line division is changed by pressing the key with the desired number. This function of qmsh works like the ``<A HREF="node143.html#qdiv">qdiv</A>'' command. The related surfaces are automatically re-meshed.
+</LI>
+</UL>
+Example for a surface combination:
+
+<UL>
+<LI>Identify a line with key ``l''. The related surfaces are selected.
+</LI>
+<LI>Or identify two adjacent surfaces with key ``s'' or by selecting two single elements ``e'' one for each surface. They must use the same lines at the junction. 
+</LI>
+<LI>To combine the two selected surfaces press key ``c'' (Attention: The surface with the longer perimeter must reference a shape (a nurbs)). In the moment an automatic adaption of the embedded shape or nurbs is not done. The shape of the bigger surface is just used for the combined surface. It might be necessary to use a mapped mesh for the new surface if the embedded shape is too small ( use tr6 instead of tr6u, see <A HREF="node81.html#elty">elty</A> or <A HREF="node124.html#mshp">mshp</A>).
+</LI>
+</UL>
+A surface (only without holes!) can be splitted by a crossing line:
+
+<UL>
+<LI>First create the desired splitting line, for example with ``<A HREF="node148.html#qlin">qlin</A>''.
+</LI>
+<LI>Type ``qmsh'' and identify the line with key ``l''.
+</LI>
+<LI>Identify the surface with key ``s'' or by selecting a single element ``e''.
+</LI>
+<LI>Press key ``b'' to break (split) the surface in two. The previously selected line will be converted to a spline with as much control points as the line division. Then the line-points are projeted to the surface.
+</LI>
+</UL>
+To change the mesh density in a selected surface:
+
+<UL>
+<LI>Select one or more surfaces with key ``s'' or by selecting lines ``l'' or by selecting a single element ``e''.
+</LI>
+<LI>Press ``h'' (higher) to increase the mesh density or ``t'' (thinner) to decrease.  
+</LI>
+</UL>
+
+<P>
+This keyword can be used to manually define elements. The key ``n'' selects nodes and the key ``f'' or ``v'' generate a surface or volume element based on the node-selection.
+
+<P>
+To catch more than one entity with one stroke, type ''a'' (all) at first. Then create a rectangular picking area by pressing two times the ''r'' key. Both strokes define opposite corners of the selection-rectangle. To catch only the entity which is closest to the user type ''i'' before.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2479"
+  HREF="node150.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2475"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2469"
+  HREF="node148.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2477"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2480"
+  HREF="node150.html">qnor</A>
+<B> Up:</B> <A NAME="tex2html2476"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2470"
+  HREF="node148.html">qlin</A>
+ &nbsp; <B>  <A NAME="tex2html2478"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

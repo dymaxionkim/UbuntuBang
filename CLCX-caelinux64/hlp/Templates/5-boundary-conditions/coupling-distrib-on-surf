@@ -1,0 +1,9 @@
+**degrees of freedom - 1 to 6 allowed
+** cload or boundary are applied to the ref. node 
+** ref. node immaterial, any position
+
+*COUPLING,REF NODE=<Ref.nd>,SURFACE=<SURF>,CONSTRAINT NAME=C1
+*DISTRIBUTING
+<first deg. of freedom>,<last deg. of freedom>
+*NSET,NSET=N1
+<Ref.nd>

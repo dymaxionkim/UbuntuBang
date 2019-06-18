@@ -1,0 +1,9 @@
+The feature "Transform to Local CS (Cyl) is described in CCX help for *TRANSFORM card, TYPE=C.
+The center of new cylindrical coordinate system will be generated at the center of cylindrical surface at selected nodal set (it should be full cylinder). Take it into account when you will apply DOF BC for this nodal set. The X' axis is in radial direction, the Z' axis in axial direction from point a to point b, and Y' is in tangential direction such that X'-Y'-Z' is a right hand system. 
+
+The feature 'Slide BC to surface' is described in CGX help for 'slide' card.
+The parameter ''slide'' in combination with one additional parameter will create equations that force the selected nodes to move only in a plane. If the additional parameter ''s'' is specified then the specified nodes will be attached to their element faces. All nodes of the affected element-faces have to be selected. For example you type:
+
+send sur abq slide s
+
+and this should attach the node with the node-nr. 1 to a plane parallel to the surface of the corresponding element-face. This element uses the node 1, 2, 3, 4, 5, 6, 7 and 8 where 1, 2, 3 and 4 are on the surface of the mesh. The program will detect this element face and constrain the node only then if the nodes 2, 3 and 4 were also included in the set ''sur''! The detected elements or faces of volume-elements will be assigned to the set. So it is possible to check the detected elements. Instead of providing a set with the necessary nodes, you might instead provide a set with shell-elements or/and faces of volume-elements. The nodes will be derived from them. In most cases this is the most convenient way. 

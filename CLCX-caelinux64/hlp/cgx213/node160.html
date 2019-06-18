@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>read</TITLE>
+<META NAME="description" CONTENT="read">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node161.html">
+<LINK REL="previous" HREF="node159.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node161.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2611"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2607"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2601"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2609"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2612"
+  HREF="node161.html">rep</A>
+<B> Up:</B> <A NAME="tex2html2608"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2602"
+  HREF="node159.html">quit</A>
+ &nbsp; <B>  <A NAME="tex2html2610"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001099000000000000000"></A><A NAME="read"></A>
+<BR>
+read
+</H2>
+<PRE>
+   'read' [&lt;geo-file&gt; ['add']]|
+          [&lt;ccx-file&gt; 'inp' ['add'|'ext'|'nom'|'new']]|
+          [&lt;openFoam-file&gt; 'foam' ['add'|'ext'|'nom']]|
+       [&lt;result-file(frd)&gt; ['add'|'ext'|'nom']|[&lt;setname&gt;]]|
+          [&lt;stl-file&gt; ['add'|'ext'|'nom']]|
+          [&lt;list-file&gt; '-n'|'-e'&lt;column&gt;]|
+          [&lt;edge-file&gt; 'edg']|
+          [&lt;netgen-file&gt; 'ng' ['add'|'ext'|'nom'|'ndsb']]|
+          [&lt;pixel-file&gt; [&lt;zoom&gt;]|[&lt;x_zoom&gt; &lt;y_zoom&gt;]]
+</PRE>
+This keyword is used to read files or commands from a file. Most commands can be read from a file but not all of them. In general all basic commands to create geometry are understood and up to now this is the only way to read pre defined geometry during run-time. To read commands from a file like <A HREF="node132.html#pnt">pnt</A>, <A HREF="node106.html#line">line</A>, <A HREF="node125.html#node">node</A>, or <A HREF="node170.html#seta">seta</A> and so on, type
+<BR>
+<BR>
+read geo-file
+<BR>
+<BR>
+this will eventually replace entities if their names were already in use. To prevent this, type
+<BR>
+<BR>
+read geo-file add
+<BR>
+<BR>
+this forces the program to change the names which are already in use to unused ones. Therefore no existing geometry will be overwritten.
+
+<P>
+If an ccx-input-file with loads, boundary-conditions and sets is read with a command like
+<BR>
+<BR>
+read ccx-file inp
+<BR>
+<BR>
+then the loads and boundary-conditions are stored in automatically created sets which start with a leading '+'. For example the ccx command '*BOUNDARY' will trigger the creation of the set '+bou'. The ccx sets are stored in cgx sets of the same name. The load-values are stored in Datasets.
+
+<P>
+The option ``nom'' (no-mesh) can be used to speed up the reading of frd or inp formatted files like:
+<BR>
+<BR>
+read ccx-file inp nom
+<BR>
+<BR>
+and/or
+<BR>
+<BR>
+read result-file nom
+<BR>
+<BR>
+This option suppresses the reading of nodes and elements and makes sense if the mesh exists and only the set-definitions and loads or results should be read. 
+
+<P>
+If the parameter ''add'' is used,
+<BR>
+<BR>
+read ccx-file inp add
+<BR>
+<BR>
+then existing node- or element-numbers are not overwritten and the program choses new numbers. If the ccx-input-file ends with ``.inp'' the parameter ``inp'' might be omitted.
+
+<P>
+An openFoam file [<A
+ HREF="node249.html#OpenFOAM">8</A>] can be read in a similar way
+<BR>
+<BR>
+read CaseDirName foam
+<BR>
+<BR>
+as an ccx input file. Sets will be created if defined in the openFoam file. Results can be used for mapping purposes. For further details see ``<A HREF="node230.html#How_to_map_loads">How to map loads</A>'' in the appendix.
+
+<P>
+The user might read a result-file in frd format during runtime. If a mesh exists and should not be overwritten just add the parameter ``add''
+<BR>
+<BR>
+read result-file add
+<BR>
+<BR>
+this forces the program to change the numbers which are already in use to unused ones. Existing datasets will be extended by the new node-numbers and their data. The option ``ext'' 
+<BR>
+<BR>
+read result-file ext
+<BR>
+<BR>
+will also extend the existing datasets but in this case the nodes and elements are updated (modified). If no parameter follows then existing nodes and elements are updated and the new datasets will be appended to existing ones. Since the dependency checks are time consuming the user might scip them by using the 'ne' parameter. Then the existing mesh is deleted before the new one is read:
+<BR>
+<BR>
+read result-file new
+<BR>
+<BR>
+<P>
+It is also possible to read files written in the result format (.frd) during runtime only to define sets of nodes or elements without changing the definitions of them. The command
+<BR>
+<BR>
+read result-file setname
+<BR>
+<BR>
+will create a set of the name setname and all nodes and elements listed in the file mesh.frd will be added to that set. But this will NOT create or modify the nodes and elements. All nodes and elements must exist and will not be changed.
+
+<P>
+An stl file can be read with 
+<BR>
+<BR>
+read file.stl
+<BR>
+<BR>.
+
+<P>
+If a file with the numbers of nodes or elements is not available in the result format (.frd) then a so called list-file could be read instead. In such a file either numbers of nodes or elements can be defined. The numbers found in a specified column is interpreted as a node- or element-number. If ''-n'' is specified the numbers are interpreted as nodes and if ''-e'' is specified the numbers are interpreted as elements. For example
+<BR>
+<BR>
+read list-file -e3
+<BR>
+<BR>
+will define a set storing names of elements from the third column of file list-file.txt. The created set-name is always the name of the file.
+<BR>
+<BR>
+<P>
+<B>NETGEN Import</B>
+<BR>
+<BR>
+In case NETGEN is used for meshing then the edges which are generated by NETGEN can be included for modifications;
+<BR>
+<BR>
+read edge-file edg
+<BR>
+<BR>
+will create beam elements based on the defined edges. When the modifications are done, the beam elements can be exported in the NETGEN-edge format with the ''send setname stl'' command and used for meshing in netgen (see also ''<A HREF="node232.html#How_to_deal_with_cad-geometry">How to deal with cad-geometry</A>''). The netgen mesh can be imported with
+<PRE>
+read netgen-file ng
+</PRE>
+If the NETGEN (.vol) file contains solid elements, all shells and beams are only used to define surface sets of nodes and faces (+set<code>&lt;</code>nr<code>&gt;</code>). The shell elements and beams are deleted by default. If you want to be more selective about the elements imported from netgen, you use the keyword ndsb (NoDeleteShellsAndBeams).
+<PRE>
+read myfile.vol ng ndsb
+</PRE>
+This keyword forces all the netgen elements to be imported. Be aware that the imported NETGEN element types (1D, 2D and 3D elements) are distributed in various sets for further operations (as well as being contained in set 'all'). For instance the set '+typ11' will contain all elements of type 11 (2-node beams). Please see ''<A HREF="node198.html#Element_Types">Element Types</A>'' for a key to the element numbers.
+<BR>
+<BR>
+<P>
+If a pixel-file in xwd-format is available it can be included as a background-picture. The user can then create geometry based on this picture:
+<BR>
+<BR>
+read pixelfile 2 4
+<BR>
+<BR>
+here the picture will be scaled by a factor of ``2'' in x- and ``4'' in y-direction. Delete it with ''<A HREF="node75.html#del">del</A> pic''. The picture can not be modified in cgx. Only scaling during reading (with either a global factor or separate scaling in x- and y-direction) is supported. Other modifications have to be made with external software.
+
+<P>
+The command parameters are writen to the ''<A HREF="node178.html#stack">stack</A>''.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2611"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2607"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2601"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2609"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2612"
+  HREF="node161.html">rep</A>
+<B> Up:</B> <A NAME="tex2html2608"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2602"
+  HREF="node159.html">quit</A>
+ &nbsp; <B>  <A NAME="tex2html2610"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

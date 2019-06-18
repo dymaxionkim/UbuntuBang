@@ -1,0 +1,7 @@
+
+                          Basic Installation
+                          ==================
+
+1) goto src
+2) a) type "make"
+   b) If you have an sgi type "make -f Makefile_SGI"

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>mata</TITLE>
+<META NAME="description" CONTENT="mata">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node107.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1987"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1983"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1977"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1985"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1988"
+  HREF="node109.html">map</A>
+<B> Up:</B> <A NAME="tex2html1984"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1978"
+  HREF="node107.html">lnor</A>
+ &nbsp; <B>  <A NAME="tex2html1986"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001047000000000000000"></A><A NAME="mata"></A>
+<BR>
+mata
+</H2>
+<PRE>
+   'mata' &lt;Material-Nr&gt; &lt;set&gt;
+</PRE>
+This keyword is used to assign a material-number to a set of elements. Currently, this feature is only useful if the NASTRAN format is used. The material-number is a numeric attribute assigned to each element of the mesh and will be stored with the mesh in the frd-format or nastran-format (see <A HREF="node166.html#send">send</A>). For example,
+<BR>
+<BR>
+mata 7 part
+<BR>
+<BR>
+assigns the material-number 7 to all elements in the set part. Elements can have just one material-number. The default number is 1. These numbers will be saved with the mesh if the database is written to the file-system with the command:
+<BR>
+<BR>
+send all frd  or  send all nas
+<BR>
+<BR>
+If the frd-file is used later, the material-number(s) are available immediately.
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

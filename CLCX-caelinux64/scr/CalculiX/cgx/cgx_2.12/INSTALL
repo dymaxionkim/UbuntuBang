@@ -1,0 +1,213 @@
+   We 16. Dez 21:09:09 CET 2015 in Munich (Germany), 
+   written by Klaus Wittig (klaus.wittig@calculix.de)
+
+
+
+                          Basic Installation
+                          ==================
+
+    If you encounter problems please read the last section "Possible
+    problems and some hints" and the section "Known Problems" in the
+    documentation.
+
+    There are two possible ways of instalation:
+    - Section A: Installation of the 64bit-binary (was compiled on suse 11)
+    - Section B: Instalation from the source:
+                 recomended if you encounter problems with the binary 
+                 or if your hardware is not supported.
+
+    For full functionallity you need the following additional programs:
+    - convert (ImageMagick)
+    - pstops (from psutils)
+    - firefox or any other html-browser (modify cgx.h if not firefox )
+    - gv (ghostview) (modify cgx.h if not gv )
+    - ng_vol from the netgen project. Replace this file with the one located
+      in the folder cgx_2.10/netgen and build it in the netgen directory.
+      This allows tet-meshing with a target-element-size.
+
+
+ A: Installation of the binary
+    --------------------------
+
+ 1. Get the binary and do the following
+    - bunzip2 cgx_2.10.bz2 (beware your browser could scip the ending
+      .bz2, then please rename the filename to the above one before unzipping )
+
+    It is necessary to have openGL on your system!
+
+    The libraries  
+    /usr/lib64/libGL.so
+    /usr/lib64/libGLU.so   (The libGLU should be the one from SGI. Otherwise the
+                          nurbs rendering is not supported)
+
+    You might create links to other locations if the libraries are 
+    stored at other places.
+
+    For example:
+
+    ln -s /usr/i486-linux-libc5/lib/libGL.so.3 /usr/lib/libGL.so
+
+ 2. login as root
+
+ 3. if possible rename the binary to /usr/local/bin/cgx
+    mv cgx_2.10 /usr/local/bin/cgx
+    chmod ao+rx /usr/local/bin/cgx
+
+ 4. If you like the help-system to work then please do the following:
+
+ 5. login as root if not already done.
+
+ 4. get the documentation (html) and do the following:
+    - move the file containing the docu cgx_2.10.htm.tar.bz2 to /usr/local 
+    - bunzip2 cgx_2.10.htm.tar.bz2 (beware sometimes the ending .bz2 is missed, 
+      please rename the filename to the above one)
+    - tar -xvf cgx_2.10.htm.tar
+    - the html-browser must be known as "firefox"
+      so if you dont have firefox you should create an link like:
+      ln -s <your browser location> /usr/local/bin/firefox
+
+ 7. Check the path /usr/local/CalculiX/cgx_2.10/doc/cgx
+    all the html files should be located there
+
+ 8. Check the installation, if you performed step 3. type:
+    cgx -b dummy.fbd
+    a window should appear on your screen.
+    Go with the mouse-ponter outside the inner big black rectangle.
+    Press the left mouse button. The menu will appear. Go down to "Help" and
+    choose "Html Manual cgx". 
+    The browser should open and the documentation should be vissible. If not be
+    sure that the documentation is in /usr/local/CalculiX/cgx_2.10/doc/cgx
+
+ 9. get the examples and do the following
+    - move the file cgx_2.10.exa.tar.bz2 to /usr/local 
+    - bunzip2 cgx_2.10.exa.tar.bz2
+    - tar -xvf cgx_2.10.exa.tar.bz2
+
+
+
+ B: Instalation from the source:
+    ----------------------------
+
+    The `configure' shell script is not yet ready. Therefore some manual 
+    fixes to the Makefile might be necessary.
+
+    Make sure that you have the devel packages for the graphic system
+    installed (the headers for X11 etc.)
+
+    You need openGL on your system. Check your file system for the
+    two following libraries:
+
+    The openGL-library:              libGL.so  or  libMesaGL.so
+    The higher level openGL-library: libGLU.so  or  libMesaGLU.so
+
+    The libGLU should be the one from SGI. Otherwise the nurbs rendering
+    is not supported.
+
+    On some systems the extension might also be ~.a instead of ~.so
+
+    You might search for this files with for example "locate libGL" or 
+    "find /usr/* -name libGL* -print"
+
+    If you find only libMesaGL and libMesaGLU instead of libGL and libGLU
+    you have to create a link or a copy with the names libGL and libGLU
+    but ceep the extension .a or .so.
+
+    This files should be located in:
+    /usr/lib64/
+
+    otherwhise you have to modify the file:
+    /usr/local/CalculiX/cgx_2.10/src/Makefile
+
+    If you do not have this libs or if you
+    have any trouble later on, then first check the CD from your distribution.
+
+    The original glut package from mark Kilgard is now in the distribution and
+    will be compiled with the other source files.
+
+ 1. Unpack the file cgx_2.10.all.tar.bz2 in "/usr/local".
+
+ 2. Then change to the following directory with:
+    cd /usr/local/CalculiX/cgx_2.10/src
+
+ 3. Change the path names in the Makefile to the ones used on your system if
+    necessary.
+
+ 4. If your installation path is not "/usr/local" then you must also change
+    the path for the html-help-files in "cgx.h",
+    see parameter "HELPFILE". If your web-browser is not firefox change the 
+    parameter "BROWSER" also.
+
+ 5. run "make" as root. On 32bit PCs you have to modify the Makefile. 
+    Change lib64 to lib below LFLAGS .
+    If you have trouble with c++ code use Makefile_pure_c to use only c code.
+    But you will not be able to deal with nurbs any more.
+
+    Then copy the binary "cgx" to
+    "/usr/local/bin/cgx" with:
+    cp cgx /usr/local/bin/cgx
+
+    If /usr/local/bin does not exist, create it with:
+    mkdir /usr/local/bin
+
+    Then you might change the protections:
+    chmod ao+rx /usr/local/bin/cgx
+
+ 6. If you have "latex" and "latex2html" on your system then run "latex cgx" 
+    in "/usr/local/CalculiX/cgx_2.10/doc" (run it 3 times!!!) and then run
+    "latex2html cgx". 
+    This creates the html-help-files. Alternatively you might download them
+    as well. Then get cgx_2.10.htm.tar.bz2 and unpack this package in 
+    /usr/local/.
+
+ 7. The program needs to write an info file to your home directory during run 
+    time. Be sure that "HOME" is defined and that you have write permission to
+    this directory. Type "echo $HOME" and check your permissions for the 
+    printed directory.
+
+ 8. Check the installation, type:
+    cgx -b dummy.fbd
+    and a window should appear on your screen.
+    Go with the mouse-ponter outside the inner black rectangle.
+    Press the left mouse button. The menu will appear. Go down to "Help" and
+    choose "Html Manual (cgx)". 
+    The browser should open and the documentation should be vissible. If not be
+    sure that the documentation is in /usr/local/CalculiX/cgx_2.10/doc/cgx
+
+ 9. get the examples and do the following
+    - move the file cgx_2.10.exa.tar.bz2 to /usr/local 
+    - bunzip2 cgx_2.10.exa.tar.bz2
+    - tar -xvf cgx_2.10.exa.tar.bz2
+
+
+
+    Possible problems and some hints:
+    ---------------------------------
+
+ 
+    If you get some linker errors then you probably have multiple libGL,
+    libglut or libGLU on your system.
+
+    If commands like "plot n all" are not recognized by the program
+    then your mouse pointer was probably not in the main window during 
+    typing {;->)
+ 
+    If the loader complains that a specific lib is not there, then often a 
+    newer version is available. Create a link with the required name to the 
+    new lib (ln -s new-lib-name old-lib-name).
+
+    If tet-meshing fails with the following messages:
+     ERROR: The input file "test.vol" could not be opened.
+     ERROR: No mesh-file found
+    then ng_vol from the netgen project is not available.
+
+
+
+
+
+
+ 
+Good luck,
+
+Klaus Wittig
+
+

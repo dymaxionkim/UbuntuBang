@@ -1,0 +1,9 @@
+*MATERIAL,NAME=<..>
+*ELASTIC
+<Young's Modulus>,<Poisson Ratio>
+
+** optional for modal, gravity, etc
+*DENSITY
+<value>
+
+

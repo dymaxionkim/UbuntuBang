@@ -1,0 +1,9 @@
+Purpose:
+calculation of temperatures during accelleration and decelleration of a turbine-rotor
+
+Do the following:
+
+cgx -bg send.fbl
+ccx latimtrans
+# open the results and create a postscript file with them
+cgx -b post.fbl

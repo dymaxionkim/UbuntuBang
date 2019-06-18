@@ -1,0 +1,4 @@
+glut-3.5 from Mark J. Kilgard
+will be automatically compiled und linked by cgx.
+
+Its not necessary to create the lib.

@@ -1,0 +1,42 @@
+ PNT p0      -0.00000       -0.00000        0.00000 
+ PNT py      -0.00000        1.00000        0.00000 
+ PNT p1       1.00000       -0.00000        0.00000 
+ PNT P001     1.00000        1.00000        0.00000 
+ PNT P002    -0.00000       -0.00000       -1.00000 
+ PNT P003    -0.00000        1.00000       -1.00000 
+ PNT P006    -1.00000       -0.00000        0.00000 
+ PNT P007    -1.00000        1.00000        0.00000 
+ PNT P00A     0.00000       -0.00000        1.00000 
+ PNT P00C     0.00000        1.00000        1.00000 
+ LINE L001 p1 P001 2              
+ LINE L002 P002 P003 2              
+ LINE L003 p1 P002 p0 8              
+ LINE L004 P001 P003 py 8              
+ LINE L005 P006 P007 2              
+ LINE L006 P002 P006 p0 8              
+ LINE L007 P003 P007 py 8              
+ LINE L008 P00A P00C 2              
+ LINE L009 P006 P00A p0 8              
+ LINE L00A P007 P00C py 8              
+ LINE L00I P00A p1 p0 8              
+ LINE L00J P00C P001 py 8              
+ GSUR A001 + BLEND  - L001 + L003 + L002 - L004 
+ GSUR A002 + BLEND  - L002 + L006 + L005 - L007 
+ GSUR A003 + BLEND  - L005 + L009 + L008 - L00A 
+ GSUR A005 + BLEND  - L008 + L00I + L001 - L00J 
+ SETA p1 p p1 
+ SETA p2 p P001 
+ SETA l1 l L001 
+ SETA l2 p P002 
+ SETA l2 p P003 
+ SETA l2 l L002 
+ SETA l3 p P006 
+ SETA l3 p P007 
+ SETA l3 l L005 
+ SETA l4 p P00A 
+ SETA l4 p P00C 
+ SETA l4 l L008 
+ SETA l5 p p1 
+ SETA l5 p P001 
+ ELTY all QU4 
+

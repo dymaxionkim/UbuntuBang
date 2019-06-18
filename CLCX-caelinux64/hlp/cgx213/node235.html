@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Remarks Concerning Code Aster</TITLE>
+<META NAME="description" CONTENT="Remarks Concerning Code Aster">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node236.html">
+<LINK REL="previous" HREF="node234.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node236.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3540"
+  HREF="node236.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3536"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3530"
+  HREF="node234.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3538"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3541"
+  HREF="node236.html">Remarks Concerning dolfyn</A>
+<B> Up:</B> <A NAME="tex2html3537"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3531"
+  HREF="node234.html">Remarks Concerning Ansys</A>
+ &nbsp; <B>  <A NAME="tex2html3539"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001717000000000000000"></A><A NAME="Remarks_Concerning_Code_Aster"></A>
+<BR>
+Remarks Concerning Code Aster
+</H2>
+From Paul CARRICO (2005/02/12)
+
+<P>
+Brief presentation of CODE ASTER: Code Aster is an implicit  solver under GPL licence from the French company EDF (&#201;lectricit&#233; de France).
+
+<P>
+Code Aster and its documentations is downloadable at the following address:
+<BR>
+<BR>
+http://www.code-aster.org
+<BR>
+<BR>(NOTA : the documentation is in French at the moment but many users are translating it in English and in German)
+
+<P>
+The following list is not exhaustive but it briefly presents the capabilities of the solver:
+
+<P>
+
+<UL>
+<LI>Mechanical modeling: 
+Code aster allows linear and non linear calculations in static, dynamic, acoustic etc. Many mechanical laws are implemented in the solver such as damage, fatigue, creep, viscosities (elastic, plastic) etc. For isotropic and non-isotropic materials (orthotropic ones for example).
+Because of EDF fields, the materials used in Code Aster are essentially Metallic ones and Geo material one, but there are probably some others.
+
+<P>
+</LI>
+<LI>Thermal and thermomechanical calculations: 
+The Thermal solver performs linear and non-linear calculations for pure thermal but also for thermomechanical simulations.
+
+<P>
+</LI>
+<LI>Input interface: 
+EFICAS is the input interface for coding the input file, but it's not a pre-processing as you can find in many commercial code.
+
+<P>
+</LI>
+<LI>Tools: 
+Many tools are provided with Code Aster: HOMARD for mesh refinement, GIBI and GMSH for post-processing.
+</LI>
+</UL>
+
+<P>
+CGX to ASTER export format (i.e HOWTO use this export format)
+The export format allows to export meshes and sets from CGX to Code Aster for linear and quadratic 1D, 2D and 3D elements. For this, just type: 'send all aster' for exporting a complete mesh. The file will have the '.mail' extension.
+Type 'send set aster nam' for exporting the GROUP-NO (node group) and the GROUP-MA (mesh group) which compose the set. The file will have '.nam' extension
+
+<P>
+The later item is particularly useful to apply boundary conditions onto (DOF, pressure, force, displacement, temperature, etc.). Since of these boundary conditions are coded with EFICAS in the input file, I thought it was not necessary to develop another features than the 2 previous ones !
+
+<P>
+So far results can not be read.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3540"
+  HREF="node236.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3536"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3530"
+  HREF="node234.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3538"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3541"
+  HREF="node236.html">Remarks Concerning dolfyn</A>
+<B> Up:</B> <A NAME="tex2html3537"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3531"
+  HREF="node234.html">Remarks Concerning Ansys</A>
+ &nbsp; <B>  <A NAME="tex2html3539"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

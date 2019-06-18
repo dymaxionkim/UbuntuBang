@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to write values to a file</TITLE>
+<META NAME="description" CONTENT="How to write values to a file">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node224.html">
+<LINK REL="previous" HREF="node222.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node224.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3396"
+  HREF="node224.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3392"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3386"
+  HREF="node222.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3394"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3397"
+  HREF="node224.html">How to select only</A>
+<B> Up:</B> <A NAME="tex2html3393"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3387"
+  HREF="node222.html">How to enquire node</A>
+ &nbsp; <B>  <A NAME="tex2html3395"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000175000000000000000"></A><A NAME="How_to_write_values_to_a_file"></A>
+<BR>
+How to write values to a file
+</H2>
+When you need to write certain values (see ``<A HREF="node190.html#valu">valu</A>'') to a file you may use the 'echo' system command:
+
+<UL>
+<LI>Choose the relevant dataset (menu or ds command)
+</LI>
+<LI>Add the relevant nodes to a set (qadd setname or seta setname n ..) 
+</LI>
+<LI>Open the stack: stack on
+</LI>
+<LI>Place node-values on the stack: prnt se setname
+</LI>
+<LI>Store the node: valu nod1 pop 
+</LI>
+<LI>Store the value: valu val1 pop 
+</LI>
+<LI>Write to file: sys echo Node nod1 Value val1 <code>&gt;|</code> file.txt
+</LI>
+</UL>
+See also ``<A HREF="node102.html#if">if</A>'' and ``<A HREF="node193.html#while">while</A>'' and see the demo in ``<A HREF="node248.html#If_and_while_demo">If and while demo</A>'' on how to work with this commands. They are usefull for automatic post-processing.
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

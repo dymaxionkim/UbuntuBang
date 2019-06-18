@@ -1,0 +1,14 @@
+
+** Section forces, section moments and section areas
+** (key=SOF or key=SOM or key=SOAREA), 
+** only makes sense for structural calculations 
+** define surface (run CGX, apply 'comp <nset> do', 'send <nset> abq sur')
+** then include .sur text file before this card (surface will be named S<nset>)
+** sample
+
+*SECTION PRINT,SURFACE=<..>,NAME=SP1
+SOF,SOM
+
+
+
+

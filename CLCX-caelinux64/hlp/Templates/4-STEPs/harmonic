@@ -1,0 +1,23 @@
+**example
+** change number of forms (upper frequency), if needed
+
+*STEP 
+*FREQUENCY,SOLVER=ARPACK,STORAGE=YES 
+<upper freq>
+
+*END STEP 
+
+
+*STEP    
+*STEADY STATE DYNAMICS,HARMONIC=YES  
+1,<upper freq>
+*MODAL DAMPING
+1,<upper freq>,<viscous damping>
+
+** add load
+
+  *NODE FILE 
+U,
+  *EL FILE
+S,
+*END STEP    

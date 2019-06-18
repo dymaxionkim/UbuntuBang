@@ -1,0 +1,11 @@
+NETGEN .VOL Converter
+python script at /scr/Converters/py_files/vol2ci1.py
+
+3D-Tetra (C3D10) body elements, second order only!
+Mesh model, apply second order, save as VOL file.
+It will make nodal groups for all surfaces.  You can change number of surface in Netgen
+to recognize it after conversion.
+
+Play with samples in /samples/Converters/tests_dip28 folder
+
+

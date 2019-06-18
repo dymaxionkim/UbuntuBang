@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Concentrated loads</TITLE>
+<META NAME="description" CONTENT="Concentrated loads">
+<META NAME="keywords" CONTENT="ccx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ccx.css">
+
+<LINK REL="next" HREF="node367.html">
+<LINK REL="previous" HREF="node365.html">
+<LINK REL="up" HREF="node363.html">
+<LINK REL="next" HREF="node367.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5721"
+  HREF="node367.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html5717"
+  HREF="node363.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html5711"
+  HREF="node365.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html5719"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5722"
+  HREF="node367.html">Facial distributed loads</A>
+<B> Up:</B> <A NAME="tex2html5718"
+  HREF="node363.html">Reading the step input</A>
+<B> Previous:</B> <A NAME="tex2html5712"
+  HREF="node365.html">Homogeneous linear equations</A>
+ &nbsp; <B>  <A NAME="tex2html5720"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000102300000000000000">
+Concentrated loads</A>
+</H3>
+
+<P>
+Concentrated loads are defined by the keyword card
+<A HREF="node218.html#cload">*CLOAD</A>. The internal structure to store concentrated loads is
+very similar to the one for SPC's, only a lot simpler. The corresponding
+one-dimensional field for nodeboun, ndirboun, xboun, iamboun, ikboun and
+ilboun are nodeforc, ndirforc, xforc, iamforc, ikforc and ilforc. The actual
+number of concentrated loads is nforc, an estimated upper bound (calculated in
+subroutine allocation.f) is nforc_. The field xforcold and xforcact are the equivalent of
+xbounold and xbounact, respectively. There is no equivalent to nodebounold,
+ndirbounold, xbounini and
+typeboun. These fields are not needed. Indeed, if the option OP=NEW is
+specified on a *CLOAD card, all values in xboun are set to zero, but the
+entries in nodeforc and ndirforc remain unchanged. Notice that DOF zero (heat
+transfer calculations) has the meaning of concentrated heat source.
+
+<P>
+<BR><HR>
+<ADDRESS>
+guido dhondt
+2017-10-08
+</ADDRESS>
+</BODY>
+</HTML>

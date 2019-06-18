@@ -1,0 +1,8 @@
+
+
+*INITIAL CONDITIONS,TYPE=TEMPERATURE
+<nset,or node#>,<initial temperature>,<initial temp.gradient 2nd dir>,<initial temp.gradient 1st dir>
+
+*TEMPERATURE
+<nset,or node#>,<temperature>,<temp.gradient 2nd dir>,<temp.gradient 1st dir>
+

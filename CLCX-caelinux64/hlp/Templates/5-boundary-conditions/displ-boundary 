@@ -1,0 +1,11 @@
+
+
+** directions <dir> can be 1,2,3 for bodies
+** and 1 to 6 for shells and beams (4,5,6 - to fix rotation)
+** 
+*BOUNDARY
+<nod.group>,<dir>,<dir>,<value>
+
+** repeat last line, if needed
+
+

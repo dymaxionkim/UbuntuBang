@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>qenq</TITLE>
+<META NAME="description" CONTENT="qenq">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node145.html">
+<LINK REL="previous" HREF="node143.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node145.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2419"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2415"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2409"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2417"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2420"
+  HREF="node145.html">qfil</A>
+<B> Up:</B> <A NAME="tex2html2416"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2410"
+  HREF="node143.html">qdiv</A>
+ &nbsp; <B>  <A NAME="tex2html2418"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001083000000000000000"></A><A NAME="qenq"></A>
+<BR>
+qenq
+</H2>
+<PRE>
+   'qenq' RETURN 'w'|'a'|'i'|'r'|'n'|'e'|'f'|'p'|'l'|'s'|-&gt;
+                 'b'|'S'|'L'|'h'|'m'|'u'|'v'|'t'|'q'
+</PRE>
+This keyword is used to gain information about entities. It is especially useful to get the values on particular nodes.
+
+<P>
+If the maximum or minimum value in a certain area has to be searched type first ``m'' to go in the max/min mode and create a rectangular picking area by pressing two times the ''r'' key. Both strokes define opposite corners of the selection-rectangle. Then the key ``h'' (high) to search the node with the maximum value. The minimum is searched with ``l'' (low). The search-result is then shown in the xterm and also attached to the node. With the ``u'' key the last search result can be deleted (``undo''). The 't'-key changes into the ``qtxt''-mode. The ''<A HREF="node158.html#qtxt">qtxt</A>'' functionallity is now available which allows to manipulate the node-attached-string and its position on the screen. Use ''<A HREF="node135.html#qadd">qadd</A>'' instead of ``qenq'' if you need to save the node in a set for further use.
+
+<P>
+To catch more than one entity with one stroke, type ''a'' (all) before and create a rectangular picking area by pressing two times the ''r'' key. Both strokes define opposite corners of the rectangle. To catch only the entity which is closest to the user type ''i'' before.
+
+<P>
+Then move the mouse pointer over the entity(s) and press one of the following keys, for Nodes n, Elements e, Faces f, Points p, Lines l, Surfaces s, Bodies b, Nurb Surfaces S and for Nurb Lines L.
+
+<P>
+The position of nodes or points are given in Cartesian and cylindrical coordinates (see figure <A HREF="#qenqp">6</A>, axyz are the 3 angles around x,y and z, rxyz are the 3 radii around x, y and z). In a second row the sets to which the picked entity belongs are listed. 
+
+<P>
+Press ''q'' to quit the command. 
+
+<P>
+It is also possible to measure distances between two pixels on the screen. Just press the key ''w'' on the positions of the two pixels. The distance is calculated in the scale of the displayed geometry.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="qenqp"></A><A NAME="2024"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6:</STRONG>
+qenq: Definition of the cylindrical system</CAPTION>
+<TR><TD><IMG
+ WIDTH="543" HEIGHT="407" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{figure}\epsfig{file=coords.eps,width=12cm}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2419"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2415"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2409"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2417"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2420"
+  HREF="node145.html">qfil</A>
+<B> Up:</B> <A NAME="tex2html2416"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html2410"
+  HREF="node143.html">qdiv</A>
+ &nbsp; <B>  <A NAME="tex2html2418"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>
