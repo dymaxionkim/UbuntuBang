@@ -1,5 +1,0 @@
-** assigns a body flux (power per unit of volume) to elset <elset>. 
-*DFLUX
-<elset>,BF,<value>
-
-

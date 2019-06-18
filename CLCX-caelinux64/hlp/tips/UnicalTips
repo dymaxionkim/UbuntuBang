@@ -1,9 +1,0 @@
-Unical converter is to convert .UNV format to CCX INP
-It has support for sets of nodes and elements.
-Can be used with Salome-Platform or Salome-MECA.
-
-Play with samples at
-.../samples/TestConverters/tests-unical
-
-Video playlist (Salome-Platfrom):
-https://www.youtube.com/user/calculix09/playlists

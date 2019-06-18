@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1449313866"/>
-  <Params Value=" -MDelphi -Scghi -Cg -O1 -l -vewnhibq -Fl/opt/gnome/lib -Fu/home/c11/Desktop/VtkLazarus/lib -Fu/usr/share/lazarus/1.6/lcl/units/x86_64-linux/gtk2 -Fu/usr/share/lazarus/1.6/lcl/units/x86_64-linux -Fu/usr/share/lazarus/1.6/components/lazutils/lib/x86_64-linux -Fu/usr/share/lazarus/1.6/packager/units/x86_64-linux -Fu/home/c11/Desktop/VtkLazarus/ -dLCL -dLCLgtk2 -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL Vtkpost.lpr"/>
-</CONFIG>

@@ -1,7 +1,0 @@
-** add mesh file or file with groups into calculation
-** after 'input=' name of file with extention
-** file should be placed in working folder (change filename if needed)
-
-*INCLUDE, INPUT=Mesh_1_OUT.inp
-
-

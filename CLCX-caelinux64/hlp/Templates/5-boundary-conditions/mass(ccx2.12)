@@ -1,7 +1,0 @@
-
-**assigns a mass of 'value' in each element belonging 
-** to defined element set of name <elset> 
-*MASS,ELSET=<elset>
-<value>
-
-

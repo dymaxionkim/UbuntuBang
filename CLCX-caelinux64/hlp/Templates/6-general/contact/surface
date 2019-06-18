@@ -1,5 +1,0 @@
-** surfaces are used to define contact (including tied contact).
-*SURFACE,NAME=<..>,TYPE=NODE
-<Nset>
-
-
