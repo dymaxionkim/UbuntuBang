@@ -73,6 +73,8 @@ git clone http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT.git $HOME/Picture
 # DraftSight
 wget -O $HOME/draftSight.deb http://www.draftsight.com/download-linux-ubuntu
 chown -R `logname`:`logname` $HOME/draftSight.deb
+#apt -y install gstreamer0.10-qaptb libgstreamer-plugins-base1.0-0 libcanberra-gtk-module libcanberra-gtk0 libdirectfb-extra libxcb-render-util0 libxcb-render-util0 libdirectfb-extra
+#dpkg -i --force-architecture,depends $HOME/draftSight.deb
 
 ###########################################################
 # QCAD

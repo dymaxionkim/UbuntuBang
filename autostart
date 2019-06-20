@@ -1,4 +1,4 @@
-compton -cCGfF -o 0.4 -O 200 -I 200 -t 10 -l 10 -r 20 -D2 -m 0.9 &
+compton -cCGfF -o 0.4 -O 200 -I 200 -t -5 -l -5 -r 10 -D2 -m 0.9 &
 feh --bg-fill /home/osboxes/.Wallpaper/Wallpaper.jpg &
 qlipper &
 tint2 -c /home/osboxes/.config/tint2/tint2rc &
