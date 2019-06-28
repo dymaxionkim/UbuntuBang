@@ -228,6 +228,11 @@ wget -O $HOME/.bashrc https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/m
 ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ###########################################################
+# notsodeep
+# https://github.com/farukuzun/notsodeep
+wget -O $HOME/.notsodeep https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/notsodeep
+
+###########################################################
 # User Permission
 mkdir $HOME/.local
 chown -R `logname`:`logname` $HOME/.local
