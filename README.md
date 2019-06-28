@@ -67,6 +67,15 @@ sudo sh Utilities.sh
 ./pyenv.sh
 ```
 
+* 추가로, LightDM 및 i3-gaps WM를 원하면 다음을 실행해 줍니다.
+
+```bash
+chmod +x ./i3-gaps.sh
+./i3-gaps
+```
+
+
+
 * 끝!  나머지 환경는 알아서~
 
 
