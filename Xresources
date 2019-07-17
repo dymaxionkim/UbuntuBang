@@ -1,0 +1,124 @@
+!###############################################################################
+!# Font options
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+ 
+!###############################################################################
+!# xterm
+xterm*termName:             xterm-256color
+xterm*faceName:             xft:D2Coding:size=10
+xterm*dynamiccolors:        true
+xterm*utf8:                 2
+!xterm*geometry:             WINDOWGEOMETRY
+xterm*visualBell:           off
+xterm*highlightSelection:   true
+xterm*background:           black
+xterm*foreground:           white
+!xterm*colorMode:            on
+!xterm*colorBD:              lightcyan
+!xterm*colorBDMode:          on
+!xterm*colorUL:              white
+!xterm*colorULMode:          on
+!xterm*scrollTtyOutput:      false
+!xterm*scrollKey:            true
+!xterm*scrollBar:            true
+ 
+!###############################################################################
+!# URxvt
+urxvt*termName:         rxvt-unicode
+urxvt*scrollBar:        false
+URxvt*cursorBlink:      true
+URxvt*saveLines:        10000
+URxvt.internalBorder:   10
+ 
+urxvt*font:             xft:D2Coding:size=10
+urxvt*boldFont:         xft:D2Coding:size=10
+urxvt.letterSpace:      -1
+!URxvt.lineSpace:         2
+ 
+!urxvt*perl-lib:         $HOME/.uxrvt/ext/
+urxvt*perl-ext-common:  default,matcher
+urxvt*urlLauncher:      firefox-trunk
+urxvt*matcher.button:   1
+ 
+URxvt*iso14755:                 false
+!URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+!URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+ 
+!urxvt*fading:           50
+!urxvt*fadeColor:        #000000
+ 
+!# Real Transparent
+urxvt*background:       rgba:0000/0000/0000/cccc
+urxvt*foreground:       #ffffff
+ 
+!# Fake transparent
+!URxvt.transparent:      true
+!URxvt.shading:          40
+ 
+URxvt.tintColor:        white
+ 
+!###############################################################################
+!# color
+*color0:      #000000
+*color1:      #9e1828
+*color2:      #aece92
+*color3:      #968a38
+*color4:      #414171
+*color5:      #963c59
+*color6:      #418179
+*color7:      #bebebe
+*color8:      #666666
+*color9:      #cf6171
+*color10:     #c5f779
+*color11:     #fff796
+*color12:     #4186be
+*color13:     #cf9ebe
+*color14:     #71bebe
+*color15:     #ffffff
+ 
+!###############################################################################
+!# rofi
+rofi.modi:                           ssh,window,drun,run
+rofi.sidebar-mode:                   true
+rofi.terminal:                       terminator
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+rofi.opacity:                        100
+rofi.width:                          50
+rofi.lines:                          8
+rofi.columns:                        1
+rofi.font:                           D2Coding 14
+rofi.fg:                             #5294E2
+rofi.bg:                             #5d729f
+rofi.fg-active:                      #34405a
+rofi.fg-urgent:                      #34405a
+rofi.hlfg-active:                    #5e73a0
+rofi.hlfg-urgent:                    #5e73a0
+rofi.bg-active:                      #34405a
+rofi.bg-urgent:                      #34405a
+rofi.hlbg-active:                    #5d729f
+rofi.hlbg-urgent:                    #5d729f
+rofi.bgalt:                          #5671a0
+rofi.hlfg:                           #34405a
+rofi.hlbg:                           #34405a
+rofi.bc:                             #789ee1
+ 
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #353944,  #FFFFFF,  #353944,  #5294E2,  #FFFFFF
+ 
+!                  'background', 'border'
+rofi.color-window: #353944,      #404552
+ 
+rofi.bw:                             1
+rofi.location:                       0
+rofi.padding:                        20
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+rofi.fuzzy:                          false
+rofi.line-margin:                    2
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.markup-rows:                    false
+rofi.scrollbar-width:                8
