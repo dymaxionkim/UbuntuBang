@@ -45,20 +45,20 @@ urxvt*matcher.button:   1
 URxvt*iso14755:                 false
 !URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 !URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
- 
+
 !urxvt*fading:           50
 !urxvt*fadeColor:        #000000
- 
+
 !# Real Transparent
-urxvt*background:       rgba:0000/0000/0000/cccc
+urxvt*background:       rgba:4444/4444/4444/cccc
 urxvt*foreground:       #ffffff
- 
+
 !# Fake transparent
 !URxvt.transparent:      true
 !URxvt.shading:          40
- 
+
 URxvt.tintColor:        white
- 
+
 !###############################################################################
 !# color
 *color0:      #000000

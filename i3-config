@@ -32,7 +32,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+#bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -48,6 +49,7 @@ bindsym $mod+d exec rofi -show drun
 # Some applications
 bindsym $mod+Ctrl+m exec min
 bindsym $mod+Ctrl+w exec firefox-trunk
+bindsym $mod+Ctrl+g exec google-chrome
 bindsym $mod+Ctrl+f exec pcmanfm
 
 # Screenshot
@@ -181,6 +183,7 @@ for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 10
 
+border_radius 5
 
 # Floating programs
 for_window [class="Pavucontrol"] floating enable
@@ -190,7 +193,7 @@ for_window [class="ukuu-gtk"] floating enable
 
 ##### LAUNCH ###################################### 
 # STARTUP
-exec --no-startup-id qlipper &
+#exec --no-startup-id qlipper &
 exec --no-startup-id nm-applet &
 exec --no-startup-id lxpolkit &
 exec --no-startup-id pasystray &
@@ -198,7 +201,8 @@ exec --no-startup-id pasystray &
 
 # RELOAD
 exec_always --no-startup-id feh --bg-fill /home/osboxes/.Wallpaper/Wallpaper.jpg &
-exec_always --no-startup-id compton -cCGfF -o 0.4 -O 200 -I 200 -t -3 -l -3 -r 3 -D2 -m 0.9 &
+#exec_always --no-startup-id compton -cCGfF -o 0.4 -O 200 -I 200 -t -3 -l -3 -r 3 -D2 -m 0.9 &
+exec_always --no-startup-id compton --config /home/osboxes/.config/compton/compton.conf -b
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

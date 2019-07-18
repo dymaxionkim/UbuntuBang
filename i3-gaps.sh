@@ -42,3 +42,11 @@ sudo apt -y install i3status
 # i3status config
 mkdir $HOME/.config/i3status
 wget -O $HOME/.config/i3status/config https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/i3status-config
+
+###########################################################
+# urxvt terminal
+sudo apt -y install rxvt-unicode
+wget -O $HOME/.Xresources https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Xresources
+
+
+
