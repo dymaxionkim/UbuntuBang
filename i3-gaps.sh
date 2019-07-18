@@ -37,11 +37,14 @@ make
 make docs
 sudo make install
 
+mkdir $HOME/.config
+mkdir $HOME/.config/compton
+wget -O $HOME/.config/compton/compton.conf https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/compton.conf
+
 ###########################################################
 # i3 config
-mkdir $HOME/.config
 mkdir $HOME/.config/i3
-wget -O $HOME/.config/si3/config https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/i3-config
+wget -O $HOME/.config/i3/config https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/i3-config
 
 ###########################################################
 # i3status
