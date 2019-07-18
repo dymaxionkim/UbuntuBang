@@ -7,7 +7,7 @@ sudo dpkg-reconfigure lightdm
 sudo systemctl enable lightdm
 
 ###########################################################
-# Build i3-gaps
+# Build i3-gaps rounded
 sudo apt -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev libxcb-shape0-dev automake
  
 cd $HOME/git
@@ -26,6 +26,15 @@ mkdir -p build && cd build/
 # The prefix and sysconfdir are, obviously, dependent on the distribution.
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
+sudo make install
+
+###########################################################
+# Build compton blur
+cd $HOME/git
+git clone https://github.com/tryone144/compton.git
+cd compton
+make
+make docs
 sudo make install
 
 ###########################################################
