@@ -41,7 +41,7 @@ sudo make install
 # i3 config
 mkdir $HOME/.config
 mkdir $HOME/.config/i3
-wget -O $HOME/.config/i3/config https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/i3-config
+wget -O $HOME/.config/si3/config https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/i3-config
 
 ###########################################################
 # i3status
@@ -57,5 +57,16 @@ wget -O $HOME/.config/i3status/config https://raw.githubusercontent.com/dymaxion
 sudo apt -y install rxvt-unicode
 wget -O $HOME/.Xresources https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Xresources
 
+###########################################################
+# more Wallpapers
+cp $HOME/git/UbuntuBang/Wallpaper/* $HOME/.Wallpaper/
+sudo echo "" >> /var/spool/cron/crontabs/$USER
+sudo echo "*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*" >> /var/spool/cron/crontabs/$USER
+
+###########################################################
+# $TERM
+sudo echo "" >> /etc/profile
+sudo echo "export TERM=xterm-256color" >> /etc/profile
+sudo echo "setterm 0" >> /etc/profile
 
 
