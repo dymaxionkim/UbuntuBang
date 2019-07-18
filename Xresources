@@ -50,7 +50,8 @@ URxvt*iso14755:                 false
 !urxvt*fadeColor:        #000000
 
 !# Real Transparent
-urxvt*background:       rgba:4444/4444/4444/cccc
+!urxvt*background:       rgba:0000/0000/0000/cccc 
+urxvt*background:       #3B414B
 urxvt*foreground:       #ffffff
 
 !# Fake transparent
