@@ -185,7 +185,8 @@ apt -y install msttcorefonts
 # d2coding
 wget https://github.com/naver/d2codingfont/releases/download/VER1.21/D2Coding-1.2.zip
 mkdir /usr/share/fonts/truetype/D2Coding
-unzip D2Coding-1.2.zip -d /usr/share/fonts/truetype/D2Coding/
+unzip D2Coding-1.2.zip
+mv ./D2Coding* /usr/share/fonts/truetype/D2Coding/
 rm -rf /usr/share/fonts/truetype/D2Coding/__MACOSX
 rm D2Coding-1.2.zip
 # Arial Unicode MS
