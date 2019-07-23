@@ -198,6 +198,12 @@ find /etc/ImageMagick-6/ -name "policy.xml" -exec perl -pi -e 's/rights="none"/r
 #apt -y install tlp tlpui
 
 ###########################################################
+# obs-studio
+* https://obsproject.com/wiki/install-instructions#linux
+add-apt-repository -y ppa:obsproject/obs-studio
+apt -y install obs-studio
+
+###########################################################
 # User Permission
 chown -R `logname`:`logname` $HOME/.pyenv
 chown -R `logname`:`logname` $HOME/.Gmsh
