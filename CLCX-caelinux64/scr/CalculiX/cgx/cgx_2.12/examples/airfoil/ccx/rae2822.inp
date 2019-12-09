@@ -1,0 +1,50 @@
+** m, kg, s
+** dyn_visc=kin_visc*rho
+** cp=R/(1-1/kappa)
+**
+*include, input=all.msh
+*include, input=in.nam
+*include, input=out.nam
+** nodes of the profil
+*include, input=profil.nam
+** eqations force flow in direction of the profil
+*include, input=profil.equ
+** surfaces for drag calc
+*SURFACE,NAME=AIRFOIL
+*include, input=profil.sur
+*MATERIAL,NAME=AIR
+*CONDUCTIVITY
+0.
+*FLUID CONSTANTS
+1004.85,1.786e-5,288.
+*SPECIFIC GAS CONSTANT
+287.1
+*SOLID SECTION,ELSET=Eall,MATERIAL=AIR
+*PHYSICAL CONSTANTS,ABSOLUTE ZERO=0.
+*INITIAL CONDITIONS,TYPE=FLUID VELOCITY
+Nall,1,248.
+Nall,2,0.
+Nall,3,0.
+*INITIAL CONDITIONS,TYPE=PRESSURE
+Nall,1.e5
+*INITIAL CONDITIONS,TYPE=TEMPERATURE
+Nall,288.
+**
+*STEP,INCF=60000
+*STATIC,EXPLICIT
+1.,1.
+*DFLUX
+*include, input=profil.dfl
+*BOUNDARY
+Nin,11,11,288.
+Nin,1,1,248.
+Nin,2,3,0.
+Nout,8,8,1.e5
+Nprofil,3,3,0.
+** for viscous flow set this to:
+** Nprofil,1,3,0.
+*NODE FILE,FREQUENCYF=1000
+V,PS,TS,TT,MACH
+*FACE PRINT,SURFACE=AIRFOIL,FREQUENCYF=1000
+DRAG
+*END STEP

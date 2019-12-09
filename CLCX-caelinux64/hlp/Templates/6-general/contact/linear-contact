@@ -1,0 +1,24 @@
+
+**Before using surface to surface contact, based on nodeset. 
+**Run CGX in pre-processor mode and type:
+
+**   comp <nodset> do
+**   send <nodeset> abq sur
+
+** .sur text file with group S<nodeset> will be created
+** in working folder. Just *INCLUDE it to calculation before contact card.
+
+
+
+*CONTACT PAIR,INTERACTION=SI1,TYPE=SURFACE TO SURFACE
+Sslave,Smaster
+
+
+*SURFACE INTERACTION,NAME=SI1
+*SURFACE BEHAVIOR,PRESSURE-OVERCLOSURE=Linear
+<slope_value, about 50-100 Young's modulus>
+
+*FRICTION
+<ratio>,<slope, 0.1 of above value>
+
+

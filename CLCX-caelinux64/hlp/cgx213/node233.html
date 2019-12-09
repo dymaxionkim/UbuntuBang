@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to check an input file for ccx</TITLE>
+<META NAME="description" CONTENT="How to check an input file for ccx">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node234.html">
+<LINK REL="previous" HREF="node232.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node234.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3516"
+  HREF="node234.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3512"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3506"
+  HREF="node232.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3514"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3517"
+  HREF="node234.html">Remarks Concerning Ansys</A>
+<B> Up:</B> <A NAME="tex2html3513"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3507"
+  HREF="node232.html">How to deal with</A>
+ &nbsp; <B>  <A NAME="tex2html3515"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001715000000000000000"></A><A NAME="How_to_check_an_input_file_for_ccx"></A>
+<BR>
+How to check an input file for ccx
+</H2>
+A quick check of a ccx input-file can be done with cgx by reading the file with the option -c (cgx -c file.inp). After startup all defined node-, element-, and surface-sets are availabe together with internal sets which group togeter certain entities according to their purposes. The following internal sets will be created if appropriate data were found: 
+
+<UL>
+<LI>+bou(DOF):  Created if *BOUNDARY is found. All affected nodes are stored in +bou were +bou(DOF) store just the nodes which are constrained in the related DOF number.
+</LI>
+<LI>+dep(BOU):  Created if *EQUATION is found. All dependent nodes are stored in +dep.
+</LI>
+<LI>+ind(BOU):  Analog to +dep.
+</LI>
+<LI>+clo[nr]:   Created if *CLOAD is found. The nr counts the number of appearance.
+</LI>
+<LI>+dlo[nr]:   Created if *DLOAD is found.
+</LI>
+<LI>+mpc[nr]:   Created if *MPC is found.
+</LI>
+<LI>+rad[nr]:   Created if *MPC is found.
+</LI>
+<LI>+flm[nr]:   Created if *FILM is found.
+</LI>
+<LI>+cflx[nr]:  Created if *CFLUX is found.
+</LI>
+<LI>+dflx[nr]:  Created if *DFLUX is found.
+</LI>
+<LI>+tie[1|2]:  Created if *TIE is found. The set +tie1 stores the slave entities and +tie2 the master. The single sets which define the contact areas are linked together so if identified with the ``qenq'' command the referenced (linked) opposing set is listed in the xterm.
+</LI>
+<LI>+trans...:  Created if *TRANSFORM is found. The name consists of the definition of the transformation.
+</LI>
+<LI>+[elty]:    Created for all known element types like *C3D20.
+</LI>
+</UL>
+Check the element quality with ``<A HREF="#Show_Bad___Elements">Show Bad Elements</A>'' or use ``<A HREF="node86.html#eqal">eqal</A>'' to set thresholds and
+``<A HREF="node130.html#plot">plot</A>'' or ``<A HREF="node133.html#prnt">prnt</A>'' to actually plot or list the affected elements.
+
+<P>
+Forces regard their referenced coordinate-system (*TRANSFORM). The values are automatically transformed into the global cartesian system so that the vectors point in the correct direction.
+
+<P>
+Multiple load definitions inside one *STEP on a single entity will sum up (ccx compatible). This applies to cflux, dflux, cload, dload.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3516"
+  HREF="node234.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3512"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3506"
+  HREF="node232.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3514"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3517"
+  HREF="node234.html">Remarks Concerning Ansys</A>
+<B> Up:</B> <A NAME="tex2html3513"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3507"
+  HREF="node232.html">How to deal with</A>
+ &nbsp; <B>  <A NAME="tex2html3515"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to map loads</TITLE>
+<META NAME="description" CONTENT="How to map loads">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node231.html">
+<LINK REL="previous" HREF="node229.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node231.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3480"
+  HREF="node231.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3476"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node229.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3478"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3481"
+  HREF="node231.html">How to run cgx</A>
+<B> Up:</B> <A NAME="tex2html3477"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3471"
+  HREF="node229.html">How to define loads</A>
+ &nbsp; <B>  <A NAME="tex2html3479"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001712000000000000000"></A><A NAME="How_to_map_loads"></A>
+<BR>
+How to map loads
+</H2>
+Values at nodes can be mapped (interpolated) from a second mesh with the ''<A HREF="node109.html#map">map</A>'' command. This second mesh (data source or ``master'') is usually available as a result-file from a previous calculation. The ''<A HREF="node160.html#read">read</A>'' command with the ``add'' parameter can be used to include this file in the current model. Solver-input files (inp) and result files (frd) can be used as a data source. The command will add an offset to the nodes and elements so that existing nodes and elements will not be overwritten. The original mesh is the target or ``slave'' of the mapping process. The mapping process will add the values to the dataset(s). The mapped values can be visualized by selecting the mapped dataset and entity and then by plotting the slave elements or faces with ``<A HREF="node130.html#plot">plot</A> fv slave''. An example of the necessary commands for the mapping process (2D to 2D) is listed below:
+<PRE>
+  Define a set with the slave nodes or faces. For example with:
+    qadd slave
+    comp slave do (to extend the set by the referenced faces or
+                   nodes)
+
+  Then open a set and read the master-model:
+    seto new
+    read result.frd add
+    setc
+
+  If necessary move 'new' in space to match the position of the
+  slave (see ``move'').
+
+  Add the faces to the 'new' set
+  (only nodes and elements are already stored in "new"):
+    comp new do
+    plot f new
+
+  Define the master set:
+    qadd master  (catch the right faces)
+    comp master do
+
+  Map the values of dataset 1 with:
+    map slave master surf ds1
+
+  Check the mapping with:
+    ds 1 e 1
+    plot fv slave
+
+  Write the file with the mapped values:
+    send slave abq pres ds1 e1
+
+  Check the file ``slave_ds1e1.dlo'' with an editor and use it
+  in an inp-file.
+</PRE>
+If the master values are not available in either inp or frd format but in any other format which can be read by cgx (isaac, openFoam ..) it is then possible to write them in frd format with the ''<A HREF="node166.html#send">send</A>'' command.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3480"
+  HREF="node231.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3476"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node229.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3478"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3481"
+  HREF="node231.html">How to run cgx</A>
+<B> Up:</B> <A NAME="tex2html3477"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3471"
+  HREF="node229.html">How to define loads</A>
+ &nbsp; <B>  <A NAME="tex2html3479"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

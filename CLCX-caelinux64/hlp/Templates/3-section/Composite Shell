@@ -1,0 +1,10 @@
+
+** for S8r and S6 (from ccx2.12) types only, change elset for yours
+*SHELL SECTION,ELSET=<..>,COMPOSITE
+<thk of layer>,,<material name>
+<thk of layer>,,<material name>
+<thk of layer>,,<material name>
+
+**add more lines, if needed
+
+

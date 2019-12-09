@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Element Definition Block</TITLE>
+<META NAME="description" CONTENT="Element Definition Block">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node204.html">
+<LINK REL="previous" HREF="node202.html">
+<LINK REL="up" HREF="node199.html">
+<LINK REL="next" HREF="node204.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3131"
+  HREF="node204.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3127"
+  HREF="node199.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3121"
+  HREF="node202.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3129"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3132"
+  HREF="node204.html">Parameter Header Record</A>
+<B> Up:</B> <A NAME="tex2html3128"
+  HREF="node199.html">Result Format</A>
+<B> Previous:</B> <A NAME="tex2html3122"
+  HREF="node202.html">Nodal Point Coordinate Block</A>
+ &nbsp; <B>  <A NAME="tex2html3130"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000124000000000000000"></A><A NAME="Element_Definition_Block"></A>
+<BR>
+Element Definition Block
+</H2>
+<PRE>
+Purpose: Defines the topology of the elements
+
+1. Record:
+Format:(1X,'   3','C',18X,I12,37X,I1)
+Values: KEY, CODE,NUMELEM, FORMAT
+Where: KEY    = 3
+       CODE   = C
+       NUMELEM= Number of elements in this block
+       FORMAT = Format indicator
+                0  short format
+                1  long format 
+                2  binary format 
+
+Following records (ascci, FORMAT=0 | 1):
+ The following block of records must be repeated for each element:
+  The first record initializes an element definition:
+  Short Format:(1X,'-1',I5,3I5)
+  Long Format:(1X,'-1',I10,3I5)
+  Values: KEY, ELEMENT, TYPE, GROUP, MATERIAL
+ Where: KEY    = -1
+       ELEMENT = element number
+       TYPE   = element type, see section ''Element Types''
+       GROUP  = element group number, see command ''grps''
+       MATERIAL= element material number, see command ''mats''.
+
+  Then the nodes in the correct order have to follow:
+  Short Format:(1X,'-2',15I5)
+  Long Format:(1X,'-2',10I10)
+  Values: KEY,NODE,NODE,NODE,NODE, ...
+ Where: KEY    = -2
+       NODE   = node number
+
+Additional lines must follow if more nodes are used.
+
+Following records (binary, FORMAT=2):
+ Format:(4*int nodes*int)
+ int and float are ansi-c data-types
+ Values:  ELEMENT, TYPE, GROUP, MATERIAL,NODE,NODE,NODE,NODE, ...
+ Where:
+       ELEMENT= element number
+       TYPE   = element type, see section ''Element Types''
+       GROUP  = element group number, see command ''grps''
+       MATERIAL= element material number, see command ''mats''.
+       NODE   = node number
+  
+  
+Last Record (only FORMAT=0 | 1 (ascii), omitted for FORMAT=2):
+Format:(1X,'-3')
+Values: KEY
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

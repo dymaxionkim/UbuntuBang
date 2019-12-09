@@ -1,0 +1,17 @@
+This option is providing feature, described
+in CGX help for 'send' card
+....
+Another case is considered with the ''presfit'' option in combination with the ''areampc'' option. For example if a cylindrical press fit should be simulated then a forced displacement between the two intersecting surfaces is necessary. This forces the dependent nodes to move to the independent face. Two modes are available:
+
+send dep indep abq areampc presfit f
+
+simulates sticking friction and with the option s
+
+send dep indep abq areampc presfit s
+
+works for sliding conditions. The user might request a certain value for the press fit if the overlapping of the mesh do not represent the necessary distance:
+
+send dep indep abq areampc presfit s0.06
+
+will move the dep-nodes 0.06 in the normal direction of the independent faces (works also with option f).
+...

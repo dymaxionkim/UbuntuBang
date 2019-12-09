@@ -1,0 +1,13 @@
+
+** third line (optional) explanation
+
+**    global x-coordinate of a unit vector in 1-direction (default:0)
+**    global y-coordinate of a unit vector in 1-direction (default:0)
+**    global z-coordinate of a unit vector in 1-direction (default:-1)
+
+**works with B32r element type 
+*BEAM GENERAL SECTION,MATERIAL=<name>,ELSET=<elset>,SECTION=PIPE
+<outer radius>,<wall thickness>
+0,0.,-1
+
+

@@ -1,0 +1,26 @@
+This is simple engineering method to obtain stress-strain curve using standard tensile test results (yield stress s0.2%, tensile strength fs and reduction of area, psi %) by Kogaev V.P., Makhutov N.A., Gusenkov A.P (Когаев В.П., Махутов Н.А., Гусенков А.П. Расчёты деталей машин и конструкций на прочность и долговечность. М., "Машиностроение", 1985). It is verified for steel alloys with s02/fs=0.5...0.85.
+Stress-strain diagram is given by formula
+
+stress=E*strain, if strain<eT=true_yield_stress/E,
+stress=true_yield_stress*(true_strain/e_T)^m, if strain>eT,
+
+where (in basic language syntax)
+
+m=0.75*log(fs*(1+1.4*psi/100)/s02)/log(log(100/(100-psi))/(0.2e-2+s02/E)) 
+
+' true yield strength
+ys=(s02/(E*0.002+s02)^m)^(1/(1-m)) 
+
+ 'true tensile strength
+sm=ys*(log(100/(100-psi))/(ys/E))^m   
+
+E- Young's modulis (2e11 Pa)
+
+you may find this calculation in Libre-Office spreadsheet (macros should be switched on before opening) at folder .../hlp/plastic-gen/fatigue..ods
+Also you may calculate S-N curve to estimate low-cycles fatigue for the total strain obtained from you analysis in Calculix with plastic.
+(in this case strain approach for fatigue is used, for this calculation stress = E*total_strain , is not real, and it can be much more than max. true stress in material. For more details, like stress correction, practical safety margins for cycles and sensitivity to stress concentration, read the book above. 
+
+Simplified version of this method is using bilinear diagram with Et=0.35*m*E (it gives good results for strain <3...5*e_T)
+
+For practical problems you should use ISO and your local codes. In most responsible cases is good to have experimental results by professional  laboratory (obtained for samples of material taken for your structure). 
+

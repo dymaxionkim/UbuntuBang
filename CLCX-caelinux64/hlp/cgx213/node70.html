@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>comp</TITLE>
+<META NAME="description" CONTENT="comp">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1531"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1527"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1521"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1529"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1532"
+  HREF="node71.html">copy</A>
+<B> Up:</B> <A NAME="tex2html1528"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1522"
+  HREF="node69.html">cntr</A>
+ &nbsp; <B>  <A NAME="tex2html1530"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000109000000000000000"></A><A NAME="comp"></A>
+<BR>
+comp
+</H2>
+<PRE>
+   'comp' &lt;set|*chars*&gt; 'u'|'d'|'e'
+</PRE>
+This keyword is used to add all entities to the specified set (see <A HREF="node170.html#seta">seta</A>) which depend on the already included entities (u, up), or to include all entities necessary to describe the already included entities (d, down).
+<BR>
+For example the set ''lines'' stores lines and should also include all dependent points:
+<BR>
+<BR>
+comp lines do
+<BR>
+<BR>
+Or the set ''lines'' should also include all surfs and bodies which depend on the lines:
+<BR>
+<BR>
+comp lines up
+<BR>
+<BR>
+In some cases you will need only the end-points of lines. With the option (e, edges)
+<BR>
+<BR>
+comp lines e
+<BR>
+<BR>
+only end-points are included in the set. One exception to this logic was introduced for convenience:
+<BR>
+<BR>
+comp nodes do
+<BR>
+<BR>
+will add all faces described by the nodes in set nodes despite the fact that faces are made from nodes.
+
+<P>
+Wildcards (*) can be used to search for setnames of a certain expression:
+<BR>
+<BR>
+comp E* do
+<BR>
+<BR>
+will complete all sets starting with ``E''.
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

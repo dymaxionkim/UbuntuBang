@@ -1,0 +1,11 @@
+
+** to create file <name>.dfl based on nodal set <name>
+** run mesh file in cgx (pre-processor mode) and apply cards below:
+** comp <name> do
+** send <name> abq dflux <value>
+** for example 'send surf abq dflux 0.5' will assign the flux of 0.5 to all element-faces in set surf 
+** <name>.dfl will be created in working folder
+
+
+*FILM
+*INCLUDE, INPUT=<name>.dfl

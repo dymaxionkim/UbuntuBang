@@ -1,0 +1,4 @@
+Pressure orientation (positive) for bodies is always directed inside the body.
+For shells default positive orientation of normales is from light (illuminated) side of surface to dark.
+(after making'plot e all' light side is green)
+Read help for CGX and CCX (*DLOAD card) for more information.

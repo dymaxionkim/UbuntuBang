@@ -1,0 +1,13 @@
+
+** can be inserted within or before step card
+** direction <dir> can be 1,2,3 for bodies
+** and 1 to 6 for shells (4,5,6 - to fix rotation)
+**range from dir1 to dir2 is used
+*BOUNDARY
+<nod.group>,<dir1>,<dir2>,0
+
+
+** repeat last line, if needed
+** use value instead of 0 for prescribed displacement
+
+

@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>*SURFACE BEHAVIOR</TITLE>
+<META NAME="description" CONTENT="*SURFACE BEHAVIOR">
+<META NAME="keywords" CONTENT="ccx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ccx.css">
+
+<LINK REL="next" HREF="node314.html">
+<LINK REL="previous" HREF="node312.html">
+<LINK REL="up" HREF="node201.html">
+<LINK REL="next" HREF="node314.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4991"
+  HREF="node314.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html4987"
+  HREF="node201.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html4981"
+  HREF="node312.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html4989"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4992"
+  HREF="node314.html">*SURFACE INTERACTION</A>
+<B> Up:</B> <A NAME="tex2html4988"
+  HREF="node201.html">Input deck format</A>
+<B> Previous:</B> <A NAME="tex2html4982"
+  HREF="node312.html">*SURFACE</A>
+ &nbsp; <B>  <A NAME="tex2html4990"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0008109000000000000000"></A><A NAME="surfacebehavior"></A>
+<BR>
+*SURFACE BEHAVIOR
+</H2>
+
+<P>
+Keyword type: model definition, surface interaction
+
+<P>
+With this option the surface behavior of a surface interaction can be
+defined. The surface behavior is required for a  contact analysis. There is
+one required parameter PRESSURE-OVERCLOSURE. It can take the value
+EXPONENTIAL, LINEAR, TABULAR or TIED. 
+
+<P>
+The exponential pressure-overclosure behavior takes the form in Figure
+<A HREF="node133.html#contact_exp">119</A>. The parameters <B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B> and <B><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ p_0$"></B> define the kind of
+contact. <B><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ p_0$"></B> is the contact pressure at zero distance, <B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B> is the distance from
+the master surface at which the pressure is decreased to 1 % of <B><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ p_0$"></B>. The
+behavior in between is exponential. A large value of <B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B> leads to soft
+contact, a small value to hard contact.
+
+<P>
+The linear pressure-overclosure behavior (Figure <A HREF="node133.html#contact_lin">120</A>) simulates a linear relationship
+between the pressure and the overclosure. At zero overclosure the pressure is
+zero as well. For node-to-face penalty contact the user has to specify the slope of the pressure-overclosure
+curve (usually 5 to 50 times the typical Young's modulus of the adjacent
+materials) and the tension value for large clearances <!-- MATH
+ $\sigma_{\infty}$
+ -->
+<B><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img762.png"
+ ALT="$ \sigma_{\infty}$"></B> (should be
+small, typically 0.25 % of the maximum stress expected). The value
+of <B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B>, which relates to the maximum clearance for which a spring contact
+element is generated can be specified too (default value <B><IMG
+ WIDTH="38" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img767.png"
+ ALT="$ 10^{-3}$"></B>). For
+face-to-face contact only the slope of the pressure-overclosure relationship
+is needed. 
+
+<P>
+The tabular pressure-overclosure relationship is a piecewise linear
+curve. The user enters (pressure,overclosure) pairs. Outside the interval
+specified by the user the pressure stays constant. The value
+of <B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B>, which relates to the maximum clearance for which a spring contact
+element is generated takes the value <B><IMG
+ WIDTH="38" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img767.png"
+ ALT="$ 10^{-3}$"></B> and cannot be changed by the
+user. Due to programming restraints the use of a tabular pressure-overclosure
+relationship in a thermomechanical calculation implies the use of a *GAP
+CONDUCTANCE card defining the thermal conductance across the contact elements.
+
+<P>
+The tied pressure-overclosure behavior simulates a truly linear relationship
+between the pressure and the overclosure for positive and negative
+pressures. At zero overclosure the pressure is zero. It can only be used for 
+face-to-face contact and similates tied contact between the slave and master
+face. Notice that all slave faces will be tied to opposite master faces, if
+any, irrespective whether there is a gap between them or not. The only parameter is the slope of the pressure-overclosure
+relationship. However, tied contact requires the specification of the stick
+slope on a <A HREF="node259.html#friction">*FRICTION</A> card.
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+First line:
+
+<UL>
+<LI>*SURFACE BEHAVIOR
+</LI>
+<LI>Enter the parameter PRESSURE-OVERCLOSURE and its value.
+</LI>
+</UL>
+
+<P>
+Following line if PRESSURE-OVERCLOSURE=EXPONENTIAL:
+
+<UL>
+<LI><B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B>.
+</LI>
+<LI><B><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ p_0$"></B>.
+</LI>
+</UL>
+
+<P>
+Following line if PRESSURE-OVERCLOSURE=LINEAR:
+
+<UL>
+<LI>slope <B><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img280.png"
+ ALT="$ K$"></B> of the pressure-overclosure curve (<B><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.png"
+ ALT="$ &gt;0$"></B>).
+</LI>
+<LI><!-- MATH
+ $\sigma_{\infty}$
+ -->
+<B><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img762.png"
+ ALT="$ \sigma_{\infty}$"></B> (<B><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.png"
+ ALT="$ &gt;0$"></B>, irrelevant vor face-to-face contact).
+</LI>
+<LI><B><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ c_0$"></B> (<B><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.png"
+ ALT="$ &gt;0$"></B>, irrelevant for face-to-face contact, optional for
+  node-to-face contact)
+</LI>
+</UL>
+
+<P>
+Following line if PRESSURE-OVERCLOSURE=TABULAR:
+
+<UL>
+<LI>pressure.
+</LI>
+<LI>overclosure.
+</LI>
+</UL>
+Repeat this line as often as needed.
+
+<P>
+Following line if PRESSURE-OVERCLOSURE=TIED:
+
+<UL>
+<LI>slope <B><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img280.png"
+ ALT="$ K$"></B> of the pressure-overclosure curve (<B><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.png"
+ ALT="$ &gt;0$"></B>).
+</LI>
+</UL>
+
+<P>
+<PRE>
+Example:
+
+*SURFACE BEHAVIOR,PRESSURE-OVERCLOSURE=EXPONENTIAL
+1.e-4,.1
+</PRE>
+
+<P>
+defines a distance of <B><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1548.png"
+ ALT="$ 10^{-4}$"></B> length units at which the contact pressure is
+.001 pressure units, whereas the contact pressure at loose contact is 0.1
+pressure units.
+
+<P>
+
+<P><P>
+<BR>
+Example files: contact1, contact2.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4991"
+  HREF="node314.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html4987"
+  HREF="node201.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html4981"
+  HREF="node312.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html4989"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4992"
+  HREF="node314.html">*SURFACE INTERACTION</A>
+<B> Up:</B> <A NAME="tex2html4988"
+  HREF="node201.html">Input deck format</A>
+<B> Previous:</B> <A NAME="tex2html4982"
+  HREF="node312.html">*SURFACE</A>
+ &nbsp; <B>  <A NAME="tex2html4990"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+guido dhondt
+2017-10-08
+</ADDRESS>
+</BODY>
+</HTML>

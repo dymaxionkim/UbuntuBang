@@ -1,0 +1,1037 @@
+   13. Jan 12:36:08 CET 2016 in Munich (Germany), 
+   written by Klaus Wittig (klaus.wittig@calculix.de)
+
+cgx Change Log
+================
+
+NOTE:  This document is potentially incomplete.
+
+
+cgx 2.9 -> cgx 2.10
+---------------------
+  o  Changed or extended commands:
+     - anim:   Option 'start' to start an animation added (implicit in most
+               related functions, therefore seldom needed).
+     - copy:   Additional transformation options are available.
+     - ds:     Sequences of datasets can be defined by just one dataset-nr.
+               The program recognizes the request when a 'h' key is
+               appended to the 'e' or 'a' keys which in turn define if the
+               fringe plots should use the deflected shape or not.
+     - ds:     An offset can be added to the values of datasets.
+     - graph:  Plotting any field results along a combined- or a single line 
+               is supported. The division of the line determines the number
+               of new locations for data-points.
+               The current displayed results will be
+               automatically mapped to this locations and shown in a 2D
+               graph over the length of the line.
+               Unordered node sets can be used. They are automatically ordered.
+     - movi:   The number of frames which will be saved before the recording 
+               stops can be specified (option 'frames'). A given command
+               file will be executed after the movie is finished.
+               Alternatively instead of a given nr of frames the key-word
+               'auto' can be used to start recording of one period of an 
+               animation or sequence. The program waits until the recording
+               is done and continues then with eventual subsequent comants.
+     - read:   Time consuming dependency checks can be avoided by using the
+               parameter 'new' when reading frd files.
+     - send:   The mass-flow in a cfd calculation can be written (mflow).
+     - swep:   Triangle and Quad elements can be sweeped into wedges and hexa
+               elements. Results will be copied to the new nodes. The sweep
+               angle is not longer restricted to values <180 deg.
+     - swep:   Additional transformation options are available.
+     - read:   (Peter Heppel) The netgen file reader accepts quad-8
+     - read:   (Peter Heppel) The netgen file reader accepts a keyword ndsb for
+               NoDeleteShells&Beams
+ 
+  o  New commands:
+     - norm:   Writes the normal direction of nodes to the konsole. The user
+               might store this values on the stack for further use.
+
+
+cgx 2.8 -> cgx 2.9
+---------------------
+  o  The animation and sequence functionallity was improved.
+     - Previously only displacements could be animated by a sinus function 
+       showing the deformed shape.
+       Now all kinds of datasets can be animated as a fringe plot with 
+       deformed shape.
+     - Fringe plots of sequences of datasets using the related deformed shapes
+       are also supported now.
+     This functionallities are available over the menu or the "ds" command.
+  o  Deformed element- and model-edges are used during animations. The user can
+     switch on additional undeformed edges as a reference over the "anim"
+     command or the "Animate" menu.
+
+  o  Changed or extended commands:
+     - copy:   More transformations are supported in case results have to be
+               copied as well (mir, rad).
+     - ds:     The animation can now be used for fringe plots with or without 
+               using the related deformations.
+     - max,    A 3rd parameter "l" (lock) or "u" (unlock) can be provided which
+       min,    locks the scale to certain max or min values. The selection of
+       mm:     a different dataset will not change the scale (max 100 e l).
+     - prnt:   List the contents of the stack (prnt st)
+     - read:   Results from "openFoam", stl-files and netgen meshes (.vol) can
+               be read now during run-time.
+     - send:   Boundary conditions for the new ccx-cfd finite volume code 
+               can be written with the 'slidef' parameter. These are equations
+               which define the velocity direction parallel to an element
+	       face (experimental).
+     - volu:   The calculation of the element volumes was improved and is now
+               in accordance with the ccx solver since it uses the same
+               algorithms now.
+
+  o  New commands:
+     - anim:   Command which provides the functionallity of the "Animate" menu
+
+
+cgx 2.7 -> cgx 2.8
+---------------------
+  o  This version shows some improvements of the batch
+     capabilities to support optimizations: 'loop' constructs,
+     case distinctions and variables were introduced. See 'while', 'if' 
+     'test', 'stack' and 'value' for further details.
+
+  o  Changed or extended menu functions:
+     In the previous versions of cgx the "maxShear" stress was named 
+     "Tresca shear stress" in the menu. This was wrong since "Tresca" is
+     equivalent to 2*maxShear. Therefore "Tresca" is now renamed to "maxShear"
+     in the menu and the manual. 
+
+  o  Changed or extended commands:
+     - prnt:   The content of 'values' can be printed (see 'valu').
+     - prnt:   Existing 'user headers' stored in the ccx result files (frd)
+               can be listed and written to the stack.
+     - prnt:   Existing 'parameters' stored in the ccx result files (frd)
+               can be listed and written to the stack.
+     - prnt:   Nodal values and coordinates of nodes and points can be written
+               to the stack.
+     - proj:   A tolerance for the maximum distance of a projection
+               can be defined.
+     - send:   Boundary conditions for the new ccx-cfd finite volume code 
+               can be written with the 'spcf' parameter for velocities,
+               pressure and temperature.
+               Cyclic symmetry mpc connections for cfd can be created with
+               'cycmpcf'.  
+     - seta:   'values' can be added to a set.
+     - setr:   'values' can be removed from a set.
+
+  o  New commands:
+     - break:  Breaks the interpretation of a command file and returns to the
+               command line.
+     - dist:   measures distances between entities of two sets. For example
+               between points or nodes stored in one set to surfaces or 
+               shapes stored in a second set. The average-, maximum- and 
+               minimum distance is determined. The distance is measured
+               normal-, rotational-, radial or translatoric. The command 
+               works analogous to the 'proj' command.
+     - else:   See 'if'
+     - endif:  See 'if'
+     - endwhile: See 'while'
+     - if:     A command to compare two values. If the compare is True
+               the following commands are executed. If the compare is False
+               the code after 'else' is executed. Strings and numbers can be
+               compared. Normal operation continues after 'endif'.
+     - stack:  Several functions which return values to the user might now
+               place them also on a software-stack. The 'valu' command
+               is able to store this values from the stack in variables.
+               (stack used by area,dist,ds,enq,gtol,length,prnt,valu,volu)
+     - test:   Tests the existence of a given entity. Returns TRUE or FALSE
+               and writes it on the stack.
+     - valu:   A new entity which can store a string of characters or numbers.
+               The command parser will scan each parameter of each command for
+               expressions which match a value and will replace the parameter
+               by the value. The contend of the value can be defined by the
+               user or derived from commands or datasets.
+               The command is able to perform simple calculations, string
+               concatenation and format changes.
+     - while:  A command to compare two values. If the compare is True
+               the following commands are executed until the 'endwhile'
+               command is found. This procedure is repeated until the compare
+               is False. Strings and numbers can be compared
+
+
+cgx 2.6 -> cgx 2.7
+---------------------
+  o  The main goal of this version was the implementation of a tet-mesher.
+     The 2D-mesher was greatly improved as a basis for the netgen 3D-tet-
+     mesher. The netgen tetmesher (ng_vol) is not linked but used as a
+     stand-alone program started by a system call. This is not visible
+     to the user and has the advantage that cgx can still be build 
+     independently. In addition any malfunction of ng_vol has no influence
+     on the stabillity of cgx. A modified version of ng_vol is included
+     and should replace the original ng_vol prg in the netgen source code.
+     The modified ng_vol allows the specification of a target size for the
+     size of the elements. But the apart from this feature the original
+     ng_vol prg from netgen works well and might be kept as it is.
+     See especially the command 'qmsh'.
+  o  The restriction to a division of 99 as a maximum is not longer valid.
+
+  o  Replaced commands:
+     - qele:   Functionality included in qmsh
+
+  o  Changed or extended commands:
+     - body:   A multi-surface-body can be created by specifiing
+               a set of surfaces. This body can only be used for tet 
+               elements.
+     - div:    w/o arguments lists the defaults. In auto mode an element-size
+               -ratio can be specified (smallest/biggest).
+     - elty:   w/o arguments lists the defaults. New elements:
+               tr6u unstructured tria with 6 nodes
+               te4  tet4   (netgen prg 'ng_vol' must be available)
+               te10 tet10  (netgen prg 'ng_vol' must be available)
+     - line:   The restriction to maximum division is no longer valid.
+               The bias argument has to follow the division in the 'line' 
+               command syntax if a division >99 is applied.
+     - mesh:   "mesh <setname> tet [max-element-size]" creates a tet-mesh
+               based on an existing closed 2D mesh composed of trias.
+               This is a second method to generate tets. The first one is 
+               to use 'elty' to asign tet-elements to bodies and to use 
+               "mesh <setname>" to mesh all bodies in set <setname>.
+     - qdiv:   Up to 3 digit divisions can be specified. 
+     - qlin:   The parameter 'e' allows the replacement of lines in lcmbs
+               or surface-definitions.
+     - qshp:   A pre-defined shape-name can be provided.
+               's' attaches a pre-selected shape or nurbs.
+               'S' pre-selects a nurbs
+               'h' pre-selects a shape
+               'c' clears pre-selections
+     - qsur:   A pre-defined surface-name can be provided.
+               's' selects a surface or attaches a pre-selected shape or nurbs.
+               'S' pre-selects a nurbs based on a surface-definition
+               'h' pre-selects a shape based on a surface-definition
+               'c' clears pre-selections
+     - seta:   lines with a line-division greater as specified can be grouped
+               together "seta <setname> ld<x>" (ld: "line-division").
+     - shpe:   A cylinder can be specified and used for the interiour def-
+               inition of a surface.
+     - surf:   A multi-line-surf can be created by specifiing
+               a set of lines. This surface can only be meshed with tr3u or
+               tr6u in conjunction with a related shape (nurbs) if it is not
+               plane.
+     - view:   The menu items 'FILL', 'LINE', 'POINT' and 'background colour'
+               are integrated.
+
+  o  New commands:
+     - lnor:   Generates a new line normal to a plane defined by 3 points.
+               (based on qnor)
+     - qmsh:   Allows the manipulation of surface meshes.
+               - Based on identified lines or surfaces meshes can be deleted
+                 and generated.
+               - Certain surfaces can be combined to get rid of very small ones.
+               - Certain surfaces can be splitted.
+               - The line-division can be changed.
+
+
+cgx 2.5 -> cgx 2.6
+---------------------
+  o  Step reader is now able to deal with assemblies.
+     All single parts of an assembly will be written to separate files
+     if requested. A command-file for the assembly is then also provided.
+     This allows the user to generate single meshable models which will
+     then be assembled (cgx -stepsplit).
+  o  Input file reader (ccx): Multiple load definitions inside one *STEP
+     on a single entity will now sum up (ccx compatible). This applies
+     to cflux, dflux, cload, dload.
+  o  The nastran f06-file can be read (CHEXA, displacements and stresses)
+     at startup (option -f06).
+
+  o  Changed or extended commands:
+     - asgn:   Alternative parameters 'rbe' (with "alpha") or 'mpc' to force
+               a successive send (option areampc) command to write either 
+               rbe's or mpc's (Nastran only).
+     - max,min: The number representation can be changed between int,float,exp.
+     - move:   Points can be moved to nearest target points (param. equ).
+     - move:   mirror, rotate or move-radial can be defined by one point and 
+               a main-axis (x|y|z).
+     - move:   The rotation-angle or radial-movement can be specified on two
+               axial positions, the target value for each point to be moved
+               will be calculated based on these two axial positions
+     - prnt:   The range of nodes and elements of a certain set can be displayed
+               in addition holes in the numbering are detected.
+     - qadd:   Collects connected element faces until a certain deviation
+               of the normal vector from the 1st picked face ist reached.
+     - read:   Background pictures (still only xwd format) can be read with
+               a scaling factor.
+     - send:   A simple text file (lst) to list node- and element-numbers
+               can be written (space separated, seven numbers per line) 
+     - send:   Certain entities of a certain dataset can be written
+               to a file.
+     - send:   The option "mpc" will alternatively generate RBEs if 
+               requested (nastan RBE2, abq *RIGID BODY).
+     - seta:   Wildcards(*) can be used.
+     - setr:   Wildcards(*) can be used.
+     - trfm:   Option "rec" works now. In all cases the resulting entities 
+               will overwrite the original ones. In this case successive
+               transformations are possible.
+
+  o  New commands:
+     - csysa:  Specifies the displacement coordinate system
+               (Nastran only)
+     - mm:     Combines max and min in one command
+     - seql:   Makes splines from lines
+
+
+
+cgx 2.4 -> cgx 2.5
+---------------------
+  o  The drawing area does not longer keep its quadratic form when the window
+     size changes. Instead it will now change to a rectangular shape when
+     this allows a better use of the available window-area.
+  o  A binary frd-format was created and can be used for reading and writing.
+     Ths reduces the storage space and leads to a speed increase.
+
+  o  Changed or extended commands:
+     - comp:   Wildcards(*) can be used to complete groups of sets of a 
+               certain expression. 
+     - del:    Node attached "texts" can be deleted, see qtxt.
+     - enq:    Nodes with values above or below a specified value can be 
+               searched.
+               And a set with a point can be provided to specify a search-
+               location.
+     - graph:  Wildcards(*) can be used for materials and amplitudes.
+     - map:    Apart from 2D-to-2D and 2D-to-3D is now 3D-to-3D mapping 
+               available. The mapping takes place for either all
+               or a specified dataset. All entities of the interpolated
+	       datasets are regarded.
+     - plot/
+     - plus:   Node attached "texts" can be displayed, see qtxt.
+     - prnt:   Wildcards(*) can be used.
+     - qadd:   Node attached "texts" can be generated and controlled.
+     - qdel:   Node attached "texts" can be deleted, see qtxt.
+     - qenq:   Node attached "texts" can be generated and controlled.
+     - read:   Nodes and elements can be skipped to speed-up the reading of
+               input-files. This is usefull when a result file was read and
+               the pre-defined sets from the input file should be available.
+               This is default when cgx is started with an frd- together with
+               its inp-file.
+     - send:   Node and element set-definitions can be written in gagemap
+               (gmp) or patran neutral format (pat).
+     - send:   The binary frd-file format can be used to export data.
+     - send:   The pressure-DOF can be specified for equations (areampc,
+               cycmpc).
+     - send:   Second order elements (hex20,Pe15,Tet10) can be subdivided to 
+               eight 1st. order elements each.
+               Syntax: "send <setname> abq quadlin"
+     - send:   The additional enities generated by cgx can be written by 
+               using the '+' sign after the 'ds' parameter (i.e. vMises).
+
+  o  New commands:
+     - qtxt:   Node attached "texts" can be generated and controlled.
+               This texts are attached to nodes and can be placed everywere
+               in the drawing area. They might show the node-nr and its value.  
+     - sete:   To enquire other sets which have entities in common or with
+               an identical content (depending on further parameters).
+               Example: "sete blade p min" searches for sets who store the
+               same or more points as "blade" (at least the set "all").
+     - seti:   To generate an intersection of several set (what do the 
+               specified sets have in common (of the specified entity-type)?)
+               Example: seti intersection_set p set1 set2 set3
+
+
+
+
+cgx 2.3 -> cgx 2.4
+---------------------
+  o  Several speed improvements for example for mapping and mpcs
+     (*EQUATIONs).
+  o  Better support of shell elements (POS, NEG can be specified).
+  o  If netgen native mesh-format is read then the surface-patches of 
+     the volume mesh are stored in sets ("+set[n]") and can be used for
+     boundary or load definitions (cgx -ng file.vol).
+     See the manual section: "Remarks Concerning NETGEN".
+  o  The actual OpenFoam (1.7.1) format is now supported (read and write).
+  o  The cfd-code dolfyn is now supported (thanks to Runar Tenfjord).
+     An example is included in the examples/dolfyn directory.
+  o  The colour index mode is not longer supported.
+  o  The menu entry "cut->vector" is introduced. See "cut" below.
+  o  All principal stresses can be displayed with vectors.
+
+  o  Changed or extended commands:
+     - cut/   A section can be created based on the selection of just
+       qcut:  one node if a dataset and entity of a vector was selected
+              (disp, PS, worstPS ..)
+     - elty:  Plain strain/stress and axisymmetric elements can be
+              specified. 
+     - read:  Result-files (frd) can be read during run-time in a way
+              that node- or element-numbers already in use will not be
+              overwritten (option 'add'). Instead new numbers are generated.
+              Existing datasets will be extended by the new node-numbers.
+              The optional parameter 'ext' will not change element or 
+              node numbers but as with 'add' will extend existing 
+              datasets by the new nodes.
+              If result-files are read without the option 'add' or 'ext'
+              then new Datasets are just added to the existing ones.
+              Element or node numbers are not changed.
+     - send:  Mapping of surface-loads from one mesh to another one is
+              no longer supported (option 'surfmap'). A new command 'map'
+              is introduced for this functionallity. The mapped results
+              can then be 'send' as usual.
+     - send:  The actual openfoam format (1.7.1) is now written.
+     - send:  The actual darwin format (7.1) is now written.
+     - send:  Writes mesh and BCs for the cfd-code dolfyn (thanks to Runar
+              Tenfjord).
+     - send:  A netgen surface mesh can be written based on the faces of 
+              elements. The faces of hex, tet, quad and tria elements are
+              triangulated and written in the stand-alone netgen mesher
+              format (file.ng). The mesher can be found in the netgen 
+              sub-directory nglib and is named ng_vol.
+     - send:  stl-format will now be written based on the faces of
+              elements. The faces of hex, tet, quad and tria elements are
+              triangulated and written in ascii-stl.
+     - send:  The side of shell elements can be specified with an
+              additional parameter (+|-) when writing BCs.
+     - split: Tet-meshes can be splitted by surfaces, faces or shapes.
+
+  o  New commands:
+     - map:   Interpolates values at nodes from one mesh to another. For
+              example pressures from a cfd calc to the structure mesh.
+              See also remarks in the manual "How to map loads".
+     - sys:   External shell commands can be issued. For example to move
+              files created by the 'send' command to certain file names
+              or/and locations.
+
+
+cgx 2.2 -> cgx 2.3
+---------------------
+  o  The Datasets are bundled to loadcases if more than one loadcase is
+     defined (a loadcase is a certain bundle of datasets for which the
+     loads and boundary-condition are unique). It influences only the 
+     menu structure. To define a dataset the user has to move the pointer
+     through a loadcase.
+  o  The special keys PAGE_UP and PAGE_DOWN are now also used to scan
+     through Datasets of different Loadcases in a fast way. For example:
+     If displacements were selected a PAGE_DOWN will display the next 
+     displacement dataset.
+  o  Parameters in the result-file a now supported. These are values
+     related to datasets which give additional information for the loadcase.
+     They can be displayed with the graph command or with the menu
+     (ccx result-files (frd) usually do not contain meaningfull parameters).
+     See the manual section: "Parameter Header Record"
+  o  A new entity called Shape is introduced. It allows the definition
+     of planes for projection purposes or to define the interiour of
+     surfaces (necessary for the 2D unstructured mesher, element-type
+     tr3u). Other types are planned.
+  o  Reading of ccx-input files is improved:
+     - Sets which are used in contact pairs reference each other.
+     - Forces are automatically transformed in the basic coordinate
+       system.
+     - Sets can now be referenced before they were defined.
+  o  A new parameter -bg will suppress the graphic window. Usefull for
+     pure batch mode.
+  o  Speed improvements for the graph command.
+  o  Improved step-format reader. Most types of lines are now supported.
+     But still only points and lines are supported.
+  o  Netgen native mesh-format can be read. By this way the netgen-sets
+     will be available if the command "mats" is used in addition.
+     See the manual section: "Remarks Concerning NETGEN".
+  o  Mapping of surface-loads is supported. See the manual section: 
+     "How to map surface loads".
+
+  o  Changed or extended commands:
+     - graph: Now parameters related to datasets can also be used for 
+              the graph command. 
+     - qseq:  Is now also able to define a sequence of nodes or points.
+              Such a sequence of nodes can be used to plot values with
+              the graph (option "l") command. It replaces the equivalent
+              function "qadd set s". Sequences can be listet with "prnt sq"
+     - qsur:  Unsorted lines can be picked with the "l" key to define a
+              surface only meshable with unstructured triangles (elty tr3u).
+              This surface permits holes in it. The surface has to be plane
+              or a suited NURBS has to be referenced.
+     - send:  Will write nodes sequences in fbd format. This file can be read 
+              again to define this sequence in another cgx-session.
+     - send:  Mapping of surface-loads from one mesh to another one is now
+              supported (option surfmap), see also remarks in the manual
+              "How to map surface loads".
+     - seqa:  Node sequences can be defined (as qseq, for the graph command)
+  o  New commands:
+     - enq:  Enquires entities (and values of a pre-selected dataset) at a
+             given position .
+     - flip: Changes the orientation of a set of surfaces or a single surface.
+             In case of a single surface with the parameter optional ``auto'' 
+             all surfaces will be flipped in a way that they share a common 
+             direction (in or out of a volume)
+     - qshp: used to define a shape. A shape needs 3 points for its definition.
+             The points are selected with the 'p' key. After the points are 
+             selected it will be generated by a 'g' keystroke. The shape can
+             be assigned to a surface by selecting the surface with the 's' 
+             key. The shape will then define the interiour of this surface.
+     - shpe: Create a shape which can be used to define the interiour of 
+             surfaces or to be used as a target for projections (see qshp).
+     - ucut: This command will delete a previous created section (cut) and 
+             display the un-cutted structure.
+
+ 
+cgx 2.1 -> cgx 2.2
+---------------------
+  o  The target for this version was in general to improve the menu-
+     functionality for post-processing.
+  o  The special keys PAGE_UP and PAGE_DOWN are now used to scan fast through
+     sets. The entities of the previous or next set will be displayed. The type
+     of entity is used as in the last plot or plus command. In other words: If
+     you have displayed the nodes of set1 and you press PAGE_DOWN you will see 
+     the nodes of set2 instead of set1 etc.
+  o  The vector-plot option "Viewing->Toggle Vector Plot" will now take 
+     immediate effect if a suited entity is already in use.
+  o  This is also true for the "Viewing->Toggle Add Displacement" menu
+     function.
+  o  After "Animate->Dataset Sequence" just one Dataset might be specified
+     before the entity is selected. The animation will then use all Datasets
+     with this name starting from the selected one. A constant spacing between 
+     the Dataset is now not longer required.
+  o  The commands qcut, qenq and graph are now included in the menu. But
+     with less functionality.
+
+  o  Changed or extended commands:
+     - copy:   Nodes and Elements can now be copied together with their 
+               results. This is helpfull for calculations which use cyclic-
+               symmetrie. For example if just a segment of
+               a rotor was calculated but additional sectors with results should
+               be displayed. It can be used in combination or instead of the
+               parameter "NGRAPH" from the ccx-keyword *CYCLIC SYMMETRY MODEL 
+     - copy/swep: 
+               Existing sets are appended by the new build geometry only on 
+               demand. The letter "a" (append)  must be the last parameter to
+               request this functionallity. Otherwhise the new geo is appended
+               only to the target-set and the set default set "all".
+     - graph:  The first and last dataset can be specified in addition to
+               restrict the range of datasets.
+     - plot/plus:
+               If "Viewing->Toggle Vector Plot" is active then nodes will be
+               displayed with arrows if the current entity belongs to a vector.
+     - prnt:   Wildcards (*) can be used to search for setnames of a certain
+               expression. 
+     - send:   To write result files in darwin format (life evaluation software)
+     - send:   Writes forced displacements normal to element-surfaces
+               (the components of the vectors at the node positions
+               can be scaled individually (fac1-3)). This is usefull to 
+               define an offset to the geometry. A subsequent calculation
+               with ccx will move the mesh accordingly. After solving the
+               deformed mesh can be written and used as a new mesh.
+               With this procedure geometric variations are possible without 
+               manipulating the geometry (morphing).
+     - send:   Single Datasets can now be written in frd format by specifying
+               the dataset-nr.
+               send <setname> frd ds <datasetnr>
+     - tra:    The command uses now model dimensions and the additional param-
+               eter "f" will move the mesh forward (towards the user and towards
+               the clipping plane). When the mesh penetrates the clipping-plane
+               the front part of the model will be clipped (same functionality
+               as the menu function "Viewing->Toggle Move-z/Zoom")
+     - trfm:   Transforms vectors of the current dataset from cylindrical
+               to the basic cartesian system. 
+               Usefull if vectors (forces etc.) in the
+               input-file are specified in a cyl-system but they should be
+               visualized with the menu option "Viewing->Toggle Vector Plot"
+               Because in this case the data must use the basic cartesian system. 
+     - trfm:   The first and last of a range of datasets can be specified.
+               Only the first dataset is regarded if no last dataset is 
+               specified. As before the current dataset is selected if no dataset
+               at all is specified. 
+
+
+cgx 2.0 -> cgx 2.1
+---------------------
+  o  The target for this version was in general to improve the batch-
+     functionality.
+  o  A Result-file can be read during run-time and replaces the existing data. 
+  o  The way result-files are read has changed. Up to now the results were read
+     before the user-interface started. Now only the meta-information 
+     (dataset-name etc.) is read at startup but the node-values are read only
+     if a certain dataset is requested. In this way the program starts much 
+     faster and the memory-requirement is lower if not all data are viewed.
+  o  Stress-components in the directions of a cylindrical system around the
+     x-axis are not longer computed automatically for all STRESS datasets.
+     Instead a new command "trfm" was implemented.
+  o  The command name lc has changed to ds (dataset).
+
+  o  Changed or extended commands:
+     - copy/send: Existing sets are extended by the copied/sweeped entities.
+     - ds:    is now "ds".
+     - del:   "del l0 setname" will delete all lines with zero lenght.
+              "del se0" deletes all empty sets
+     - mids:  Generate or delete midside-nodes.
+     - plot/plus: Plot lines with their end-points "plot lp set"
+     - proj:  Moves now points and nodes to surfaces or element-faces.
+     - qlin:  The key "x" will transform any line into a straight line and
+              the "e" key allows the modification of a lcmb w/o destroying
+              related entities like bodies.
+     - read:  Now also result-files can be read during run-time and will
+              replace existing meshes and results. This allows batch-jobs
+              for post-processing.
+     - send:  A so called "press-fit" connection between meshes can be created.
+              It is based on equations with a forced deflection.
+     - send:  To write frd-files with results needs now the parameter ds.
+              Otherwhise only the mesh is written.
+
+  o  New commands:
+     - cntr:  Define new rotational center of the drawing (as qcnt).
+     - cut:   Create a section through the mesh (as qcut).
+     - ds:    Was former "lc". Explicidly the last or last-<nr> of dataset 
+              can be selected now.
+     - font:  Defines the font to use in the drawing- and legend-window.
+     - qfil:  Creates a fillet between two intersecting lines.
+     - qint:  Extend two lines to their intersection-point.
+     - view:  Controlls several viewing options like element-edges on/off etc. 
+     - trfm:  Transforms displacements and stresses of the current dataset
+              in a cylindrical system.
+
+
+cgx 1.8 -> cgx 2.0
+---------------------
+  o  Now 2D-step files can be read. Points and certain types of lines are
+     implemented. It was tested with files produced by UG-NX5. The
+     parameter -step is necessary during startup of cgx.
+  o  The reading of abaqus input files is improved. Initial PLASTICSTRAIN 
+     can be read.
+
+
+  o  Changed or extended commands:
+     - elty:  he8f for fluid calculations (ccx element F3D8)
+     - graph: Parameter l (length) to plot values along the length of a
+              set of nodes. This set has to be a sequence-set ( see qadd)
+     - lc:    new parameter s to scale all values of a certain dataset or of a
+              range of datasets
+     - qadd:  Parameter s to indicate that the set has to maintain the
+              sequence of the picked entities. This is used by the graph
+              command.
+     - qpnt:  Parameter n to indicate that the coordinates of the picked node
+              should be used to create a new point.
+     - send:  Now with the parameter lc not only temperature-values can be send
+              into a file instead also velocity and pressure. With this values
+              ccx can be restarted for a cfd calculation (ccx command *INITIAL
+               CONDITIONS). The created files have the extension '.dat'
+              (former .tem) and the mesh is not longer written in this case.
+
+
+cgx 1.7 -> cgx 1.8
+---------------------
+  o  The copy and swep commands did not copy nurbs so far. Now it does.
+  o  The reading of abaqus input files is improved. Initial stresses
+     can be read.
+
+  o  Changed or extended commands:
+     - graph: Now it is not longer necessary to define a sequence of Datasets
+              before the graph command can be used. It is possible to define
+              the common part of the Dataset-names and the entity which should
+              be plotted (ie. graph nodes t DISP D1).
+     - plot, plus:
+              Bad elements will be shown with the parameter "eq"
+     - proj, copy, swep:
+              Now the parameters rad and rot can both use either two points to 
+              define the rotational axis or just one global axis (x,y,z)
+     - qdis:  Angles between two points (p) relative to one centerpoint (c)
+              can be measured.
+     - qlin:  A line can be lenghted or shortened by picking the line (l) and
+              then one end-point (p) which should be moved.
+     - seta:  A mesh referenced by a setname and consisting of independend
+              meshes can be separated into several new sets. 
+              The setnames are generated automatically (seta ! <set>).
+
+  o  New commands:
+     - qnor:  A new line normal to a plane defined by three points is
+              created.
+     - eqal:  Some element quality parameters can be defined. The elements
+              will be checked against this parameters either with the menu-
+              option "Show Bad Elements" or with the "plot" command. The
+              parameters are stored in the fbd file.
+
+
+cgx 1.6 -> cgx 1.7
+---------------------
+  o  The hardcopy code is changed. Now it does not use "xwd" any more and 
+     works also for other systems than Linux (thanks to Jeff Baylor).
+  o  The Coefficients for *EQUATION and the *NODE vectors are written with
+     more digits. This improves results for "glued" meshes.
+  o  The maximum Shear-Stress (Tresca) is computed automatically for all
+     STRESS datasets.
+  o  Stress-components in the directions of a cylindrical system around the
+     x-axis are computed automatically for all STRESS datasets.
+  o  The compressor in the examples-dir comes now with a fillet between disk
+     and blades. The stress-distribution is now more realistic.
+  o  Changed commands:
+     - copy: option "scal" is changed, see "move".
+     - del: a background picture can be removed
+     - mids: midside nodes can be repositioned in a linear way.
+     - move: scaling can be performed to a reference point.
+     - proj: Normal projection for all types of surfaces.
+     - qpnt: A point can be moved also to a NURBS along the surface-normals.
+     - read: If a pixel-file in xwd-format of a certain geometry is available
+             it can be included as a background-picture. The user can then
+             create geomety based on this picture.
+     - send: a forced deflection for spc's (boundary) can be specified.
+     - swep: option "scal" is changed, see "move".
+
+
+cgx 1.5 -> cgx 1.6
+---------------------
+  o  Capabilities of the command-line are improved. A command history is
+     realized.
+  o  Entity-names might be as long as 255 characters now.
+  o  The sets are selectable by index and by names.
+  o  IMPORTANT! Since openFoam-version 1.3 uses a new format it is required to
+     convert the resulting files. See section "Remarks Concerning OpenFOAM"
+     in the manual.
+
+  o  New commands:
+     - length: calculate the length of all lines stored in a set
+     - mids:   correct the midside nodes of higher order elements stored in a set
+     - split:  split lines and to create points on surfaces included in set1
+               where they cross surfaces from set2 
+     - tra:    This keyword is used to translate the model on the screen
+     - zoom:   This keyword is used to zoom into the model on the screen
+
+  o  Changed commands:
+     - graph: Displays also material-properties and amplitudes
+     - prnt: Prints also material-properties and amplitudes
+     - proj: Normal projection now possible
+     - nurs: Nurbs can be created based on existing surfaces following the 
+             Coons-algorithm
+     - send: Write temperatures with step-information with reference to 
+             a cload-file
+     - send: thermal connection between parts
+     - send: sliding equations (mpcs) between parts
+     - send: gap-elements can be defined
+
+
+cgx 1.4 -> cgx 1.5
+---------------------
+
+  o  IMPORTANT! The definition of the line-bias has changed. One decimal digit
+     is now supported. A program parameter exists (-oldbias) to convert pre
+     v-1.5 models. 
+  o  IMPORTANT! The node-numbering has changed. A mesh will have a
+     differend node sequence than a pre-1.5 mesh. The mesher has now some
+     parameters who control certain aspects of the mesh, see the mesh command. 
+  o  ISAAC is now supported (a CFD-3D solver). A mesh can be created and
+     results can be visualized.
+  o  All geometric operations are now performed with double precission instead
+     of float. Results use still float to save space.
+
+  o  New commands:
+     - area: This keyword is used to calculate the area and center of 
+             gravity of a set of shell elements.
+     - bia:  Define a node bias for lines, in addition to qbia 
+     - qcut: Cuts the model by a plane and presents the plane. Used to display
+             results on this inner section.
+     - hcpy: Creates hardcopies and bundles several of them in one file. With
+             this feature automatic post-processing is possible.
+
+  o  Changed commands:
+     - div:  A bias can be specified in addition to the line-division.
+     - mesh: The position of midside nodes of higher order elements are now
+             better placed. Parameters to create a blocked mesh for cfd and more. 
+     - send: ISSAC (cfd) data are supported. All 3 CFD codes are now treated
+             in the same manner
+     - seta: A range of node- or element-numbers can be specified.
+     - setr: A range of node- or element-numbers can be specified.
+
+
+cgx 1.3 -> cgx 1.4
+---------------------
+
+  o  The color model has changed. Stepped colors are now available on Linux-
+     PC's by using textures. This texture-mapping is now default. But if you
+     are working on computers who support color-indexing you should change
+     to index-mode by editing the cgx.h file (set INX_MODE 1 and TEX_MODE 0).
+     The index mode might be faster there.
+  o  OpenFOAM is now supported (a CFD solver-lib). A mesh can be created and
+     results can be read. Only he8 are supported so far.
+  o  You can manipulate the edges which are generated by NETGEN to get better
+     results in NETGEN. 
+
+  o  Changed commands:
+     - elty: Just type elty to see all sets which have an assigned element-
+             type.
+     - graph:The dataset-description can be used as a parameter for the 
+             x-axis if it is a nummerical value.
+     - read: In case NETGEN is used for meshing then the edges which are 
+             generated by NETGEN can be read for modifications. They will be
+             stored as beam elements.
+     - send: It is now possible to write an OpenFOAM polyMesh.
+     - qenq: The position of nodes or points is now also given in cylindrical
+             coordinates and the sets to which the picked entity belongs are
+             listed.
+
+
+cgx 1.2 -> cgx 1.3
+---------------------
+
+  o  IMPORTANT! Some key-values have changed. See 'qpnt', 'qlin', 'qsur',
+     'qbod' below. If you do not read it you might not be able to generate
+      geometry any more!
+
+  o  The nurbs-trimming capabilities are improved.
+  o  A new mesher for unstructured 3-noded triangles is included. With this
+     mesher surfaces from cad systems (imported with vda2fbd or step2fbd) are
+     meshable (Only surfaces which are related to a nurbs are meshable).
+     This mesh might be exported in stl format which can be read by
+     other meshing software who fill this volume with tetraeder elements
+     (ie. NETGEN). The resulting mesh can be imported in cgx for further
+     actions. The unstructured form of an element type must be used (tr3u).
+  o  The type of an element can be specified more specificly (reduced 
+     integration, incompatible modes (he8r,he8i,he20r). 
+  o  A user-function for mesh and result manipulations can be included.
+  o  Commands for geometry creation as qlin might modify an already existing
+     entity (ie. line, surface..) without destroying the context (if a line
+     is redefined all dependent surfaces and bodies will survive).
+  o  It is now possible to store all actions or to save an animation in a
+     movie.
+  o  On startup a result-file (frd) and the corresponding solver input file
+     (inp) can be read in together. In this case all sets defined in the 
+     input file together with the boundary conditions are available in
+     addition to the results ("cgx file.frd file.inp").
+  o  On startup an stl file can be read.
+  o  On startup automatic line-division-calculation, merging and 
+     illumination of surfaces is triggered with the -a parameter instead of
+     using the -b parameter.
+  o  It is possible to read a solver input file during run-time. For example
+     to include additional elements (ie. coming from NETGEN).
+
+  o  New commands:
+     - call: This keyword is used to invoke the user provided functions.
+     - movi: manipulate giff files to create a movie.
+     - volu: This keyword is used to calculate the volume and center of 
+             gravity of a set of elements.
+     - qele: To manually define elements  
+
+  o  Changed commands:
+     - elty: The type of an element can be specified more specificly. It is
+             also used to choose the unstructured mesher.
+     - qdel: delete also elements and nodes
+     - qpnt: The user might specyfy a specific name for the point on the
+             command-line or by picking an existing point with the mouse-
+             pointer. A point can be moved (projected) to a nurbs-related
+             surface. A new point is generated by pressing the "g" (generate)
+             key and not longer by pressing the "p" key.
+     - qlin: The user might specyfy a specific name for the line on the
+             command-line or by picking an existing line with the mouse-
+             pointer. The key to end a line has changed from "l" to "g".
+     - qsur: The user might specyfy a specific name for the surf on the
+             command-line or by picking an existing surf with the mouse-
+             pointer. The key to end a line has changed from "l" to "g".
+             It is possible to reference a NURBS with the "S" key.
+     - qbod: The user might specyfy a specific name for the body on the
+             command-line or by picking an existing body with the mouse-
+             pointer.
+     - qflp: The syntax has changed and all connected surfaces can be 
+             oriented regarding the orientation of the selected one.
+             Necessary if a cad-volume should be meshed with triangles to
+             define a meshable volume.
+     - read: It is possible to read a solver input file during run-time.
+             For example to include additional elements and nodes. 
+     - send: A mesh made of triangles can be exported in stl format.
+             and additional features from Paul CARRICO:
+             'send all aster' for exporting a complete mesh in CODE ASTER 
+             format. The file will have the '.mail' extension
+             'send name_set aster names' for exporting the GROUP_NO 
+             (node group) and the GROUP_MA (mesh group) which compose the
+             set. The file will have '.nam' extension.
+
+  o  New menu-items:
+     - Hardcopy -> start recording giff-movie
+ 
+
+cgx 1.1 -> cgx 1.2
+---------------------
+
+  o  Scott Lanham's Nurbs-Trimming functions are stored in a separate library
+     called libSNL.
+
+  o  Nodal values can be displayed on the deformed structure with the menu
+     item "Toggle Add Displacements".
+
+  o  Arrows representing a vector can be displayed either with the menu
+     item "Vector Plot" or in general cases with the command 'lc'. DUNS
+     results require the use the command line.
+
+  o  A new entity called 'faces' is available. A face is one side of an
+     element and can be used to define boundary conditions. Faces exist
+     only on the surface of the part.
+
+  o  New boundary conditions for the thermal capabilities of the solver
+     are available like *FILM, *RADIATION etc.
+
+  o  New commands:
+     - scal: This keyword is used to scale scalar-, vector-values and 
+             the deformed structure. 
+
+  o  Changed commands:
+     - qdis: The distances between points are calculated also in the
+             cylindrical system.
+     - qlin: Lines can be splitted as with 'qspl'.
+     - rep:  This command prepares now all types of surfaces for illumination.
+             After this command returns you can display all surfaces
+             illuminated. This is very helpfull for selection.
+     - send: Creates and sends several new boundary conditions for the
+             new thermal capabilities of ccx.
+     - gsur: formal changes in this command require the update of the
+             vda2fbd interface to version 1.0. The version 0.9 of vda2fbd
+             might not work for complicated surfaces any longer. 
+  
+
+cgx 1.0 -> cgx 1.1
+---------------------
+
+  o  Thanks to Scott Lanham Nurbs-Trimming is supported now! CAD-geometries
+     can be rendered with illumination. The connection between vda2fbd and
+     cgx is much better now.
+
+  o  Wedge-elements can be displayed now.
+
+  o  Bug fixes in:
+     - duns-support
+
+  o  Updated documentation.
+
+  o  New commands:
+     - qdis: The distances between points are calculated. 
+
+  o  Changed commands:
+     - div:  The option "auto" calculates divisions based on element-length
+             and curvature. A single line can be used instead of a set.
+     - comp: The option e (edges) assigns all edge-points of the
+             lines used by the entities which are already included to the set. 
+     - qpnt: It is now possible to move a point to a surface if the 
+             surface is related to a NURBS.
+     - plot/plus: The option 'l' to see elements illuminated is replaced
+             by the option 'i'. This option 'i' can also be used with surfaces
+             if the surface is related to a NURBS and if the command "rep all"
+             was issued before. 
+     - rep:  The command (rep) trims the NURBS by the border-lines of the
+             related surfaces. If an fbd file is read which 
+             includes also NURBS-lines (nurbl) then this commands are issued
+             automatically. This is the case if the fbd file was created by
+             "vda2fbd" 
+              
+
+cgx 0.93 -> cgx 1.0
+---------------------
+
+  o  Bug fixes in:
+     - command mesh in combination with 7 sided bodies
+     - command qspl in combination with splines
+
+  o  Updated documentation.
+
+  o  Some support for the cfd-code duns (www.sourceforge.net) is included.
+     It is possible to create 2D- and 3D-meshes and to display the 
+     results of a duns-calculation. See the command mesh. To 
+     read a result-file you have to use the parameter -duns2d or -duns3d 
+     at start-up (example: "cgx -duns2d dunsout").
+
+  o  So far only 6 components (entities) of a dataset could be displayed.
+     This has changed and there is no practical restriction any more.
+
+  o  The results of the pre-defined calculations like v. Mises Stress
+     are not longer stored in additional datasets. They are added to the 
+     basis-datasets. In addition not only the worst-principal-stress is 
+     shown, also all 3 principal stresses are included now. 
+
+  o  New commands:
+     - qbia: The ratio of the length of the first element to the last 
+             element along a line can be set. 
+
+  o  Changed commands:
+     - qpnt: A picked first point can be moved to the place of a picked 
+             second point.
+     - send: Input for the ccx- or abaqus user-routine umpc can be generated.  
+
+
+cgx 0.92 -> cgx 0.93
+---------------------
+
+  o  Bug fixes in:
+     - command proj in combination with parameter rot
+
+  o  Updated documentation. Small examples of geometry are shown. A disk,
+     a cylinder and a segment of a sphere.
+
+  o  General speed improvements.
+
+  o  Small "undo" functionallity in some "q" commands (ie. qadd, qbod)
+     
+  o  New commands:
+     - mata, mats: Material-numbers can be defined. Usefull for nastran
+                   only.
+     - nurl, nurs: Definition of NURBS Lines and Shapes, Nurbs-Lines will
+                   be transformed to splines. Usefull for CAD-interfaces.
+                   Plot this entities with "plot L all" or "plot S all".
+     - qseq: Used to redefine a straight- or arc-line as a sequence-line.
+
+  o  Changed commands:
+     - body, gbod, qbod: can deal now with five-, six- and seven-sided
+                         bodies
+     - surf, gsur, qsur: can deal now with three-, four- and five-sided
+                         surfaces 
+     - comp: Also elements are included in a given set after a
+             "comp set up" if nodes were originally included.
+     - line, qlin: the definition of arc- and spline-lines are changed.
+     - qadd, qbod, qlin, qpnt, qnod, qsur: last action can be erased by
+                                           pressing the 'u' key
+     - qspl: Multiple crossing lines are splitted in a way, that they use
+             a common end-point at the crossing position.
+     - read: You might specify a column if you read nodes- or element-
+             numbers with the command "read <list-file> '-n'|'-e'&<column>" 
+
+  o  An solver input file (ccx) can be read with the option -c at startup
+     (example: "cgx -c solverfile.inp").
+
+
+cgx 0.91 -> cgx 0.92
+---------------------
+
+  o  Bug fixes in:
+     - command proj in combination with parameter rot
+
+  o  Updated documentation.
+
+  o  General speed improvements.
+
+  o  Small changes to the mesher. This results in changed node positions
+     in situations where opposide edges have different divisions.
+
+  o  Much better element edge representation in the surface mode. In the 
+     volume mode the edge representation is unchanged.
+
+  o  New commands:
+     - minus: This command will remove certain entities from the display list 
+              (annulment of a previous "plus" command).
+
+  o  Changed commands:
+     - group: A new mechanism is installed if not suppressed with the 
+              parameter -g at the start of the program. This mechanism, called
+              "auto-group" assigns the active group number to all elements
+              which are displayed by the commands plot or plus. Therefore the
+              presentation of results ("Datasets" -> "entity") is restricted
+              to the visible sets of elements. With that feature easy insight
+              into the structure is possible.
+
+     - plot/plus: A new color l "lighted-grey" is available for elements.
+  
+  o  New menu-items:
+     - Viewing -> Show Bad Elements: Calculates the jacobian matrix and shows
+              the elements with negative values. 
+ 
+
+cgx 0.9 -> cgx 0.91
+---------------------
+
+  o  Bug fixes.
+
+  o  Updated documentation.
+
+  o  General speed improvements.
+
+  o  Its now possible to change the first letter in the entity names
+     and to define the first node- and element-number of the mesh.
+     The function is named "asgn".
+
+  o  Radii can be fixed with the function "corrad".
+
+  o  Time history plots can be created with the function "graph".
+
+  o  Projections of geometry are possible with the function "proj".
+
+

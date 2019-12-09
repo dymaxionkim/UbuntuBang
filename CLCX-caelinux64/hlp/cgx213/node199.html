@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Result Format</TITLE>
+<META NAME="description" CONTENT="Result Format">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node206.html">
+<LINK REL="previous" HREF="node198.html">
+<LINK REL="up" HREF="cgx.html">
+<LINK REL="next" HREF="node200.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3077"
+  HREF="node200.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3073"
+  HREF="cgx.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3067"
+  HREF="node198.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3075"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3078"
+  HREF="node200.html">Model Header Record</A>
+<B> Up:</B> <A NAME="tex2html3074"
+  HREF="cgx.html">CalculiX USER'S MANUAL -</A>
+<B> Previous:</B> <A NAME="tex2html3068"
+  HREF="node198.html">Element Types</A>
+ &nbsp; <B>  <A NAME="tex2html3076"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000120000000000000000"></A><A NAME="Result_Format"></A>
+<BR>
+Result Format
+</H1>
+Listing of the mesh- and the nodal results format. The data are stored in fixed format. Node-, element-definitions and results might be in ascii or binary coding. The ascii format is able to store element- and node-numbers up to '99999' in the short form or up to '9999999999' in the long form. An example for the short form is shown below:
+
+<P>
+<PRE>
+&gt;    1Ctest             !''1C'' defines a new calc of name ''test''
+&gt;    1UDATE  26.01.2000 !''1U'' stores user job-informations
+&gt;    2C                 !''2C'' starts a block of node coordinates
+&gt; -1    1 0.00000E+00 0.00000E+00 0.00000E+00 ! 1. node
+&gt; -1    2 0.10000E+01 0.00000E+00 0.00000E+00 ! 2. node ....
+&gt; -3                    !end of the current block
+&gt;    3C                 !''3C'' starts a block of elem definitions
+&gt; -1    1    4    0    0!first elem, type of that elem is 4 (he20)
+&gt; -2    1    2    3    4   13   14   15   16    5    6    7    8 ..
+&gt; -2   12   17   18   19   20 !twenty nodes defining that element
+&gt; -1 ...
+&gt; -2 ...
+&gt; -2 ...
+&gt; -3                    !end of the current block
+&gt;    1PHID      10      !defines a parameter HID value 10
+&gt;  100CL101            !''100C'' starts a user defined result block
+&gt; -4  DISP        3    1         !Attribute Header Record (Dataset)
+&gt; -5  D1          1    2    1    0 !Component Def. Record  (Entity)
+&gt; -5  D2          1    2    2    0
+&gt; -5  D3          1    2    3    0
+&gt; -1    1 0.00000E+00 1.00000E+00 1.00000E+00  !Nodal Values
+&gt; -1    2 1.00000E+00 0.00000E+00 0.00000E+00
+&gt; -3                      !end of the current block
+&gt; 9999                    !end of data
+</PRE>
+The binary format applys only for data lines and the ``end of the current block'' line (-3), which is omitted.
+All other lines are the same.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3079"
+  HREF="node200.html">Model Header Record</A>
+<LI><A NAME="tex2html3080"
+  HREF="node201.html">User Header Record</A>
+<LI><A NAME="tex2html3081"
+  HREF="node202.html">Nodal Point Coordinate Block</A>
+<LI><A NAME="tex2html3082"
+  HREF="node203.html">Element Definition Block</A>
+<LI><A NAME="tex2html3083"
+  HREF="node204.html">Parameter Header Record</A>
+<LI><A NAME="tex2html3084"
+  HREF="node205.html">Nodal Results Block</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

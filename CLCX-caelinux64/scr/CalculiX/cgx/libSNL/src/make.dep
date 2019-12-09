@@ -1,0 +1,67 @@
+snlCircularOffsetCurve.o: snlCircularOffsetCurve.cpp \
+  snlCircularOffsetCurve.h snlCurve.h snlCtrlPointNetCurve.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h snlCurveBase.h snlKnotVector.h snlVertexNet.h \
+  snlVertex.h snlUtil.h snlVersion.h
+snlCtrlPoint.o: snlCtrlPoint.cpp snlCtrlPoint.h snlPoint.h snlVector.h
+snlCtrlPointNet.o: snlCtrlPointNet.cpp snlCtrlPointNet.h snlCtrlPoint.h \
+  snlPoint.h snlVector.h snlTransform.h snlMatrix_4x4.h snlUtil.h \
+  snlVersion.h
+snlCtrlPointNetCurve.o: snlCtrlPointNetCurve.cpp snlCtrlPointNetCurve.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h
+snlCtrlPointNetSurface.o: snlCtrlPointNetSurface.cpp \
+  snlCtrlPointNetSurface.h snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h \
+  snlVector.h snlTransform.h snlMatrix_4x4.h snlUtil.h snlVersion.h
+snlCurve.o: snlCurve.cpp snlCurve.h snlCtrlPointNetCurve.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h snlCurveBase.h snlKnotVector.h snlVertexNet.h \
+  snlVertex.h snlUtil.h snlVersion.h snlSquareLinear.h
+snlKnotVector.o: snlKnotVector.cpp snlKnotVector.h
+snlMatrix_4x4.o: snlMatrix_4x4.cpp snlMatrix_4x4.h snlPoint.h snlVector.h
+snlMeshable.o: snlMeshable.cpp snlMeshable.h snlKnotVector.h snlPoint.h \
+  snlVector.h snlTriangleMesh.h snlVertex.h dynamicArray.h snlVertexNet.h \
+  snlCtrlPoint.h
+snlNurbsCommon.o: snlNurbsCommon.cpp snlNurbsCommon.h snlPoint.h \
+  snlVector.h snlKnotVector.h snlSurface.h snlCtrlPointNetSurface.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlTransform.h snlMatrix_4x4.h \
+  snlCurve.h snlCtrlPointNetCurve.h snlCurveBase.h snlVertexNet.h \
+  snlVertex.h snlSurfaceBase.h snlTriangleMesh.h dynamicArray.h ptrList.h
+snlPoint.o: snlPoint.cpp snlPoint.h snlVector.h
+snlSquareLinear.o: snlSquareLinear.cpp snlSquareLinear.h snlPoint.h \
+  snlVector.h
+snlSurface.o: snlSurface.cpp snlSurface.h snlCtrlPointNetSurface.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h snlCurve.h snlCtrlPointNetCurve.h snlCurveBase.h \
+  snlKnotVector.h snlVertexNet.h snlVertex.h snlSurfaceBase.h \
+  snlTriangleMesh.h dynamicArray.h ptrList.h snlUtil.h snlVersion.h \
+  snlNurbsCommon.h
+snlSurface_pointLoop.o: snlSurface_pointLoop.cpp snlSurface_pointLoop.h \
+  snlSurface.h snlCtrlPointNetSurface.h snlCtrlPointNet.h snlCtrlPoint.h \
+  snlPoint.h snlVector.h snlTransform.h snlMatrix_4x4.h snlCurve.h \
+  snlCtrlPointNetCurve.h snlCurveBase.h snlKnotVector.h snlVertexNet.h \
+  snlVertex.h snlSurfaceBase.h snlTriangleMesh.h dynamicArray.h ptrList.h \
+  snlUtil.h snlVersion.h snlNurbsCommon.h
+snlSurface_projection.o: snlSurface_projection.cpp \
+  snlSurface_projection.h snlSurface.h snlCtrlPointNetSurface.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h snlCurve.h snlCtrlPointNetCurve.h snlCurveBase.h \
+  snlKnotVector.h snlVertexNet.h snlVertex.h snlSurfaceBase.h \
+  snlTriangleMesh.h dynamicArray.h ptrList.h snlUtil.h snlVersion.h \
+  snlNurbsCommon.h
+snlSurfaceOfRevolution.o: snlSurfaceOfRevolution.cpp \
+  snlSurfaceOfRevolution.h snlCurve.h snlCtrlPointNetCurve.h \
+  snlCtrlPointNet.h snlCtrlPoint.h snlPoint.h snlVector.h snlTransform.h \
+  snlMatrix_4x4.h snlCurveBase.h snlKnotVector.h snlVertexNet.h \
+  snlVertex.h snlSurfaceBase.h snlTriangleMesh.h dynamicArray.h snlUtil.h \
+  snlVersion.h
+snlTransform.o: snlTransform.cpp snlTransform.h snlPoint.h snlVector.h \
+  snlMatrix_4x4.h
+snlTriangleMesh.o: snlTriangleMesh.cpp snlTriangleMesh.h snlVertex.h \
+  snlPoint.h snlVector.h snlKnotVector.h dynamicArray.h
+snlUtil.o: snlUtil.cpp snlUtil.h snlPoint.h snlVector.h snlVersion.h
+snlVector.o: snlVector.cpp snlVector.h snlPoint.h
+snlVertex.o: snlVertex.cpp snlVertex.h snlPoint.h snlVector.h \
+  snlKnotVector.h
+snlVertexNet.o: snlVertexNet.cpp snlVertexNet.h snlVertex.h snlPoint.h \
+  snlVector.h snlKnotVector.h snlCtrlPoint.h

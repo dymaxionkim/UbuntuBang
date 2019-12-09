@@ -1,0 +1,24 @@
+ 
+*STEP 
+*STATIC 
+
+** Boundary Conditions
+
+** Output (frd file)
+*NODE FILE 
+U, 
+*EL FILE 
+S, 
+*END STEP 
+
+** Modal, prestressed, 3 forms
+*STEP, PERTURBATION 
+*FREQUENCY 
+3
+
+
+** Output (frd file)
+*NODE FILE 
+U 
+
+*END STEP  

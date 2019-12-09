@@ -1,0 +1,11 @@
+
+** to create file <name>.flm based on nodal set <name>
+** run mesh file in CGX (pre-processor mode) and apply cards below:
+** comp <name> do
+** send <name> abq film <temperature> <value>
+** for example 'send sindoor abq film 293 5' means Sink temperature=293 and Heat transfer (Film) coefficient=5 
+** <name>.flm text file will be created in working folder
+
+
+*FILM
+*INCLUDE, INPUT=<name>.flm

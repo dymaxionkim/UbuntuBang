@@ -1,0 +1,6 @@
+Martin Kraska
+Created by Martin Kraska, Brandenburg University of Applied Sciences
+Example CalculiX FEA models.
+These examples demonstrate the use of CalculiX for various analysis types. Most of them use parametrized geometry generated in CGX, some use GMSH for geometry and meshing. 
+See the website for details:
+https://github.com/mkraska/CalculiX-Examples

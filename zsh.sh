@@ -19,7 +19,7 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 ###########################################################
 # Install font
 wget -P ~/ https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/UbuntuMono.zip
-unzip ~/UbuntuMono.zip -d /home/osboxes/.local/share/fonts/
+unzip ~/UbuntuMono.zip -d /home/osboxes/.local/share/fonts/UbuntuMono
 rm ~/UbuntuMono.zip
 sudo fc-cache -f -v
 

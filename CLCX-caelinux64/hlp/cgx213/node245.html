@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sphere</TITLE>
+<META NAME="description" CONTENT="Sphere">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node246.html">
+<LINK REL="previous" HREF="node244.html">
+<LINK REL="up" HREF="node242.html">
+<LINK REL="next" HREF="node246.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3664"
+  HREF="node246.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3660"
+  HREF="node242.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3654"
+  HREF="node244.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3662"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3665"
+  HREF="node246.html">Sphere (Volume)</A>
+<B> Up:</B> <A NAME="tex2html3661"
+  HREF="node242.html">Simple Examples</A>
+<B> Previous:</B> <A NAME="tex2html3655"
+  HREF="node244.html">Cylinder</A>
+ &nbsp; <B>  <A NAME="tex2html3663"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000183000000000000000"></A><A NAME="Sphere"></A>
+<BR>
+Sphere
+</H2>
+
+<DIV ALIGN="CENTER"><A NAME="Segment_of_a_Sphere"></A><A NAME="2163"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 16:</STRONG>
+Segment of a Sphere</CAPTION>
+<TR><TD><IMG
+ WIDTH="544" HEIGHT="473" BORDER="0"
+ SRC="img35.png"
+ ALT="\begin{figure}\epsfig{file=sphere.eps,width=12cm}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<PRE>
+ PNT py      -0.00000        1.00000       -0.00000 
+ PNT p1       1.00000       -0.00000       -0.00000 
+ PNT P001     0.70711       -0.00000       -0.70711 
+ PNT P003    -0.00000       -0.00000       -1.00000 
+ PNT P006     0.70711        0.50000       -0.50000 
+ PNT P008    -0.00000        0.70711       -0.70711 
+ PNT P00C     0.70711       -0.00000       -0.00000 
+ PNT P00K     0.70711        0.70711       -0.00000 
+ PNT P00L    -0.00000       -0.00000       -0.00000 
+ PNT P00N    -0.00000        1.00000       -0.00000 
+ LINE L001 p1 P001 P00L 8              
+ LINE L002 P001 P003 P00L 8              
+ LINE L003 p1 P006 P00L 8              
+ LINE L004 P006 P008 P00L 8              
+ LINE L006 P001 P006 P00C 8              
+ LINE L008 P003 P008 P00L 8              
+ LINE L00A p1 P00K P00L 8              
+ LINE L00C P00K P00N P00L 8              
+ LINE L00G P006 P00K P00C 8              
+ LINE L00J P008 P00N P00L 8              
+ SHPE SPH1 sph P00L 1.
+ GSUR A005 + SPH1  - L003 + L001 + L006 
+ GSUR A002 + SPH1  - L002 + L006 + L004 - L008 
+ GSUR A006 + SPH1  + L003 + L00G - L00A 
+ GSUR A004 + SPH1  - L004 + L00G + L00C - L00J 
+ ELTY all QU4
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

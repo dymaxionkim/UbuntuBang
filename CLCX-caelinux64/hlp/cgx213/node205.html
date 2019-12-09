@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Nodal Results Block</TITLE>
+<META NAME="description" CONTENT="Nodal Results Block">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="previous" HREF="node204.html">
+<LINK REL="up" HREF="node199.html">
+<LINK REL="next" HREF="node206.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3153"
+  HREF="node206.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3149"
+  HREF="node199.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3145"
+  HREF="node204.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3151"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3154"
+  HREF="node206.html">Pre-defined Calculations</A>
+<B> Up:</B> <A NAME="tex2html3150"
+  HREF="node199.html">Result Format</A>
+<B> Previous:</B> <A NAME="tex2html3146"
+  HREF="node204.html">Parameter Header Record</A>
+ &nbsp; <B>  <A NAME="tex2html3152"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000126000000000000000"></A><A NAME="Nodal_Results_Block"></A>
+<BR>
+Nodal Results Block
+</H2>
+<PRE>
+Purpose: Stores values on node positions
+
+1. Record:
+Format:(1X,' 100','C',6A1,E12.5,I12,20A1,I2,I5,10A1,I2)
+Values: KEY,CODE,SETNAME,VALUE,NUMNOD,TEXT,ICTYPE,NUMSTP,ANALYS,
+        FORMAT
+Where: KEY    = 100
+       CODE   = C
+       SETNAME= Name (not used)
+       VALUE  = Could be frequency, time or any numerical value
+       NUMNOD = Number of nodes in this nodal results block
+       TEXT   = Any text
+       ICTYPE = Analysis type
+                0  static
+                1  time step
+                2  frequency
+                3  load step
+                4  user named
+       NUMSTP = Step number
+       ANALYS = Type of analysis (description)
+       FORMAT = Format indicator
+                0  short format
+                1  long format 
+                2  binary format 
+
+2. Record:
+Format:(1X,I2,2X,8A1,2I5)
+Values: KEY, NAME, NCOMPS, IRTYPE
+Where: KEY    = -4
+       NAME   = Dataset name to be used in the menu
+       NCOMPS = Number of entities
+       IRTYPE = 1  Nodal data, material independent
+                2  Nodal data, material dependant
+                3  Element data at nodes (not used) 
+
+3. Type of Record:
+Format:(1X,I2,2X,8A1,5I5,8A1) 
+Values: KEY, NAME, MENU, ICTYPE, ICIND1, ICIND2, IEXIST, ICNAME
+Where: KEY    = -5
+       NAME   = Entity name to be used in the menu for this comp.
+       MENU   = 1
+       ICTYPE = Type of entity
+                1  scalar
+                2  vector with 3 components
+                4  matrix
+               12  vector with 3 amplitudes and 3 phase-angles in
+                   degree
+               14  tensor with 6 amplitudes and 6 phase-angles in
+                   degree
+       ICIND1 = sub-component index or row number
+       ICIND2 = column number for ICTYPE=4
+       IEXIST = 0  data are provided
+                1  data are to be calculated by predefined
+                   functions (not used)
+                2  as 0 but flaged by cgx
+       ICNAME = Name of the predefined calculation (not used)
+                ALL  calculate the total displacement if ICTYPE=2
+This record must be repeated for each entity.
+
+4. Type of Record:  (not used)
+This record will be necessary in combination with the request for 
+predefined calculations. This type of record is not allowed in
+combination with binary coding of data.
+Format:(1X,I2,2I5,20I3) 
+Values: KEY,IRECTY,NUMCPS,(LSTCPS(I),I=1,NUMCPS)
+Where: KEY    = -6
+       IRECTY = Record variant identification number
+       NUMCPS = Number of components
+       LSTCPS = For each variant component, the position of the
+                corresponding component in attribute definition
+
+
+5. Type of Record:
+The following records are data-records and the format is repeated
+for each node.
+
+In case of material independent data
+
+- ascii coding:
+Following records (ascci, FORMAT=0 | 1):
+ Short Format:(1X,I2,I5,6E12.5)
+ Long Format:(1X,I2,I10,6E12.5)
+ Values: KEY, NODE, XX..
+ Where: KEY  = -1 if its the first line of data for a given node
+               -2 if its a continuation line
+       NODE  = node number or blank if KEY=-2
+       XX..  = data
+
+- binary coding:
+ Following records (ascci, FORMAT=2):
+ (int,NCOMPS*float)
+ int and float are ansi-c data-types
+ Values: NODE, XX..
+ Where:
+       NODE   = node number or blank if KEY=-2
+       XX..   = data
+
+In case of material dependant data
+REMARK: Implemented only for NMATS=1
+- first line:
+Short Format:(1X,I2,4I5)
+Long Format:(1X,I2,I10,3I5)
+Values: KEY, NODENR, NMATS
+Where: KEY    = -1
+       NODENR = Node number
+       NMATS  = Number of different materials at this node(unused)
+- second and following lines:
+Short Format:(1X,I2,I5,6E12.5)
+Long Format:(1X,I2,I10,6E12.5)
+Values: KEY, MAT, XX, YY, ZZ, XY, YZ, ZX ..
+Where: KEY    = -2 
+       MAT    = material-property-number if KEY=-2 (unused)
+       XX..   = data
+
+  
+Last Record (only FORMAT=0 | 1 (ascii), omitted for FORMAT=2):
+Format:(1X,'-3')
+Values: KEY
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

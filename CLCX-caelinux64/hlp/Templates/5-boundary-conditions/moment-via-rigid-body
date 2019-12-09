@@ -1,0 +1,16 @@
+
+** example: create rigid body for nset (with ROT NODE #1000002 at any position)
+*node
+1000002,0,0,0 
+
+*RIGID BODY,nset=<..>,,ROT NODE=1000002
+
+** moment should be applied within STEP card after *STEP and *STATIC
+
+** Direction dir=1, for moment around 'X', 
+** dir=2 and dir=3 should be used for moments around 'Y' AND 'Z'
+*CLOAD
+1000002,<dir>,<value>  
+
+
+

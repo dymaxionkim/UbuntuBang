@@ -1,0 +1,10 @@
+
+** to create file <name>.rad based on nodal set <name>
+** run mesh file in cgx (pre-processor mode) and apply cards below:
+** comp <name> do
+** send <name> abq rad <temperature> <value>
+** or 'send <name> abq rad cr<temperature> <value>' for cavity radiation
+** <name>.rad text file will be created in working folder
+
+*RADIATE
+*INCLUDE, INPUT=<name>.rad

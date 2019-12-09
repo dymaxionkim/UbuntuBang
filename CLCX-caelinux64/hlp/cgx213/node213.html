@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Meshing rules</TITLE>
+<META NAME="description" CONTENT="Meshing rules">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node214.html">
+<LINK REL="previous" HREF="node206.html">
+<LINK REL="up" HREF="cgx.html">
+<LINK REL="next" HREF="node214.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3253"
+  HREF="node214.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3249"
+  HREF="cgx.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3243"
+  HREF="node212.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3251"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3254"
+  HREF="node214.html">User-Functions</A>
+<B> Up:</B> <A NAME="tex2html3250"
+  HREF="cgx.html">CalculiX USER'S MANUAL -</A>
+<B> Previous:</B> <A NAME="tex2html3244"
+  HREF="node212.html">Cylindrical Stresses</A>
+ &nbsp; <B>  <A NAME="tex2html3252"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000140000000000000000"></A><A NAME="Meshing_rules"></A>
+<BR>
+Meshing rules
+</H1>
+Some rules must be fulfilled before a geometry is meshable (see <A HREF="node115.html#mesh">mesh</A>). For linear elements (ie. qu4 or he8), the sum of all divisions (see <A HREF="node77.html#div">div</A>) of each surface must be even. In case of quadratic elements (ie. qu8 or he20) this sum must be divisible by 4 without residue. Opposite edges of a given surface might have different divisions. For example on the left side of a given surface the division is 8 and on the right side it is only 4. But only two opposite surfaces of a body can use this feature. These surfaces are called top and bottom surfaces. All other surfaces of this body must have unique divisions on opposite edges. In case of 3 sided surfaces it is necessary to apply a minimum division sufficient for two elements along the edge. The only exception is the element tr3u (see <A HREF="node81.html#elty">elty</A>) which allows a division of one.
+
+<P>
+A body can not be meshed when the shape of the body is very far from being brick-like. The body might be subdivided to improve the shapes of the single ones. There is a restriction for the definition of five- or seven-sided bodies. The first two surfaces in the body-topology (see <A HREF="node93.html#gbod">gbod</A>) have to be defined in the same order. That means the first line of the first surface has to be connected with the first line in the second surface by one of the remaining surfaces. This is always the case if the body is a product of a ''<A HREF="node181.html#swep">swep</A>'' command.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3253"
+  HREF="node214.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3249"
+  HREF="cgx.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3243"
+  HREF="node212.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3251"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3254"
+  HREF="node214.html">User-Functions</A>
+<B> Up:</B> <A NAME="tex2html3250"
+  HREF="cgx.html">CalculiX USER'S MANUAL -</A>
+<B> Previous:</B> <A NAME="tex2html3244"
+  HREF="node212.html">Cylindrical Stresses</A>
+ &nbsp; <B>  <A NAME="tex2html3252"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

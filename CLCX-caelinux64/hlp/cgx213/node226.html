@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How the mesh is related to the geometry</TITLE>
+<META NAME="description" CONTENT="How the mesh is related to the geometry">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node227.html">
+<LINK REL="previous" HREF="node225.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node227.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3432"
+  HREF="node227.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3428"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3422"
+  HREF="node225.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3430"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3433"
+  HREF="node227.html">How to change the</A>
+<B> Up:</B> <A NAME="tex2html3429"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3423"
+  HREF="node225.html">How to generate a</A>
+ &nbsp; <B>  <A NAME="tex2html3431"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000178000000000000000"></A><A NAME="How_the_mesh_is_related_to_the_geometry"></A>
+<BR>
+How the mesh is related to the geometry
+</H2>
+Very often you need the embedded nodes, element-faces or elements of geometric entities to apply boundary conditions. If you understand the underlying concept you will be able to get them more easily.
+
+<P>
+Geometric entities are the mothers of nodes, faces and elements (so to say) and will remember them. In turn if an entity is not the mother of a given mesh-entity it will not remember it. Therefore a body will only know about nodes which are not placed on surfaces, lines or points. A surface will only know about nodes which are not placed on lines or points. And so on.
+
+<P>
+Therefore if you need the nodes on a surface and not only the ones just inside the surface, then create a set with this surface and do a ''<A HREF="node70.html#comp">comp</A> set do''. This will add the lines and points together with their nodes to the set.
+
+<P>
+On the other hand if you have only a node and you need the geometric entity in which the node is embedded you might also type ''comp set do''.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3432"
+  HREF="node227.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3428"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3422"
+  HREF="node225.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3430"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3433"
+  HREF="node227.html">How to change the</A>
+<B> Up:</B> <A NAME="tex2html3429"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3423"
+  HREF="node225.html">How to generate a</A>
+ &nbsp; <B>  <A NAME="tex2html3431"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

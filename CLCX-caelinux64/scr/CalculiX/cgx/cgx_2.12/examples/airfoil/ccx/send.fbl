@@ -1,0 +1,26 @@
+read ../rae2822.fbd
+del me
+div bl 6
+bia bl 1
+div all mult 2
+seta tedge p P001
+swep all s2 tra 0 0 0.1 1 append
+comp in do
+comp out do
+comp profil do
+setr profil se tedge
+elty all
+elty all he8f
+mesh all
+send profil abq nam
+send in abq nam
+send out abq nam
+send profil abq surf
+send profil abq slide s
+send profil abq dflux 0.
+send all abq
+plot e all
+view ed off
+view elem on
+#quit
+

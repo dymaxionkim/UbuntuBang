@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to change the format of the movie file</TITLE>
+<META NAME="description" CONTENT="How to change the format of the movie file">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node220.html">
+<LINK REL="previous" HREF="node218.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node220.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3348"
+  HREF="node220.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3344"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3338"
+  HREF="node218.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3346"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3349"
+  HREF="node220.html">How to get the</A>
+<B> Up:</B> <A NAME="tex2html3345"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3339"
+  HREF="node218.html">Tips and Hints</A>
+ &nbsp; <B>  <A NAME="tex2html3347"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000171000000000000000"></A><A NAME="How_to_change_the_format_of_the_movie_file"></A>
+<BR>
+How to change the format of the movie file
+</H2>
+Use a shell command like convert to split up movie.gif with multiple
+layers into multiple frames, as seperate jpeg files:
+<PRE>
+convert movie.gif %d.jpg
+</PRE>
+Convert any series of multiple jpeg files into WMV format with:
+<PRE>
+mencoder 'mf://*.jpg' -mf type=jpg:fps=25 -ovc lavc -lavcopts
+vcodec=wmv2 -o movie.wmv
+</PRE>
+To convert a video file into avi format use this command:
+<PRE>
+mencoder &lt;videofile&gt; -ovc lavc -lavcopts vcodec=flv -of avi -o movie.avi
+</PRE>
+In general:To convert a video file from one format into the other, use
+the program "mencoder". It comes with the mplayer packages. 
+<PRE>
+mplayer movie.wmv
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

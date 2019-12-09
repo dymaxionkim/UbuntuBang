@@ -1,0 +1,9 @@
+**degrees of freedom - only 1, 2 or 3 allowed
+** cload or boundary are applied to the ref. node 
+** ref. node is center of rotation
+
+*COUPLING,REF NODE=<Ref.nd>,SURFACE=<SURF>,CONSTRAINT NAME=C1
+*KINEMATIC
+<first deg. of freedom>,<last deg. of freedom>
+*NSET,NSET=N1
+<Ref.nd>

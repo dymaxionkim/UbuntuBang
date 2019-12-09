@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>body</TITLE>
+<META NAME="description" CONTENT="body">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1483"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1479"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1473"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1481"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1484"
+  HREF="node67.html">break</A>
+<B> Up:</B> <A NAME="tex2html1480"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1474"
+  HREF="node65.html">bia</A>
+ &nbsp; <B>  <A NAME="tex2html1482"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000105000000000000000"></A><A NAME="body"></A>
+<BR>
+body
+</H2>
+<PRE>
+   'body' &lt;name(char&lt;9)&gt;|'!' [&lt;surf1&gt; &lt;surf2&gt;]|
+                [&lt;surf1&gt; &lt;surf2&gt; &lt;surf3&gt; &lt;surf4&gt; -&gt;
+                &lt;surf5&gt; [&lt;surf6&gt;  &lt;surf6&gt;]]|
+                [&lt;set&gt;]
+</PRE>
+This keyword is used to define or redefine a volume (body). Each body must have five, six or seven surfaces to be mesh-able with hexaeder-elements, otherwise it can only meshed with tets if NETGEN [<A
+ HREF="node249.html#NETGEN">4</A>] is installed. However, it is sufficient to specify just the ''top'' and the ''bottom'' surfaces. But if surfaces with 3 or 5 edges are involved then this surfaces have to be the ''top'' and ''bottom'' surfaces. This is also true if surfaces have different line-divisions at opposite edges. The missing surfaces between the ''top'' and ''bottom'' surfaces will be created automatically if they do not already exist (they will always have 4 edges with the same division on opposide edges). But all needed lines must exist. More precisely, only single lines or existing combined lines (<A HREF="node104.html#lcmb">lcmb</A>) can be detected. The user must define the missing surface if just a chain of lines (and no lcmb) is defined between two corner points of the ''top'' and ''bottom'' surfaces before he can successfully use the body command. It is a more convenient way to define a body than the command ``<A HREF="node93.html#gbod">gbod</A>'' but exactly 2 or all surfaces must be specified otherwise the body will not be created (The most convenient way to define bodies is to use the command ``<A HREF="node138.html#qbod">qbod</A>''). 
+For example,
+<BR>
+<BR>
+body b1 s1 s2
+<BR>
+<BR>
+will look for the missing surfaces and if necessary create them if all lines between the corner points of s1 and s2 are defined; the result is the creation of body, b1. Or for example,
+<BR>
+<BR>
+body <code>!</code> s1 s2 s3 s4 s5
+<BR>
+<BR>
+will create  a body and a new name for it. The new name is triggered by the sign <code>!</code>. Here the body is based on 5 surfaces. If the surfaces are not connected, the body is not mesh-able.
+<BR>
+<BR>
+In case a body should only be meshable with tets it can be composed of more than 7 surfaces. The definition can be provided by a set of surfaces:
+<BR>
+<BR>
+body <code>!</code> surfset
+<BR>
+<BR>
+will create  a body based on the surfaces referenced by surfset.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1483"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1479"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1473"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1481"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1484"
+  HREF="node67.html">break</A>
+<B> Up:</B> <A NAME="tex2html1480"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1474"
+  HREF="node65.html">bia</A>
+ &nbsp; <B>  <A NAME="tex2html1482"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

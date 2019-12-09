@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Network iterations</TITLE>
+<META NAME="description" CONTENT="Network iterations">
+<META NAME="keywords" CONTENT="ccx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ccx.css">
+
+<LINK REL="next" HREF="node184.html">
+<LINK REL="previous" HREF="node182.html">
+<LINK REL="up" HREF="node180.html">
+<LINK REL="next" HREF="node184.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3301"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3297"
+  HREF="node180.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3291"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3299"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3302"
+  HREF="node184.html">Implicit dynamics</A>
+<B> Up:</B> <A NAME="tex2html3298"
+  HREF="node180.html">Convergence criteria</A>
+<B> Previous:</B> <A NAME="tex2html3292"
+  HREF="node182.html">Line search</A>
+ &nbsp; <B>  <A NAME="tex2html3300"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000710300000000000000">
+Network iterations</A>
+</H3>
+
+<P>
+For network iterations two kinds of convergence criteria are applied: the
+residuals and the change in the solution must be both small enough.
+
+<P>
+For the mass and energy flow residuals <!-- MATH
+ $\tilde{q}^{\alpha}_i$
+ -->
+<B><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1446.png"
+ ALT="$ \tilde{q}^{\alpha}_i$"></B> and
+<!-- MATH
+ $r^{\alpha}_{i,max}$
+ -->
+<B><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1447.png"
+ ALT="$ r^{\alpha}_{i,max}$"></B> are calculated as specified in Equations (<A HREF="node181.html#Eq323">434</A>) and
+(<A HREF="node181.html#Eq324">435</A>) with <B><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1497.png"
+ ALT="$ k_n=1$"></B> and <!-- MATH
+ $q_i^{\alpha}$
+ -->
+<B><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1498.png"
+ ALT="$ q_i^{\alpha}$"></B> equal to the mass flow (unit of
+mass/unit of time) and the energy flow (unit of energy/unit of time). For the
+element equation  <!-- MATH
+ $\tilde{q}^{\alpha}_i$
+ -->
+<B><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1446.png"
+ ALT="$ \tilde{q}^{\alpha}_i$"></B> is taken to be 1 (the element
+equation is dimensionless) and <!-- MATH
+ $r^{\alpha}_{i,max}$
+ -->
+<B><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1447.png"
+ ALT="$ r^{\alpha}_{i,max}$"></B> is calculated based on the
+element equation residuals. The residual check amounts to 
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+r^{\alpha}_{i,max} \le c_{1*} \tilde{q}^{\alpha}_i
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="105" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1499.png"
+ ALT="$\displaystyle r^{\alpha}_{i,max} \le c_{1*} \tilde{q}^{\alpha}_i$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(444)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1500.png"
+ ALT="$ c_{1*}$"></B> takes the value <B><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1501.png"
+ ALT="$ c_{1t}$"></B>, <B><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1502.png"
+ ALT="$ c_{1f}$"></B> and <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1503.png"
+ ALT="$ c_{1p}$"></B> for the energy
+balance, mass balance and element equation, respectively.
+
+<P>
+In the same way the maximum change in solution in network iteration i
+<!-- MATH
+ ${c}^{\alpha}_{i,max}$
+ -->
+<B><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1452.png"
+ ALT="$ {c}^{\alpha}_{i,max}$"></B> is compared with the maximum change in the solution
+since the start of the network iterations, i.e. the solution at the end of
+iteration i minus the solution at the beginning of the increment(before
+network iteration 1). This is done separately for the temperature, the mass
+flow, the pressure and the geometry. It amounts to the equation:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+{c}^{\alpha}_{i,max} \le c_{2*} {\Delta u}^{\alpha}_{i,max},
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="149" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1504.png"
+ ALT="$\displaystyle {c}^{\alpha}_{i,max} \le c_{2*} {\Delta u}^{\alpha}_{i,max},$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(445)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1505.png"
+ ALT="$ c_{2*}$"></B> takes the value <B><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.png"
+ ALT="$ c_{2}$"></B>, <B><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1507.png"
+ ALT="$ c_{2f}$"></B>, <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1508.png"
+ ALT="$ c_{2p}$"></B> and <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1509.png"
+ ALT="$ c_{2a}$"></B> for
+the temperature, the mass flow, the pressure and the geometry,
+respectively. 
+
+<P>
+The parameters <B><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1501.png"
+ ALT="$ c_{1t}$"></B>, <B><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1502.png"
+ ALT="$ c_{1f}$"></B>, <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1503.png"
+ ALT="$ c_{1p}$"></B>, <B><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.png"
+ ALT="$ c_{2}$"></B>, <B><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1507.png"
+ ALT="$ c_{2f}$"></B>, <B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1508.png"
+ ALT="$ c_{2p}$"></B> and
+<B><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1509.png"
+ ALT="$ c_{2a}$"></B> can be changed using the <A HREF="node226.html#controls">*CONTROLS</A>,PARAMETERS=NETWORK card.
+
+<P>
+Both criteria are important. A convergent solution with divergent residuals
+points to a local minimum, convergent residuals with a divergent solution
+point to a singular equation system (i.e. infinitely many solutions).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3301"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3297"
+  HREF="node180.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3291"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3299"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3302"
+  HREF="node184.html">Implicit dynamics</A>
+<B> Up:</B> <A NAME="tex2html3298"
+  HREF="node180.html">Convergence criteria</A>
+<B> Previous:</B> <A NAME="tex2html3292"
+  HREF="node182.html">Line search</A>
+ &nbsp; <B>  <A NAME="tex2html3300"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+guido dhondt
+2017-10-08
+</ADDRESS>
+</BODY>
+</HTML>

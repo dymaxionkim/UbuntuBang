@@ -1,0 +1,22 @@
+*INITIAL CONDITIONS,TYPE=TEMPERATURE
+Nall,293
+
+**The parameter STEADY STATE indicates that only the steady state should be calculated
+
+*STEP,NLGEOM
+*UNCOUPLED TEMPERATURE-DISPLACEMENT,STEADY STATE 
+<Initial time increment>,<Time period of the step, def. 1 >
+
+**Boundary Conditions
+
+
+**Output (frd file)
+*NODE FILE 
+NT,U
+*EL FILE
+HFL,S
+*END STEP
+
+*END STEP
+
+

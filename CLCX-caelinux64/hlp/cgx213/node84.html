@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>enq</TITLE>
+<META NAME="description" CONTENT="enq">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node85.html">
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node85.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1699"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1695"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1689"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1697"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1700"
+  HREF="node85.html">eprop</A>
+<B> Up:</B> <A NAME="tex2html1696"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1690"
+  HREF="node83.html">endwhile</A>
+ &nbsp; <B>  <A NAME="tex2html1698"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001023000000000000000"></A><A NAME="enq"></A>
+<BR>
+enq
+</H2>
+<PRE>
+   'enq' &lt;set&gt; &lt;set&gt; ['set' &lt;setname&gt; ]| -&gt; 
+            ['rec' &lt;x-value&gt;|'_' &lt;y-value&gt;|'_' &lt;z-value&gt;|'_' ]| -&gt;
+            ['cyl' 'x'|'y'|'z' &lt;r-value&gt;|'_' &lt;axis-value&gt;|'_' ] -&gt; 
+             &lt;tol&gt; 'i'|'a'|'h'|'l' [&lt;value&gt;]
+</PRE>
+This command is used to locate entities from a certain set (first provided set) and stores them in the second set. The following entities are handled: nodes, points, lines, surfaces. But surfaces can only be identified if the command ``<A HREF="node161.html#rep">rep</A> <code>&lt;</code>setname<code>&gt;</code>'' was issued before. In case of nodes with related values (results) it will also determine the highes or lowest value in the specified range, or, all nodes above or below a certain value. The coordinates might be taken from one node or point in a given 3rd set or given in cartesian coordinates (option rec) or cylindrical coordinates (option cyl). Some coordinates might be omitted to specify an infinite range. The '_' key has to be used in this case. The mode is defined by the keys 'i' individual, 'a' all, 'h' high, 'l' low, were h and l will search the highest or lowest value in range. This value will also be written to a file for automatic processing purposes. For example
+<BR>
+<BR>
+enq all newset rec 10. _ 100. 0.1 i
+<BR>
+<BR>
+will search for entities in set 'all' at the given location x:10. y:_(infinite range, triggered by the '_' key) z:100. with a tolerance of 0.1 and only the closest entity of all kinds of entities are stored in set 'newset', triggered by the 'i' key. With the 'a' key all in range would be stored. The key 'h' or 'l' would trigger a search for the highest or lowest value in the specified range. 
+
+<P>
+In combination with a certain value
+<BR>
+<BR>
+enq all newset rec 10. _ 100. 0.1 h 1013.
+<BR>
+<BR>
+all nodes with a value above ``1013.'' would be stored in set ``newset''. The command 
+<BR>
+<BR>
+enq domain1 newset cyl x 100. 10. 0.1 a
+<BR>
+<BR>
+will search for entities in set 'domain1' at radius:100. around x at x:10. with a tolerance of 0.1. All entities in range are stored in set 'newset'.
+
+<P>
+The following example illustrates the use of ``enq'' to find the highest value close to a location given by a node-number: 
+<PRE>
+# activate dataset 3 with entity 7:
+ds 3 e 7
+# read a file with one node to define a set:
+read pos1.frd pos1
+# search the highest value around a radius of 1:
+enq all t set pos1 1. h
+# move the file with the search result to a meaningfull name:
+sys mv enq_lc3_e7_1.out pos1.out
+</PRE>
+The command writes to the ''<A HREF="node178.html#stack">stack</A>''.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1699"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1695"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1689"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1697"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1700"
+  HREF="node85.html">eprop</A>
+<B> Up:</B> <A NAME="tex2html1696"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1690"
+  HREF="node83.html">endwhile</A>
+ &nbsp; <B>  <A NAME="tex2html1698"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

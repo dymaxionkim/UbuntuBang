@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>User subroutines.</TITLE>
+<META NAME="description" CONTENT="User subroutines.">
+<META NAME="keywords" CONTENT="ccx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ccx.css">
+
+<LINK REL="next" HREF="node358.html">
+<LINK REL="previous" HREF="node201.html">
+<LINK REL="up" HREF="ccx.html">
+<LINK REL="next" HREF="node327.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5145"
+  HREF="node327.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html5141"
+  HREF="ccx.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html5135"
+  HREF="node325.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html5143"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5146"
+  HREF="node327.html">Creep (creep.f)</A>
+<B> Up:</B> <A NAME="tex2html5142"
+  HREF="ccx.html">CalculiX CrunchiX USER'S MANUAL</A>
+<B> Previous:</B> <A NAME="tex2html5136"
+  HREF="node325.html">*VISCO</A>
+ &nbsp; <B>  <A NAME="tex2html5144"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00090000000000000000">
+User subroutines.</A>
+</H1>
+
+<P>
+Although the present software is protected by the GNU General Public
+License, and the user should always get the source code, it is
+sometimes more practical to get a nicely described user interface to
+plug in your own routines, instead of having to analyze the whole
+program. Therefore, for specific tasks well-defined interfaces are put
+at the disposal of the user. These interfaces are basically FORTRAN
+subroutines containing a subroutine header, a description of the input and
+output variables and declaration statements for these variables. The body of
+the routine has to be written by the user.
+
+<P>
+To use a user subroutine, replace the dummy routine in the CalculiX
+distribution by yours (e.g. dflux.f from the distribution by the dflux.f you
+wrote yourself) and recompile.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5147"
+  HREF="node327.html">Creep (creep.f) </A>
+<LI><A NAME="tex2html5148"
+  HREF="node328.html">Hardening (uhardening.f)</A>
+<LI><A NAME="tex2html5149"
+  HREF="node329.html">User-defined initial conditions</A>
+<UL>
+<LI><A NAME="tex2html5150"
+  HREF="node330.html">Initial internal variables (sdvini.f)</A>
+<LI><A NAME="tex2html5151"
+  HREF="node331.html">Initial stress field (sigini.f)</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5152"
+  HREF="node332.html">User-defined loading</A>
+<UL>
+<LI><A NAME="tex2html5153"
+  HREF="node333.html">Concentrated flux (cflux.f)</A>
+<LI><A NAME="tex2html5154"
+  HREF="node334.html">Concentrated load (cload.f)</A>
+<LI><A NAME="tex2html5155"
+  HREF="node335.html">Distributed flux (dflux.f)</A>
+<LI><A NAME="tex2html5156"
+  HREF="node336.html">Distribruted load (dload.f)</A>
+<LI><A NAME="tex2html5157"
+  HREF="node337.html">Heat convection (film.f)</A>
+<LI><A NAME="tex2html5158"
+  HREF="node338.html">Boundary conditions(uboun.f)</A>
+<LI><A NAME="tex2html5159"
+  HREF="node339.html">Heat radiation (radiate.f)</A>
+<LI><A NAME="tex2html5160"
+  HREF="node340.html">Temperature (utemp.f)</A>
+<LI><A NAME="tex2html5161"
+  HREF="node341.html">Amplitude (uamplitude.f)</A>
+<LI><A NAME="tex2html5162"
+  HREF="node342.html">Face loading (ufaceload.f)</A>
+<LI><A NAME="tex2html5163"
+  HREF="node343.html">Gap conductance (gapcon.f)</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5164"
+  HREF="node344.html">User-defined mechanical material laws.</A>
+<UL>
+<LI><A NAME="tex2html5165"
+  HREF="node345.html">The CalculiX interface</A>
+<LI><A NAME="tex2html5166"
+  HREF="node346.html">ABAQUS umat routines</A>
+<UL>
+<LI><A NAME="tex2html5167"
+  HREF="node347.html">Calling shared libraries</A>
+<LI><A NAME="tex2html5168"
+  HREF="node348.html">Limitations</A>
+<LI><A NAME="tex2html5169"
+  HREF="node349.html">Calling shared libraries</A>
+<LI><A NAME="tex2html5170"
+  HREF="node350.html">Limitations</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html5171"
+  HREF="node351.html">User-defined thermal material laws.</A>
+<LI><A NAME="tex2html5172"
+  HREF="node352.html">User-defined nonlinear equations </A>
+<UL>
+<LI><A NAME="tex2html5173"
+  HREF="node353.html">Mean rotation MPC.</A>
+<LI><A NAME="tex2html5174"
+  HREF="node354.html">Maximum distance MPC.</A>
+<LI><A NAME="tex2html5175"
+  HREF="node355.html">Network MPC.</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5176"
+  HREF="node356.html">User-defined elements</A>
+<UL>
+<LI><A NAME="tex2html5177"
+  HREF="node357.html">Network element</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+guido dhondt
+2017-10-08
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How to run cgx in batch mode</TITLE>
+<META NAME="description" CONTENT="How to run cgx in batch mode">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node232.html">
+<LINK REL="previous" HREF="node230.html">
+<LINK REL="up" HREF="node218.html">
+<LINK REL="next" HREF="node232.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3492"
+  HREF="node232.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3488"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3482"
+  HREF="node230.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3490"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3493"
+  HREF="node232.html">How to deal with</A>
+<B> Up:</B> <A NAME="tex2html3489"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3483"
+  HREF="node230.html">How to map loads</A>
+ &nbsp; <B>  <A NAME="tex2html3491"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001713000000000000000"></A><A NAME="How_to_run_cgx_in_batch_mode"></A>
+<BR>
+How to run cgx in batch mode
+</H2>
+Most commands can be executed in batch-mode. Actually if you read a file with geometry (fbd-file) then you run cgx in batch mode already! You just have to add ''exit'' or ''quit'' at the end of the file and it will be obvious. You might use the ''<A HREF="node160.html#read">read</A>'' command in such a command-file to reference other command-files or to read files with mesh-entities for whatever purposes. In such a way you can create and modify geometry or meshes in batch-mode or evaluate results in batch-mode. But you need a graphic-capable computer because cgx needs it also if no graphic output is requested. Nevertheless the popup of the graphic window can be suppressed if cgx was started with the ``-bg'' parameter.
+
+<P>
+Some commands make only sense in a batch file like ``<A HREF="node102.html#if">if</A>'' and ``<A HREF="node193.html#while">while</A>''. Please have a look into ``<A HREF="node248.html#If_and_while_demo">If and while demo</A>'' on how to work with this commands. Results can be extracted and stored to a file, see ``<A HREF="node223.html#How_to_write_values_to_a_file">How to write values to a file</A>''.
+
+<P>
+It should be noted that a successive 'save' or 'exit' command will overwrite the batch file if it has the file-extension 'fbd'. To prevent this the user should use a different extension like 'fbl'.
+
+<P>
+When executing commands which increase the used space then it might happen that geometry is clipped and can not be seen or accessed anymore. In such a case a ``<A HREF="node92.html#frame">frame</A>'' command is needed. This command is usually automatically triggered. Especially in batch mode without graphic output it solves sometimes strange situations.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3492"
+  HREF="node232.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3488"
+  HREF="node218.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3482"
+  HREF="node230.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3490"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3493"
+  HREF="node232.html">How to deal with</A>
+<B> Up:</B> <A NAME="tex2html3489"
+  HREF="node218.html">Tips and Hints</A>
+<B> Previous:</B> <A NAME="tex2html3483"
+  HREF="node230.html">How to map loads</A>
+ &nbsp; <B>  <A NAME="tex2html3491"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,12 @@
+Purpose:
+Demonstrates the use of cyclic symmetry boundary conditions.
+
+Do the following:
+
+cgx -b send.fbl
+ccx latim
+cgx latim.frd latim.inp
+
+In cgx type:
+
+copy all b2 rot x 60

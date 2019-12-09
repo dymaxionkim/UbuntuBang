@@ -1,0 +1,6 @@
+
+*MATERIAL,NAME=COMPRESSION_ONLY
+*USER MATERIAL,CONSTANTS=2
+<Young's Modulus>, <Tension Strength>
+
+

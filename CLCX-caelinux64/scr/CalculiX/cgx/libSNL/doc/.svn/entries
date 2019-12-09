@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3"
+   name=""
+   committed-date="2006-05-01T09:29:34.524372Z"
+   url="https://svn.sourceforge.net/svnroot/libsnl/trunk/doc"
+   last-author="sael"
+   kind="dir"
+   uuid="0153e824-4b12-0410-9664-84e45467d5fe"
+   repos="https://svn.sourceforge.net/svnroot/libsnl"
+   revision="15"/>
+</wc-entries>

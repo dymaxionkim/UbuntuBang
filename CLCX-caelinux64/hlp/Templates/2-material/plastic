@@ -1,0 +1,10 @@
+
+** to be inserted after elastic card
+*PLASTIC,HARDENING=ISOTROPIC
+<yield strength>,0.00000,
+<stress1>,<plastic strain1>
+<stress2>,<plastic strain2>
+
+**add more points of curve, if needed.
+
+

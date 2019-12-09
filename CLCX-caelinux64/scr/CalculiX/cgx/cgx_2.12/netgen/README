@@ -1,0 +1,7 @@
+Replace ../netgen-4.9.13/nglib/ng_vol.cpp with the version from this directory.
+Then do a 'make' there.
+A different netgen version might work. If not you may do a diff to the
+original ng_vol (ng_vol.cpp_orig) and apply the changes to your ng_vol. 
+Make sure that the resulting prg 'ng_vol' will be found by the system in any
+folder you want to use with cgx.
+It allows the specification of a element target size.

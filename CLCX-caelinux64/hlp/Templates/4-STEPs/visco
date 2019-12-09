@@ -1,0 +1,18 @@
+**Using this step only makes sense if at least one 
+** materials exhibits viscous behavior (read about *CREEP)
+
+*STEP
+*VISCO 
+
+** boundary conditions (load)
+** the loading is fully applied at the start of the step
+
+** Output (frd file)
+**Displacements
+*NODE FILE
+U
+
+**Stress (add other types, if needed)
+*EL FILE
+S
+*END STEP

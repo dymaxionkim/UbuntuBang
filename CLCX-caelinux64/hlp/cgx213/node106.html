@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>line</TITLE>
+<META NAME="description" CONTENT="line">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node107.html">
+<LINK REL="previous" HREF="node105.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node107.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1963"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1959"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1953"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1961"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1964"
+  HREF="node107.html">lnor</A>
+<B> Up:</B> <A NAME="tex2html1960"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1954"
+  HREF="node105.html">length</A>
+ &nbsp; <B>  <A NAME="tex2html1962"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001045000000000000000"></A><A NAME="line"></A>
+<BR>
+line
+</H2>
+<PRE>
+   'line' &lt;name(char&lt;9)&gt;|'!' &lt;p1&gt; &lt;p2&gt; &lt;cp|seq&gt; &lt;div&gt; [&lt;bias&gt;]
+</PRE>
+This keyword is used to define or redefine a line. A line depends on points. A line can only be defined if the necessary points are already defined. There are three different types of lines available. The straight line
+<BR>
+<BR>
+line l1 p1 p2 4
+<BR>
+<BR>
+is defined by: its name l1 (the name could have up to 8 characters), by the points p1 and p2 and optionally by the division. The arc
+<BR>
+<BR>
+line <code>!</code> p1 p2 cp 4
+<BR>
+<BR>
+needs a center point cp. The radius changes linear from p1 to p2 if the center-point cp is excentric. The name is chosen automatically (triggered by the character <code>!</code>). The spline
+<BR>
+<BR>
+line l1 p1 p2 seq 4
+<BR>
+<BR>
+needs a so called sequential-set, seq (use the command ``<A HREF="node167.html#seqa">seqa</A>'' or ``<A HREF="node154.html#qseq">qseq</A>'' to define such a set). This set seq stores the spline points between the end-points in the right order. The spline function is described in [<A
+ HREF="node249.html#spline">15</A>]. Usually, a line is defined interactively with ``<A HREF="node148.html#qlin">qlin</A>''. 
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

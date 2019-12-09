@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2012 (1.2)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>map</TITLE>
+<META NAME="description" CONTENT="map">
+<META NAME="keywords" CONTENT="cgx">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cgx.css">
+
+<LINK REL="next" HREF="node110.html">
+<LINK REL="previous" HREF="node108.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node110.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1999"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1995"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1989"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1997"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2000"
+  HREF="node110.html">mats</A>
+<B> Up:</B> <A NAME="tex2html1996"
+  HREF="node61.html">Commands</A>
+<B> Previous:</B> <A NAME="tex2html1990"
+  HREF="node108.html">mata</A>
+ &nbsp; <B>  <A NAME="tex2html1998"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001048000000000000000"></A><A NAME="map"></A>
+<BR>
+map
+</H2>
+<PRE>
+   'map' &lt;slave-set&gt; &lt;master-set&gt; [ -&gt;
+           ['surf']|
+           ['volu']|
+           [ 'x'|'y'|'z'|'rx'|'ry'|'rz']  -&gt;
+           ] 'ds'[&lt;nr&gt;]
+</PRE>
+This keyword is used to map (or interpolate) values from one mesh to another. For example
+<BR>
+<BR>
+map slave master surf ds1
+<BR>
+<BR>
+will map the values from Dataset 1 to the nodes of set slave. All available datasets will be mapped if no number follows the ``ds'' parameter. The parameter ``surf'' is used for mapping of values from surface to surface (2D to 2D). A typical application would be the mapping of pressure. The parameter ``volu'' triggers the mapping from a 3D mesh to another 3D mesh of the same shape (i.e. temperatures). The parameters ``x,y,z'' are used for mapping from 2D to 2D/3D in the indicated direction. The parameters ``rx,ry,rz'' are used for rotational mapping of 2D to 2D/3D around the x,y,z-axis. The ``master''-nodes must belong to elements. Unconnected nodes are not allowed. Usually the master nodes (on which the values are known) were included from an external result file with the ``<A HREF="node160.html#read">read</A>'' command (with the parameter ``add''). For further details see ``<A HREF="node230.html#How_to_map_loads">How to map loads</A>'' in the appendix.
+
+<P>
+<BR><HR>
+<ADDRESS>
+root
+2017-10-07
+</ADDRESS>
+</BODY>
+</HTML>

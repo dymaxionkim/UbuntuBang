@@ -1,0 +1,9 @@
+
+** Example:
+** assigns gravity acceleration in the negative z-direction with magnitude 9.81 to set of elements 'C3D10'.
+** density should be applied for material
+*DLOAD
+C3D10,GRAV,9.81.,0.,0.,-1.
+
+
+ 
