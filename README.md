@@ -71,12 +71,17 @@ sudo sh Utilities.sh
 
 ```bash
 chmod +x ./i3-gaps.sh
-./i3-gaps
+./i3-gaps.sh
 ```
 
+* zsh, Oh my zsh! 설치를 원할 경우에는 다음과 같이...
 
+```bash
+chmod +x ./zsh.sh
+./zsh.sh
+```
 
-* 끝!  나머지 환경는 알아서~
+* 끝!  나머지 환경은 알아서~
 
 
 
