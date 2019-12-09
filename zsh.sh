@@ -25,7 +25,7 @@ sudo fc-cache -f -v
 
 ###########################################################
 # Install theme
-git clone https://github.com/Powerlevel9k/powerlevel9k.git ~/.oh-my-zsh/custom/themes
+git clone https://github.com/Powerlevel9k/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 ###########################################################
 # Copy configs
