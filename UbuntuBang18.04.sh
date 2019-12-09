@@ -11,7 +11,7 @@
 # Basic update
 cd
 cp /etc/apt/sources.list /etc/apt/sources.list.old
-sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/' /etc/apt/sources.list
+sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
 apt -y update
 apt -y upgrade
 
@@ -29,7 +29,9 @@ echo 'DefaultTimeoutStopSec=4s' >> /etc/systemd/system.conf
 ###########################################################
 # Disable CUI Screensaver
 echo '' >> /etc/profile
-echo 'setterm -blank 0' >> /etc/profile
+echo 'export TERM=xterm-256color' >> /etc/profile
+echo 'setterm 0' >> /etc/profile
+echo 'LANG="ko_KR.UTF-8"' >> /etc/profile
 source /etc/profile
 #sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="consoleblank=0"/' /etc/default/grub
 update-grub
