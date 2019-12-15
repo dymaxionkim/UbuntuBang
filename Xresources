@@ -7,16 +7,14 @@ Xft*hinting:            full
 !###############################################################################
 !# xterm
 xterm*termName:             xterm-256color
-!# xterm*faceName:             xft:D2Coding:size=10
-xterm*faceName:             xft:UbuntuMono Nerd Font Mono:size=12,xft:D2Coding
+xterm*faceName:             xft:UbuntuMono Nerd Font:size=12,xft:D2Coding
 xterm*dynamiccolors:        true
 xterm*utf8:                 2
 !xterm*geometry:             WINDOWGEOMETRY
 xterm*visualBell:           off
 xterm*highlightSelection:   true
-xterm*background:           #3B414B
-xterm*foreground:           #ffffff
-xterm*BorderWidth:          0
+xterm*background:           black
+xterm*foreground:           white
 !xterm*colorMode:            on
 !xterm*colorBD:              lightcyan
 !xterm*colorBDMode:          on
@@ -32,14 +30,12 @@ urxvt*termName:         rxvt-unicode-256color
 urxvt*scrollBar:        false
 URxvt*cursorBlink:      true
 URxvt*saveLines:        10000
-URxvt.internalBorder:   3
-
-!# urxvt*font:             xft:D2Coding:size=12
-!# urxvt*boldFont:         xft:D2Coding:size=12
-urxvt*font:             xft:UbuntuMono Nerd Font Mono:size=12,xft:D2Coding
-urxvt*boldFont:         xft:UbuntuMono Nerd Font Mono:size=12,xft:D2Coding
+URxvt.internalBorder:   10
+ 
+urxvt*font:             xft:UbuntuMono Nerd Font:size=12,xft:D2Coding
+urxvt*boldFont:         xft:UbuntuMono Nerd Font Bold:size=12,xft:D2Coding
 urxvt.letterSpace:      -1
-!urxvt.lineSpace:        2
+!URxvt.lineSpace:         2
  
 !urxvt*perl-lib:         $HOME/.uxrvt/ext/
 urxvt*perl-ext-common:  default,matcher
@@ -49,40 +45,65 @@ urxvt*matcher.button:   1
 URxvt*iso14755:                 false
 !URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 !URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-
+ 
 !urxvt*fading:           50
 !urxvt*fadeColor:        #000000
-
+ 
 !# Real Transparent
-!urxvt*background:       rgba:0000/0000/0000/cccc 
-urxvt*background:       #3B414B
-urxvt*foreground:       #ffffff
-
+!urxvt*background:       rgba:0000/0000/0000/cccc
+!urxvt*background:         #0f0f0f
+!urxvt*foreground:       #ffffff
+ 
 !# Fake transparent
-!URxvt.transparent:      true
-!URxvt.shading:          40
-
+URxvt.transparent:      true
+URxvt.shading:          20
+ 
 URxvt.tintColor:        white
+ 
+!###############################################################################
+!# color (default)
+!# *color0:      #000000
+!# *color1:      #9e1828
+!# *color2:      #aece92
+!# *color3:      #968a38
+!# *color4:      #414171
+!# *color5:      #963c59
+!# *color6:      #418179
+!# *color7:      #bebebe
+!# *color8:      #666666
+!# *color9:      #cf6171
+!# *color10:     #c5f779
+!# *color11:     #fff796
+!# *color12:     #4186be
+!# *color13:     #cf9ebe
+!# *color14:     #71bebe
+!# *color15:     #ffffff
 
 !###############################################################################
-!# color
-*color0:      #000000
-*color1:      #9e1828
-*color2:      #aece92
-*color3:      #968a38
-*color4:      #414171
-*color5:      #963c59
-*color6:      #418179
-*color7:      #bebebe
-*color8:      #666666
-*color9:      #cf6171
-*color10:     #c5f779
-*color11:     #fff796
-*color12:     #4186be
-*color13:     #cf9ebe
-*color14:     #71bebe
-*color15:     #ffffff
- 
+!# color (pnevma)
+!scheme: 
+*foreground: #696969
+*background: #282626
+!*foreground: #6F6767
+!*background: #3A3636
+*color0: #363636
+*color1: #C37561
+*color2: #A0A57E
+*color3: #D1A375
+*color4: #7985A3
+*color5: #AB716D
+*color6: #98B9B1
+*color7: #D0D0D0
+*color8: #424242
+*color9: #D19485
+*color10: #B6B99D
+*color11: #DEBC9C
+*color12: #98A1B9
+*color13: #BE918E
+*color14: #CBE6CB
+*color15: #E6E6E6
+
+
 !###############################################################################
 !# rofi
 rofi.modi:                           ssh,window,drun,run
@@ -127,3 +148,4 @@ rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.markup-rows:                    false
 rofi.scrollbar-width:                8
+
