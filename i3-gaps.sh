@@ -57,7 +57,7 @@ wget -O $HOME/.config/i3status/config https://raw.githubusercontent.com/dymaxion
 
 ###########################################################
 # urxvt terminal
-sudo apt -y install rxvt-unicode
+sudo apt -y install rxvt-unicode rxvt-unicode-256color
 wget -O $HOME/.Xresources https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/Xresources
 
 ###########################################################
