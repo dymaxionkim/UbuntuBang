@@ -137,6 +137,7 @@ echo 'Categories=Education;' >> $HOME/.local/share/applications/Gmsh.desktop
 # Paraview
 wget -O Paraview.tar.gz "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=nightly&type=binary&os=Linux&downloadFile=ParaView-latest-MPI-Linux-64bit.tar.gz"
 tar -xvzf Paraview.tar.gz
+mkdir $HOME/.Paraview
 mv ./ParaView-* $HOME/.Paraview
 rm Paraview.tar.gz
 chown -R `logname`:`logname` $HOME/.Paraview
