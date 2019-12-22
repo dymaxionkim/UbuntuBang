@@ -1,3 +1,0 @@
-J-type clamp
-Static analysis with contact
-Model is prepared in Salome-Platform. Double-click on folder to see hdf file

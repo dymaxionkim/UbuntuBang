@@ -1,8 +1,0 @@
-This feature uses *CLOAD card (with no options)
-Read CCX help about that.
-For solid bodies total force will be divided by number of nodes
-and moment will be applied to the rigid body, created
-For shells and beams total force and moment will be divided by number of nodes
-in selected set.
-*DISTRIBUTED COUPLING does the same, but with total force value under *CLOAD card
-In this case distribution is provided with *DISTRIBUTED COUPLING card, generated.

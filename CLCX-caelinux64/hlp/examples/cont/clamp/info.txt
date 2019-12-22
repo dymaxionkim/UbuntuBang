@@ -1,3 +1,0 @@
-Plastic Clamp
-Model is created in Salome-MECA.
-HDF file is in folder

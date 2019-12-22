@@ -1,2 +1,0 @@
-The tied pressure-overclosure behavior simulates a truly linear relationship between the pressure and the overclosure for positive and negative pressures. At zero overclosure the pressure is zero. It can only be used for face-to-face contact and similates tied contact between the slave and master face. The only parameter is the slope of the pressure-overclosure relationship. 
-This is equivalent to elastic base.

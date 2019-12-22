@@ -1,9 +1,0 @@
-
-** to create file <name>.dlo based on nodal set <name>
-** run mesh file in cgx (pre-processor mode) and apply cards below:
-** comp <name> do
-** send <name> abq pres <value>
-** <name>.dlo file will be created in working folder
-
-*DLOAD
-*INCLUDE, INPUT=<name>.dlo

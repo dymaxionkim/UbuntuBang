@@ -1,8 +1,0 @@
-This option will run python script param.py created by Martin Kraska. It gives you ability to build and solve parametric models in CalculiX.
-1) Prepare and select par. file;
-2) Run conversion;
-3) fbd file will be created. You can open it in CGX Prep mode with -b key. It will produce all other files, required for CCX solver.
-See the website for details:
-https://github.com/mkraska/CalculiX-Examples
-Also read md file at /scr/Converters/MartinKraska
-and play with examples, stored at ../samples/MartinKraska

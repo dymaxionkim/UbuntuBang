@@ -59,33 +59,13 @@ URxvt.transparent:      true
 URxvt.shading:          20
  
 URxvt.tintColor:        white
- 
-!###############################################################################
-!# color (default)
-!# *color0:      #000000
-!# *color1:      #9e1828
-!# *color2:      #aece92
-!# *color3:      #968a38
-!# *color4:      #414171
-!# *color5:      #963c59
-!# *color6:      #418179
-!# *color7:      #bebebe
-!# *color8:      #666666
-!# *color9:      #cf6171
-!# *color10:     #c5f779
-!# *color11:     #fff796
-!# *color12:     #4186be
-!# *color13:     #cf9ebe
-!# *color14:     #71bebe
-!# *color15:     #ffffff
+URxvt.cursorColor:      magenta
 
 !###############################################################################
 !# color (pnevma)
 !scheme: 
 *foreground: #696969
 *background: #282626
-!*foreground: #6F6767
-!*background: #3A3636
 *color0: #363636
 *color1: #C37561
 *color2: #A0A57E
@@ -104,48 +84,33 @@ URxvt.tintColor:        white
 *color15: #E6E6E6
 
 
-!###############################################################################
+!############################################################################### 
 !# rofi
 rofi.modi:                           ssh,window,drun,run
 rofi.sidebar-mode:                   true
 rofi.terminal:                       terminator
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
-rofi.opacity:                        100
-rofi.width:                          50
-rofi.lines:                          8
+!rofi.opacity:                        100  ! i3wm does not support this feature.  Use compton.
+rofi.width:                          30
+rofi.lines:                          10
 rofi.columns:                        1
-rofi.font:                           D2Coding 14
-rofi.fg:                             #5294E2
-rofi.bg:                             #5d729f
-rofi.fg-active:                      #34405a
-rofi.fg-urgent:                      #34405a
-rofi.hlfg-active:                    #5e73a0
-rofi.hlfg-urgent:                    #5e73a0
-rofi.bg-active:                      #34405a
-rofi.bg-urgent:                      #34405a
-rofi.hlbg-active:                    #5d729f
-rofi.hlbg-urgent:                    #5d729f
-rofi.bgalt:                          #5671a0
-rofi.hlfg:                           #34405a
-rofi.hlbg:                           #34405a
-rofi.bc:                             #789ee1
- 
-! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal: #353944,  #FFFFFF,  #353944,  #5294E2,  #FFFFFF
- 
-!                  'background', 'border'
-rofi.color-window: #353944,      #404552
- 
-rofi.bw:                             1
+rofi.font:                           D2Coding,12
+rofi.show-icons:                     true
+rofi.bw:                             0     ! Border Width
 rofi.location:                       0
-rofi.padding:                        20
+rofi.padding:                        10
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
 rofi.fuzzy:                          false
 rofi.line-margin:                    2
-rofi.separator-style:                solid
-rofi.hide-scrollbar:                 true
 rofi.markup-rows:                    false
-rofi.scrollbar-width:                8
+rofi.hide-scrollbar:                 true
+rofi.scroll-method:                  0     ! 0:Page, 1:Centered
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #101010,  #A0A0A0,  #101010,  #7985A3,  #101010
+
+! State:           'background',       'border'
+rofi.color-window: #101010,            #101010
 

@@ -1,3 +1,0 @@
-Bolted Connections
-Models are created in Salome-Platform
-Double click on folder to see hdf files

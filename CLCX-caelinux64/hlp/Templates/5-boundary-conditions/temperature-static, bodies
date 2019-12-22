@@ -1,9 +1,0 @@
- 
- *INITIAL CONDITIONS,TYPE=TEMPERATURE
-<nset,or node#>,<Initial Temp.>
- 
-
-*TEMPERATURE
-<nset,or node#>,<Temp.Value>
-
-

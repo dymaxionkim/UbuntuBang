@@ -1,9 +1,0 @@
-object Form2: TForm2
-  Left = 681
-  Height = 402
-  Top = 353
-  Width = 654
-  AutoSize = True
-  Caption = '*PLASTIC card and user materials'
-  LCLVersion = '1.6.0.4'
-end

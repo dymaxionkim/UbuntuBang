@@ -1,5 +1,0 @@
-
-** concentrated flux to nodal set
-** value is for each node
-*CFLUX
-<nset>,11,<value>
