@@ -220,7 +220,7 @@ apt -y install stacer
 
 ###########################################################
 # Other utilties
-apt -y install scrot htop file-roller printer-driver-cups-pdf evince convertall qalculate curl arandr gsimplecal screenfetch
+apt -y install scrot htop file-roller printer-driver-cups-pdf evince zathura convertall qalculate curl arandr gsimplecal screenfetch
 
 ###########################################################
 # bashrc
