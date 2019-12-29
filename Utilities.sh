@@ -9,60 +9,60 @@
 
 ###########################################################
 # Update
-apt -y update
+sudo apt -y update
 
 ###########################################################
 # Firefox
-add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
-apt -y install firefox-trunk
+sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
+sudo apt -y install firefox-trunk
 
 ###########################################################
 # FreeCAD
-add-apt-repository -y ppa:freecad-maintainers/freecad-daily
-apt -y install freecad-daily
+sudo add-apt-repository -y ppa:freecad-maintainers/freecad-daily
+sudo apt -y install freecad-daily
 
 ###########################################################
 # LibreOffice
-add-apt-repository -y ppa:libreoffice/ppa
-apt -y install libreoffice libreoffice-l10n-ko
+sudo add-apt-repository -y ppa:libreoffice/ppa
+sudo apt -y install libreoffice libreoffice-l10n-ko
 
 ###########################################################
 # Atom
-curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
-sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-apt -y update
-apt -y install atom
+sudo curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo apt -y update
+sudo apt -y install atom
 
 ###########################################################
 # MScode
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-apt -y install apt-transport-https
-apt -y update
-apt -y install code
+sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt -y install apt-transport-https
+sudo apt -y update
+sudo apt -y install code
 
 ###########################################################
 # Movie
-add-apt-repository -y ppa:djcj/hybrid
-add-apt-repository -y ppa:openshot.developers/ppa
-add-apt-repository -y ppa:xuzhen666/gnome-mpv
-apt -y install ffmpeg openshot gnome-mpv
+sudo add-apt-repository -y ppa:djcj/hybrid
+sudo add-apt-repository -y ppa:openshot.developers/ppa
+sudo add-apt-repository -y ppa:xuzhen666/gnome-mpv
+sudo apt -y install ffmpeg openshot gnome-mpv
 
 ###########################################################
 # 2D Graphics
-add-apt-repository -y ppa:otto-kesselgulasch/gimp
-add-apt-repository -y ppa:inkscape.dev/stable
-apt -y install gimp inkscape pinta
+sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
+sudo add-apt-repository -y ppa:inkscape.dev/stable
+sudo apt -y install gimp inkscape pinta
 
 ###########################################################
 # Git Cola, Meld
-#add-apt-repository -y ppa:pavreh/git-cola
-#apt -y install git-cola meld
+#sudo add-apt-repository -y ppa:pavreh/git-cola
+#sudo apt -y install git-cola meld
 
 ###########################################################
 # TeX, Pandoc
-apt -y install texlive-full pandoc
+sudo apt -y install texlive-full pandoc
 
 ###########################################################
 # Robot icons
@@ -73,25 +73,25 @@ git clone http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT.git $HOME/Picture
 # DraftSight
 #wget -O $HOME/draftSight.deb http://www.draftsight.com/download-linux-ubuntu
 #chown -R `logname`:`logname` $HOME/draftSight.deb
-#apt -y install gstreamer0.10-qaptb libgstreamer-plugins-base1.0-0 libcanberra-gtk-module libcanberra-gtk0 libdirectfb-extra libxcb-render-util0 libxcb-render-util0 libdirectfb-extra
+#sudo apt -y install gstreamer0.10-qaptb libgstreamer-plugins-base1.0-0 libcanberra-gtk-module libcanberra-gtk0 libdirectfb-extra libxcb-render-util0 libxcb-render-util0 libdirectfb-extra
 #dpkg -i --force-architecture,depends $HOME/draftSight.deb
 
 ###########################################################
 # QCAD
-add-apt-repository -y ppa:alex-p/qcad
-apt -y install qcad
+sudo add-apt-repository -y ppa:alex-p/qcad
+sudo apt -y install qcad
 
 ###########################################################
 # KiCAD, Gerbber Viewer
-add-apt-repository -y ppa:js-reynaud/kicad-5
-apt -y install kicad gerbv
+sudo add-apt-repository -y ppa:js-reynaud/kicad-5
+sudo apt -y install kicad gerbv
 
 ###########################################################
 # Elmer
-add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-apt -y install elmerfem-csc-eg
-mkdir /usr/share/ElmerGUI/icons
-wget -O /usr/share/ElmerGUI/icons/Mesh3D.png "https://raw.githubusercontent.com/tehnick/elmerfem/master/ElmerGUI/Application/icons/Mesh3D.png"
+sudo add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
+sudo apt -y install elmerfem-csc-eg
+sudo mkdir /usr/share/ElmerGUI/icons
+sudo wget -O /usr/share/ElmerGUI/icons/Mesh3D.png "https://raw.githubusercontent.com/tehnick/elmerfem/master/ElmerGUI/Application/icons/Mesh3D.png"
 
 echo '#!/bin/bash' > $HOME/.Start_Elmer.sh
 echo 'export ELMERGUI_HOME=/usr/share/ElmerGUI' >> $HOME/.Start_Elmer.sh
@@ -101,7 +101,7 @@ echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMERLIB:$ELMERSOLVER_HOME/lib' >
 echo '/usr/bin/ElmerGUI' >> $HOME/.Start_Elmer.sh
 
 chmod +x $HOME/.Start_Elmer.sh
-chown `logname`:`logname` $HOME/.Start_Elmer.sh
+sudo chown `logname`:`logname` $HOME/.Start_Elmer.sh
 
 echo '[Desktop Entry]' > $HOME/.local/share/applications/ElmerGUI.desktop
 echo 'Encoding=UTF-8' >> $HOME/.local/share/applications/ElmerGUI.desktop
@@ -119,7 +119,7 @@ echo 'Categories=Education;' >> $HOME/.local/share/applications/ElmerGUI.desktop
 wget -O Gmsh.tgz "http://gmsh.info/bin/Linux/gmsh-4.3.0-Linux64.tgz"
 tar -xvzf Gmsh.tgz
 mv ./gmsh* $HOME/.Gmsh
-chown -R `logname`:`logname` $HOME/.Gmsh
+sudo chown -R `logname`:`logname` $HOME/.Gmsh
 rm Gmsh.tgz
 
 echo '[Desktop Entry]' > $HOME/.local/share/applications/Gmsh.desktop
@@ -140,7 +140,7 @@ tar -xvzf Paraview.tar.gz
 mkdir $HOME/.Paraview
 mv ./ParaView-* $HOME/.Paraview
 rm Paraview.tar.gz
-chown -R `logname`:`logname` $HOME/.Paraview
+sudo chown -R `logname`:`logname` $HOME/.Paraview
 
 echo '[Desktop Entry]' > $HOME/.local/share/applications/Paraview.desktop
 echo 'Encoding=UTF-8' >> $HOME/.local/share/applications/Paraview.desktop
@@ -155,7 +155,7 @@ echo 'Categories=Education;' >> $HOME/.local/share/applications/Paraview.desktop
 
 ###########################################################
 # Salome
-apt -y install libopengl0
+sudo apt -y install libopengl0
 wget -O Salome.tgz "https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB18.04&version=9.3.0"
 tar -xvzf Salome.tgz
 mv ./SALOME-* $HOME/.Salome
@@ -181,41 +181,47 @@ rm $HOME/CL.zip
 wget -O $HOME/.local/share/applications/CalculixLauncher.desktop https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/CalculixLauncher.desktop
 
 ###########################################################
+# Octave
+sudo apt -y install flatpak
+flatpak remote-add --if-not-exists flathub
+flatpak install flathub org.octave.Octave
+
+###########################################################
 # V-Rep
 wget -O $HOME/.local/share/applications/V-rep.desktop https://raw.githubusercontent.com/dymaxionkim/UbuntuBang/master/V-rep.desktop
 
 ###########################################################
 # Pyenv PreRequisites
-apt -y install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+sudo apt -y install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 
 ###########################################################
 # Imagemagik ghostscript
-cp /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.old
-find /etc/ImageMagick-6/ -name "policy.xml" -exec perl -pi -e 's/rights="none"/rights="read|write"/g' {} \;
+sudo cp /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.old
+sudo find /etc/ImageMagick-6/ -name "policy.xml" -exec perl -pi -e 's/rights="none"/rights="read|write"/g' {} \;
 
 ###########################################################
 # TLP for notebook pc
-#add-apt-repository -y ppa:linuxuprising/apps
-#apt -y install tlp tlpui
+#sudo add-apt-repository -y ppa:linuxuprising/apps
+#sudo apt -y install tlp tlpui
 
 ###########################################################
 # obs-studio
 # https://obsproject.com/wiki/install-instructions#linux
-add-apt-repository -y ppa:obsproject/obs-studio
-apt -y install obs-studio
+sudo add-apt-repository -y ppa:obsproject/obs-studio
+sudo apt -y install obs-studio
 
 ###########################################################
 # User Permission
-chown -R `logname`:`logname` $HOME/.pyenv
-chown -R `logname`:`logname` $HOME/.Gmsh
-chown -R `logname`:`logname` $HOME/.Paraview
-chown -R `logname`:`logname` $HOME/.Salome
-chown -R `logname`:`logname` $HOME/.local
-chown -R `logname`:`logname` $HOME
+sudo chown -R `logname`:`logname` $HOME/.pyenv
+sudo chown -R `logname`:`logname` $HOME/.Gmsh
+sudo chown -R `logname`:`logname` $HOME/.Paraview
+sudo chown -R `logname`:`logname` $HOME/.Salome
+sudo chown -R `logname`:`logname` $HOME/.local
+sudo chown -R `logname`:`logname` $HOME
 
 ###########################################################
 # Autoremove
-apt -y autoremove
+sudo apt -y autoremove
 
 # Fin
 echo 'Finished!'

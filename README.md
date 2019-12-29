@@ -63,7 +63,7 @@ obmenu
 ```bash
 chmod +x ./Utilities.sh
 chmod +x ./pyenv.sh
-sudo sh Utilities.sh
+sh Utilities.sh
 ./pyenv.sh
 ```
 
