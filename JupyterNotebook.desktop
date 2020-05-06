@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=JupyterNotebook
 Comment=JupyterNotebook
-Exec=/home/osboxes/.JupyterNotebook.sh
+Exec=/home/osboxes/git/UbuntuBang/JupyterNotebook.sh
 Icon=ipython-symbolic
 StartupNotify=true
 Terminal=false

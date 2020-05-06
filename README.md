@@ -1,88 +1,198 @@
 # UbuntuBang
-_Automation of Making OpenBox &amp; Tint2 Desktop based on Ubuntu Server_
+_Recipe making for My Ubuntu Desktop Environment_
 
 
-## 소개
-* 우분투 기반 경량 리눅스 데스크탑을 빠르게 구성하기 위한 자동화 툴입니다.
-* 사용되는 유틸리티들 및 사용자 환경은 작성자의 취향에 따라 임의로 선택된 것입니다.
+## OS
 
-
-## 특징
-* VirtualBox 가상머신에 설치하는 것을 상정하여 구성하였습니다.
-* 기계설계,해석을 위한 리눅스 머신을 구성하는데 초점을 두었습니다.
-* 일반적인 웹서버 운용이나 멀티미디어 데스크탑을 구성하기 위한 시스템은 아닙니다.
-
-
-## 주요 유틸리티
-* OS : Ubuntu Server 18.04
-* Xorg, OpenBox, obmenu, lxappearance, compton, feh, tint2, numlockx, qlipper
-* pluma, atom, mscode
-* pcmanfm, htop, scrot, nimf, file-roller, cups-pdf, evince, convertall, qalculate, rofi, stacer ...
-
-
-## 사용방법
-* Ubuntu Server 18.04를 VirtualBox 가상머신에 설치합니다.  가상머신의 하드디스크 사이즈는 80GB 이상으로 합니다.
-* 최초 부팅하고 로그인 합니다.
-* 인터넷 연결이 되어 있는지 확인합니다.
-* 이후에 다음의 명령어를 차례대로 쳐넣습니다.
+* Lubuntu 20.04
 
 ```bash
-mkdir ~/git
-cd ~/git
-git init
-git clone https://github.com/dymaxionkim/UbuntuBang.git
-cd UbuntuBang
-chmod +x ./UbuntuBang18.04.sh
-sudo sh UbuntuBang18.04.sh
+sudo apt -y update
+sudo apt -y upgrade
 ```
 
-* 위의 과정이 다 끝나면 다음 명령을 쳐서 재부팅을 한 번 해 줍니다.
+## Upgrade Kernel
 
 ```bash
+sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt -y install ukuu
+sudo ukuu --install-latest
+```
+
+## Utilities
+
+```bash
+sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pasystray
+```
+
+## Upgrade Git
+
+```bash
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt -y update
+sudo apt -y upgrade
+sudo curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt -y install git-lfs
+
+mkdir $HOME/git
+cd git
+git clone https://github.com/dymaxionkim/UbuntuBang.git
+cd
+```
+
+## Wallpaper
+
+```bash
+ln -s $HOME/git/UbuntuBang/Wallpaper $HOME/.Wallpaper
+```
+
+## Robot icons
+
+```bash
+git clone http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT.git $HOME/Pictures/
+```
+
+
+## Fonts
+
+```bash
+sudo apt -y install language-pack-ko fonts-noto-cjk fonts-noto-cjk-extra msttcorefonts
+
+sudo wget -O /usr/share/fonts/truetype/D2Coding.zip https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip
+sudo unzip /usr/share/fonts/truetype/D2Coding.zip -d /usr/share/fonts/truetype/
+sudo rm /usr/share/fonts/truetype/D2Coding.zip
+
+sudo mkdir /usr/share/fonts/truetype/ARIALUNI
+sudo wget -O /usr/share/fonts/truetype/ARIALUNI/ARIALUNI.TTF https://raw.githubusercontent.com/dymaxionkim/CREO3_STARTUP/master/font/ARIALUNI.TTF
+
+sudo mkdir /usr/share/fonts/truetype/BickhamScriptPro
+sudo wget -O /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Bold.otf http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT/raw/branch/master/Fonts/BickhamScriptPro-Bold.otf
+sudo wget -O /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Regular.otf http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT/raw/branch/master/Fonts/BickhamScriptPro-Regular.otf
+sudo wget -O /usr/share/fonts/truetype/BickhamScriptPro/BickhamScriptPro-Semibold.otf http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT/raw/branch/master/Fonts/BickhamScriptPro-Semibold.otf
+
+sudo fc-cache -f -v
+sudo apt -y install gnome-font-viewer
+```
+
+## fcitx-hangul
+
+```bash
+sudo apt install fcitx-hangul
+im-config -n fcitx
 sudo reboot now
 ```
 
-* 그리고 X윈도우를 실행해서 잘 되는지 확인합니다.
+
+## MScode
 
 ```bash
-startx
+sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt -y install apt-transport-https
+sudo apt -y update
+sudo apt -y install code
 ```
 
-* 이제 데스크탑 관련 각종 설정을 해 줍니다.
+## LaTeX, PanDoc
 
 ```bash
-nimf-settings
-obconf
-lxappearance
-obkey
-obmenu
+sudo apt -y install texlive-full pandoc
 ```
 
-* 기타 유틸리티들의 설치 스크립트를 마저 실행해 줍니다.
+## Snap Utilities
 
 ```bash
-chmod +x ./Utilities.sh
-chmod +x ./pyenv.sh
-sh Utilities.sh
-./pyenv.sh
+sudo snap install alacritty gimp inkscape
 ```
 
-* 추가로, LightDM 및 i3-gaps WM를 원하면 다음을 실행해 줍니다.
+## Pyenv
 
 ```bash
-chmod +x ./i3-gaps.sh
-./i3-gaps.sh
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+### Path Pyenv
+export PATH="/home/osboxes/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+### Anaconda
+pyenv install anaconda3-2020.02
+pyenv global anaconda3-2020.02
+pyenv activate anaconda3-2020.02
+conda update --all
+
+### Icons
+mkdir $HOME/.local/share/applications
+ln -s $HOME/git/UbuntuBang/JupyterNotebook.desktop $HOME/.local/share/applications/JupyterNotebook.desktop
+ln -s $HOME/git/UbuntuBang/JupyterLab.desktop $HOME/.local/share/applications/JupyterLab.desktop
+ln -s $HOME/git/UbuntuBang/Spyder.desktop $HOME/.local/share/applications/Spyder.desktop
 ```
 
-* zsh, Oh my zsh! 설치를 원할 경우에는 다음과 같이...
+## Build i3-gaps rounded
 
 ```bash
-chmod +x ./zsh.sh
-./zsh.sh
+sudo apt -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev libxcb-shape0-dev automake
+
+# clone the repository
+git clone https://github.com/resloved/i3.git $HOME/git/i3-gaps
+cd $HOME/git/i3-gaps
+ 
+# compile & install
+autoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+ 
+# Disabling sanitizers is important for release versions!
+# The prefix and sysconfdir are, obviously, dependent on the distribution.
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+
+# i3 config
+mkdir $HOME/.config/i3
+ln -s $HOME/git/UbuntuBang/i3-config $HOME/.config/i3/config
+
+# i3status
+sudo apt -y install i3status
+
+# i3status config
+mkdir $HOME/.config/i3status
+ln -s $HOME/git/UbuntuBang/i3status_config $HOME/.config/i3status/config
+
+# Terminal config
+sudo apt -y install rxvt-unicode-256color
+mv $HOME/.Xresources $HOME/.Xresources.old
+ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
-* 끝!  나머지 환경은 알아서~
+## Install zsh
+
+```bash
+sudo apt -y install zsh
+chsh -s `which zsh`
+
+# Install oh my zsh!
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+# Install theme
+git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+# configs
+mv $HOME/.zshrc $HOME/.zshrc.old
+ln $HOME/git/UbuntuBang/zshrc $HOME/.zshrc
+
+p10k config
+```
 
 
+## Crontab
 
+```bash
+crontab -e
+```
+
+```
+*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*
+```
 

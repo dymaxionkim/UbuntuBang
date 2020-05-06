@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=Spyder3
 Comment=Spyder in Python3
-Exec=/home/osboxes/.Spyder.sh
-Icon=/home/osboxes/.pyenv/versions/anaconda3-2019.03/share/icons/spyder3.png
+Exec=/home/osboxes/git/UbuntuBang/Spyder.sh
+Icon=/home/osboxes/.pyenv/versions/anaconda3-2020.02/share/icons/spyder3.png
 StartupNotify=true
 Terminal=false
 Type=Application

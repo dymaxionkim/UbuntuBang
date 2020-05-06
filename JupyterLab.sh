@@ -6,5 +6,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 pyenv activate anaconda3-2020.02
-spyder
-
+jupyter lab

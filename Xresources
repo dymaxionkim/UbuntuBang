@@ -55,7 +55,7 @@ URxvt*iso14755:                 false
 !urxvt*foreground:       #ffffff
  
 !# Fake transparent
-URxvt.transparent:      true
+!URxvt.transparent:      true
 URxvt.shading:          20
  
 URxvt.tintColor:        white

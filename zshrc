@@ -13,26 +13,26 @@ export ZSH="/home/osboxes/.oh-my-zsh"
 
 
 ### https://medium.com/@jeongdeoksu/vscode-%EA%B7%B8%EB%A6%AC%EA%B3%A0-babun-powerlevel9k-6b33f4b97fbb
-ZSH_THEME="powerlevel9k/powerlevel9k"
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_MODE='nerdfont-complete'
-source /home/osboxes/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+#POWERLEVEL9K_MODE='nerdfont-complete'
+#source /home/osboxes/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 # Customise the Powerlevel9k prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-ram
-dir
-vcs
-virtualenv
-newline
-status
-)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+#ram
+#dir
+#vcs
+#virtualenv
+#newline
+#status
+#)
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 
 
@@ -123,8 +123,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias octave="flatpak run org.octave.Octave"
 
 # Pyenv
 export PATH="/home/osboxes/.pyenv/bin:$PATH"
