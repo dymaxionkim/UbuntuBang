@@ -11,6 +11,12 @@ sudo apt -y update
 sudo apt -y upgrade
 ```
 
+## VirtualBox
+
+```bash
+sudo usermod -G vboxsf -a $USER
+```
+
 ## Upgrade Kernel
 
 ```bash
@@ -34,6 +40,13 @@ sudo apt -y upgrade
 sudo curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt -y install git-lfs
 
+git config --global user.email "dymaxion.kim@gmail.com"
+git config --global user.name "osboxes"
+git config --global color.ui auto
+git config --global core.editor nano
+git config --global credential.helper cache
+git config --global push.default matching
+
 mkdir $HOME/git
 cd git
 git clone https://github.com/dymaxionkim/UbuntuBang.git
@@ -44,6 +57,16 @@ cd
 
 ```bash
 ln -s $HOME/git/UbuntuBang/Wallpaper $HOME/.Wallpaper
+```
+
+## Crontab
+
+```bash
+crontab -e
+```
+
+```
+*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*
 ```
 
 ## Robot icons
@@ -104,6 +127,7 @@ sudo apt -y install texlive-full pandoc
 
 ```bash
 sudo snap install alacritty gimp inkscape
+ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ```
 
 ## Pyenv
@@ -186,13 +210,10 @@ p10k config
 ```
 
 
-## Crontab
+## Themes for QT5 and GTK+
 
 ```bash
-crontab -e
+sudo apt -y install qt5-style-plugins qt5ct
+echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+sudo echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
 ```
-
-```
-*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*
-```
-

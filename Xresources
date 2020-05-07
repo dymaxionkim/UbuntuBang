@@ -56,7 +56,7 @@ URxvt*iso14755:                 false
  
 !# Fake transparent
 !URxvt.transparent:      true
-URxvt.shading:          20
+!URxvt.shading:          20
  
 URxvt.tintColor:        white
 URxvt.cursorColor:      magenta
