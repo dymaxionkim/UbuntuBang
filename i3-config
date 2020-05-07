@@ -201,13 +201,13 @@ exec --no-startup-id pasystray &
 
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
-exec_always --no-startup-id compton -cCGfF -o 0.4 -O 200 -I 200 -t -3 -l -3 -r 3 -D2 -m 0.9 -b
+exec_always --no-startup-id compton -cCGfF -o 0.75 -O 0.028 -I 0.028 -t -10 -l -10 -r 10 -D 10 -m 0.9 --active-opacity -b
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 		colors {
-			background #00000000
+			background #333333
 			statusline #ffffff
 			separator #ffffff
 			#                  backgr    text      border
@@ -218,7 +218,7 @@ bar {
 		}
         height 20
         position top
-        i3bar_command i3bar -t
+        i3bar_command i3bar
         status_command i3status
 }
 # hide/unhide i3status bar

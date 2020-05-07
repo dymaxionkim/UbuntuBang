@@ -206,7 +206,15 @@ git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/t
 mv $HOME/.zshrc $HOME/.zshrc.old
 ln $HOME/git/UbuntuBang/zshrc $HOME/.zshrc
 
-p10k config
+# Font
+sudo mkdir /usr/share/fonts/truetype/MesloLGS_NF
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+sudo fc-cache -f -v
+
+p10k configure
 ```
 
 
@@ -216,4 +224,21 @@ p10k config
 sudo apt -y install qt5-style-plugins qt5ct
 echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 sudo echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
+```
+
+## OpenJDK 11
+
+```bash
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt install openjdk-11-jdk
+```
+
+
+## Typora (Markdown Editor)
+
+```bash
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt -y update
+sudo apt -y install typora
 ```
