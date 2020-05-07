@@ -201,7 +201,7 @@ exec --no-startup-id pasystray &
 
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
-exec_always --no-startup-id compton -cCGfF -o 0.75 -O 0.028 -I 0.028 -t -10 -l -10 -r 10 -D 10 -m 0.9 --active-opacity -b
+exec_always --no-startup-id compton -cCGfF -o 0.75 -O 0.01 -I 0.01 -t -10 -l -10 -r 10 -D 0 -m 0.9 -b
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
