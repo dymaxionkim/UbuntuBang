@@ -126,8 +126,23 @@ sudo apt -y install texlive-full pandoc
 ## Snap Utilities
 
 ```bash
-sudo snap install alacritty gimp inkscape
+sudo snap install gimp
+sudo snap install inkscape
+sudo snap install ffmpeg
+sudo snap install mpv --beta
+sudo snap install pdfmixtool
+sudo snap install boxy-svg
+sudo snap install freecad --beta
+sudo snap install julia-mrcinv --edge --classic
 ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
+```
+
+## Alacritty
+
+```bash
+sudo snap install alacritty
+mkdir $HOME/.config/alacritty
+ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
 ```
 
 ## Pyenv
@@ -212,6 +227,12 @@ sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf h
 sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
 sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+
+sudo mkdir /usr/share/fonts/truetype/FiraMono
+sudo wget -O /usr/share/fonts/truetype/FiraMono/FiraMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
+sudo unzip /usr/share/fonts/truetype/FiraMono/FiraMono.zip -d /usr/share/fonts/truetype/FiraMono
+sudo rm /usr/share/fonts/truetype/FiraMono/FiraMono.zip
+
 sudo fc-cache -f -v
 
 p10k configure

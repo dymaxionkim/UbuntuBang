@@ -7,7 +7,7 @@ Xft*hinting:            full
 !###############################################################################
 !# xterm
 xterm*termName:             xterm-256color
-xterm*faceName:             xft:UbuntuMono Nerd Font Mono:size=11,xft:D2Coding
+xterm*faceName:             xft:FiraMono Nerd Font Mono:size=11,xft:D2Coding
 xterm*dynamiccolors:        true
 xterm*utf8:                 2
 !xterm*geometry:             WINDOWGEOMETRY
@@ -32,8 +32,8 @@ URxvt*cursorBlink:      true
 URxvt*saveLines:        10000
 URxvt.internalBorder:   10
  
-urxvt*font:             xft:UbuntuMono Nerd Font Mono:size=11,xft:D2Coding
-urxvt*boldFont:         xft:UbuntuMono Nerd Font Mono:size=11,xft:D2Coding
+urxvt*font:             xft:FiraMono Nerd Font Mono:size=11,xft:D2Coding
+urxvt*boldFont:         xft:FiraMono Nerd Font Mono:size=11,xft:D2Coding
 urxvt.letterSpace:      -1
 !URxvt.lineSpace:         2
 
