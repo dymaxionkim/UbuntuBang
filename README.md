@@ -263,3 +263,10 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt -y update
 sudo apt -y install typora
 ```
+
+## Remove
+
+```bash
+sudo apt remove --purge kcalc 2048-qt k3b noblenote quassel trojita skanlite screengrab
+sudo apt autoremove
+```

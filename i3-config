@@ -32,7 +32,10 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec urxtv
+bindsym $mod+t exec urxvt
+bindsym $mod+q exec qterminal
+bindsym $mod+x exec xterm
+bindsym $mod+a exec alacritty
 bindsym $mod+Return exec alacritty
 
 # kill focused window
@@ -99,10 +102,10 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#abindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -269,4 +272,4 @@ mode "[s]Shurdown, [r]Reboot" {
 	bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+x mode "[s]Shurdown, [r]Reboot"
+bindsym $mod+CtrlR+x mode "[s]Shurdown, [r]Reboot"
