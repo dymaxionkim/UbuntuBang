@@ -143,6 +143,7 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 sudo snap install alacritty
 mkdir $HOME/.config/alacritty
 ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
+ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
 ## Pyenv
@@ -219,7 +220,7 @@ git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/t
 
 # configs
 mv $HOME/.zshrc $HOME/.zshrc.old
-ln $HOME/git/UbuntuBang/zshrc $HOME/.zshrc
+ln -s $HOME/git/UbuntuBang/zshrc $HOME/.zshrc
 
 # Font
 sudo mkdir /usr/share/fonts/truetype/MesloLGS_NF
