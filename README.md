@@ -143,7 +143,6 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 sudo snap install alacritty
 mkdir $HOME/.config/alacritty
 ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
-ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
 ## Pyenv

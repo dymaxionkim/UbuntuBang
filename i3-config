@@ -272,4 +272,4 @@ mode "[s]Shurdown, [r]Reboot" {
 	bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+CtrlR+x mode "[s]Shurdown, [r]Reboot"
+bindsym $mod+Ctrl+x mode "[s]Shurdown, [r]Reboot"
