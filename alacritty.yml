@@ -169,7 +169,9 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night Bright)
+# Colors
+
+# Tomorrow Night Bright
 #colors:
   # Default colors
   #primary:
@@ -255,35 +257,56 @@ draw_bold_text_with_bright_colors: false
   #
   #indexed_colors: []
 
-
-# Colors (Blood Moon)
+# Color Schemes : https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Afterglow
 colors:
   # Default colors
   primary:
-    background: '#222222'
-    foreground: '#ffffff'
+    background: '#2c2c2c'
+    foreground: '#d6d6d6'
+
+    dim_foreground:    '#dbdbdb'
+    bright_foreground: '#d9d9d9'
+    dim_background:    '#202020' # not sure
+    bright_background: '#3a3a3a' # not sure
+
+  # Cursor colors
+  cursor:
+    text:   '#2c2c2c'
+    cursor: '#d9d9d9'
 
   # Normal colors
   normal:
-    black:   '0x10100E'
-    red:     '0xC40233'
-    green:   '0x009F6B'
-    yellow:  '0xFFD700'
-    blue:    '0x0087BD'
-    magenta: '0x9A4EAE'
-    cyan:    '0x20B2AA'
-    white:   '0xC6C6C4'
+    black:   '#1c1c1c'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#cacaca'
 
   # Bright colors
   bright:
-    black:   '0x696969'
-    red:     '0xFF2400'
-    green:   '0x03C03C'
-    yellow:  '0xFDFF00'
-    blue:    '0x007FFF'
-    magenta: '0xFF1493'
-    cyan:    '0x00CCCC'
-    white:   '0xFFFAFA'
+    black:   '#636363'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#f7f7f7'
+
+  # Dim colors
+  dim:
+    black:   '#232323'
+    red:     '#74423f'
+    green:   '#5e6547'
+    yellow:  '#8b7653'
+    blue:    '#556b79'
+    magenta: '#6e4962'
+    cyan:    '#5c8482'
+    white:   '#828282'
 
 
 # Visual Bell
@@ -346,11 +369,11 @@ cursor:
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  #thickness: 0.15
+  thickness: 0.15
 
 # Live config reload (changes require restart)
 live_config_reload: true
