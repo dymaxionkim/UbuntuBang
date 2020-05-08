@@ -57,22 +57,27 @@ cd
 
 ```bash
 ln -s $HOME/git/UbuntuBang/Wallpaper $HOME/.Wallpaper
+
+sudo mv /usr/share/sddm/themes/lubuntu/theme.conf /usr/share/sddm/themes/lubuntu/theme.conf.old
+sudo bash -c 'echo "background=/home/osboxes/.Wallpaper/20200411_215713.jpg" > /usr/share/sddm/themes/lubuntu/theme.conf'
+
+sudo mv /usr/share/sddm/themes/lubuntu/wall.png /usr/share/sddm/themes/lubuntu/wall.png.old
+sudo ln -s /home/osboxes/.Wallpaper/20200411_215713.jpg /usr/share/sddm/themes/lubuntu/wall.png
 ```
 
 ## Crontab
 
 ```bash
-crontab -e
-```
+echo -e "*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*" | crontab
 
-```
-*/1 * * * * DISPLAY=:0.0 /usr/bin/feh --randomize --bg-fill /home/osboxes/.Wallpaper/*
+crontab -l
 ```
 
 ## Robot icons
 
 ```bash
 git clone http://dymaxionkim.iptime.org:3100/dymaxionkim/ROBOT.git $HOME/Pictures/
+sudo ln -s $HOME/Pictures/ROBOT/Icons_ROBOT/robot-1107_V01.png /usr/share/sddm/faces/osboxes.face.icon
 ```
 
 
@@ -244,7 +249,7 @@ p10k configure
 ```bash
 sudo apt -y install qt5-style-plugins qt5ct
 echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
-sudo echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
+sudo bash -c 'echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment'
 ```
 
 ## OpenJDK 11
