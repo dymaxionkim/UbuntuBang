@@ -150,11 +150,17 @@ export PATH="/home/osboxes/.Salome:$PATH"
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
+export OMP_NUM_THREADS=4
 
 # Julia Lang
 alias julia='snap run julia-mrcinv'
 
-screenfetch -n
+# Freecad
+alias freecad='snap run freecad'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+screenfetch -n
+
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Salome
+Comment=Salome
+Exec=/home/osboxes/.Salome/bin/salome
+Icon=yast-system
+Terminal=false
+Type=Application
+Categories=Education;

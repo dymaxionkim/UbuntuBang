@@ -1,5 +1,9 @@
 # UbuntuBang
-_Recipe making for My Ubuntu Desktop Environment_
+_Build for My Ubuntu Desktop Environment using i3wm_
+
+![](screenshot.png)
+
+
 
 
 ## OS
@@ -111,7 +115,7 @@ sudo reboot now
 ```
 
 
-## MScode
+## VScode
 
 ```bash
 sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -137,9 +141,10 @@ sudo snap install ffmpeg
 sudo snap install mpv --beta
 sudo snap install pdfmixtool
 sudo snap install boxy-svg
-sudo snap install freecad --beta
+sudo snap install freecad --stable
 sudo snap install julia-mrcinv --edge --classic
 ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
+ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
 ## Alacritty
@@ -173,7 +178,7 @@ ln -s $HOME/git/UbuntuBang/JupyterLab.desktop $HOME/.local/share/applications/Ju
 ln -s $HOME/git/UbuntuBang/Spyder.desktop $HOME/.local/share/applications/Spyder.desktop
 ```
 
-## Build i3-gaps rounded
+## Build i3-gaps rounded wm
 
 ```bash
 sudo apt -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev libxcb-shape0-dev automake
@@ -210,7 +215,7 @@ mv $HOME/.Xresources $HOME/.Xresources.old
 ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
-## Install zsh
+## zsh
 
 ```bash
 sudo apt -y install zsh
@@ -269,9 +274,107 @@ sudo apt -y update
 sudo apt -y install typora
 ```
 
-## Remove
+## Remove unnecessary things
 
 ```bash
 sudo apt remove --purge kcalc 2048-qt k3b noblenote quassel trojita skanlite screengrab
 sudo apt autoremove
 ```
+
+
+
+# Engineering Tools
+
+## CalculiX Launcher
+
+* Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://drive.google.com/drive/folders/1jb02PnNtH1u5PKrdsG_hqsZmU2eMmG6q).
+
+* And execute the commands like that :
+
+```bash
+unzip $HOME/Downloads/CL33-linux64.zip -d $HOME/
+mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
+ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
+rm $HOME/Downloads/CL33-linux64.zip
+  
+echo "OMP_NUM_THREADS=4" > $HOME/.pam_environment
+echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
+```
+
+## Gmsh 4.5.6
+
+* Download [Gmsh](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwjimbiU3abpAhUYiZQKHa9sAzQQFjAAegQIEBAC&url=https%3A%2F%2Fgmsh.info%2F&usg=AOvVaw0wmNq0n5gNA1Lya-JkXBi0) from here :
+
+```bash
+cd
+wget -O $HOME/Downloads/gmsh.tgz https://gmsh.info/bin/Linux/gmsh-4.5.6-Linux64.tgz
+```
+
+* And execute the commands like that :
+
+```bash
+tar -xvzf $HOME/Downloads/gmsh.tgz -C $HOME/
+mv $HOME/gmsh-4.5.6-Linux64 $HOME/.Gmsh
+rm $HOME/Downloads/gmsh.tgz
+ln -s $HOME/git/UbuntuBang/Gmsh.desktop $HOME/.local/share/applications/Gmsh.desktop
+```
+
+## Paraview
+
+* Download [Paraview](https://www.paraview.org/) from [here](https://www.paraview.org/download/).
+* And execute the commands like that :
+
+```bash
+rm -rf $HOME/.Paraview
+rm -rf $HOME/.local/share/Trash/files/*
+rm -rf $HOME/.local/share/Trash/info/*
+
+tar -xvzf $HOME/Downloads/ParaView-*.tar.gz -C $HOME/
+find . -name "ParaView-*" -type d -exec mv '{}' $HOME/.Paraview \;
+rm $HOME/Downloads/ParaView*.tar.gz
+ln -s $HOME/.Paraview/share/applications/org.paraview.ParaView.desktop $HOME/.local/share/applications/Paraview.desktop
+```
+
+## Salome Platform 9.4
+
+* Download [Salome Platform](https://www.salome-platform.org/) from [here](https://www.salome-platform.org/downloads/current-version) or :
+
+```bash
+wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=SP.UB18.04&version=9.4.0
+```
+
+* And execute the commands like that :
+
+```bash
+# netstat is needed to install.
+sudo apt install net-tools
+
+tar xfz salome.tgz
+mv $HOME/Downloads/salome $HOME/.Salome
+rm $HOME/Downloads/salome.tgz
+ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
+```
+
+## Salome Meca 2019
+
+* Download [Salome Meca](https://www.code-aster.org/) from [here](https://www.code-aster.org/spip.php?article303) or :
+
+```bash
+wget -O $HOME/Downloads/salome_meca-2019.0.3-1-universal.tgz https://www.code-aster.org/FICHIERS/salome_meca-2019.0.3-1-universal.tgz
+```
+
+* And execute the commands like that :
+
+```bash
+# Python 2 is needed to install
+pyenv install anaconda2-2019.07
+pyenv activate anaconda2-2019.07
+
+cd $HOME/Downloads
+tar -xvf salome_meca-2019.0.3-1-universal.tgz
+./salome_meca-2019.0.3-1-universal.run
+# Install into /home/osboxes/.Salome_meca
+
+rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
+```
+

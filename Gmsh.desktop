@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gmsh
+Comment=Gmsh
+Exec=/home/osboxes/.Gmsh/bin/gmsh
+Icon=/home/osboxes/.Gmsh/share/doc/gmsh/tutorial/t4_image.png
+Terminal=false
+Type=Application
+Categories=Education;

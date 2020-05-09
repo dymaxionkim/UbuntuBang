@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=CalculixLauncher
 Comment=Calculix Launcher with GUI
-Exec=/home/osboxes/.CalculixLauncher/CalculiX4Caelinux
-Icon=yast-system
+Exec=/home/osboxes/.CalculixLauncher/Launcher
+Icon=/home/osboxes/.CalculixLauncher/hlp/ccx215/img116.png
 Terminal=false
 Type=Application
 Categories=Education;

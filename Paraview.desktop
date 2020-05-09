@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Paraview
+Comment=Paraview
+Exec=/home/osboxes/.Paraview/bin/
+Icon=yast-system
+Terminal=false
+Type=Application
+Categories=Education;
