@@ -274,12 +274,31 @@ sudo apt -y update
 sudo apt -y install typora
 ```
 
+## Min Browser 1.14
+
+* Download [Min Browser](https://github.com/minbrowser/min) from [here](https://github.com/minbrowser/min/releases/download/v1.14.0/min_1.14.0_amd64.deb) or :
+
+```bash
+wget -O $HOME/Downloads/min.deb https://github.com/minbrowser/min/releases/download/v1.14.0/min_1.14.0_amd64.deb
+```
+
+* Fix some code about user agent to login google : 
+
+```bash
+sudo mv /usr/lib/min/resources/app/main.build.js /usr/lib/min/resources/app/main.build.js.old
+
+sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUserAgent \*\/\napp.userAgentFallback = \'Mozilla\/5.0 \(Windows NT 10.0\; WOW64\; rv\:74.0\) Gecko\/20100101 Firefox\/74.0'/g" /usr/lib/min/resources/app/main.build.js.old | sudo tee -a /usr/lib/min/resources/app/main.build.js
+
+```
+
 ## Remove unnecessary things
 
 ```bash
 sudo apt remove --purge kcalc 2048-qt k3b noblenote quassel trojita skanlite screengrab
 sudo apt autoremove
 ```
+
+
 
 
 
@@ -377,4 +396,8 @@ tar -xvf salome_meca-2019.0.3-1-universal.tgz
 
 rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
 ```
+
+
+
+
 

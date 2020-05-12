@@ -88,7 +88,7 @@ URxvt.cursorColor:      magenta
 !# rofi
 rofi.modi:                           ssh,window,drun,run
 rofi.sidebar-mode:                   true
-rofi.terminal:                       terminator
+rofi.terminal:                       qterminal
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 !rofi.opacity:                        100  ! i3wm does not support this feature.  Use compton.
