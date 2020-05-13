@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=Salome
 Comment=Salome
-Exec=/home/osboxes/.Salome/bin/salome
-Icon=yast-system
+Exec=/home/osboxes/.Salome/salome
+Icon=/home/osboxes/.Salome/salomeTools/doc/src/images/sat_v5.0.png
 Terminal=false
 Type=Application
 Categories=Education;

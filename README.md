@@ -32,7 +32,7 @@ sudo ukuu --install-latest
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pasystray
+sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pasystray mupdf mupdf-tools
 ```
 
 ## Upgrade Git
@@ -215,6 +215,32 @@ mv $HOME/.Xresources $HOME/.Xresources.old
 ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
+## Build Picom (Fork of Compton compositor)
+
+```bash
+# Pre-requisites
+sudo apt -y install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev asciidoc
+
+conda install meson
+
+# clone the repository
+git clone https://github.com/yshui/picom.git $HOME/git/picom
+cd $HOME/git/picom
+
+# Build
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+
+# Install
+meson configure -Dprefix=$HOME/.local build
+ninja -C build install
+
+# Configure
+mkdir $HOME/.config/picom
+ln -s $HOME/git/UbuntuBang/picom.conf $HOME/.config/picom/picom.conf
+```
+
 ## zsh
 
 ```bash
@@ -354,7 +380,7 @@ rm $HOME/Downloads/ParaView*.tar.gz
 ln -s $HOME/.Paraview/share/applications/org.paraview.ParaView.desktop $HOME/.local/share/applications/Paraview.desktop
 ```
 
-## Salome Platform 9.4
+## Salome Platform 9.4 (Fail to execute)
 
 * Download [Salome Platform](https://www.salome-platform.org/) from [here](https://www.salome-platform.org/downloads/current-version) or :
 
@@ -374,7 +400,7 @@ rm $HOME/Downloads/salome.tgz
 ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
 ```
 
-## Salome Meca 2019
+## Salome Meca 2019 (Fail to execute)
 
 * Download [Salome Meca](https://www.code-aster.org/) from [here](https://www.code-aster.org/spip.php?article303) or :
 
