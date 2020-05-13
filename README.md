@@ -228,6 +228,7 @@ git clone https://github.com/yshui/picom.git $HOME/git/picom
 cd $HOME/git/picom
 
 # Build
+export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # if git submodule is appeared
 git submodule update --init --recursive
 meson --buildtype=release . build
 ninja -C build
