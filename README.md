@@ -21,7 +21,7 @@ sudo apt -y upgrade
 sudo usermod -G vboxsf -a $USER
 ```
 
-## Upgrade Kernel
+## Upgrade Kernel (Deprecated)
 
 ```bash
 sudo apt-add-repository -y ppa:teejee2008/ppa
@@ -211,7 +211,7 @@ ln -s $HOME/git/UbuntuBang/i3status_config $HOME/.config/i3status/config
 
 # Terminal config
 sudo apt -y install rxvt-unicode-256color
-mv $HOME/.Xresources $HOME/.Xresources.old
+mv $HOME/.Xresources $HOME/.old
 ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
 
