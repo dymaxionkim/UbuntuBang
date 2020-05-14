@@ -57,7 +57,7 @@ bindsym $mod+Ctrl+f exec pcmanfm-qt
 bindsym $mod+Ctrl+e exec code
 
 # Screenshot
-bindsym --release Print exec scrot
+bindsym --release Print exec scrot '%Y%m%d_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
 bindsym --release $mod+Print exec scrot -s '%Y%m%d_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
 
 # change focus
