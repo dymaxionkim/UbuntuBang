@@ -318,6 +318,15 @@ sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUser
 
 ```
 
+## Ranger
+
+* Ref : https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps
+
+```bash
+sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+ranger --copy-config=all
+```
+
 ## Remove unnecessary things
 
 ```bash
