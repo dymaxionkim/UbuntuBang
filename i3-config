@@ -58,7 +58,7 @@ bindsym $mod+Ctrl+e exec code
 
 # Screenshot
 bindsym --release Print exec scrot
-bindsym --release $mod+Print exec scrot -s
+bindsym --release $mod+Print exec scrot -s '%Y%m%d_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
 
 # change focus
 bindsym $mod+j focus left
@@ -205,7 +205,7 @@ exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0
 exec --no-startup-id nm-applet &
 exec --no-startup-id lxpolkit &
 exec --no-startup-id pasystray &
-exec --no-startup-id qlipper &
+#exec --no-startup-id qlipper &
 
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
