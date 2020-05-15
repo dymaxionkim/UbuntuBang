@@ -55,6 +55,7 @@ bindsym $mod+Ctrl+w exec firefox
 bindsym $mod+Ctrl+g exec google-chrome
 bindsym $mod+Ctrl+f exec pcmanfm-qt
 bindsym $mod+Ctrl+e exec code
+bindsym $mod+Ctrl+v exec pavucontrol
 
 # Screenshot
 bindsym --release Print exec scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
@@ -204,7 +205,7 @@ exec_always --no-startup-id pkill picom &
 exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off
 exec --no-startup-id nm-applet &
 exec --no-startup-id lxpolkit &
-exec --no-startup-id pasystray &
+#exec --no-startup-id pasystray &
 #exec --no-startup-id qlipper &
 
 # RELOAD

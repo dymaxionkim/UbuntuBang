@@ -32,7 +32,7 @@ sudo ukuu --install-latest
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pasystray mupdf mupdf-tools
+sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools
 ```
 
 ## Upgrade Git
