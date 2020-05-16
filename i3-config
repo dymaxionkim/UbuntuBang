@@ -227,7 +227,7 @@ bar {
 			#                  backgr    text      border
 			focused_workspace  #ffffffff #000000aa #ffffffff
 			#active_workspace   #00000000 #ffffffff #ffffffff
-			inactive_workspace #00000000 #000000aa #ffffffff
+			inactive_workspace #00000000 #000000aa #bbbbbbsaa
 			#urgent_workspace   #aaaaaa #00000000 #ffffff
 		}
 		i3bar_command i3bar -t
