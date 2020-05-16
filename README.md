@@ -177,10 +177,13 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
-## Alacritty
+## Alacritty 0.4.2
 
 ```bash
-sudo snap install alacritty
+wget -O $HOME/Downloads/alacritty.deb https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb
+sudo dpkg -i $HOME/Downloads/alacritty.deb
+rm $HOME/Downloads/alacritty.deb
+
 mkdir $HOME/.config/alacritty
 ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
 ```
