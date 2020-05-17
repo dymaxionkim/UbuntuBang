@@ -127,6 +127,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias octave="snap run octave"
 
 # Pyenv
 export PATH="/home/osboxes/.pyenv/bin:$PATH"
