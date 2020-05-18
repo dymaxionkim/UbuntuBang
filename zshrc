@@ -165,8 +165,8 @@ alias freecad='snap run freecad'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Ranger
-export VISUAL=micro;
-export EDITOR=micro;
+export VISUAL='snap run micro';
+export EDITOR='snap run micro';
 
 #screenfetch -n
 
