@@ -32,7 +32,7 @@ sudo ukuu --install-latest
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools
+sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
 ```
 
 ## Upgrade Git
@@ -47,7 +47,7 @@ sudo apt -y install git-lfs
 git config --global user.email "dymaxion.kim@gmail.com"
 git config --global user.name "osboxes"
 git config --global color.ui auto
-git config --global core.editor nano
+git config --global core.editor micro
 git config --global credential.helper cache
 git config --global push.default matching
 
@@ -165,6 +165,7 @@ sudo apt -y install texlive-full pandoc
 ## Snap Utilities
 
 ```bash
+sudo snap install micro --classic
 sudo snap install gimp
 sudo snap install inkscape
 sudo snap install ffmpeg
