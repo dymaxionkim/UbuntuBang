@@ -127,6 +127,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias octave="snap run octave"
+alias micro="snap run micro"
 
 # Pyenv
 export PATH="/home/osboxes/.pyenv/bin:$PATH"
@@ -161,6 +163,10 @@ alias freecad='snap run freecad'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Ranger
+export VISUAL='snap run micro';
+export EDITOR='snap run micro';
 
 #screenfetch -n
 

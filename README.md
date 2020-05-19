@@ -32,7 +32,7 @@ sudo ukuu --install-latest
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pasystray mupdf mupdf-tools
+sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
 ```
 
 ## Upgrade Git
@@ -47,7 +47,7 @@ sudo apt -y install git-lfs
 git config --global user.email "dymaxion.kim@gmail.com"
 git config --global user.name "osboxes"
 git config --global color.ui auto
-git config --global core.editor nano
+git config --global core.editor micro
 git config --global credential.helper cache
 git config --global push.default matching
 
@@ -106,7 +106,9 @@ sudo fc-cache -f -v
 sudo apt -y install gnome-font-viewer
 ```
 
-## fcitx-hangul
+## IME
+
+### - fcitx-hangul
 
 ```bash
 sudo apt install fcitx-hangul
@@ -114,6 +116,34 @@ im-config -n fcitx
 sudo reboot now
 ```
 
+### - uim-byeoru
+
+```bash
+sudo apt install uim uim-byeoru
+im-config -n uim
+sudo reboot now
+```
+
+### - nimf
+
+* Ref : https://hamonikr.org/hamoni_notice/77036
+
+```bash
+wget -O - http://apt.hamonikr.org/hamonikr.key | sudo apt-key add -
+sudo bash -c "echo 'deb https://apt.hamonikr.org jin main upstream' > /etc/apt/sources.list.d/hamonikr-jin.list"
+sudo bash -c "echo 'deb-src https://apt.hamonikr.org jin main upstream' >> /etc/apt/sources.list.d/hamonikr-jin.list"
+
+sudo apt update
+
+# 한글만 사용하고 싶은경우
+sudo apt install nimf nimf-libhangul
+
+# 일본어, 중국어 등 다른언어를 사용하고 싶은경우
+sudo apt install libnimf1 nimf nimf-anthy nimf-dev nimf-libhangul nimf-m17n nimf-rime
+
+im-config -n nimf
+sudo reboot now
+```
 
 ## VScode
 
@@ -135,6 +165,7 @@ sudo apt -y install texlive-full pandoc
 ## Snap Utilities
 
 ```bash
+sudo snap install micro --classic
 sudo snap install gimp
 sudo snap install inkscape
 sudo snap install ffmpeg
@@ -147,10 +178,13 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
-## Alacritty
+## Alacritty 0.4.2
 
 ```bash
-sudo snap install alacritty
+wget -O $HOME/Downloads/alacritty.deb https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb
+sudo dpkg -i $HOME/Downloads/alacritty.deb
+rm $HOME/Downloads/alacritty.deb
+
 mkdir $HOME/.config/alacritty
 ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
 ```
@@ -228,6 +262,7 @@ git clone https://github.com/yshui/picom.git $HOME/git/picom
 cd $HOME/git/picom
 
 # Build
+export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # if git submodule is appeared
 git submodule update --init --recursive
 meson --buildtype=release . build
 ninja -C build
@@ -315,6 +350,15 @@ sudo mv /usr/lib/min/resources/app/main.build.js /usr/lib/min/resources/app/main
 
 sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUserAgent \*\/\napp.userAgentFallback = \'Mozilla\/5.0 \(Windows NT 10.0\; WOW64\; rv\:74.0\) Gecko\/20100101 Firefox\/74.0'/g" /usr/lib/min/resources/app/main.build.js.old | sudo tee -a /usr/lib/min/resources/app/main.build.js
 
+```
+
+## Ranger
+
+* Ref : https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps
+
+```bash
+sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+ranger --copy-config=all
 ```
 
 ## Remove unnecessary things
