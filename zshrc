@@ -149,6 +149,7 @@ export PATH="/home/osboxes/.Paraview/bin:$PATH"
 
 # Salome
 export PATH="/home/osboxes/.Salome:$PATH"
+export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
