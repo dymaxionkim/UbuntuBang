@@ -252,7 +252,7 @@ ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ## Conky
 
 ```bash
-sudo apt -y install conky-all
+sudo apt -y install conky-all wmctrl
 
 mk $HOME/.config/conky
 ln -s $HOME/git/UbuntuBang/conky.conf $HOME/.config/conky/conky.conf
