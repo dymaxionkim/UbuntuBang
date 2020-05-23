@@ -241,13 +241,24 @@ sudo apt -y install i3status
 
 # i3status config
 mkdir $HOME/.config/i3status
-ln -s $HOME/git/UbuntuBang/i3status_config $HOME/.config/i3status/config
+ln -s $HOME/git/UbuntuBang/i3status-config $HOME/.config/i3status/config
 
 # Terminal config
 sudo apt -y install rxvt-unicode-256color
 mv $HOME/.Xresources $HOME/.old
 ln -s $HOME/git/UbuntuBang/Xresources $HOME/.Xresources
 ```
+
+## Conky
+
+```bash
+sudo apt -y install conky-all
+
+mk $HOME/.config/conky
+ln -s $HOME/git/UbuntuBang/conky.conf $HOME/.config/conky/conky.conf
+```
+
+
 
 ## Build Picom (Fork of Compton compositor)
 
