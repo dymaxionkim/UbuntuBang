@@ -200,6 +200,7 @@ for_window [class="ukuu-gtk"] floating enable
 # Kill
 #exec_always --no-startup-id pkill compton &
 exec_always --no-startup-id pkill picom &
+exec_always --no-startup-id pkill conky &
 
 # STARTUP
 #exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off
@@ -211,7 +212,7 @@ exec --no-startup-id lxpolkit &
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
 #exec_always --no-startup-id compton -cCGfF -o 0.8 -D 0 -t -7 -l -7 -r 7 -m 0.9 -b
-exec_always --no-startup-id /home/osboxes/.local/bin/picom --config /home/osboxes/git/UbuntuBang/picom.conf --experimental-backends -b
+exec_always --no-startup-id /home/osboxes/.local/bin/picom --config /home/osboxes/git/UbuntuBang/picom.conf -b
 exec_always --no-startup-id conky -c $HOME/.config/conky/conky.conf
 
 # Remove temporary files
