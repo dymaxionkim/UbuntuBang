@@ -94,4 +94,4 @@ default_outline_color white
 # to show current Workspace
 # ${exec wmctrl -d | grep '*' | sed 's/.* //g'}
 TEXT
-${alignc} ${kernel} ◇ CPU ${cpubar 10,50} ◇ RAM ${membar 10,50} ◇ HDD ${fs_bar 10,50} ◇ ▲ ${upspeedgraph enp0s3 10,20} ▼ ${downspeedgraph enp0s3 10,20} ◇ ${uptime}
+${alignc} ${kernel} ◇ CPU ${cpubar 10,50} ◇ RAM ${membar 10,50} ◇ HDD ${fs_bar 10,50} ◇ ▲ ${upspeedgraph wlo1 10,20} ▼ ${downspeedgraph wlo1 10,20} ◇ ${uptime}
