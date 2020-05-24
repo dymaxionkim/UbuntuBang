@@ -236,10 +236,10 @@ bar {
         status_command i3status
         #mode hide
         position top
-        height 26
+        height 20
         output primary
         #tray_output none
-        font pango:D2Coding 12
+        font pango:D2Coding 11
         separator_symbol "  ⁞⁞  "
 }
 # hide/unhide i3status bar
