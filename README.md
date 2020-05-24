@@ -3,6 +3,7 @@ _Build for My Ubuntu Desktop Environment using i3wm_
 
 ![](screenshot.png)
 
+![](screenshot_notebook.png)
 
 
 
