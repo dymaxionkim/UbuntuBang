@@ -22,12 +22,13 @@ sudo apt -y upgrade
 sudo usermod -G vboxsf -a $USER
 ```
 
-## Upgrade Kernel (Deprecated)
+## UKUU 18.9.1 (for 18.04)
 
 ```bash
-sudo apt-add-repository -y ppa:teejee2008/ppa
-sudo apt -y install ukuu
-sudo ukuu --install-latest
+wget -O $HOME/Downloads/ukuu.deb https://github.com/teejee2008/ukuu/releases/download/v18.9.1/ukuu-v18.9.1-amd64.deb
+
+sudo dpkg -i $HOME/Downloads/ukuu.deb
+rm $HOME/Downloads/ukuu.deb
 ```
 
 ## Utilities
@@ -94,6 +95,10 @@ sudo apt -y install language-pack-ko fonts-noto-cjk fonts-noto-cjk-extra msttcor
 sudo wget -O /usr/share/fonts/truetype/D2Coding.zip https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip
 sudo unzip /usr/share/fonts/truetype/D2Coding.zip -d /usr/share/fonts/truetype/
 sudo rm /usr/share/fonts/truetype/D2Coding.zip
+
+# https://github.com/kelvinks/D2Coding_Nerd
+sudo mkdir /usr/share/fonts/truetype/D2CodingNerd
+sudo wget -O /usr/share/fonts/truetype/D2CodingNerd/D2CodingNerd.ttf https://github.com/kelvinks/D2Coding_Nerd/raw/master/D2Coding%20v.1.3.2%20Nerd%20Font%20Complete.ttf
 
 sudo mkdir /usr/share/fonts/truetype/ARIALUNI
 sudo wget -O /usr/share/fonts/truetype/ARIALUNI/ARIALUNI.TTF https://raw.githubusercontent.com/dymaxionkim/CREO3_STARTUP/master/font/ARIALUNI.TTF

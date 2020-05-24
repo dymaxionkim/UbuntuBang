@@ -80,8 +80,8 @@ override_utf8_locale yes
 
 # Xft fonts (Anti-aliasing)
 use_xft yes
-#xftfont D2Coding:size=11
-xftfont Firamono Nerd Font:size=10
+xftfont D2Coding Nerd Font:size=11
+#xftfont Firamono Nerd Font:size=10
 #xftalpha 0.5
 
 # set to yes if you want all text to be in uppercase
