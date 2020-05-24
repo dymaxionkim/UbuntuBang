@@ -198,9 +198,9 @@ for_window [class="ukuu-gtk"] floating enable
 
 ##### LAUNCH ######################################
 # Kill
-#exec_always --no-startup-id pkill compton
-exec_always --no-startup-id pkill picom
-exec_always --no-startup-id pkill conky
+#exec_always --no-startup-id killall compton
+exec_always --no-startup-id killall picom
+exec_always --no-startup-id killall conky
 
 # STARTUP
 #exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off

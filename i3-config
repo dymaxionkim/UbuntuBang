@@ -198,12 +198,12 @@ for_window [class="ukuu-gtk"] floating enable
 
 ##### LAUNCH ######################################
 # Kill
-exec_always --no-startup-id pkill compton &
-exec_always --no-startup-id pkill picom &
+exec_always --no-startup-id killall compton
+exec_always --no-startup-id killall picom
 
 # STARTUP
 exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off
-exec --no-startup-id nm-applet &
+#exec --no-startup-id nm-applet &
 exec --no-startup-id lxpolkit &
 #exec --no-startup-id pasystray &
 #exec --no-startup-id qlipper &
@@ -211,7 +211,8 @@ exec --no-startup-id lxpolkit &
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
 #exec_always --no-startup-id compton -cCGfF -o 0.8 -D 0 -t -7 -l -7 -r 7 -m 0.9 -b
-exec_always --no-startup-id /home/osboxes/.local/bin/picom --config /home/osboxes/git/UbuntuBang/picom.conf --experimental-backends -b
+exec_always --no-startup-id /home/osboxes/.local/bin/picom --config /home/osboxes/git/UbuntuBang/picom.conf -b
+exec_always --no-startup-id conky -c $HOME/.config/conky/conky.conf
 
 # Remove temporary files
 exec_always --no-startup-id rm /home/osboxes/*.log*
@@ -221,7 +222,7 @@ exec_always --no-startup-id rm /home/osboxes/core
 # finds out, if available)
 bar {
 		colors {
-			background #000000aa
+			background #00000000
 			statusline #ffffffff
 			separator #ffffffff
 			#                  backgr    text      border

@@ -13,9 +13,9 @@ general {
         interval = 5
 }
 
-order += "cpu_usage"
-order += "memory"
-order += "disk /"
+#order += "cpu_usage"
+#order += "memory"
+#order += "disk /"
 order += "tztime seoul"
 #order += "ipv6"
 #order += "wireless wlan0"
