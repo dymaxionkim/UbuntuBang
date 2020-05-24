@@ -32,7 +32,7 @@ total_run_times 0
 # Gap between borders of screen and text
 # same thing as passing -x at command line
 gap_x 0
-gap_y 2
+gap_y 0
 
 # Minimum size of text area
 minimum_size 1366 17
@@ -80,7 +80,8 @@ override_utf8_locale yes
 
 # Xft fonts (Anti-aliasing)
 use_xft yes
-xftfont D2Coding:size=11
+#xftfont D2Coding:size=11
+xftfont Firamono Nerd Font:size=10
 #xftalpha 0.5
 
 # set to yes if you want all text to be in uppercase
@@ -94,4 +95,4 @@ default_outline_color white
 # to show current Workspace
 # ${exec wmctrl -d | grep '*' | sed 's/.* //g'}
 TEXT
-${alignc} ${kernel} ◇ CPU ${cpubar 10,50} ◇ RAM ${membar 10,50} ◇ HDD ${fs_bar 10,50} ◇ ▲ ${upspeedgraph wlo1 10,20} ▼ ${downspeedgraph wlo1 10,20} ◇ BAT ${battery_bar 10,50} ◇ ${uptime}
+${alignc}   ${kernel}    ${cpubar 7,20}    ${membar 7,20}    ${fs_bar 7,20}   ﯴ ${upspeedgraph wlo1 7,20}   ﯲ ${downspeedgraph wlo1 7,20}    ${battery_bar 7,20}    ${uptime}
