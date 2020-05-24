@@ -35,7 +35,7 @@ gap_x 0
 gap_y 2
 
 # Minimum size of text area
-minimum_size 1366 20
+minimum_size 1366 17
 maximum_width 1366
 
 # Create own window instead of using desktop (required in nautilus)
