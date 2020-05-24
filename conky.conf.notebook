@@ -1,0 +1,97 @@
+# conky configuration
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.).
+short_units true
+
+# Set to yes if you want Conky to be forked in the background
+background yes
+
+# Update interval in seconds
+update_interval 1
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 8
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Subtract file system buffers from used memory?
+#no_buffers yes
+double_buffer yes
+text_buffer_size 2048
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer right
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 0
+gap_y 2
+
+# Minimum size of text area
+minimum_size 1366 20
+maximum_width 1366
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_transparent no
+own_window_argb_visual yes
+own_window_argb_value 100
+own_window_colour 000000
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+#stippled_borders 0
+
+# border margins
+#border_margin 0
+border_inner_margin 0
+
+# border width
+#border_width 0
+
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Xft fonts (Anti-aliasing)
+use_xft yes
+xftfont D2Coding:size=11
+#xftalpha 0.5
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+
+# to show current Workspace
+# ${exec wmctrl -d | grep '*' | sed 's/.* //g'}
+TEXT
+${alignc} ${kernel} ◇ CPU ${cpubar 10,50} ◇ RAM ${membar 10,50} ◇ HDD ${fs_bar 10,50} ◇ ▲ ${upspeedgraph enp0s3 10,20} ▼ ${downspeedgraph enp0s3 10,20} ◇ ${uptime}
