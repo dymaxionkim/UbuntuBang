@@ -51,9 +51,9 @@ bindsym $mod+d exec rofi -show drun -show-icons
 
 # Some applications
 bindsym $mod+Ctrl+m exec min
-bindsym $mod+Ctrl+w exec firefox-trunk
+bindsym $mod+Ctrl+w exec firefox
 bindsym $mod+Ctrl+g exec google-chrome
-bindsym $mod+Ctrl+f exec pcmanfm
+bindsym $mod+Ctrl+f exec pcmanfm-qt
 bindsym $mod+Ctrl+e exec code
 bindsym $mod+Ctrl+v exec pavucontrol
 
@@ -198,12 +198,12 @@ for_window [class="ukuu-gtk"] floating enable
 
 ##### LAUNCH ######################################
 # Kill
-#exec_always --no-startup-id pkill compton
-exec_always --no-startup-id pkill picom
-exec_always --no-startup-id pkill conky
+#exec_always --no-startup-id killall compton
+exec_always --no-startup-id killall picom
+exec_always --no-startup-id killall conky
 
 # STARTUP
-#exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off
+exec --no-startup-id $HOME/git/UbuntuBang/1920x1080.sh
 exec --no-startup-id nm-applet &
 exec --no-startup-id lxpolkit &
 #exec --no-startup-id pasystray &
@@ -232,14 +232,14 @@ bar {
 			inactive_workspace #00000000 #000000aa #bbbbbbsaa
 			#urgent_workspace   #aaaaaa #00000000 #ffffff
 		}
-		i3bar_command  i3bar -t
+		i3bar_command i3bar -t
         status_command i3status
         #mode hide
         position top
-        height 26
+        height 20
         output primary
         #tray_output none
-        font pango:D2Coding 12
+        font pango:D2Coding 11
         separator_symbol "  ⁞⁞  "
 }
 # hide/unhide i3status bar
