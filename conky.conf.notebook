@@ -11,7 +11,7 @@ update_interval 1
 
 # number of cpu samples to average
 # set to 1 to disable averaging
-cpu_avg_samples 8
+cpu_avg_samples 2
 
 # number of net samples to average
 # set to 1 to disable averaging
@@ -44,7 +44,7 @@ own_window_class Conky
 own_window_type override
 own_window_transparent no
 own_window_argb_visual yes
-own_window_argb_value 100
+own_window_argb_value 130
 own_window_colour 000000
 #own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
@@ -95,4 +95,4 @@ default_outline_color white
 # to show current Workspace
 # ${exec wmctrl -d | grep '*' | sed 's/.* //g'}
 TEXT
-${alignc}   ${kernel}    ${cpubar 7,20}    ${membar 7,20}    ${fs_bar 7,20}   ﯴ ${upspeedgraph wlo1 7,20}   ﯲ ${downspeedgraph wlo1 7,20}    ${battery_bar 7,20}    ${uptime}
+${alignc}   ${kernel}    ${freq}MHz ${hwmon 1 temp 1}℃ ${cpu}% ${cpubar 7,20}    ${membar 7,20}    ${fs_bar 7,20}   ﯴ ${upspeedgraph wlo1 7,20}   ﯲ ${downspeedgraph wlo1 7,20}    ${battery_bar 7,20}    ${uptime} ${image /home/osboxes/git/UbuntuBang/face_alpha.png -s 20x20 -p 1170,0}
