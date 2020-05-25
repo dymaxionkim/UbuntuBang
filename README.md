@@ -69,6 +69,8 @@ sudo bash -c 'echo "background=/home/osboxes/.Wallpaper/20200411_215713.jpg" > /
 
 sudo mv /usr/share/sddm/themes/lubuntu/wall.png /usr/share/sddm/themes/lubuntu/wall.png.old
 sudo ln -s /home/osboxes/.Wallpaper/20200411_215713.jpg /usr/share/sddm/themes/lubuntu/wall.png
+
+ln -s $HOME/git/UbuntuBang/face.png $HOME/.face.icon
 ```
 
 ## Crontab

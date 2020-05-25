@@ -7,7 +7,7 @@ Xft*hinting:            full
 !###############################################################################
 !# xterm
 xterm*termName:             xterm-256color
-xterm*faceName:             xft:D2Coding Nerd Font:size=11,xft:D2Coding
+xterm*faceName:             xft:D2Coding Nerd Font:size=11
 xterm*dynamiccolors:        true
 xterm*utf8:                 2
 !xterm*geometry:             WINDOWGEOMETRY
@@ -32,9 +32,9 @@ URxvt*cursorBlink:      true
 URxvt*saveLines:        10000
 URxvt.internalBorder:   10
  
-urxvt*font:             xft:D2Coding Nerd Font:size=11,xft:D2Coding
-urxvt*boldFont:         xft:D2Coding Nerd Font:size=11,xft:D2Coding
-urxvt.letterSpace:      -1
+urxvt*font:             xft:D2Coding Nerd Font:size=11
+urxvt*boldFont:         xft:D2Coding Nerd Font:size=11
+urxvt.letterSpace:      0
 !URxvt.lineSpace:         2
 
 !urxvt*perl-lib:         $HOME/.uxrvt/ext/
