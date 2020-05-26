@@ -380,6 +380,10 @@ sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 ranger --copy-config=all
 ```
 
+## Docker
+
+* Ref : [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) / [Docker with GUI Tutorial](https://goodgodgd.github.io/ian-flow/archivers/docker-tutorial)
+
 ## Remove unnecessary things
 
 ```bash
@@ -511,7 +515,14 @@ rm $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
 ```
 
+## ccx2paraview (frd to vtu converter)
 
+```bash
+cd ~/git
+git clone https://github.com/calculix/ccx2paraview.git
+```
 
+## ElmerFEM in Docker
 
+* [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
 
