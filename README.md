@@ -455,6 +455,13 @@ rm $HOME/Downloads/ParaView*.tar.gz
 ln -s $HOME/.Paraview/share/applications/org.paraview.ParaView.desktop $HOME/.local/share/applications/Paraview.desktop
 ```
 
+## Pre-requisites for Salome and Salome_meca (20.04)
+
+```bash
+# Prerequisites
+sudo apt install net-tools libtbb2 gfortran libgfortran4 bison flex liblapack-dev libopenblas-dev libboost-python-dev libboost-numpy-dev liblapack3
+```
+
 ## Salome Platform 9.4 (Success in 20.04)
 
 * Download [Salome Platform](https://www.salome-platform.org/) from [here](https://www.salome-platform.org/downloads/current-version) or :
@@ -466,9 +473,6 @@ wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/cur
 * And execute the commands like that :
 
 ```bash
-# netstat, libtbb2.so.2 is needed to install & execute.
-sudo apt install net-tools libtbb2
-
 tar xfz salome.tgz
 mv $HOME/Downloads/salome $HOME/.Salome
 rm $HOME/Downloads/salome.tgz
@@ -496,6 +500,12 @@ tar -xvf salome_meca-2019.0.3-1-universal.tgz
 # Install into /home/osboxes/.Salome_meca
 
 rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
+
+# Dependency for CodeAster Module
+# Ref : https://www.code-aster.org/forum2/viewtopic.php?id=24883
+wget -O $HOME/Downloadslibffi6_3.2.1-9_amd64.deb http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb
+sudo dpkg -i $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
+rm $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
 
 # Execute with this desktop file
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
