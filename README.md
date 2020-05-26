@@ -380,6 +380,11 @@ sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 ranger --copy-config=all
 ```
 
+## kakoun (Alternative of Vim)
+
+* Source : https://github.com/mawww/kakoune
+* Intro : https://medium.com/@Jernfrost/kakoune-the-text-editor-i-didnt-know-i-needed-23d5f1d6ad97
+
 ## Docker
 
 * Ref : [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) / [Docker with GUI Tutorial](https://goodgodgd.github.io/ian-flow/archivers/docker-tutorial)
