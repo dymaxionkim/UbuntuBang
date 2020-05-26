@@ -169,6 +169,9 @@ alias freecad='snap run freecad'
 export VISUAL='snap run micro';
 export EDITOR='snap run micro';
 
+# Kakoun
+export XDG_CONFIG_HOME=$HOME/.config
+
 #screenfetch -n
 
 
