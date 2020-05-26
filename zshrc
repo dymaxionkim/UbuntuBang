@@ -169,6 +169,8 @@ alias freecad='snap run freecad'
 export VISUAL='snap run micro';
 export EDITOR='snap run micro';
 
-#screenfetch -n
+# Salome_meca in VirtualBox
+export LD_PRELOAD='/usr/$LIB/libstdc++.so.6'
 
+#screenfetch -n
 

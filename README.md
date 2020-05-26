@@ -34,7 +34,7 @@ rm $HOME/Downloads/ukuu.deb
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot convertall qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
+sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
 ```
 
 ## Upgrade Git
@@ -393,6 +393,18 @@ sudo apt autoremove
 
 # Engineering Tools
 
+## ConvertAll 0.8
+
+```bash
+# https://convertall.bellz.org
+# JS Online Version : http://convertall-js.bellz.org/
+sudo apt remove convertall
+cd ~/git
+git clone https://github.com/doug-101/ConvertAll.git
+cd ConvertAll
+sudo ./install.py
+```
+
 ## CalculiX Launcher
 
 * Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://drive.google.com/drive/folders/1jb02PnNtH1u5PKrdsG_hqsZmU2eMmG6q).
@@ -411,7 +423,7 @@ echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
 
 ## Gmsh 4.5.6
 
-* Download [Gmsh](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwjimbiU3abpAhUYiZQKHa9sAzQQFjAAegQIEBAC&url=https%3A%2F%2Fgmsh.info%2F&usg=AOvVaw0wmNq0n5gNA1Lya-JkXBi0) from here :
+* Download [Gmsh](https://gmsh.info/) from here :
 
 ```bash
 cd
@@ -443,7 +455,7 @@ rm $HOME/Downloads/ParaView*.tar.gz
 ln -s $HOME/.Paraview/share/applications/org.paraview.ParaView.desktop $HOME/.local/share/applications/Paraview.desktop
 ```
 
-## Salome Platform 9.4 (Fail to execute)
+## Salome Platform 9.4 (Success in 20.04)
 
 * Download [Salome Platform](https://www.salome-platform.org/) from [here](https://www.salome-platform.org/downloads/current-version) or :
 
@@ -454,8 +466,8 @@ wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/cur
 * And execute the commands like that :
 
 ```bash
-# netstat is needed to install.
-sudo apt install net-tools
+# netstat, libtbb2.so.2 is needed to install & execute.
+sudo apt install net-tools libtbb2
 
 tar xfz salome.tgz
 mv $HOME/Downloads/salome $HOME/.Salome
@@ -463,7 +475,7 @@ rm $HOME/Downloads/salome.tgz
 ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
 ```
 
-## Salome Meca 2019 (Fail to execute)
+## Salome Meca 2019 (Success in 20.04)
 
 * Download [Salome Meca](https://www.code-aster.org/) from [here](https://www.code-aster.org/spip.php?article303) or :
 
@@ -484,6 +496,9 @@ tar -xvf salome_meca-2019.0.3-1-universal.tgz
 # Install into /home/osboxes/.Salome_meca
 
 rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
+
+# Execute with this desktop file
+ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
 ```
 
 
