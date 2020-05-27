@@ -385,6 +385,23 @@ ranger --copy-config=all
 * Source : https://github.com/mawww/kakoune
 * Intro : https://medium.com/@Jernfrost/kakoune-the-text-editor-i-didnt-know-i-needed-23d5f1d6ad97
 
+## anoise (Ambient Noise)
+
+* Ref : https://websetnet.net/ko/ambient-noise-anoise-player-fixed-ubuntu-16-04-newer/
+
+```bash
+sudo add-apt-repository ppa:costales/anoise
+sudo apt install anoise anoise-gui anoise-community-extension1 anoise-community-extension2 anoise-community-extension3 anoise-community-extension4
+
+# Dependency
+pip install vext
+pip install vext.gi
+
+# Run
+python2 /usr/share/anoise/anoise.py
+```
+
+
 ## Docker
 
 * Ref : [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) / [Docker with GUI Tutorial](https://goodgodgd.github.io/ian-flow/archivers/docker-tutorial)
