@@ -527,12 +527,87 @@ cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
 ```
 
-## ElmerFEM in Docker (u18.04)
+## ElmerFEM in Docker (without GUI)
 
 * [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
 
 ```bash
 docker pull unifem/elmer-desktop
 docker run -it unifem/elmer-desktop /bin/bash
+```
+
+## ElmerFEM in Docker (with GUI) : Test
+
+* Pull a clear Lubuntu 18.04 and run :
+
+```bash
+docker pull teresaejunior/lubuntu
+docker run -it unifem/elmer-desktop /bin/bash
+```
+
+In Docker Bash :
+
+```bash
+apt update
+apt upgrade
+apt autoremove
+
+add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
+apt -y install xorg elmerfem-csc-eg
+
+echo '' >> /root/.bashrc
+echo '# ElmerFEM' >> /root/.bashrc
+echo 'export ELMERGUI_HOME=/usr/share/ElmerGUI' >> /root/.bashrc
+echo 'export ELMERSOLVER_HOME=/usr/share/elmersolver' >> /root/.bashrc
+echo 'export ELMERLIB=/usr/lib/elmersolver' >> /root/.bashrc
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMERLIB:$ELMERSOLVER_HOME/lib' >> /root/.bashrc
+
+exit
+```
+
+Commit the container :
+
+```bash
+docker ps -a
+docker commit -p [CONTAINER ID] personal
+```
+
+Start the personal  container :
+
+```bash
+xhost +local:
+docker run -it --name mygui --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" personal /bin/bash
+```
+
+In Docker bash, Start ElmerGUI :
+
+```bash
+ElmerGUI
+```
+
+Check to show ElmerGUI.
+
+Restart the personal  container :
+
+```bash
+docker stop mygui
+docker start mygui
+docker attach mygui
+```
+
+Start directly ElmerGUI :
+
+```bash
+xhost +local:
+docker run -it --name mygui2 --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" personal /usr/bin/ElmerGUI
+
+docker stop mygui2
+docker start mygui2
+```
+
+Finish Test :
+
+```bash
+docker rm mygui mygui2
 ```
 
