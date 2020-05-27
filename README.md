@@ -522,7 +522,12 @@ cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
 ```
 
-## ElmerFEM in Docker
+## ElmerFEM in Docker (u18.04)
 
 * [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
+
+```bash
+docker pull unifem/elmer-desktop
+docker run -it unifem/elmer-desktop /bin/bash
+```
 
