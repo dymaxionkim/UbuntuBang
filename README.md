@@ -266,8 +266,6 @@ mkdir $HOME/.config/conky
 ln -s $HOME/git/UbuntuBang/conky.conf $HOME/.config/conky/conky.conf
 ```
 
-
-
 ## Build Picom (Fork of Compton compositor)
 
 ```bash
@@ -311,7 +309,7 @@ git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/t
 mv $HOME/.zshrc $HOME/.zshrc.old
 ln -s $HOME/git/UbuntuBang/zshrc $HOME/.zshrc
 
-# Font
+# Nerd Fonts
 sudo mkdir /usr/share/fonts/truetype/MesloLGS_NF
 sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
@@ -322,6 +320,10 @@ sudo mkdir /usr/share/fonts/truetype/FiraMono
 sudo wget -O /usr/share/fonts/truetype/FiraMono/FiraMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 sudo unzip /usr/share/fonts/truetype/FiraMono/FiraMono.zip -d /usr/share/fonts/truetype/FiraMono
 sudo rm /usr/share/fonts/truetype/FiraMono/FiraMono.zip
+
+sudo mkdir /usr/share/fonts/truetype/UbuntuMono
+sudo wget -O /usr/share/fonts/truetype/UbuntuMono/Ubuntu%20Nerd%20Font%20Complete%20Mono.ttf https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Ubuntu/Regular/complete/Ubuntu%20Nerd%20Font%20Complete%20Mono.ttf
+sudo wget -O /usr/share/fonts/truetype/UbuntuMono/Ubuntu%20Nerd%20Font%20Complete.ttf https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Ubuntu/Regular/complete/Ubuntu%20Nerd%20Font%20Complete.ttf
 
 sudo fc-cache -f -v
 
@@ -392,10 +394,6 @@ ranger --copy-config=all
 ```bash
 sudo add-apt-repository ppa:costales/anoise
 sudo apt install anoise anoise-gui anoise-community-extension1 anoise-community-extension2 anoise-community-extension3 anoise-community-extension4
-
-# Dependency
-pip install vext
-pip install vext.gi
 
 # Run
 python2 /usr/share/anoise/anoise.py

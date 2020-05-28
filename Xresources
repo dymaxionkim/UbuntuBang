@@ -32,9 +32,8 @@ URxvt*cursorBlink:      true
 URxvt*saveLines:        10000
 URxvt.internalBorder:   10
  
-urxvt*font:             xft:D2Coding Nerd Font:size=11
-urxvt*boldFont:         xft:D2Coding Nerd Font:size=11
-urxvt.letterSpace:      0
+urxvt*font:             xft:Ubuntu Nerd Font:style=regular:size=11
+urxvt.letterSpace:      -2
 !URxvt.lineSpace:         2
 
 !urxvt*perl-lib:         $HOME/.uxrvt/ext/
