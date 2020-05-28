@@ -49,7 +49,7 @@ sudo apt -y install git-lfs
 git config --global user.email "dymaxion.kim@gmail.com"
 git config --global user.name "osboxes"
 git config --global color.ui auto
-git config --global core.editor micro
+git config --global core.editor 'snap run micro'
 git config --global credential.helper cache
 git config --global push.default matching
 
@@ -352,7 +352,6 @@ sudo apt install openjdk-11-jdk
 ```bash
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt -y update
 sudo apt -y install typora
 ```
 
@@ -409,40 +408,6 @@ python2 /usr/share/anoise/anoise.py
 ```bash
 sudo apt remove --purge kcalc 2048-qt k3b noblenote quassel trojita skanlite screengrab
 sudo apt autoremove
-```
-
-## Update every packages
-
-```bash
-# apt
-sudo apt update
-sudo apt upgrade
-sudo apt autoremove
-
-# anaconda
-conda update -n base conda
-conda update --all
-
-prompt-toolkit
-pycodestyle
-pydocstyle
-pyflakes
-pyodbc
-pytest-doctestplus
-python-language-server
-pyzmq
-QtAwesome
-ruamel-yaml
-# pip
-pip install --upgrade pip
-
-# pip update every packages (Risky)
-# Ref : https://simpleit.rocks/python/upgrade-all-pip-requirements-package-console-commands/
-pip list -o --format columns
-pip list -o --format columns|  cut -d' ' -f1|xargs -n1 pip install -U
-
-# julia
-julia -e 'using Pkg; Pkg.update();'
 ```
 
 
@@ -658,5 +623,80 @@ Finish Test :
 
 ```bash
 docker rm mygui mygui2
+```
+
+
+
+
+
+# Update every packages
+
+```bash
+#######################################
+# apt
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+
+# snap
+sudo snap refresh
+
+# anaconda
+conda update -n base conda
+conda update --all
+
+# pip
+pip install --upgrade pip
+
+# pip update every packages (Risky)
+# Ref : https://simpleit.rocks/python/upgrade-all-pip-requirements-package-console-commands/
+pip list -o --format columns
+pip list -o --format columns|  cut -d' ' -f1|xargs -n1 pip install -U
+
+# julia
+julia -e 'using Pkg; Pkg.update();'
+
+#######################################
+# UbuntuBang
+cd ~/git/UbuntuBang
+git pull
+
+# i3-gaps
+cd ~/git/i3-gaps
+autoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+
+# picom
+cd ~/git/picom
+git pull
+export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+meson configure -Dprefix=$HOME/.local build
+ninja -C build install
+
+# ConvertAll
+cd ~/git/ConvertAll
+git pull
+
+# ccx2paraview
+cd ~/git/ccx2paraview
+git pull
+
+#######################################
+#### Manual Updates
+# Kakoun
+# Min Browser
+# CalculixLauncher
+# Gmsh
+# Paraview
+# Salome
+# Salome-meca
+# ElmerFEM
 ```
 

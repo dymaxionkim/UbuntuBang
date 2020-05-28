@@ -95,4 +95,4 @@ default_outline_color white
 # to show current Workspace
 # ${exec wmctrl -d | grep '*' | sed 's/.* //g'}
 TEXT
-${alignc}   ${kernel}    ${freq}MHz ${hwmon 1 temp 1}℃ ${cpu}% ${cpubar 7,20}    ${membar 7,20}    ${fs_bar 7,20}   ﯴ ${upspeedgraph wlo1 7,20}   ﯲ ${downspeedgraph wlo1 7,20}    ${battery_bar 7,20}    ${uptime} ${image /home/osboxes/git/UbuntuBang/face_alpha.png -s 20x20 -p 1170,0}
+${alignc}  ${exec uname -nr}    ${freq}MHz ${hwmon 1 temp 1}℃ ${cpu}% ${cpubar 7,20}    ${membar 7,20}    ${fs_bar 7,20}   ﯴ ${upspeedgraph wlo1 7,20}   ﯲ ${downspeedgraph wlo1 7,20}    ${battery_bar 7,20}    ${uptime} ${image /home/osboxes/git/UbuntuBang/face_alpha.png -s 20x20 -p 1170,0}
