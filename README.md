@@ -413,6 +413,40 @@ sudo apt remove --purge kcalc 2048-qt k3b noblenote quassel trojita skanlite scr
 sudo apt autoremove
 ```
 
+## Update every packages
+
+```bash
+# apt
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+
+# anaconda
+conda update -n base conda
+conda update --all
+
+prompt-toolkit
+pycodestyle
+pydocstyle
+pyflakes
+pyodbc
+pytest-doctestplus
+python-language-server
+pyzmq
+QtAwesome
+ruamel-yaml
+# pip
+pip install --upgrade pip
+
+# pip update every packages (Risky)
+# Ref : https://simpleit.rocks/python/upgrade-all-pip-requirements-package-console-commands/
+pip list -o --format columns
+pip list -o --format columns|  cut -d' ' -f1|xargs -n1 pip install -U
+
+# julia
+julia -e 'using Pkg; Pkg.update();'
+```
+
 
 
 
