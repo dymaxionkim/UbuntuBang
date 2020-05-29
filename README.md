@@ -386,6 +386,22 @@ ranger --copy-config=all
 * Source : https://github.com/mawww/kakoune
 * Intro : https://medium.com/@Jernfrost/kakoune-the-text-editor-i-didnt-know-i-needed-23d5f1d6ad97
 
+```bash
+sudo apt install libncursesw5-dev pkg-config
+
+cd git
+git clone https://github.com/mawww/kakoune.git
+cd kakoune
+make
+PREFIX=$HOME/.local make install
+kak
+
+# Config
+* Ref : https://git.sr.ht/~ntgg/dotfiles/tree/master/.config/kak/kakrc
+mkdir ~/.config/kak
+micro ~/.config/kak/kakrc
+```
+
 ## anoise (Ambient Noise)
 
 * Ref : https://websetnet.net/ko/ambient-noise-anoise-player-fixed-ubuntu-16-04-newer/
@@ -661,8 +677,15 @@ julia -e 'using Pkg; Pkg.update();'
 cd ~/git/UbuntuBang
 git pull
 
+# Kakoune
+cd ~/git/kakoune
+git pull
+make
+PREFIX=$HOME/.local make install
+
 # i3-gaps
 cd ~/git/i3-gaps
+git pull
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
@@ -690,7 +713,6 @@ git pull
 
 #######################################
 #### Manual Updates
-# Kakoun
 # Min Browser
 # CalculixLauncher
 # Gmsh
