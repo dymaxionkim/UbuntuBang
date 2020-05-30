@@ -513,7 +513,7 @@ wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/cur
 
 ```bash
 tar xfz salome.tgz
-mv $HOME/Downloads/salome $HOME/.Salome
+mv $HOME/Downloads/SALOME-9.4.0-UB18.04-SRC $HOME/.Salome
 rm $HOME/Downloads/salome.tgz
 ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
 ```
@@ -542,9 +542,9 @@ rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
 
 # Dependency for CodeAster Module
 # Ref : https://www.code-aster.org/forum2/viewtopic.php?id=24883
-wget -O $HOME/Downloadslibffi6_3.2.1-9_amd64.deb http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb
-sudo dpkg -i $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
-rm $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
+wget -O $HOME/Downloads/libffi6_3.2.1-9_amd64.deb http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb
+sudo dpkg -i $HOME/Downloads/Clibffi6_3.2.1-9_amd64.deb
+rm $HOME/Downloads/libffi6_3.2.1-9_amd64.deb
 
 # Execute with this desktop file
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
@@ -556,7 +556,6 @@ ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/S
 cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
 ```
-
 ## ElmerFEM in Docker (without GUI)
 
 * [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
