@@ -381,8 +381,12 @@ sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUser
 sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo odt2txt jq libimage-exiftool-perl catdoc
 
 pip install xlsx2csv
+pip install ueberzug
 
 ranger --copy-config=all
+
+# Config
+micro ~/.config/ranger/rc.conf
 ```
 
 * If csv preview is not working, change `~/.config/ranger/scope.sh`'s 293th line like that :
@@ -618,7 +622,7 @@ apt upgrade
 apt autoremove
 
 add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-apt -y install xorg elmerfem-csc-eg
+apt -y install xorg libqt5xml5 elmerfem-csc-eg
 
 echo '' >> /root/.bashrc
 echo '# ElmerFEM' >> /root/.bashrc
