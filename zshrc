@@ -129,6 +129,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias octave="snap run octave"
 alias micro="snap run micro"
+alias inkscape="snap run inkscape"
+alias gimp="snap run gimp"
+alias code="snap run code"
 
 # Pyenv
 export PATH="/home/osboxes/.pyenv/bin:$PATH"
