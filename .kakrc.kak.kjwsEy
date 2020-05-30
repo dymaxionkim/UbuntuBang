@@ -1,0 +1,3 @@
+colorscheme tomorrow-night
+#hook global WinCreate .* %{ autowrap-enable }
+#hook global WinCreate .* %{ autowrap-enable }
