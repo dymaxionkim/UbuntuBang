@@ -61,6 +61,9 @@ bindsym $mod+Ctrl+v exec pavucontrol
 bindsym --release Print exec scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
 bindsym --release $mod+Print exec scrot -s '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f /media/sf_D_DRIVE/WORK/'
 
+# Change Wallpaper
+bindsym $mod+w exec feh --randomize --bg-fill /home/osboxes/.Wallpaper/2020_Jeju/*
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
