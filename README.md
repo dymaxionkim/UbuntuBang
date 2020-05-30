@@ -378,8 +378,25 @@ sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUser
 * Ref : https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps
 
 ```bash
-sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo odt2txt jq libimage-exiftool-perl catdoc
+
+pip install xlsx2csv
+
 ranger --copy-config=all
+```
+
+* If csv preview is not working, change `~/.config/ranger/scope.sh`'s 293th line like that :
+
+from
+
+```bash
+        text/* | */xml)
+```
+
+to
+
+```bash
+        text/* | */xml | */csv)
 ```
 
 ## kakoune (Alternative of Vim)
