@@ -1,4 +1,5 @@
 # UbuntuBang
+
 _Build for My Ubuntu Desktop Environment using i3wm_
 
 ![](screenshot.png)
@@ -381,7 +382,7 @@ sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 ranger --copy-config=all
 ```
 
-## kakoun (Alternative of Vim)
+## kakoune (Alternative of Vim)
 
 * Source : https://github.com/mawww/kakoune
 * Intro : https://medium.com/@Jernfrost/kakoune-the-text-editor-i-didnt-know-i-needed-23d5f1d6ad97
@@ -399,7 +400,7 @@ kak
 # Config
 * Ref : https://git.sr.ht/~ntgg/dotfiles/tree/master/.config/kak/kakrc
 mkdir ~/.config/kak
-micro ~/.config/kak/kakrc
+ln -s $HOME/git/UbuntuBang/kakrc $HOME/.config/kak/kakrc
 ```
 
 ## anoise (Ambient Noise)
