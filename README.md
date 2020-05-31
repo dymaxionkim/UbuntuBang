@@ -389,8 +389,12 @@ git clone https://github.com/ranger/ranger.git
 
 ~/git/ranger/ranger.py --copy-config=all
 
-# Config
-micro ~/.config/ranger/rc.conf
+# Replace config files
+#micro ~/.config/ranger/rc.conf
+mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old
+mv ~/.config/ranger/scope.sh ~/.config/ranger/scope.sh.old
+ln -s ~/git/UbuntuBang/ranger_rc.conf ~/.config/ranger/rc.conf
+ln -s ~/git/UbuntuBang/ranger_scope.sh ~/.config/ranger/scope.sh
 ```
 
 * If csv preview is not working, change `~/.config/ranger/scope.sh`'s 293th line like that :
