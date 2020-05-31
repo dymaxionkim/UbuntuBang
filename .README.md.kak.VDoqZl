@@ -1,5 +1,4 @@
-# UbuntuBang
-
+UbuntuBang
 _Build for My Ubuntu Desktop Environment using i3wm_
 
 ![](screenshot.png)
@@ -35,7 +34,7 @@ rm $HOME/Downloads/ukuu.deb
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils
+sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
 ```
 
 ## Upgrade Git
@@ -378,91 +377,14 @@ sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUser
 * Ref : https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps
 
 ```bash
-sudo apt install caca-utils highlight atool w3m poppler-utils mediainfo odt2txt jq libimage-exiftool-perl catdoc
-
-pip install xlsx2csv
-pip install docx2txt
-pip install ueberzug
-
-cd ~/git
-git clone https://github.com/ranger/ranger.git
-
-~/git/ranger/ranger.py --copy-config=all
-
-# Config
-micro ~/.config/ranger/rc.conf
+sudo apt install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+ranger --copy-config=all
 ```
 
-* If csv preview is not working, change `~/.config/ranger/scope.sh`'s 293th line like that :
-
-from
-
-```bash
-        text/* | */xml)
-```
-
-to
-
-```bash
-        text/* | */xml | */csv)
-```
-
-* If svg preview is not working, remove `~/.config/ranger/scope.sh`'s 130~133th lines'  remarks like that :
-
-```bash
-        ## SVG
-        image/svg+xml|image/svg)
-            convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            exit 1;;
-```
-
-* If you want to pdf preview as image, remove `~/.config/ranger/scope.sh`'s 162~170th lines'  remarks like that :
-
-```bash
-        ## PDF
-        application/pdf)
-            pdftoppm -f 1 -l 1 \
-                     -scale-to-x "${DEFAULT_SIZE%x*}" \
-                     -scale-to-y -1 \
-                     -singlefile \
-                     -jpeg -tiffcompression jpeg \
-                     -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
-                && exit 6 || exit 1;;
-```
-
-* If you want to docx preview, add lines into `~/.config/ranger/scope.sh` :
-
-```bash
-		## Docx
-		docx)
-			docx2txt -- "${FILE_PATH}" && exit 5
-			exit 1;;
-```
-
-
-
-
-
-## kakoune (Alternative of Vim)
+## kakoun (Alternative of Vim)
 
 * Source : https://github.com/mawww/kakoune
 * Intro : https://medium.com/@Jernfrost/kakoune-the-text-editor-i-didnt-know-i-needed-23d5f1d6ad97
-
-```bash
-sudo apt install libncursesw5-dev pkg-config
-
-cd git
-git clone https://github.com/mawww/kakoune.git
-cd kakoune
-make
-PREFIX=$HOME/.local make install
-kak
-
-# Config
-* Ref : https://git.sr.ht/~ntgg/dotfiles/tree/master/.config/kak/kakrc
-mkdir ~/.config/kak
-ln -s $HOME/git/UbuntuBang/kakrc $HOME/.config/kak/kakrc
-```
 
 ## anoise (Ambient Noise)
 
@@ -480,24 +402,6 @@ python2 /usr/share/anoise/anoise.py
 ## Docker
 
 * Ref : [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) / [Docker with GUI Tutorial](https://goodgodgd.github.io/ian-flow/archivers/docker-tutorial)
-
-```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-sudo apt update
-apt-cache policy docker-ce
-
-sudo apt install docker-ce
-
-sudo systemctl status docker
-
-sudo usermod -aG docker ${USER}
-id -nG
-sudo reboot now
-```
-
-
 
 ## Remove unnecessary things
 
@@ -593,7 +497,7 @@ wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/cur
 
 ```bash
 tar xfz salome.tgz
-mv $HOME/Downloads/SALOME-9.4.0-UB18.04-SRC $HOME/.Salome
+mv $HOME/Downloads/salome $HOME/.Salome
 rm $HOME/Downloads/salome.tgz
 ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
 ```
@@ -622,9 +526,9 @@ rm $HOME/Downloads/salome_meca-2019.0.3-1-universal*
 
 # Dependency for CodeAster Module
 # Ref : https://www.code-aster.org/forum2/viewtopic.php?id=24883
-wget -O $HOME/Downloads/libffi6_3.2.1-9_amd64.deb http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb
-sudo dpkg -i $HOME/Downloads/Clibffi6_3.2.1-9_amd64.deb
-rm $HOME/Downloads/libffi6_3.2.1-9_amd64.deb
+wget -O $HOME/Downloadslibffi6_3.2.1-9_amd64.deb http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb
+sudo dpkg -i $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
+rm $HOME/Downloadslibffi6_3.2.1-9_amd64.deb
 
 # Execute with this desktop file
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
@@ -636,6 +540,7 @@ ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/S
 cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
 ```
+
 ## ElmerFEM in Docker (without GUI)
 
 * [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
@@ -651,7 +556,7 @@ docker run -it unifem/elmer-desktop /bin/bash
 
 ```bash
 docker pull teresaejunior/lubuntu
-docker run -it teresaejunior/lubuntu /bin/bash
+docker run -it unifem/elmer-desktop /bin/bash
 ```
 
 In Docker Bash :
@@ -662,7 +567,7 @@ apt upgrade
 apt autoremove
 
 add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-apt -y install xorg libqt5xml5 elmerfem-csc-eg
+apt -y install xorg elmerfem-csc-eg
 
 echo '' >> /root/.bashrc
 echo '# ElmerFEM' >> /root/.bashrc
@@ -756,15 +661,8 @@ julia -e 'using Pkg; Pkg.update();'
 cd ~/git/UbuntuBang
 git pull
 
-# Kakoune
-cd ~/git/kakoune
-git pull
-make
-PREFIX=$HOME/.local make install
-
 # i3-gaps
 cd ~/git/i3-gaps
-git pull
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
@@ -792,6 +690,7 @@ git pull
 
 #######################################
 #### Manual Updates
+# Kakoun
 # Min Browser
 # CalculixLauncher
 # Gmsh
