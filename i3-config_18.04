@@ -58,8 +58,8 @@ bindsym $mod+Ctrl+e exec code
 bindsym $mod+Ctrl+v exec pavucontrol
 
 # Screenshot
-bindsym --release Print exec scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/' && xclip -selection clipboard -t image/png -i ~/`ls -1 -t . | head -1`
-bindsym --release $mod+Print exec scrot -s '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/' && xclip -selection clipboard -t image/png -i ~/`ls -1 -t . | head -1`
+bindsym --release Print exec scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f /home/osboxes/' && xclip -selection clipboard -t image/png -i /home/osboxes/`/bin/ls -1 -t /home/osboxes/ | head -1`
+bindsym --release $mod+Print exec scrot -s '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f /home/osboxes/' && xclip -selection clipboard -t image/png -i /home/osboxes/`/bin/ls -1 -t /home/osboxes/ | head -1 | head -1`
 
 # Change Wallpaper
 bindsym $mod+w exec feh --randomize --bg-fill /home/osboxes/.Wallpaper/2020_Jeju/*
