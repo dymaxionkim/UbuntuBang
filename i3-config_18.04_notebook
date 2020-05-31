@@ -57,7 +57,7 @@ bindsym $mod+Ctrl+f exec pcmanfm
 bindsym $mod+Ctrl+e exec code
 bindsym $mod+Ctrl+v exec pavucontrol
 
-# ScreenshotM
+# Screenshot
 bindsym --release Print exec scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/' && xclip -selection clipboard -t image/png -i ~/`ls -1 -t . | head -1`
 bindsym --release $mod+Print exec scrot -s '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/' && xclip -selection clipboard -t image/png -i ~/`ls -1 -t . | head -1`
 
