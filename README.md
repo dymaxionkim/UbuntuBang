@@ -35,7 +35,7 @@ rm $HOME/Downloads/ukuu.deb
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip
+sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils
 ```
 
 ## Upgrade Git
@@ -401,6 +401,29 @@ to
 
 ```bash
         text/* | */xml | */csv)
+```
+
+* If svg preview is not working, remove `~/.config/ranger/scope.sh`'s 130~133th lines'  remarks like that :
+
+```bash
+        ## SVG
+        image/svg+xml|image/svg)
+            convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
+            exit 1;;
+```
+
+* If you want to pdf preview as image, remove `~/.config/ranger/scope.sh`'s 162~170th lines'  remarks like that :
+
+```bash
+        ## PDF
+        application/pdf)
+            pdftoppm -f 1 -l 1 \
+                     -scale-to-x "${DEFAULT_SIZE%x*}" \
+                     -scale-to-y -1 \
+                     -singlefile \
+                     -jpeg -tiffcompression jpeg \
+                     -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
+                && exit 6 || exit 1;;
 ```
 
 ## kakoune (Alternative of Vim)
