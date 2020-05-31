@@ -79,20 +79,40 @@ handle_extension() {
             transmission-show -- "${FILE_PATH}" && exit 5
             exit 1;;
 
-        ## OpenDocument
-        odt|ods|odp|sxw)
+        ## Office files (odp,pptx,ppt)
+        odp|pptx|ppt)
+          libreoffice \
+            --headless \
+            --convert-to png \
+            "${FILE_PATH}" \
+            --outdir /tmp \
+            && mv -T "/tmp/$(basename ${FILE_PATH%.*}).png" "${IMAGE_CACHE_PATH}" \
+            && exit 6 || exit 1;;
+
+        ## Office files (odt|docx|doc)
+        odt|docx|doc)
+          libreoffice \
+            --headless \
+            --convert-to png \
+            "${FILE_PATH}" \
+            --outdir /tmp \
+            && mv -T "/tmp/$(basename ${FILE_PATH%.*}).png" "${IMAGE_CACHE_PATH}" \
+            && exit 6 || exit 1;;
+
+        ## Office files (Calc file)
+        ods|sxw)
             ## Preview as text conversion
             odt2txt "${FILE_PATH}" && exit 5
             ## Preview as markdown conversion
-            pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
+        #    pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
             exit 1;;
 
 		## Docx
-		docx)
-			docx2txt -- "${FILE_PATH}" && exit 5
-			exit 1;;
+		#docx)
+		#	docx2txt -- "${FILE_PATH}" && exit 5
+		#	exit 1;;
 
-        ## XLSX
+        ## Office files (xlsx)
         xlsx)
             ## Preview as csv conversion
             ## Uses: https://github.com/dilshod/xlsx2csv
@@ -173,7 +193,6 @@ handle_image() {
                       -jpeg -tiffcompression jpeg \
                       -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
              && exit 6 || exit 1;;
-
 
         ## ePub, MOBI, FB2 (using Calibre)
         # application/epub+zip|application/x-mobipocket-ebook|\

@@ -390,62 +390,11 @@ git clone https://github.com/ranger/ranger.git
 ~/git/ranger/ranger.py --copy-config=all
 
 # Replace config files
-#micro ~/.config/ranger/rc.conf
 mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old
 mv ~/.config/ranger/scope.sh ~/.config/ranger/scope.sh.old
 ln -s ~/git/UbuntuBang/ranger_rc.conf ~/.config/ranger/rc.conf
 ln -s ~/git/UbuntuBang/ranger_scope.sh ~/.config/ranger/scope.sh
 ```
-
-* If csv preview is not working, change `~/.config/ranger/scope.sh`'s 293th line like that :
-
-from
-
-```bash
-        text/* | */xml)
-```
-
-to
-
-```bash
-        text/* | */xml | */csv)
-```
-
-* If svg preview is not working, remove `~/.config/ranger/scope.sh`'s 130~133th lines'  remarks like that :
-
-```bash
-        ## SVG
-        image/svg+xml|image/svg)
-            convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            exit 1;;
-```
-
-* If you want to pdf preview as image, remove `~/.config/ranger/scope.sh`'s 162~170th lines'  remarks like that :
-
-```bash
-        ## PDF
-        application/pdf)
-            pdftoppm -f 1 -l 1 \
-                     -scale-to-x "${DEFAULT_SIZE%x*}" \
-                     -scale-to-y -1 \
-                     -singlefile \
-                     -jpeg -tiffcompression jpeg \
-                     -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
-                && exit 6 || exit 1;;
-```
-
-* If you want to docx preview, add lines into `~/.config/ranger/scope.sh` :
-
-```bash
-		## Docx
-		docx)
-			docx2txt -- "${FILE_PATH}" && exit 5
-			exit 1;;
-```
-
-
-
-
 
 ## kakoune (Alternative of Vim)
 
