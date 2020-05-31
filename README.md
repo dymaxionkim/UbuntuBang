@@ -387,7 +387,7 @@ pip install ueberzug
 cd ~/git
 git clone https://github.com/ranger/ranger.git
 
-~/git/ranger/ranger.py --copy-config=all
+python ~/git/range/ranger.py --copy-config=all
 
 # Replace config files
 #micro ~/.config/ranger/rc.conf

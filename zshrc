@@ -132,6 +132,7 @@ alias micro="snap run micro"
 alias inkscape="snap run inkscape"
 alias gimp="snap run gimp"
 alias code="snap run code"
+alias ranger="python /home/osboxes/git/ranger/ranger.py"
 
 # Pyenv
 export PATH="/home/osboxes/.pyenv/bin:$PATH"
