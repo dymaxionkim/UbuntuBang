@@ -63,7 +63,7 @@ handle_extension() {
             ## Avoid password prompt by providing empty password
             7z l -p -- "${FILE_PATH}" && exit 5
             exit 1;;
-
+            
         ## PDF
         pdf)
             ## Preview as text conversion
@@ -152,11 +152,6 @@ handle_image() {
 
     local mimetype="${1}"
     case "${mimetype}" in
-        # SVG
-        image/svg+xml|image/svg)
-            convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            exit 1;;
-
         ## DjVu
         # image/vnd.djvu)
         #     ddjvu -format=tiff -quality=90 -page=1 -size="${DEFAULT_SIZE}" \
@@ -177,6 +172,12 @@ handle_image() {
             ## `w3mimgdisplay` will be called for all images (unless overriden
             ## as above), but might fail for unsupported types.
             exit 7;;
+
+        # SVG
+        image/svg|image/svg+xml)
+            #convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
+            inkscape --export-filename="${IMAGE_CACHE_PATH}" "${FILE_PATH}" && exit 6
+            exit 1;;
 
         ## Video
         # video/*)
