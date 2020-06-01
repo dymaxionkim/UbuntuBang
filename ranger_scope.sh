@@ -63,7 +63,7 @@ handle_extension() {
             ## Avoid password prompt by providing empty password
             7z l -p -- "${FILE_PATH}" && exit 5
             exit 1;;
-            
+
         ## PDF
         pdf)
             ## Preview as text conversion
@@ -158,6 +158,13 @@ handle_image() {
         #           - "${IMAGE_CACHE_PATH}" < "${FILE_PATH}" \
         #           && exit 6 || exit 1;;
 
+        ## SVG
+        image/svg|image/svg+xml)
+            convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
+            #inkscape --export-filename="${IMAGE_CACHE_PATH}" "${FILE_PATH}" && exit 6
+            #inkscape "${FILE_PATH}" -e "${IMAGE_CACHE_PATH}" && exit 6
+            exit 7;;
+        
         ## Image
         image/*)
             local orientation
@@ -172,12 +179,6 @@ handle_image() {
             ## `w3mimgdisplay` will be called for all images (unless overriden
             ## as above), but might fail for unsupported types.
             exit 7;;
-
-        # SVG
-        image/svg|image/svg+xml)
-            #convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            inkscape --export-filename="${IMAGE_CACHE_PATH}" "${FILE_PATH}" && exit 6
-            exit 1;;
 
         ## Video
         # video/*)
@@ -344,11 +345,11 @@ handle_mime() {
             exit 1;;
 
         ## Image
-        image/*)
+        #image/*)
             ## Preview as text conversion
             # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
-            exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+        #    exiftool "${FILE_PATH}" && exit 5
+        #    exit 1;;
 
         ## Video and audio
         video/* | audio/*)
