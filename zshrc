@@ -127,11 +127,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias octave="snap run octave"
-alias micro="snap run micro"
-alias inkscape="snap run inkscape"
-alias gimp="snap run gimp"
-alias code="snap run code"
+#alias octave="snap run octave"
+#alias micro="snap run micro"
+#alias inkscape="snap run inkscape"
+#alias gimp="snap run gimp"
 alias ranger="python /home/osboxes/git/ranger/ranger.py"
 
 # Pyenv
@@ -161,10 +160,10 @@ export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
 export OMP_NUM_THREADS=4
 
 # Julia Lang
-alias julia='snap run julia-mrcinv'
+#alias julia='snap run julia-mrcinv'
 
 # Freecad
-alias freecad='snap run freecad'
+#alias freecad='snap run freecad'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -175,6 +174,9 @@ export EDITOR='snap run micro';
 
 # Salome_meca in VirtualBox
 export LD_PRELOAD='/usr/$LIB/libstdc++.so.6'
+
+# snap path
+export PATH=/snap/bin:$PATH
 
 #screenfetch -n
 
