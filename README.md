@@ -35,7 +35,7 @@ rm $HOME/Downloads/ukuu.deb
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils
+sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv
 ```
 
 ## Upgrade Git
@@ -392,8 +392,10 @@ python ~/git/ranger/ranger.py --copy-config=all
 # Replace config files
 mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old
 mv ~/.config/ranger/scope.sh ~/.config/ranger/scope.sh.old
+mv ~/.config/ranger/rifle.conf ~/.config/ranger/rifle.conf.old
 ln -s ~/git/UbuntuBang/ranger_rc.conf ~/.config/ranger/rc.conf
 ln -s ~/git/UbuntuBang/ranger_scope.sh ~/.config/ranger/scope.sh
+ln -s ~/git/UbuntuBang/ranger_rifle.conf ~/.config/ranger/rifle.conf
 ```
 
 ## kakoune (Alternative of Vim)

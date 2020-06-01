@@ -197,6 +197,8 @@ border_radius 7
 for_window [class="Pavucontrol"] floating enable
 #for_window [class="Pavucontrol"] resize shrink left 100, resize shrink right 100, resize shrink down 50, resize shrink up 50
 for_window [class="ukuu-gtk"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="vlc"] floating enable
 
 
 ##### LAUNCH ######################################
