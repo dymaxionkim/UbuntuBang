@@ -30,6 +30,8 @@ wget -O $HOME/Downloads/ukuu.deb https://github.com/teejee2008/ukuu/releases/dow
 
 sudo dpkg -i $HOME/Downloads/ukuu.deb
 rm $HOME/Downloads/ukuu.deb
+
+sudo apt install grub-customizer
 ```
 
 ## Utilities
