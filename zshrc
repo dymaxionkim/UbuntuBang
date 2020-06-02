@@ -160,7 +160,7 @@ export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
 export OMP_NUM_THREADS=4
 
 # Julia Lang
-#alias julia='snap run julia-mrcinv'
+alias julia='snap run julia-mrcinv'
 
 # Freecad
 #alias freecad='snap run freecad'
