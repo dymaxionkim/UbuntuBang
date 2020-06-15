@@ -37,7 +37,7 @@ sudo apt install grub-customizer
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv
+sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet
 ```
 
 ## Upgrade Git

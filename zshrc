@@ -178,5 +178,5 @@ export LD_PRELOAD='/usr/$LIB/libstdc++.so.6'
 # snap path
 export PATH=/snap/bin:$PATH
 
-#screenfetch -n
-
+screenfetch -n
+figlet "Higen Robot"
