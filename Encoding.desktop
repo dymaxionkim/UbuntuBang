@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name = EUC-KR to UTF8
+Tooltip = Encoding EUCKR to UTF8
+Icon = utilities-terminal
+Profiles = make_exec;
+
+[X-Action-Profile make_exec]
+Name = EUC-KR to UTF8
+MimeTypes = text/plain;
+SelectionCount = 1
+Schemes = file;
+Exec = /home/osboxes/git/UbuntuBang/Encoding.sh %f

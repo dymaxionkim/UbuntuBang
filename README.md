@@ -37,7 +37,7 @@ sudo apt install grub-customizer
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate convertall curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet
+sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet
 ```
 
 ## Upgrade Git
@@ -431,6 +431,14 @@ sudo apt install anoise anoise-gui anoise-community-extension1 anoise-community-
 
 # Run
 python2 /usr/share/anoise/anoise.py
+```
+
+## Add Encoding command in pcmanfm-qt's cascade menu
+
+```bash
+mkdir $HOME/.local/share/file-manager
+mkdir $HOME/.local/share/file-manager/actions
+ln -s $HOME/git/UbuntuBang/Encoding.desktop $HOME/.local/share/file-manager/actions/Encoding.desktop
 ```
 
 
