@@ -53,7 +53,7 @@ bindsym $mod+d exec rofi -show drun -show-icons
 bindsym $mod+Ctrl+m exec min
 bindsym $mod+Ctrl+w exec firefox-trunk
 bindsym $mod+Ctrl+g exec google-chrome
-bindsym $mod+Ctrl+f exec pcmanfm
+bindsym $mod+Ctrl+f exec pcmanfm-qt
 bindsym $mod+Ctrl+e exec code
 bindsym $mod+Ctrl+v exec pavucontrol
 
