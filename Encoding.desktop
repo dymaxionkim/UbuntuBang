@@ -1,4 +1,5 @@
 [Desktop Entry]
+Type = Action
 Name = EUC-KR to UTF8
 Tooltip = Encoding EUCKR to UTF8
 Icon = utilities-terminal
