@@ -178,5 +178,9 @@ export LD_PRELOAD='/usr/$LIB/libstdc++.so.6'
 # snap path
 export PATH=/snap/bin:$PATH
 
+# qt514
+export PATH="/opt/qt514/bin:$PATH"
+export LD_LIBRARY_PATH="/opt/qt514/lib:$LD_LIBRARY_PATH"
+
 screenfetch -n
 figlet "Higen Robot"

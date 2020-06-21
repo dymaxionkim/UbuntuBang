@@ -686,6 +686,45 @@ docker rm mygui mygui2
 ```
 
 
+## ODA tools
+
+* qt 5.14 설치
+
+```bash
+sudo add-apt-repository ppa:beineri/opt-qt-5.14.0-bionic
+sudo apt install qt514-meta-full
+```
+
+* ODA File Converter
+
+https://www.opendesign.com/guestfiles/oda_file_converter
+
+```bash
+wget https://download.opendesign.com/guestfiles/ODAFileConverter/ODAFileConverter_QT5_lnxX64_7.2dll.deb
+sudo dpkg -i ODAFileConverter_QT5_lnxX64_7.2dll.deb
+```
+
+* ODA Drawing Explorer
+
+https://www.opendesign.com/guestfiles/oda_drawings_explorer
+
+https://www.opendesign.com/guestfiles/oda_drawings_explorer/reference
+
+```bash
+wget https://download.opendesign.com/guestfiles/ODADrawingsExplorer/ODADrawingsExplorer_QT5_lnxX64_7.2dll.deb
+sudo dpkg -i ODADrawingsExplorer_QT5_lnxX64_7.2dll.deb
+```
+
+* Change desktop file
+
+```bash
+sudo rm /usr/share/applications/ODADrawingsExplorer_21.5.0.0.desktop
+sudo rm /usr/share/applications/ODAFileConverter_21.5.0.0.desktop
+
+ln -s /home/osboxes/git/UbuntuBang/ODADrawingsExplorer_21.5.0.0.desktop /home/osboxes/.local/share/applications/ODADrawingsExplorer_21.5.0.0.desktop
+ln -s /home/osboxes/git/UbuntuBang/ODAFileConverter_21.5.0.0.desktop /home/osboxes/.local/share/applications/ODAFileConverter_21.5.0.0.desktop
+```
+
 
 
 

@@ -173,6 +173,8 @@ export EDITOR='snap run micro';
 # Kakoun
 export XDG_CONFIG_HOME=$HOME/.config
 
+# qt514
+export PATH="/opt/qt514/bin:$PATH"
+export LD_LIBRARY_PATH="/opt/qt514/lib:$LD_LIBRARY_PATH"
+
 #screenfetch -n
-
-
