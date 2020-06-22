@@ -688,17 +688,22 @@ docker rm mygui mygui2
 
 ## ODA tools
 
-* qt5-default  설치
+* qt5-default
 
 ```bash
 sudo apt install qt5-default
 ```
 
-* qt 5.14 설치 (Ubuntu 18.04)
+*  qt 5.14.2
 
 ```bash
-sudo add-apt-repository ppa:beineri/opt-qt-5.14.0-bionic
-sudo apt install qt514-meta-full
+wget https://download.qt.io/official_releases/qt/5.14/5.14.2/qt-opensource-linux-x64-5.14.2.run
+chmod +x qt-opensource-linux-x64-5.14.2.run
+sudo ./qt-opensource-linux-x64-5.14.2.run
+... Login, GPL2 obligation
+... Installation Folder : /opt/qt514
+... Select components All
+rm ./qt-opensource-linux-x64-5.14.2.run
 ```
 
 * ODA File Converter
@@ -708,6 +713,7 @@ https://www.opendesign.com/guestfiles/oda_file_converter
 ```bash
 wget https://download.opendesign.com/guestfiles/ODAFileConverter/ODAFileConverter_QT5_lnxX64_7.2dll.deb
 sudo dpkg -i ODAFileConverter_QT5_lnxX64_7.2dll.deb
+rm ./ODAFileConverter_QT5_lnxX64_7.2dll.deb
 ```
 
 * ODA Drawing Explorer
@@ -719,6 +725,8 @@ https://www.opendesign.com/guestfiles/oda_drawings_explorer/reference
 ```bash
 wget https://download.opendesign.com/guestfiles/ODADrawingsExplorer/ODADrawingsExplorer_QT5_lnxX64_7.2dll.deb
 sudo dpkg -i ODADrawingsExplorer_QT5_lnxX64_7.2dll.deb
+rm ./ODADrawingsExplorer_QT5_lnxX64_7.2dll.deb
+
 ```
 
 * Change desktop file

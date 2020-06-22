@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=ODAFileConverter
 Comment=ODA SDK for .dwg files 21.5.0.0, Open Design Alliance Inc.
-Exec=env LD_LIBRARY_PATH=/opt/qt514/lib:$LD_LIBRARY_PATH; /usr/bin/ODAFileConverter %U
+Exec=env LD_LIBRARY_PATH=/opt/qt514/5.14.2/gcc_64/lib:$LD_LIBRARY_PATH; /usr/bin/ODAFileConverter %U
 Icon=ODAFileConverter
 Terminal=false
 Type=Application
