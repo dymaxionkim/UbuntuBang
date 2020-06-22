@@ -688,7 +688,13 @@ docker rm mygui mygui2
 
 ## ODA tools
 
-* qt 5.14 설치
+* qt5-default  설치
+
+```bash
+sudo apt install qt5-default
+```
+
+* qt 5.14 설치 (Ubuntu 18.04)
 
 ```bash
 sudo add-apt-repository ppa:beineri/opt-qt-5.14.0-bionic
