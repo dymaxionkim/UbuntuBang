@@ -182,5 +182,8 @@ export PATH=/snap/bin:$PATH
 export PATH="/opt/qt514/5.14.2/gcc_64/bin:$PATH"
 export LD_LIBRARY_PATH="/opt/qt514/5.14.2/gcc_64/lib:$LD_LIBRARY_PATH"
 
+# STEP2UNV for Elmer with Salome
+export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
+
 screenfetch -n
 figlet "Higen Robot"

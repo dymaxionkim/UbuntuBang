@@ -595,6 +595,16 @@ rm $HOME/Downloads/libffi6_3.2.1-9_amd64.deb
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
 ```
 
+## step2unv script for Salome platform
+
+```bash
+mkdir ~/.config/salome/step2unv
+wget -O ~/.config/salome/step2unv/step2unv https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv
+wget -O ~/.config/salome/step2unv/step2unv.py https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/step2unv.py
+wget -O ~/.config/salome/step2unv/Readme.md https://raw.githubusercontent.com/dymaxionkim/ElmerFEM_Examples/master/20170911_Salome_Script_STEP2UNV/Readme.md
+chmod +x ~/.config/salome/step2unv/step2unv
+```
+
 ## ccx2paraview (frd to vtu converter)
 
 ```bash
