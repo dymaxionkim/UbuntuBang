@@ -749,6 +749,16 @@ ln -s /home/osboxes/git/UbuntuBang/ODADrawingsExplorer_21.5.0.0.desktop /home/os
 ln -s /home/osboxes/git/UbuntuBang/ODAFileConverter_21.5.0.0.desktop /home/osboxes/.local/share/applications/ODAFileConverter_21.5.0.0.desktop
 ```
 
+## Netgen (NGsolve)
+
+```bash
+sudo add-apt-repository ppa:ngsolve/ngsolve
+sudo apt install ngsolve
+netgen
+```
+
+
+
 
 
 
