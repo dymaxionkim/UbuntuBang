@@ -462,6 +462,19 @@ id -nG
 sudo reboot now
 ```
 
+## feh
+
+```bash
+sudo apt remove feh
+sudo apt autoremove
+sudo apt install libimlib2-dev libcurl3-gnutls libcurl4-gnutls-dev libpng-dev libx11-dev libxinerama-dev libexif-dev libexif12
+cd ~/git
+git clone https://github.com/derf/feh.git
+cd feh
+make
+sudo make install
+```
+
 
 
 ## Remove unnecessary things
