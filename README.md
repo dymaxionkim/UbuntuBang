@@ -608,6 +608,30 @@ rm $HOME/Downloads/libffi6_3.2.1-9_amd64.deb
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
 ```
 
+## CalculiX 2.16
+
+```bash
+mkdir ~/.Calculix
+cd ~/.Calculix
+
+wget http://www.dhondt.de/ccx_2.16.tar.bz2
+wget http://www.dhondt.de/cgx_2.16.1.bz2
+
+tar -xvf ccx_2.16.tar.bz2
+mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
+rm -rf CalculiX
+ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
+
+bzip2 -kd cgx_2.16.1.bz2
+chmod +x cgx_2.16.1
+ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
+
+rm ~/.Calculix/ccx_2.16.tar.bz2
+rm ~/.Calculix/cgx_2.16.1.bz2
+
+cd
+```
+
 ## step2unv script for Salome platform
 
 ```bash
