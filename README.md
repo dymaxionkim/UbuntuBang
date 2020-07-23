@@ -620,9 +620,17 @@ chmod +x ~/.config/salome/step2unv/step2unv
 
 ## ccx2paraview (frd to vtu converter)
 
+* This tool cannot convert binary `_main.frd` file what made from CalculixLauncher.
+* So You should change some keywords in `_main.inp` like from `*CONTACT OUTPUT` to `*CONTACT FILE`
+* Then `ccx _main` command will make ascii `_main.frd` file, it can converted by `ccx2paraview _main.frd vtu` command.
+
 ```bash
 cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
+ln -s /home/osboxes/git/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
+
+[Command Example]
+ccx2paraview _main.frd vtu
 ```
 ## ElmerFEM in Docker (without GUI)
 
