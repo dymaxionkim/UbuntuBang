@@ -629,6 +629,9 @@ cd ~/git
 git clone https://github.com/calculix/ccx2paraview.git
 ln -s /home/osboxes/git/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
 
+[Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
+sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/Templates/6-general/Output/contact-output
+
 [Command Example]
 ccx2paraview _main.frd vtu
 ```
