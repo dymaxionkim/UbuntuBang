@@ -37,7 +37,7 @@ sudo apt install grub-customizer
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet
+sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet gpick
 ```
 
 ## Upgrade Git
@@ -338,7 +338,7 @@ p10k configure
 
 ```bash
 sudo apt -y install qt5-style-plugins qt5ct
-echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> ~/.profile
 sudo bash -c 'echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment'
 ```
 
@@ -502,22 +502,6 @@ cd ConvertAll
 sudo ./install.py
 ```
 
-## CalculiX Launcher
-
-* Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://drive.google.com/drive/folders/1jb02PnNtH1u5PKrdsG_hqsZmU2eMmG6q).
-
-* And execute the commands like that :
-
-```bash
-unzip $HOME/Downloads/CL33-linux64.zip -d $HOME/
-mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
-ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
-rm $HOME/Downloads/CL33-linux64.zip
-  
-echo "OMP_NUM_THREADS=4" > $HOME/.pam_environment
-echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
-```
-
 ## Gmsh 4.5.6
 
 * Download [Gmsh](https://gmsh.info/) from here :
@@ -608,30 +592,6 @@ rm $HOME/Downloads/libffi6_3.2.1-9_amd64.deb
 ln -s $HOME/git/UbuntuBang/Salome_meca.desktop $HOME/.local/share/applications/Salome_meca.desktop
 ```
 
-## CalculiX 2.16
-
-```bash
-mkdir ~/.Calculix
-cd ~/.Calculix
-
-wget http://www.dhondt.de/ccx_2.16.tar.bz2
-wget http://www.dhondt.de/cgx_2.16.1.bz2
-
-tar -xvf ccx_2.16.tar.bz2
-mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
-rm -rf CalculiX
-ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
-
-bzip2 -kd cgx_2.16.1.bz2
-chmod +x cgx_2.16.1
-ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
-
-rm ~/.Calculix/ccx_2.16.tar.bz2
-rm ~/.Calculix/cgx_2.16.1.bz2
-
-cd
-```
-
 ## step2unv script for Salome platform
 
 ```bash
@@ -642,23 +602,6 @@ wget -O ~/.config/salome/step2unv/Readme.md https://raw.githubusercontent.com/dy
 chmod +x ~/.config/salome/step2unv/step2unv
 ```
 
-## ccx2paraview (frd to vtu converter)
-
-* This tool cannot convert binary `_main.frd` file what made from CalculixLauncher.
-* So You should change some keywords in `_main.inp` like from `*CONTACT OUTPUT` to `*CONTACT FILE`
-* Then `ccx _main` command will make ascii `_main.frd` file, it can converted by `ccx2paraview _main.frd vtu` command.
-
-```bash
-cd ~/git
-git clone https://github.com/calculix/ccx2paraview.git
-ln -s /home/osboxes/git/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
-
-[Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
-sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/Templates/6-general/Output/contact-output
-
-[Command Example]
-ccx2paraview _main.frd vtu
-```
 ## ElmerFEM in Docker (without GUI)
 
 * [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
@@ -807,6 +750,120 @@ netgen
 
 
 
+## CalculiX Toolchain
+
+### CalculiX Launcher
+
+* Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://drive.google.com/drive/folders/1jb02PnNtH1u5PKrdsG_hqsZmU2eMmG6q).
+
+* And execute the commands like that :
+
+```bash
+unzip $HOME/Downloads/CL33-linux64.zip -d $HOME/
+mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
+ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
+rm $HOME/Downloads/CL33-linux64.zip
+  
+echo "OMP_NUM_THREADS=4" > $HOME/.pam_environment
+echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
+```
+
+### CalculiX 2.16
+
+```bash
+mkdir ~/.Calculix
+cd ~/.Calculix
+
+wget http://www.dhondt.de/ccx_2.16.tar.bz2
+wget http://www.dhondt.de/cgx_2.16.1.bz2
+
+tar -xvf ccx_2.16.tar.bz2
+mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
+rm -rf CalculiX
+ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
+
+bzip2 -kd cgx_2.16.1.bz2
+chmod +x cgx_2.16.1
+ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
+
+rm ~/.Calculix/ccx_2.16.tar.bz2
+rm ~/.Calculix/cgx_2.16.1.bz2
+
+cd
+```
+
+### ccx2paraview (frd to vtu converter)
+
+* This tool cannot convert binary `_main.frd` file what made from CalculixLauncher.
+* So You should change some keywords in `_main.inp` like from `*CONTACT OUTPUT` to `*CONTACT FILE`
+* Then `ccx _main` command will make ascii `_main.frd` file, it can converted by `ccx2paraview _main.frd vtu` command.
+
+```bash
+mkdir ~/Calculix
+cd ~/Calculix
+git clone https://github.com/calculix/ccx2paraview.git
+ln -s /home/osboxes/Calculix/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
+
+[Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
+sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/Templates/6-general/Output/contact-output
+
+[Command Example]
+ccx2paraview _main.frd vtu
+```
+
+### cae (Fail)
+
+* CalculiX CAE - GUI/pre-processor for CalculiX CrunchiX. It's designed to guide you through the keywords creation sequence and is  aimed to help you reach correct input file with no mistakes.
+
+```bash
+cd ~/Calculix
+git clone https://github.com/calculix/cae.git
+```
+
+### gmsh2ccx
+
+* Gmsh to CalculiX converter (.inp to .inp)
+
+```bash
+git clone https://github.com/calculix/gmsh2ccx.git
+```
+
+### unv2ccx
+
+* Salome universal to CalculiX converter. Converts UNV mesh to the CalculiX INP format.
+
+```bash
+git clone https://github.com/calculix/unv2ccx.git
+```
+
+### salome2ccx
+
+* Salome to CalculiX mesh exporter: outputs Salome mesh to the CalculiX INP file.
+
+```bash
+git clone https://github.com/calculix/salome2ccx.git
+```
+
+### unical1
+
+* Convert finite elemet meshes given in the SDRL universal file format into ABAQUS / Calculix compatible input decks
+
+```bash
+git clone https://github.com/calculix/unical1.git
+```
+
+### konvertor
+
+* GMSH ABACUS INP file -> INP file for CGX
+
+```bash
+git clone https://github.com/calculix/konvertor.git
+```
+
+
+
+
+
 
 
 
@@ -886,4 +943,9 @@ git pull
 # Salome-meca
 # ElmerFEM
 ```
+
+
+
+
+
 

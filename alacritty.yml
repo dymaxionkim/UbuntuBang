@@ -262,7 +262,7 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background: '#2c2c2c'
+    background: '#363636' #'#2c2c2c'
     foreground: '#d6d6d6'
 
     dim_foreground:    '#dbdbdb'
