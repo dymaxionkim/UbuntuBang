@@ -811,13 +811,37 @@ sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/Templates/6-ge
 ccx2paraview _main.frd vtu
 ```
 
-### cae (Fail)
+### cae
 
 * CalculiX CAE - GUI/pre-processor for CalculiX CrunchiX. It's designed to guide you through the keywords creation sequence and is  aimed to help you reach correct input file with no mistakes.
 
 ```bash
+*** Installing by git clone ***
+mkdir ~/Calculix
 cd ~/Calculix
 git clone https://github.com/calculix/cae.git
+cd ~/Calculix/cae
+sudo chmod -R +x ./*
+
+*** Python 3.6 in Pyenv environment  ***
+pyenv install 3.6.10
+pyenv global 3.6.10
+pyenv virtualenv 3.6.10 CalculixCAE
+pyenv activate CalculixCAE
+pip install --upgrade pip
+
+*** Installation of dependencies ***
+pip3 install -r requirements.txt
+
+*** Unset separately Installed Qt 5.14 ***
+unset LD_LIBRARY_PATH
+
+*** Run ***
+cd ~/Calculix/cae
+./cae.sh
+
+*** Desktop File ***
+ln -s /home/osboxes/git/UbuntuBang/CalculixCAE.desktop /home/osboxes/.local/share/applications/CalculixCAE.desktop
 ```
 
 ### gmsh2ccx
