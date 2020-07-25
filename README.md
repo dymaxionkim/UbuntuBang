@@ -189,10 +189,10 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
-## Alacritty 0.4.2
+## Alacritty 0.4.3
 
 ```bash
-wget -O $HOME/Downloads/alacritty.deb https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb
+wget -O $HOME/Downloads/alacritty.deb https://github.com/alacritty/alacritty/releases/download/v0.4.3/Alacritty-v0.4.3-ubuntu_18_04_amd64.deb
 sudo dpkg -i $HOME/Downloads/alacritty.deb
 rm $HOME/Downloads/alacritty.deb
 
@@ -339,7 +339,7 @@ p10k configure
 ```bash
 sudo apt -y install qt5-style-plugins qt5ct
 echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> ~/.profile
-sudo bash -c 'echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment'
+sudo sh -c 'echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 ```
 
 ## OpenJDK 11
@@ -358,12 +358,14 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt -y install typora
 ```
 
-## Min Browser 1.14
+## Min Browser 1.15
 
 * Download [Min Browser](https://github.com/minbrowser/min) from [here](https://github.com/minbrowser/min/releases/download/v1.14.0/min_1.14.0_amd64.deb) or :
 
 ```bash
-wget -O $HOME/Downloads/min.deb https://github.com/minbrowser/min/releases/download/v1.14.0/min_1.14.0_amd64.deb
+wget -O $HOME/Downloads/min.deb https://github.com/minbrowser/min/releases/download/v1.15.0/min_1.15.0_amd64.deb
+sudo dpkg -i $HOME/Downloads/min.deb
+rm $HOME/Downloads/min.deb
 ```
 
 * Fix some code about user agent to login google : 
@@ -502,20 +504,20 @@ cd ConvertAll
 sudo ./install.py
 ```
 
-## Gmsh 4.5.6
+## Gmsh 4.6.0
 
 * Download [Gmsh](https://gmsh.info/) from here :
 
 ```bash
 cd
-wget -O $HOME/Downloads/gmsh.tgz https://gmsh.info/bin/Linux/gmsh-4.5.6-Linux64.tgz
+wget -O $HOME/Downloads/gmsh.tgz https://gmsh.info/bin/Linux/gmsh-4.6.0-Linux64.tgz
 ```
 
 * And execute the commands like that :
 
 ```bash
 tar -xvzf $HOME/Downloads/gmsh.tgz -C $HOME/
-mv $HOME/gmsh-4.5.6-Linux64 $HOME/.Gmsh
+mv $HOME/gmsh-4.6.0-Linux64 $HOME/.Gmsh
 rm $HOME/Downloads/gmsh.tgz
 ln -s $HOME/git/UbuntuBang/Gmsh.desktop $HOME/.local/share/applications/Gmsh.desktop
 ```
@@ -746,6 +748,8 @@ ln -s /home/osboxes/git/UbuntuBang/ODAFileConverter_21.5.0.0.desktop /home/osbox
 sudo add-apt-repository ppa:ngsolve/ngsolve
 sudo apt install ngsolve
 netgen
+
+ln -s /home/osboxes/git/UbuntuBang/Netgen.desktop /home/osboxes/.local/share/applications/Netgen.desktop
 ```
 
 
@@ -764,7 +768,7 @@ mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
 ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
 rm $HOME/Downloads/CL33-linux64.zip
   
-echo "OMP_NUM_THREADS=4" > $HOME/.pam_environment
+echo "OMP_NUM_THREADS=8" > $HOME/.pam_environment
 echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
 ```
 
@@ -785,7 +789,7 @@ ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
 bzip2 -kd cgx_2.16.1.bz2
 chmod +x cgx_2.16.1
 ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
-
+c
 rm ~/.Calculix/ccx_2.16.tar.bz2
 rm ~/.Calculix/cgx_2.16.1.bz2
 
@@ -805,7 +809,7 @@ git clone https://github.com/calculix/ccx2paraview.git
 ln -s /home/osboxes/Calculix/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
 
 [Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
-sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/Templates/6-general/Output/contact-output
+sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/templates/6-general/Output/contact-output
 
 [Command Example]
 ccx2paraview _main.frd vtu
@@ -825,7 +829,7 @@ sudo chmod -R +x ./*
 
 *** Python 3.6 in Pyenv environment  ***
 pyenv install 3.6.10
-pyenv global 3.6.10
+#pyenv global 3.6.10
 pyenv virtualenv 3.6.10 CalculixCAE
 pyenv activate CalculixCAE
 pip install --upgrade pip
@@ -844,7 +848,7 @@ cd ~/Calculix/cae
 ln -s /home/osboxes/git/UbuntuBang/CalculixCAE.desktop /home/osboxes/.local/share/applications/CalculixCAE.desktop
 ```
 
-### gmsh2ccx
+### gmsh2ccx (TEST)
 
 * Gmsh to CalculiX converter (.inp to .inp)
 
@@ -852,7 +856,7 @@ ln -s /home/osboxes/git/UbuntuBang/CalculixCAE.desktop /home/osboxes/.local/shar
 git clone https://github.com/calculix/gmsh2ccx.git
 ```
 
-### unv2ccx
+### unv2ccx (TEST)
 
 * Salome universal to CalculiX converter. Converts UNV mesh to the CalculiX INP format.
 
@@ -860,7 +864,7 @@ git clone https://github.com/calculix/gmsh2ccx.git
 git clone https://github.com/calculix/unv2ccx.git
 ```
 
-### salome2ccx
+### salome2ccx (TEST)
 
 * Salome to CalculiX mesh exporter: outputs Salome mesh to the CalculiX INP file.
 
@@ -868,7 +872,7 @@ git clone https://github.com/calculix/unv2ccx.git
 git clone https://github.com/calculix/salome2ccx.git
 ```
 
-### unical1
+### unical1 (TEST)
 
 * Convert finite elemet meshes given in the SDRL universal file format into ABAQUS / Calculix compatible input decks
 
@@ -876,7 +880,7 @@ git clone https://github.com/calculix/salome2ccx.git
 git clone https://github.com/calculix/unical1.git
 ```
 
-### konvertor
+### konvertor (TEST)
 
 * GMSH ABACUS INP file -> INP file for CGX
 
