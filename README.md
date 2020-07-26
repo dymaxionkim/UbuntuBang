@@ -768,8 +768,8 @@ mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
 ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
 rm $HOME/Downloads/CL33-linux64.zip
   
-echo "OMP_NUM_THREADS=8" > $HOME/.pam_environment
-echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
+#echo "OMP_NUM_THREADS=8" > $HOME/.pam_environment
+#echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
 ```
 
 ### CalculiX 2.16

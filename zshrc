@@ -157,7 +157,7 @@ export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
-export OMP_NUM_THREADS=4
+export OMP_NUM_THREADS=8
 
 # Julia Lang
 alias julia='snap run julia-mrcinv'
