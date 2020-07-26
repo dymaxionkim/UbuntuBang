@@ -806,7 +806,12 @@ cd
 mkdir ~/Calculix
 cd ~/Calculix
 git clone https://github.com/calculix/ccx2paraview.git
-ln -s /home/osboxes/Calculix/ccx2paraview/bin/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
+
+cd ~/Calculix/ccx2paraview
+pip install pyinstaller
+pyinstaller ./src/ccx2paraview.py --onefile
+
+ln -s /home/osboxes/Calculix/ccx2paraview/dist/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
 
 [Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
 sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/templates/6-general/Output/contact-output
