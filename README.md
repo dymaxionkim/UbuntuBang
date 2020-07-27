@@ -841,6 +841,7 @@ pip install --upgrade pip
 
 *** Installation of dependencies ***
 pip3 install -r requirements.txt
+pip3 install numpy
 
 *** Unset separately Installed Qt 5.14 ***
 unset LD_LIBRARY_PATH
@@ -893,7 +894,21 @@ git clone https://github.com/calculix/unical1.git
 git clone https://github.com/calculix/konvertor.git
 ```
 
+### Examples
 
+* Official and user examples for CCX and CGX. All in one place.
+
+```bash
+git clone https://github.com/calculix/examples.git
+```
+
+### mkraska
+
+* Parametric CalculiX-Examples
+
+```bash
+git clone https://github.com/calculix/mkraska.git
+```
 
 
 
