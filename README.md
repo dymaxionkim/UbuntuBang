@@ -758,42 +758,20 @@ ln -s /home/osboxes/git/UbuntuBang/Netgen.desktop /home/osboxes/.local/share/app
 
 ### CalculiX Launcher
 
-* Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://drive.google.com/drive/folders/1jb02PnNtH1u5PKrdsG_hqsZmU2eMmG6q).
+* Download [CalculiX Launcher](http://www.calculixforwin.com/) from [here](https://sourceforge.net/projects/calculixforwin/).
 
 * And execute the commands like that :
 
 ```bash
-unzip $HOME/Downloads/CL33-linux64.zip -d $HOME/
-mv $HOME/CL33-linux64 $HOME/.CalculixLauncher
+unzip $HOME/Downloads/CL34-linux64.zip -d $HOME/
+mv $HOME/CL34-linux64 $HOME/.CalculixLauncher
 ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
-rm $HOME/Downloads/CL33-linux64.zip
-  
+rm $HOME/Downloads/CL34-linux64.zip
+
+# in Ubuntu 20.04, ccx need libgfortran3
+
 #echo "OMP_NUM_THREADS=8" > $HOME/.pam_environment
 #echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
-```
-
-### CalculiX 2.16
-
-```bash
-mkdir ~/.Calculix
-cd ~/.Calculix
-
-wget http://www.dhondt.de/ccx_2.16.tar.bz2
-wget http://www.dhondt.de/cgx_2.16.1.bz2
-
-tar -xvf ccx_2.16.tar.bz2
-mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
-rm -rf CalculiX
-ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
-
-bzip2 -kd cgx_2.16.1.bz2
-chmod +x cgx_2.16.1
-ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
-c
-rm ~/.Calculix/ccx_2.16.tar.bz2
-rm ~/.Calculix/cgx_2.16.1.bz2
-
-cd
 ```
 
 ### ccx2paraview (frd to vtu converter)
@@ -810,8 +788,6 @@ git clone https://github.com/calculix/ccx2paraview.git
 cd ~/Calculix/ccx2paraview
 pip install pyinstaller
 pyinstaller ./src/ccx2paraview.py --onefile
-
-ln -s /home/osboxes/Calculix/ccx2paraview/dist/ccx2paraview /home/osboxes/.CalculixLauncher/bin/ccx2paraview
 
 [Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
 sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/templates/6-general/Output/contact-output
@@ -910,7 +886,35 @@ git clone https://github.com/calculix/examples.git
 git clone https://github.com/calculix/mkraska.git
 ```
 
+### CalculiX Commands
 
+```bash
+mkdir ~/.Calculix
+cd ~/.Calculix
+
+wget http://www.dhondt.de/ccx_2.16.tar.bz2
+wget http://www.dhondt.de/cgx_2.16.1.bz2
+
+tar -xvf ccx_2.16.tar.bz2
+mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
+rm -rf CalculiX
+ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
+
+bzip2 -kd cgx_2.16.1.bz2
+chmod +x cgx_2.16.1
+ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
+c
+rm ~/.Calculix/ccx_2.16.tar.bz2
+rm ~/.Calculix/cgx_2.16.1.bz2
+
+cd
+
+ln -s /home/osboxes/.Calculix/ccx_2.16 /home/osboxes/.Calculix/ccx
+ln -s /home/osboxes/.Calculix/cgx_2.16.1 /home/osboxes/.Calculix/cgx
+ln -s /home/osboxes/Calculix/ccx2paraview/dist/ccx2paraview /home/osboxes/.Calculix/ccx2paraview
+```
+
+### 
 
 
 

@@ -159,6 +159,9 @@ export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
 export OMP_NUM_THREADS=8
 
+# Calculix
+export PATH="/home/osboxes/.Calculix:$PATH"
+
 # Julia Lang
 alias julia='snap run julia-mrcinv'
 
