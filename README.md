@@ -349,6 +349,12 @@ sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt install openjdk-11-jdk
 ```
 
+## Libreoffice 7.0
+
+```bash
+sudo add-apt-repository ppa:libreoffice/libreoffice-7-0
+sudo apt install libreoffice
+```
 
 ## Typora (Markdown Editor)
 
@@ -768,7 +774,9 @@ mv $HOME/CL34-linux64 $HOME/.CalculixLauncher
 ln -s $HOME/git/UbuntuBang/CalculixLauncher.desktop $HOME/.local/share/applications/CalculixLauncher.desktop
 rm $HOME/Downloads/CL34-linux64.zip
 
-# in Ubuntu 20.04, ccx need libgfortran3
+# ccx216 need libgfortran3
+# Ubuntu 20.04 : No libgfortran3 yet.
+# Ubuntu 18.04 : sudo apt install libgfortran3
 
 #echo "OMP_NUM_THREADS=8" > $HOME/.pam_environment
 #echo "export OMP_NUM_THREADS" >> $HOME/.pam_environment
@@ -892,6 +900,7 @@ git clone https://github.com/calculix/mkraska.git
 mkdir ~/.Calculix
 cd ~/.Calculix
 
+# Official Binary
 wget http://www.dhondt.de/ccx_2.16.tar.bz2
 wget http://www.dhondt.de/cgx_2.16.1.bz2
 
@@ -909,12 +918,11 @@ rm ~/.Calculix/cgx_2.16.1.bz2
 
 cd
 
+# Symbolic Links
 ln -s /home/osboxes/.Calculix/ccx_2.16 /home/osboxes/.Calculix/ccx
 ln -s /home/osboxes/.Calculix/cgx_2.16.1 /home/osboxes/.Calculix/cgx
 ln -s /home/osboxes/Calculix/ccx2paraview/dist/ccx2paraview /home/osboxes/.Calculix/ccx2paraview
 ```
-
-### 
 
 
 
