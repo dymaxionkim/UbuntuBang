@@ -999,6 +999,7 @@ pyenv activate CalculixCAE
 pip install --upgrade pip
 pip install pyinstaller
 pip install pycallgraph
+pip3 install -r requirements.txt
 
 unset LD_LIBRARY_PATH
 #python3 release.py
