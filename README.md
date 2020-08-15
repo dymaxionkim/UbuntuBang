@@ -354,6 +354,12 @@ sudo apt install openjdk-11-jdk
 ```bash
 sudo add-apt-repository ppa:libreoffice/libreoffice-7-0
 sudo apt install libreoffice
+
+# Suggested packages:
+sudo apt install gpa hunspell-dictionary hyphen-hyphenation-patterns libreoffice-grammarcheck libreoffice-help
+sudo apt install libreoffice-librelogo myspell-dictionary mythes-thesaurus openclipart2-libreoffice
+sudo apt install openclipart-libreoffice pstoedit unixodbc gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad
+sudo apt install gstreamer1.0-libav libofficebean-java libjtds-java libreoffice-sdbc-hsqldb libsqliteodbc tdsodbc
 ```
 
 ## Typora (Markdown Editor)
