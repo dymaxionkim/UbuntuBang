@@ -989,6 +989,21 @@ ninja -C build install
 cd ~/git/ConvertAll
 git pull
 
+# CalculiX CAE
+cd /home/osboxes/Calculix/cae
+git reset --hard HEAD
+git pull
+sudo chmod -R +x ./*
+
+pyenv activate CalculixCAE
+pip install --upgrade pip
+pip install pyinstaller
+pip install pycallgraph
+
+unset LD_LIBRARY_PATH
+#python3 release.py
+./cae.sh
+
 # ccx2paraview
 cd ~/git/ccx2paraview
 git pull
