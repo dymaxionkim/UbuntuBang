@@ -370,22 +370,14 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt -y install typora
 ```
 
-## Min Browser 1.15
+## Min Browser 1.17
 
-* Download [Min Browser](https://github.com/minbrowser/min) from [here](https://github.com/minbrowser/min/releases/download/v1.14.0/min_1.14.0_amd64.deb) or :
+* Download [Min Browser](https://github.com/minbrowser/min) from [here](https://github.com/minbrowser/min/releases/download/v1.17.1/min_1.17.1_amd64.deb) or :
 
 ```bash
-wget -O $HOME/Downloads/min.deb https://github.com/minbrowser/min/releases/download/v1.15.0/min_1.15.0_amd64.deb
+wget -O $HOME/Downloads/min.deb https://github.com/minbrowser/min/releases/download/v1.17.1/min_1.17.1_amd64.deb
 sudo dpkg -i $HOME/Downloads/min.deb
 rm $HOME/Downloads/min.deb
-```
-
-* Fix some code about user agent to login google : 
-
-```bash
-sudo mv /usr/lib/min/resources/app/main.build.js /usr/lib/min/resources/app/main.build.js.old
-
-sed "s/app.userAgentFallback = newUserAgent/\/\* app.userAgentFallback = newUserAgent \*\/\napp.userAgentFallback = \'Mozilla\/5.0 \(Windows NT 10.0\; WOW64\; rv\:74.0\) Gecko\/20100101 Firefox\/74.0'/g" /usr/lib/min/resources/app/main.build.js.old | sudo tee -a /usr/lib/min/resources/app/main.build.js
 
 ```
 
@@ -616,88 +608,29 @@ wget -O ~/.config/salome/step2unv/Readme.md https://raw.githubusercontent.com/dy
 chmod +x ~/.config/salome/step2unv/step2unv
 ```
 
-## ElmerFEM in Docker (without GUI)
+## ElmerFEM (Bulid)
 
-* [Docker Image for Elmer in a Desktop Environment](https://github.com/unifem/Elmer-desktop)
+* Ref : [Building Elmer FEM From Source](https://bearinstruments.co.uk/building-elmer-fem-from-source/)
+
+## ElmerFEM (Non-GUI)
 
 ```bash
-docker pull unifem/elmer-desktop
-docker run -it unifem/elmer-desktop /bin/bash
+sudo add-apt-repository ppa:elmer-csc-ubuntu/elmer-csc-ppa
+sudo apt install elmerfem-csc
 ```
 
-## ElmerFEM in Docker (with GUI) : Test
-
-* Pull a clear Lubuntu 18.04 and run :
+## ElmerFEM (GUI) : Test
 
 ```bash
-docker pull teresaejunior/lubuntu
-docker run -it teresaejunior/lubuntu /bin/bash
-```
+sudo add-apt-repository ppa:elmer-csc-ubuntu/elmer-csc-ppa
+sudo apt install elmerfem-csc-eg
 
-In Docker Bash :
-
-```bash
-apt update
-apt upgrade
-apt autoremove
-
-add-apt-repository -y ppa:elmer-csc-ubuntu/elmer-csc-ppa
-apt -y install xorg libqt5xml5 elmerfem-csc-eg
-
-echo '' >> /root/.bashrc
-echo '# ElmerFEM' >> /root/.bashrc
-echo 'export ELMERGUI_HOME=/usr/share/ElmerGUI' >> /root/.bashrc
-echo 'export ELMERSOLVER_HOME=/usr/share/elmersolver' >> /root/.bashrc
-echo 'export ELMERLIB=/usr/lib/elmersolver' >> /root/.bashrc
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMERLIB:$ELMERSOLVER_HOME/lib' >> /root/.bashrc
-
-exit
-```
-
-Commit the container :
-
-```bash
-docker ps -a
-docker commit -p [CONTAINER ID] personal
-```
-
-Start the personal  container :
-
-```bash
-xhost +local:
-docker run -it --name mygui --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" personal /bin/bash
-```
-
-In Docker bash, Start ElmerGUI :
-
-```bash
-ElmerGUI
-```
-
-Check to show ElmerGUI.
-
-Restart the personal  container :
-
-```bash
-docker stop mygui
-docker start mygui
-docker attach mygui
-```
-
-Start directly ElmerGUI :
-
-```bash
-xhost +local:
-docker run -it --name mygui2 --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" personal /usr/bin/ElmerGUI
-
-docker stop mygui2
-docker start mygui2
-```
-
-Finish Test :
-
-```bash
-docker rm mygui mygui2
+sudo echo '' >> /root/.bashrc
+sudo echo '# ElmerFEM' >> /root/.bashrc
+sudo echo 'export ELMERGUI_HOME=/usr/share/ElmerGUI' >> /root/.bashrc
+sudo echo 'export ELMERSOLVER_HOME=/usr/share/elmersolver' >> /root/.bashrc
+sudo echo 'export ELMERLIB=/usr/lib/elmersolver' >> /root/.bashrc
+sudo echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMERLIB:$ELMERSOLVER_HOME/lib' >> /root/.bashrc
 ```
 
 
