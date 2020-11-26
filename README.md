@@ -23,21 +23,24 @@ sudo apt -y upgrade
 sudo usermod -G vboxsf -a $USER
 ```
 
-## UKUU 18.9.1 (for 18.04)
-
-```bash
-wget -O $HOME/Downloads/ukuu.deb https://github.com/teejee2008/ukuu/releases/download/v18.9.1/ukuu-v18.9.1-amd64.deb
-
-sudo dpkg -i $HOME/Downloads/ukuu.deb
-rm $HOME/Downloads/ukuu.deb
-
-sudo apt install grub-customizer
-```
 
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet gpick
+sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet gpick grub-customizer
+```
+
+## Kernel Update
+
+```bash
+uname -r
+sudo apt-cache search linux-image-5.
+sudo apt install linux-image-5.X.X-XX-generic
+
+sudo grub-customizer
+
+sudo micro /etc/default/grub
+sudo update-grub
 ```
 
 ## Upgrade Git
