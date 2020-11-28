@@ -622,11 +622,13 @@ sudo add-apt-repository ppa:elmer-csc-ubuntu/elmer-csc-ppa
 sudo apt install elmerfem-csc
 ```
 
-## ElmerFEM (GUI) : Test
+## ElmerFEM (GUI)
 
 ```bash
 sudo add-apt-repository ppa:elmer-csc-ubuntu/elmer-csc-ppa
 sudo apt install elmerfem-csc-eg
+
+ln -s /home/osboxes/git/UbuntuBang/ElmerGUI.desktop /home/osboxes/.local/share/applications/ElmerGUI.desktop
 ```
 
 
