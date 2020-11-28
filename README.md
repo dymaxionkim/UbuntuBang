@@ -192,15 +192,16 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
-## Alacritty 0.4.3
+## Alacritty (Auto Build)
 
 ```bash
-wget -O $HOME/Downloads/alacritty.deb https://github.com/alacritty/alacritty/releases/download/v0.4.3/Alacritty-v0.4.3-ubuntu_18_04_amd64.deb
-sudo dpkg -i $HOME/Downloads/alacritty.deb
-rm $HOME/Downloads/alacritty.deb
+# Install Rust
+curl https://sh.rustup.rs -sSf | sh
+1
 
-mkdir $HOME/.config/alacritty
-ln -s $HOME/git/UbuntuBang/alacritty/yml $HOME/.config/alacritty/alacritty.yml
+rustc --version
+
+cargo install alacritty
 ```
 
 ## Pyenv
