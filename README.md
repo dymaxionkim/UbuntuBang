@@ -627,13 +627,6 @@ sudo apt install elmerfem-csc
 ```bash
 sudo add-apt-repository ppa:elmer-csc-ubuntu/elmer-csc-ppa
 sudo apt install elmerfem-csc-eg
-
-sudo echo '' >> /root/.bashrc
-sudo echo '# ElmerFEM' >> /root/.bashrc
-sudo echo 'export ELMERGUI_HOME=/usr/share/ElmerGUI' >> /root/.bashrc
-sudo echo 'export ELMERSOLVER_HOME=/usr/share/elmersolver' >> /root/.bashrc
-sudo echo 'export ELMERLIB=/usr/lib/elmersolver' >> /root/.bashrc
-sudo echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMERLIB:$ELMERSOLVER_HOME/lib' >> /root/.bashrc
 ```
 
 
