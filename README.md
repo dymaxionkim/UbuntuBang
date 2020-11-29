@@ -192,6 +192,17 @@ ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
 ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
+## Curlftpfs
+
+```bash
+sudo apt install curlftpfs
+
+# Change ID, PW, DOMAIN, PORT, DIRECTORY for your personal environment
+sudo echo "" >> /etc/fstab
+sudo echo "# FTP" >> /etc/fstab
+sudo echo "curlftpfs#ID:PW@DOMAIN:PORT/DIRECTORY /home/osboxes/DIRECTORY fuse auto,user,uid=1000,gid=1000,allow_other,_netdev 0 0" >> /etc/fstab
+```
+
 ## Alacritty (Auto Build)
 
 ```bash
