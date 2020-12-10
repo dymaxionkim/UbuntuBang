@@ -191,5 +191,5 @@ export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 # RUST
 export PATH="/home/osboxes/.cargo/bin:$PATH"
 
-screenfetch -n
+#screenfetch -n
 figlet "Higen Robot"
