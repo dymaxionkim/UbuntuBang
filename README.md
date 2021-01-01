@@ -27,19 +27,25 @@ sudo usermod -G vboxsf -a $USER
 ## Utilities
 
 ```bash
-sudo apt -y install make build-essential feh rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet gpick grub-customizer
+sudo apt -y install make build-essential cmake rofi scrot qalculate curl arandr screenfetch pavucontrol pasystray mupdf mupdf-tools xclip imagemagick poppler-utils mpv figlet gpick grub-customizer lxpolkit lxappearance
+
+# For Broadcom Wifi
+sudo apt -y install broadcom-sta-dkms
 ```
 
 ## Kernel Update
 
 ```bash
-uname -r
-sudo apt-cache search linux-image-5.
-sudo apt install linux-image-5.X.X-XX-generic
+# Mainline
+# https://github.com/bkw777/mainline
+sudo apt-add-repository -y ppa:cappelikan/ppa
+sudo apt install mainline
 
+mainline --list
+sudo mainline --install 5.8.18
+mainline --list-installed
 sudo grub-customizer
-
-sudo micro /etc/default/grub
+sudo nano /etc/default/grub
 sudo update-grub
 ```
 
@@ -188,8 +194,10 @@ sudo snap install pdfmixtool
 sudo snap install boxy-svg
 sudo snap install freecad --stable
 sudo snap install julia-mrcinv --edge --classic
+
+mkdir $HOME/.local/share/
+mkdir $HOME/.local/share/applications/
 ln -s /var/lib/snapd/desktop/applications/ $HOME/.local/share/applications/snap
-ln -s $HOME/git/UbuntuBang/Freecad.desktop $HOME/.local/share/applications/Freecad.desktop
 ```
 
 ## Curlftpfs
@@ -211,6 +219,9 @@ curl https://sh.rustup.rs -sSf | sh
 1
 
 rustc --version
+
+# Pre-Requisites
+sudo apt -y install binutils libfontconfig libfontconfig1-dev libxcb-xfixes0-dev
 
 cargo install alacritty
 ```

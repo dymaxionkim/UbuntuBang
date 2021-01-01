@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=FreeCAD
-Comment=FreeCAD
-Exec=snap run freecad
-Icon=/snap/freecad/current/opt/local/FreeCAD-0.18/data/freecad-icon-32.png
-Terminal=false
-Type=Application
-Categories=Education;
