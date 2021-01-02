@@ -749,13 +749,16 @@ rm $HOME/Downloads/CL34-linux64.zip
 * Then `ccx _main` command will make ascii `_main.frd` file, it can converted by `ccx2paraview _main.frd vtu` command.
 
 ```bash
-mkdir ~/Calculix
-cd ~/Calculix
-git clone https://github.com/calculix/ccx2paraview.git
+mkdir ~/.Calculix
+cd ~/.Calculix
+wget https://github.com/calculix/ccx2paraview/releases/download/v3.0.0/ccx2paraview_20200829_linux.zip
+unzip ccx2paraview_20200829_linux.zip
+rm ccx2paraview_20200829_linux.zip
+rm LICENSE
+rm README.md
+rm requirements.txt
 
-cd ~/Calculix/ccx2paraview
-pip install pyinstaller
-pyinstaller ./src/ccx2paraview.py --onefile
+pip install vtk numpy
 
 [Change '*CONTACT OUTPUT' to '*CONTACT FILE' in CalculixLauncher template]
 sed -i'.bak' 's/OUTPUT/FILE/' /home/osboxes/.CalculixLauncher/hlp/templates/6-general/Output/contact-output
@@ -769,29 +772,30 @@ ccx2paraview _main.frd vtu
 * CalculiX CAE - GUI/pre-processor for CalculiX CrunchiX. It's designed to guide you through the keywords creation sequence and is  aimed to help you reach correct input file with no mistakes.
 
 ```bash
-*** Installing by git clone ***
-mkdir ~/Calculix
-cd ~/Calculix
-git clone https://github.com/calculix/cae.git
-cd ~/Calculix/cae
-sudo chmod -R +x ./*
+*** Release Version ***
+cd ~/.Calculix
+wget https://github.com/calculix/cae/releases/download/v0.8.0/cae_20200725_linux.zip
+unzip cae_20200725_linux.zip -d ./cae
+rm cae_20200725_linux.zip
+cd cae
+sudo chmod -R 777 ./*
 
-*** Python 3.6 in Pyenv environment  ***
-pyenv install 3.6.10
-#pyenv global 3.6.10
-pyenv virtualenv 3.6.10 CalculixCAE
+*** Python 3.7.9 in Pyenv environment  ***
+sudo apt install -y libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+pyenv install 3.7.9
+pyenv virtualenv 3.7.9 CalculixCAE
 pyenv activate CalculixCAE
 pip install --upgrade pip
 
 *** Installation of dependencies ***
-pip3 install -r requirements.txt
-pip3 install numpy
+pip install -r requirements.txt
+pip install numpy
 
 *** Unset separately Installed Qt 5.14 ***
 unset LD_LIBRARY_PATH
 
 *** Run ***
-cd ~/Calculix/cae
+cd ~/.Calculix/cae
 ./cae.sh
 
 *** Desktop File ***
@@ -857,31 +861,22 @@ git clone https://github.com/calculix/mkraska.git
 ### CalculiX Commands
 
 ```bash
-mkdir ~/.Calculix
 cd ~/.Calculix
 
 # Official Binary
-wget http://www.dhondt.de/ccx_2.16.tar.bz2
-wget http://www.dhondt.de/cgx_2.16.1.bz2
+wget http://www.dhondt.de/ccx_2.17.tar.bz2
+wget http://www.dhondt.de/cgx_2.17.1.bz2
 
-tar -xvf ccx_2.16.tar.bz2
-mv ./CalculiX/ccx_2.16/src/ccx_2.16 ./ccx_2.16
+tar -xvf ccx_2.17.tar.bz2
+mv ./CalculiX/ccx_2.17/src/ccx_2.17 ./ccx_2.17
 rm -rf CalculiX
-ln -s ~/.Calculix/ccx_2.16 ~/.CalculixLauncher/bin/ccx
+rm ccx_2.17.tar.bz2
+ln -s ~/.Calculix/ccx_2.17 ~/.Calculix/ccx
 
-bzip2 -kd cgx_2.16.1.bz2
-chmod +x cgx_2.16.1
-ln -s ~/.Calculix/cgx_2.16.1 ~/.CalculixLauncher/bin/cgx
-c
-rm ~/.Calculix/ccx_2.16.tar.bz2
-rm ~/.Calculix/cgx_2.16.1.bz2
-
-cd
-
-# Symbolic Links
-ln -s /home/osboxes/.Calculix/ccx_2.16 /home/osboxes/.Calculix/ccx
-ln -s /home/osboxes/.Calculix/cgx_2.16.1 /home/osboxes/.Calculix/cgx
-ln -s /home/osboxes/Calculix/ccx2paraview/dist/ccx2paraview /home/osboxes/.Calculix/ccx2paraview
+bzip2 -kd cgx_2.17.1.bz2
+chmod +x cgx_2.17.1
+ln -s ~/.Calculix/cgx_2.17.1 ~/.Calculix/cgx
+rm ~/.Calculix/cgx_2.17.1.bz2
 ```
 
 

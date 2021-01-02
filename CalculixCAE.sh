@@ -7,6 +7,6 @@ eval "$(pyenv virtualenv-init -)"
 pyenv activate CalculixCAE;
 
 unset LD_LIBRARY_PATH;
-cd /home/osboxes/Calculix/cae;
-/home/osboxes/Calculix/cae/cae.sh;
+cd /home/osboxes/.Calculix/cae;
+/home/osboxes/.Calculix/cae/cae.sh;
 #sleep 100
