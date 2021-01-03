@@ -677,13 +677,11 @@ sudo apt install qt5-default
 *  qt 5.14.2
 
 ```bash
-wget https://download.qt.io/official_releases/qt/5.14/5.14.2/qt-opensource-linux-x64-5.14.2.run
-chmod +x qt-opensource-linux-x64-5.14.2.run
-sudo ./qt-opensource-linux-x64-5.14.2.run
-... Login, GPL2 obligation
-... Installation Folder : /opt/qt514
-... Select components All
-rm ./qt-opensource-linux-x64-5.14.2.run
+# Qt Online Installer for Linux (64-bit)
+https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4
+
+# Install Target
+/opt/qt514
 ```
 
 * ODA File Converter
