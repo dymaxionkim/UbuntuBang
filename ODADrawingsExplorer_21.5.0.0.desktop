@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=ODADrawingsExplorer
 Comment=ODA SDK for .dwg files 21.5.0.0, Open Design Alliance Inc.
-Exec=env LD_LIBRARY_PATH=/opt/qt514/5.14.2/gcc_64/lib:$LD_LIBRARY_PATH; /usr/bin/ODADrawingsExplorer %U
+Exec=env LD_LIBRARY_PATH=/opt/qt515/5.15.2/gcc_64/lib:$LD_LIBRARY_PATH; /usr/bin/ODADrawingsExplorer %U
 Icon=ODADrawingsExplorer
 Terminal=false
 Type=Application
