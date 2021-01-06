@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Spyder3
+Name=Spyder
 Comment=Spyder in Python3
 Exec=/home/osboxes/git/UbuntuBang/Spyder.sh
 Icon=/home/osboxes/.pyenv/versions/anaconda3-2020.02/share/icons/spyder3.png
@@ -8,5 +8,5 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Categories=Education;
-Name[en_US]=Spyder3
+Name[en_US]=Spyder
 Comment[en_US]=Spyder in Python3
