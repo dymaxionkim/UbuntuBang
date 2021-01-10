@@ -35,8 +35,8 @@ floating_modifier $mod
 bindsym $mod+t exec urxvt
 bindsym $mod+q exec qterminal
 bindsym $mod+x exec xterm
-bindsym $mod+a exec alacritty
-bindsym $mod+Return exec alacritty
+bindsym $mod+a exec /home/osboxes/.cargo/bin/alacritty
+bindsym $mod+Return exec /home/osboxes/.cargo/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,9 +51,9 @@ bindsym $mod+d exec rofi -show drun -show-icons
 
 # Some applications
 bindsym $mod+Ctrl+m exec min
-bindsym $mod+Ctrl+w exec firefox-trunk
+bindsym $mod+Ctrl+w exec firefox
 bindsym $mod+Ctrl+g exec google-chrome
-bindsym $mod+Ctrl+f exec pcmanfm
+bindsym $mod+Ctrl+f exec pcmanfm-qt
 bindsym $mod+Ctrl+e exec code
 bindsym $mod+Ctrl+v exec pavucontrol
 
@@ -210,6 +210,7 @@ exec_always --no-startup-id killall conky
 # STARTUP
 #exec --no-startup-id xrandr --output Virtual1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output Virtual2 --off --output Virtual3 --off --output Virtual4 --off --output Virtual5 --off --output Virtual6 --off --output Virtual7 --off --output Virtual8 --off
 #exec --no-startup-id nm-applet &
+exec --no-startup-id nm-tray &
 exec --no-startup-id lxpolkit &
 #exec --no-startup-id pasystray &
 #exec --no-startup-id qlipper &
