@@ -260,26 +260,18 @@ ln -s $HOME/git/UbuntuBang/JupyterLab.desktop $HOME/.local/share/applications/Ju
 ln -s $HOME/git/UbuntuBang/Spyder.desktop $HOME/.local/share/applications/Spyder.desktop
 ```
 
-## Build i3-gaps rounded wm
+## Build i3-radius wm
 
 ```bash
 sudo apt -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev libxcb-shape0-dev automake
 
 # clone the repository
-git clone https://github.com/resloved/i3.git $HOME/git/i3-gaps
-cd $HOME/git/i3-gaps
+git clone https://github.com/terroo/i3-radius.git $HOME/git/i3-radius
+cd $HOME/git/i3-radius
  
 # compile & install
-autoreconf --force --install
-rm -rf build/
-mkdir -p build && cd build/
+./build.sh
  
-# Disabling sanitizers is important for release versions!
-# The prefix and sysconfdir are, obviously, dependent on the distribution.
-../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-make
-sudo make install
-
 # i3 config
 mkdir $HOME/.config/i3
 ln -s $HOME/git/UbuntuBang/i3-config $HOME/.config/i3/config
@@ -929,15 +921,10 @@ git pull
 make
 PREFIX=$HOME/.local make install
 
-# i3-gaps
-cd ~/git/i3-gaps
+# i3-radius
+cd ~/git/i3-radius
 git pull
-autoreconf --force --install
-rm -rf build/
-mkdir -p build && cd build/
-../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-make
-sudo make install
+./build.ch
 
 # picom
 cd ~/git/picom
