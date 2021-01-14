@@ -940,6 +940,9 @@ ninja -C build install
 cd ~/git/ConvertAll
 git pull
 
+# Alacritty
+cargo install alacritty
+
 # CalculiX CAE
 cd /home/osboxes/Calculix/cae
 git reset --hard HEAD
@@ -968,7 +971,7 @@ git pull
 # Paraview
 # Salome
 # Salome-meca
-# ElmerFEM
+
 ```
 
 
