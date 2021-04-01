@@ -571,26 +571,27 @@ rm $HOME/Downloads/ParaView*.tar.gz
 ln -s $HOME/.Paraview/share/applications/org.paraview.ParaView.desktop $HOME/.local/share/applications/Paraview.desktop
 ```
 
-## Pre-requisites for Salome and Salome_meca (20.04)
+## Pre-requisites for Salome and Salome_meca
 
 ```bash
 # Prerequisites
 sudo apt install net-tools libtbb2 gfortran libgfortran4 bison flex liblapack-dev libopenblas-dev libboost-python-dev libboost-numpy-dev liblapack3
 ```
 
-## Salome Platform 9.4 (Success in 20.04)
+## Salome Platform 9.6
 
 * Download [Salome Platform](https://www.salome-platform.org/) from [here](https://www.salome-platform.org/downloads/current-version) or :
 
 ```bash
-wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=SP.UB18.04&version=9.4.0
+wget -O $HOME/Downloads/salome.tgz https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=SP.UB20.04&version=9.6.0
 ```
 
 * And execute the commands like that :
 
 ```bash
+cd $HOME/Downloads
 tar xfz salome.tgz
-mv $HOME/Downloads/SALOME-9.4.0-UB18.04-SRC $HOME/.Salome
+mv $HOME/Downloads/SALOME-9.6.0-UB20.04-SRC $HOME/.Salome
 rm $HOME/Downloads/salome.tgz
 ln -s $HOME/git/UbuntuBang/Salome.desktop $HOME/.local/share/applications/Salome.desktop
 ```
