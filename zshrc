@@ -156,7 +156,7 @@ export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
-export OMP_NUM_THREADS=8
+export OMP_NUM_THREADS=14
 
 # Calculix
 export PATH="/home/osboxes/.Calculix:$PATH"
