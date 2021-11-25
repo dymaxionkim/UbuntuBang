@@ -156,7 +156,7 @@ export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 # CalculixLauncher
 export PATH="/home/osboxes/.CalculixLauncher:$PATH"
 export PATH="/home/osboxes/.CalculixLauncher/bin:$PATH"
-export OMP_NUM_THREADS=14
+export OMP_NUM_THREADS=8
 
 # Calculix
 export PATH="/home/osboxes/.Calculix:$PATH"
@@ -190,5 +190,6 @@ export PATH="/home/osboxes/.config/salome/step2unv:$PATH"
 # RUST
 export PATH="/home/osboxes/.cargo/bin:$PATH"
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #screenfetch -n
 figlet "Higen Robot"

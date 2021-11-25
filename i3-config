@@ -214,12 +214,11 @@ exec --no-startup-id nm-tray &
 exec --no-startup-id lxpolkit &
 #exec --no-startup-id pasystray &
 #exec --no-startup-id qlipper &
-#exec --no-startup-id kime-indicator &
 
 # RELOAD
 exec_always --no-startup-id feh --randomize --bg-fill /home/osboxes/.Wallpaper/* &
 #exec_always --no-startup-id compton -cCGfF -o 0.8 -D 0 -t -7 -l -7 -r 7 -m 0.9 -b
-exec_always --no-startup-id /home/osboxes/.local/bin/picom --config /home/osboxes/git/UbuntuBang/picom.conf -b
+exec_always --no-startup-id /home/osboxes/.local/bin/picom -b --experimental-backends
 exec_always --no-startup-id conky -c $HOME/.config/conky/conky.conf
 
 # Remove temporary files
