@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Gmsh
-Comment=Gmsh
-Exec=/home/osboxes/.Gmsh/bin/gmsh
+Name=cad_assistant
+Comment=cad_assistant
+Exec=/home/osboxes/.cad_assistant/cad_assistant_1.6.0_2021-10-05_lin64.appimage
 Icon=/home/osboxes/.Gmsh/share/doc/gmsh/tutorial/t4_image.png
 Terminal=false
 Type=Application
