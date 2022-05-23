@@ -515,7 +515,7 @@ sudo reboot now
 ```bash
 sudo apt remove feh
 sudo apt autoremove
-sudo apt install libimlib2-dev libcurl3-gnutls libcurl4-gnutls-dev libpng-dev libx11-dev libxinerama-dev libexif-dev libexif12
+sudo apt install libimlib2-dev libcurl3-gnutls libcurl4-gnutls-dev libpng-dev libx11-dev libxinerama-dev libexif-dev libexif12 libmagic-dev
 cd ~/git
 git clone https://github.com/derf/feh.git
 cd feh
