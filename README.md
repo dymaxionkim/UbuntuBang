@@ -63,6 +63,7 @@ cp -f ~/git/UbuntuBang/_xinitrc ~/.xinitrc
 cp -f ~/git/UbuntuBang/_Xresources ~/.Xresources
 cp -f ~/git/UbuntuBang/_zshrc ~/.zshrc
 cp -f ~/git/UbuntuBang/mimeapps.list ~/.local/share/applications/mimeapps.list
+cp -f ~/git/UbuntuBang/micro.desktop ~/.local/share/applications/micro.desktop
 sudo cp -f ~/git/UbuntuBang/environment /etc/environment
 ```
 

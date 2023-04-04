@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=micro
+Exec=micro %f
+Categories=Accessories;
+NoDisplay=true
+MimeType=application/x-yaml
+Terminal=true
+X-KeepTerminal=false
