@@ -62,6 +62,7 @@ cp -f ~/git/UbuntuBang/_p10k.zsh ~/.p10k.zsh
 cp -f ~/git/UbuntuBang/_xinitrc ~/.xinitrc
 cp -f ~/git/UbuntuBang/_Xresources ~/.Xresources
 cp -f ~/git/UbuntuBang/_zshrc ~/.zshrc
+cp -f ~/git/UbuntuBang/mimeapps.list ~/.local/share/applications/mimeapps.list
 sudo cp -f ~/git/UbuntuBang/environment /etc/environment
 ```
 
