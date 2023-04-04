@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Paraview
-Comment=Paraview
-Exec=/home/osboxes/.Paraview/bin/paraview
-Icon=/home/osboxes/.Paraview/share/icons/hicolor/32x32/apps/paraview.png
-Terminal=false
-Type=Application
-Categories=Education;

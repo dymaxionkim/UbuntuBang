@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=ElmerGUI
-Comment=ElmerGUI
-Exec=/usr/bin/ElmerGUI
-Icon=/home/osboxes/git/UbuntuBang/ElmerGUI.png
-Terminal=false
-Type=Application
-Categories=Education;

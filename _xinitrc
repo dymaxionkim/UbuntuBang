@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# Mount ftp
+#curlftpfs ftp://... /home/osboxes/...
+
+# for TigerVNC Server
+#unset SESSION_MANAGER
+#unset DBUS_SESSION_BUS_ADDRESS
+
+# X-screen Saver off
+xset -dpms
+xset s off
+xset s noblank
+
+# Environments
+export TERMINAL=/usr/bin/alacritty
+export QT_QPA_PLATFORMTHEME=gtk2
+export XDG_SESSION_TYPE=x11
+
+# Start
+xrdb -merge ~/.Xresources
+exec i3

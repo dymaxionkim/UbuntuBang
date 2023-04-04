@@ -1,0 +1,4 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:snap/bin"
+export GTK_IM_MODULE=kime
+export QT_IM_MODULE=kime
+export XMODIFIERS=@im=kime

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=CalculixCAE
-Comment=CalculixCAE with GUI
-Exec=/home/osboxes/git/UbuntuBang/CalculixCAE.sh
-Icon=/home/osboxes/.Calculix/cae/img/action_cgx_frd.png
-Terminal=false
-Type=Application
-Categories=Education;

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Salome_meca
-Comment=Salome_meca
-Exec=bash -c "LD_PRELOAD='/usr/$LIB/libstdc++.so.6' /home/osboxes/.Salome_meca/appli_V2019.0.3_universal/salome"
-Icon=/home/osboxes/.Salome_meca/appli_V2019.0.3_universal/lib/salome/share/salome/resources/asterstudy/asterstudy.png
-Terminal=false
-Type=Application
-Categories=Education;

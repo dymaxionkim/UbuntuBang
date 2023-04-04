@@ -1,0 +1,27 @@
+configuration {
+  font: "D2Coding Nerd Font 12";
+  
+  modi: [combi,drun,run,window,ssh];
+  combi-modi: [drun,run,ssh];
+  sidebar-mode: true;
+  //sort: false;
+  levenshtein-sort: true;
+  //matching: "fuzzy";
+  //case-sensitive: false;
+  show-icons: true;
+  icon-theme: "Yaru-red-dark";
+
+
+  scroll-method: 0; // 0:Page, 1:Centered
+
+  terminal: "alacritty";
+  ssh-client: "ssh";
+  ssh-command: "{terminal} -e {ssh-client} {host}";
+  //ssh-command: "{terminal} -e {ssh-client} -p 5022 osboxes@dymaxionkim.iptime.org";
+  //ssh-command: "{terminal} -e {ssh-client} -p 22 ubuntu@152.67.796.70";
+  //ssh-command: "{terminal} -e {ssh-client} -p 22 ubuntu@144.24.83.13";
+  //ssh-command: "{terminal} -e {ssh-client} cio@wiki.higenmotor.com";
+  //ssh-command: "{terminal} -e {ssh-client} lab@wiki.higenmotor.com";
+  //ssh-command: "{terminal} -e {ssh-client} mech@10.124.1.61";
+}
+@theme "mytheme"
