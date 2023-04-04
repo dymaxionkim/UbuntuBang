@@ -17,6 +17,11 @@ export TERMINAL=/usr/bin/alacritty
 export QT_QPA_PLATFORMTHEME=gtk2
 export XDG_SESSION_TYPE=x11
 
+# ElmerFEM
+export ELMER_HOME=$HOME/git/elmerfem/install/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMER_HOME/lib
+export PATH=$PATH:$ELMER_HOME/bin
+
 # Start
 xrdb -merge ~/.Xresources
 exec i3

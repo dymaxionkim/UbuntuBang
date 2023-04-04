@@ -195,3 +195,43 @@ sudo cp -f ~/git/UbuntuBang/firefox-no-snap /etc/apt/preferences.d/firefox-no-sn
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt install firefox
 ```
+
+## ElmerFEM
+
+* https://www.elmerfem.org/forum/viewtopic.php?t=7864
+
+* Pre-Requisites
+
+```
+sudo apt install cmake gcc g++ gfortran
+sudo apt install libqwt-qt5-dev libqt5opengl5-dev qtscript5-dev qtscript5-dev libqwt-qt5-dev libqt5svg5-dev
+sudo apt install libmpich-dev libopenmpi-dev
+sudo apt install libblas-dev liblapack-dev
+sudo apt install libnetcdff-dev libmetis-dev libparmetis-dev libmumps-dev netcdf-bin
+sudo apt install lua5.3
+```
+
+* git clone
+
+```
+cd ~/git
+git clone https://github.com/ElmerCSC/elmerfem.git
+```
+
+* build
+
+```
+cd elmerfem
+mkdir build
+cd build
+cmake -DWITH_QT5=TRUE -DWITH_ELMERGUI:BOOL=TRUE -DWITH_MPI:BOOL=TRUE -DWITH_Mumps:BOOL=TRUE -DWITH_LUA:BOOL=TRUE -DCMAKE_INSTALL_PREFIX=../install ../
+make -j6 install
+```
+
+* environment (`.xinitrc`)
+
+```
+export ELMER_HOME=$HOME/git/elmerfem/install/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ELMER_HOME/lib
+export PATH=$PATH:$ELMER_HOME/bin
+```
